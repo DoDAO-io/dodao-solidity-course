@@ -1,6 +1,7 @@
 - uuid: 1b8fbe3c-aeb2-4b7d-a3ef-3082bf07efcc
   type: MultipleChoice
   order: 0
+
   content: What does SW DAO offer? (Select One)
   answerKeys:
     - dog_or_cat
@@ -20,6 +21,95 @@
     - content: All of the about options
       key: only_cat
       order: 3
+ 
+  content1: Which of the following is not a valid data type in solidity?
+  answerKeys1:
+    - D
+  choices1:
+    - content: bool
+      key: A
+      order: 0
+    - content: uint
+      key: B
+      order: 1
+    - content: address
+      key: C
+      order: 2
+    - content: char
+      key: D
+      order: 3
+
+  content2: What is the default value of int data type in solidity?
+  answerKeys2:
+    - B
+  choices2:
+    - content: "null"
+      key: A
+      order: 0
+    - content: "0"
+      key: B
+      order: 1
+    - content: undefined
+      key: C
+      order: 2
+    - content: "1"
+      key: D
+      order: 3
+
+  content3: Which of the following statements is incorrect regarding data types in solidity?
+  answerKeys3:
+    - C
+  choices3:
+    - content: The range of uint32 data type is from 0 upto 2**32 -1
+      key: A
+      order: 0
+    - content: Bool data type can only take true and false values.
+      key: B
+      order: 1
+    - content: The range of int256 data type is from -2**256+1 to 2**256-1
+      key: C
+      order: 2
+    - content: address data type holds a 20 byte value
+      key: D
+      order: 3
+
+  content4: Which of the following statements about address data type in solidity is correct?
+  answerKeys4:
+    - C
+  choices4:
+    - content: Address payable has a larger size compared to address
+      key: A
+      order: 0
+    - content: Implicit type conversion from address payable to address are not allowed
+      key: B
+      order: 1
+    - content: If you need a variable of type address and plan to send Ether to it, then declare its type as address payable 
+      key: C
+      order: 2
+    - content: Explicit conversion of data type byte 32 to address is allowed.
+      key: D
+      order: 3
+
+  content5: Which of the following is not a valid member of type address?
+  answerKeys5:
+    - B
+  choices5:
+    - content: balance
+      key: A
+      order: 0
+    - content: keccak256
+      key: B
+      order: 1
+    - content: codehash
+      key: C
+      order: 2
+    - content: transfer
+      key: D
+      order: 3
+  
+
+  
+
 
 
 
