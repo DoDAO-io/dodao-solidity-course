@@ -1,7 +1,3 @@
-# Adding Questions
-
-Questions should be written in the following format
-```yaml
 - # uuid Needs to be a random UUID - You can generate it from https://www.uuidgenerator.net/version4.  Use version 4
   uuid: 1b8fbe3c-aeb2-4b7d-a3ef-3082bf07efcc
   # Types can be MultipleChoice or SingleChoice
@@ -39,4 +35,3 @@ Questions should be written in the following format
     - content: All of the about options
       key: pwlp
       order: 3
-```

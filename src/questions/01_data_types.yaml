@@ -21,7 +21,7 @@
     - content: All of the about options
       key: only_cat
       order: 3
- 
+
   content1: Which of the following is not a valid data type in solidity?
   answerKeys1:
     - D
@@ -83,7 +83,7 @@
     - content: Implicit type conversion from address payable to address are not allowed
       key: B
       order: 1
-    - content: If you need a variable of type address and plan to send Ether to it, then declare its type as address payable 
+    - content: If you need a variable of type address and plan to send Ether to it, then declare its type as address payable
       key: C
       order: 2
     - content: Explicit conversion of data type byte 32 to address is allowed.
@@ -106,9 +106,8 @@
     - content: transfer
       key: D
       order: 3
-  
 
-  
+
 
 
 
