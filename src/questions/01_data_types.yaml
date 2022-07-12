@@ -1,7 +1,7 @@
 - uuid: 89128b13-bd0f-4887-85c4-1308dfbc3234
   type: MultipleChoice
   content: Which of the following are not valid data types in solidity?
-  hint: null
+  hint: noHint
   explanation: floating point data and character data types are not valid in solidity.
   answerKeys:
     - B
@@ -24,7 +24,7 @@
 - uuid: 5413170f-f8c0-40fd-b17a-9481650eaa72
   type: SingleChoice
   content: What is the default value of int data type in solidity?
-  hint: null
+  hint: noHint
   explanation: null and undefined do not exist in solidity.
   answerKeys:
     - B
@@ -45,7 +45,7 @@
 - uuid: 165cc35e-7d95-4273-a61a-621916e5ef05
   type: SingleChoice
   content: Which of the following statements is incorrect regarding data types in solidity?
-  hint: null
+  hint: noHint
   explanation: The range of uintx in solidity is [0,2**x -1], the range of intx is [-2**(x-1),2**(x-1)-1] , boolean values only take true/false values and address literals take 20 bytes hexadecimal values.
   answerKeys:
     - C
@@ -91,7 +91,7 @@
 - uuid: d5773538-949b-4909-b91e-5f035808b8bc
   type: SingleChoice
   content: Which of the following is not a valid member of type address?
-  hint: null
+  hint: noHint
   explanation: keccak256 is a globally available function in solidity used to calculate the keccak256 hash of an input . balance , codehash and transfer are methods of the address type.
   answerKeys:
     - B
@@ -133,7 +133,7 @@
 - uuid: b0c8e946-2740-499a-9863-3173f1dc8a52
   type: SingleChoice
   content: in solidity 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF is an example of-
-  hint: null
+  hint: noHint
   explanation: addresses holds 20 byte hexadecimal literals.
   answerKeys:
     - A
@@ -154,7 +154,7 @@
 - uuid: 944228da-440e-43d3-b0b8-a9a3751aa5b9
   type: SingleChoice
   content: which of the following is not a valid array declaration?
-  hint: null
+  hint: noHint
   explanation: type arrayName [ arraySize ]; declares an array of fixed size in Solidity,
                type[] arrayName; declares an array of dynamic size in solidity.
   answerKeys:
@@ -249,7 +249,7 @@
 - uuid: 663929a6-3a12-43fd-b0ff-ac07c2e34467
   type: SingleChoice
   content: Which of the following is not a reference type?
-  hint: null
+  hint: noHint
   explanation: enum is a value type.
   answerKeys:
     - D
@@ -269,7 +269,7 @@
 - uuid: d118157f-2d86-4ee3-bedc-de508017477a
   type: MultipleChoice
   content: Which of the following is not a valid data location for a reference data type in solidity?
-  hint: null
+  hint: noHint
   explanation: address is a value type in solidity whearas memory , storage and calldata are data locations for reference types.
   answerKeys:
     - C
@@ -311,7 +311,7 @@
 - uuid: 723b95b6-504c-41ff-9b16-22f22756fadd
   type: SingleChoice
   content: Which of the following is the correct way to compare two strings str1 and str2 in solidity?
-  hint: null
+  hint: noHint
   explanation: Solidity does not have string manipulation functions, but there are third-party string libraries. You can also compare two strings by their keccak256-hash using keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2)) and concatenate two strings using string.concat(s1, s2).
   answerKeys:
     - B
@@ -403,7 +403,7 @@
                       b.push(5);
                   }
               }"
-  hint: null
+  hint: noHint
   explanation: Memory arrays cannot be extended during runtime. The member function push does not exist. If you need to resize your memory array, you need to create a new array with the desired length and copy every element from the old array.
   answerKeys:
     - C
@@ -425,7 +425,7 @@
   type: SingleChoice
   content: "Statement 1- The array literal [-1,1] is invalid. Statement 2- Calling push() member function on an array can be used to append a zero-initialized element at the end of the array.
             Which of the following options is correct?"
-  hint: null
+  hint: noHint
   explanation: The array literal [1, -1] is invalid because the type of the first expression is uint8 while the type of the second is int8 and they cannot be implicitly converted to each other. To make it work, you can use [int8(1), -1], for example. Methods .push() and .push(value) can be used to append a new element at the end of the array, where .push() appends a zero-initialized element and returns a reference to it.
   answerKeys:
     - C
@@ -446,7 +446,7 @@
 - uuid: 8adbf18e-9fbb-416b-b0a0-b319e642b936
   type: MultipleChoice
   content: Which of the following statements is correct?
-  hint: null
+  hint: noHint
   explanation: It is not possible for a struct to contain a member of its own type, although the struct itself can be the value type of a mapping member or it can contain a dynamically-sized array of its type. Struct types can be used inside mappings and arrays and they can themselves contain mappings and arrays.
   answerKeys:
     - B
@@ -467,7 +467,7 @@
 - uuid: 49928b3a-750a-42e3-a358-274275fa82a8
   type: SingleChoice
   content: Which of the following statements is correct about mapping data type?
-  hint: null
+  hint: noHint
   explanation: Mappings can only have a data location of storage. The KeyType can be any built-in value type, bytes, string, or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are not allowed. ValueType can be any type, including mappings, arrays and structs.
   answerKeys:
     - C
@@ -487,7 +487,7 @@
 - uuid: 861e7d61-22e2-48db-b6e9-5f95c4b0fbaa
   type: SingleChoice
   content:  In the following code snippets where is implicit type conversion possible?
-  hint: null
+  hint: noHint
   explanation: In the example below, y and z, the operands of the addition, do not have the same type, but uint8 can be implicitly converted to uint16 and not vice-versa.  uint8 is convertible to uint16 and int128 to int256, but int8 is not convertible to uint256, because uint256 cannot hold values such as -1.
   answerKeys:
     - A
@@ -514,7 +514,7 @@
 - uuid: e383c36b-6272-4467-ae2e-c69c22ce60bc
   type: SingleChoice
   content: What is the correct declaration for a mapping type ?
-  hint: null
+  hint: noHint
   explanation: mapping types use the syntax mapping(KeyType => ValueType) and variables of mapping type are declared using the syntax mapping(KeyType => ValueType) VariableName. The KeyType can be any built-in value type, bytes, string, or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are not allowed. ValueType can be any type, including mappings, arrays and structs.
   answerKeys:
     - C
@@ -534,7 +534,7 @@
 - uuid: 63af76dd-2db1-4b0b-bc49-9fa5deb0b6a5 
   type: MultipleChoice
   content: Which of the following statements is correct about fixed point numbers?
-  hint: null
+  hint: noHint
   explanation: Signed and unsigned fixed point number of various sizes. Keywords ufixedMxN and fixedMxN, where M represents the number of bits taken by the type and N represents how many decimal points are available. M must be divisible by 8 and goes from 8 to 256 bits. N must be between 0 and 80, inclusive. ufixed and fixed are aliases for ufixed128x18 and fixed128x18, respectively.
   answerKeys:
     - A
@@ -556,7 +556,7 @@
 - uuid: 794197c0-6a38-49af-a8ce-52c116ee3cee
   type: SingleChoice
   content: Comparison operators like <= , >= are not applicable to which of the following value types?
-  hint: null
+  hint: noHint
   explanation: " '!' , '&&' , '||' , '==' , '!=' work with bolleans. Comparision operators like <=, < etc do not work with booleans in solidity ."
   answerKeys:
     - A
@@ -597,7 +597,7 @@
 - uuid: 05680353-3068-486e-ac07-ddc278b06a20
   type: SingleChoice
   content: Which of the following is not a valid address ?
-  hint: null
+  hint: noHint
   explanation: addresses hold 20 byte hexadecimal values.
   answerKeys:
     - D
@@ -639,7 +639,7 @@
 - uuid: 8b5b134a-af35-478c-bd53-8ddfb5471646
   type: MultipleChoice
   content: Which of the following statements is correct about send and transfer functions of the address value type?
-  hint: null
+  hint: noHint
   explanation: It is possible to query the balance of an address using the property balance and to send Ether (in units of wei) to a payable address using the transfer function. Send is the low-level counterpart of transfer. 
   answerKeys:
     - C
@@ -662,7 +662,7 @@
            Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32).
            Statement 2 - keccak256(address.code) is cheaper than using address.codehash.
            Which of the following options is correct considering the code and codehash methods of the address type.
-  hint: null
+  hint: noHint
   explanation: Use .code to get the EVM bytecode as a bytes memory, which might be empty. Use .codehash get the Keccak-256 hash of that code (as a bytes32). Note that addr.codehash is cheaper than using keccak256(addr.code).
   answerKeys:
     - B
@@ -682,7 +682,7 @@
 - uuid: caa00c9b-61e5-4224-82fa-9a0bb613d436
   type: MultipleChoice
   content: Which of the following options is correct regarding a user defined value type defined by the syntax ' type C is V ; ' in solidity.
-  hint: null
+  hint: noHint
   explanation: A user defined value type is defined using type C is V, where C is the name of the newly introduced type and V has to be a built-in value type (the “underlying type”). The function C.wrap is used to convert from the underlying type to the custom type. Similarly, the function C.unwrap is used to convert from the custom type to the underlying type.The type C does not have any operators or bound member functions. In particular, even the operator == is not defined. Explicit and implicit conversions to and from other types are disallowed.
   answerKeys:
     - C
@@ -702,7 +702,7 @@
 - uuid: b0134cbb-b413-4e42-8030-7221df128b4e
   type: MultipleChoice
   content: In solidity , contract types are - 
-  hint: null
+  hint: noHint
   explanation: Solidity Contracts are like a class in any other object-oriented programming language.
   answerKeys:
     - A
@@ -722,7 +722,7 @@
 - uuid: 9c4a6edd-ee00-43f2-a097-05fc166e243b
   type: SingleChoice
   content: Which of the following statements are correct regarding variable declaration in solidity?
-  hint: null
+  hint: noHint
   explanation: A variable name should not match with reserved keywords. Variable names must start with a letter or an underscore (_), and may contain letters from “a to z” or “A to Z” or digits from “0 to 9” and characters also. The name of variables are case sensitive.
   answerKeys:
     - A
@@ -762,7 +762,7 @@
 - uuid: 270dfe5f-a833-472c-ad07-3ce1942780b0
   type: MultipleChoice
   content: Which among the following is  a valid data storage location for mapping type?
-  hint: null
+  hint: noHint
   explanation: Mappings can only have a data location of storage.
   answerKeys:
     - B
@@ -783,7 +783,7 @@
 - uuid: 653b974e-d79d-4103-a2ff-57a86506ada3
   type: MultipleChoice
   content: The declaration below in solidity is an example of which type? function f() public payable returns (bytes4){}
-  hint: null
+  hint: noHint
   explanation: function f() public payable returns (bytes4){} is a fuction declaration.
   answerKeys:
     - B
@@ -984,7 +984,7 @@
               }
             }
             What type of variable is storedData declared in the SolidityTest contract?"
-  hint: null
+  hint: noHint
   explanation: State Variables , Variables whose values are permanently stored in a contract storage.
                Local Variables , Variables whose values are present till function is executing.
                Global Variables , Special variables which exist in the global namespace used to get information about the blockchain.
@@ -1056,7 +1056,7 @@
 - uuid: 203d97e1-7194-4373-b943-d89d06e35126
   type: MultipleChoice
   content: Which of the following are valid literals for solidity data types?
-  hint: null
+  hint: noHint
   explanation: 2.5e1 is an integer literal , "foo" "bar" is equivalent to “foobar” which is a string literal and hex"001122FF" is an example of  hexadecimal literal which are prefixed with the keyword hex.
   answerKeys:
     - A
