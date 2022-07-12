@@ -124,7 +124,7 @@
 
 - uuid: b0c8e946-2740-499a-9863-3173f1dc8a52
   type: SingleChoice
-  content: in solidity 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF is an example of-
+  content: in solidity `0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF` is an example of-
   hint: noHint
   explanation: addresses holds 20 byte hexadecimal literals.
   answerKeys:
@@ -133,7 +133,7 @@
     - "value-types"
   difficulty_level: Low
   choices:
-    - content: address
+    - content: "`address`"
       key: A
     - content: uint
       key: B
@@ -146,8 +146,9 @@
   type: SingleChoice
   content: which of the following is not a valid array declaration?
   hint: noHint
-  explanation: type arrayName [ arraySize ]; declares an array of fixed size in Solidity,
-               type[] arrayName; declares an array of dynamic size in solidity.
+  explanation: | 
+   `type arrayName [ arraySize ];` declares an array of fixed size in Solidity,
+   `type[] arrayName;` declares an array of dynamic size in solidity.
   answerKeys:
     - D
   sub_topics:
@@ -158,20 +159,24 @@
       key: A
     - content: int []arr;
       key: B
-    - content: uint arr[] = [1,2,3];
+    - content: "`uint arr[] = [1,2,3];`"
       key: C
     - content: int [3]arr;
       key: D
 
 - uuid: 42d6e1ad-75b3-41a8-88d7-7aa7f958619f
   type: SingleChoice
-  content: What will be the value of arr[arr.length-2] after execution of the following code?
+  content: |
+    What will be the value of `arr[arr.length-2]` after execution of the following code?
+    ```
             uint[] arr;
             arr = [1,2,3];
             arr.push(1);
             arr.push(2);
             delete arr[1];
             arr.pop();
+    ```
+
   hint: delete method does not change the length of the array.
   explanation: array.push(x) is used to add element x to the end of the array , array.length returns the length of the array and delete array[x] deletes the item at index x of the array and leaves all other elements and the length of the array untouched.
   answerKeys:

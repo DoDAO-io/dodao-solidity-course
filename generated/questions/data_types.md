@@ -41,8 +41,8 @@ Which of the following are true regarding constant and immutable variables in so
 - [x]  Variables declared as immutable are a bit less restricted than those declared as constant.
 - [ ]  Immutable variables can be assigned more than once.         
  
-in solidity 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF is an example of-
-- [x]  address
+in solidity `0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF` is an example of-
+- [x]  `address`
 - [ ]  uint
 - [ ]  string
 - [ ]  array         
@@ -50,10 +50,19 @@ in solidity 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF is an example of-
 which of the following is not a valid array declaration?
 - [ ]  uint arr[10];
 - [ ]  int []arr;
-- [ ]  uint arr[] = [1,2,3];
+- [ ]  `uint arr[] = [1,2,3];`
 - [x]  int [3]arr;         
  
-What will be the value of arr[arr.length-2] after execution of the following code? uint[] arr; arr = [1,2,3]; arr.push(1); arr.push(2); delete arr[1]; arr.pop();
+What will be the value of `arr[arr.length-2]` after execution of the following code?
+```
+        uint[] arr;
+        arr = [1,2,3];
+        arr.push(1);
+        arr.push(2);
+        delete arr[1];
+        arr.pop();
+```
+
 - [ ]  1
 - [ ]  undefined
 - [ ]  2
