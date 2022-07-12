@@ -7,9 +7,7 @@
     - B
     - D
   sub_topics:
-    - value types
-    - booleans
-    - address
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: bool
@@ -29,8 +27,7 @@
   answerKeys:
     - B
   sub_topics:
-    - integers
-    - value types
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: "null"
@@ -50,10 +47,7 @@
   answerKeys:
     - C
   sub_topics:
-    - value types
-    - integers
-    - booleans
-    - address
+    - "value-types"
   difficulty_level: Medium
   choices:
     - content: The range of uint32 data type is from 0 upto 2**32 -1
@@ -75,8 +69,7 @@
     - B
     - D
   sub_topics:
-    - value types
-    - address
+    - "value-types"
   difficulty_level: Medium
   choices:
     - content: Address payable has a larger size compared to address.
@@ -96,8 +89,7 @@
   answerKeys:
     - B
   sub_topics:
-    - value types
-    - address
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: balance
@@ -118,7 +110,7 @@
     - A
     - C
   sub_topics:
-    - value types
+    - "value-types"
   difficulty_level: Medium
   choices:
     - content: For constant variables, the value has to be fixed at compile-time. For immutable, value can be assigned at construction time.
@@ -138,8 +130,7 @@
   answerKeys:
     - A
   sub_topics:
-    - value types
-    - address
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: address
@@ -160,8 +151,7 @@
   answerKeys:
     - D
   sub_topics:
-    - reference types
-    - arrays
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: uint arr[10];
@@ -187,8 +177,7 @@
   answerKeys:
     - D
   sub_topics:
-    - reference types
-    - arrays
+    - "reference-types"
   difficulty_level: Medium
   choices:
     - content: "1"
@@ -204,14 +193,13 @@
   type: MultipeChoice
   content: Which of the following statements is correct about arrays in solidity ?
   hint: arrays in solidity are homogenous.
-  explanation: arrays in solidity can store value types like boolean , integers etc and can be declared with the new keyword. Array indexing in solidity starts with 0 like most other programming languages.
+  explanation: arrays in solidity can store "value-types" like boolean , integers etc and can be declared with the new keyword. Array indexing in solidity starts with 0 like most other programming languages.
   answerKeys:
     - B
     - C
     - D
   sub_topics:
-    - reference types
-    - arrays
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: They can hold values of different data types.
@@ -233,8 +221,7 @@
     - C
     - D
   sub_topics:
-    - value types
-    - enums
+    - "value-types"
   difficulty_level: Medium
   choices:
     - content: They require at least one member, and its default value when declared is the first member.
@@ -254,7 +241,7 @@
   answerKeys:
     - D
   sub_topics:
-    - reference types
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: arrays
@@ -270,12 +257,11 @@
   type: MultipleChoice
   content: Which of the following is not a valid data location for a reference data type in solidity?
   hint: noHint
-  explanation: address is a value type in solidity whearas memory , storage and calldata are data locations for reference types.
+  explanation: address is a value type in solidity whearas memory , storage and calldata are data locations for "reference-types".
   answerKeys:
     - C
   sub_topics:
-    - reference types
-    - data location
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: memory
@@ -295,8 +281,7 @@
   answerKeys:
     - C
   sub_topics:
-    - reference types
-    - arrays
+    - "reference-types"
   difficulty_level: Medium
   choices:
     - content: Incorrect way to initialize array
@@ -316,7 +301,7 @@
   answerKeys:
     - B
   sub_topics:
-    - strings 
+    - "reference-types" 
   difficulty_level: Low
   choices:
     - content: str1 == str2
@@ -337,8 +322,7 @@
   answerKeys:
     - C
   sub_topics:
-    - value types
-    - integers
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: Imports the SafeMath library
@@ -358,7 +342,7 @@
   answerKeys:
     - C
   sub_topics:
-    - integers
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: "Null"
@@ -378,7 +362,7 @@
   answerKeys:
     - A
   sub_topics:
-    - bytes
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: "0x65"
@@ -408,8 +392,7 @@
   answerKeys:
     - C
   sub_topics:
-    - arrays
-    - data location
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: It is not not possible to declare an array with new keyword
@@ -430,8 +413,7 @@
   answerKeys:
     - C
   sub_topics:
-    - arrays
-    - reference types
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: Statement 1 is true.
@@ -452,7 +434,7 @@
     - B
     - C
   sub_topics:
-    - structs
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: It is possible for a struct to contain a member of its own type.
@@ -472,10 +454,10 @@
   answerKeys:
     - C
   sub_topics:
-    - mapping
+    - "reference-types"
   difficulty_level: Low
   choices:
-    - content: User-defined or complex types, such as mappings, structs or array types are not allowed as key and value types in a mapping.
+    - content: User-defined or complex types, such as mappings, structs or array types are not allowed as key and "value-types" in a mapping.
       key: A
     - content: Mappings can have any data location. 
       key: B
@@ -492,8 +474,7 @@
   answerKeys:
     - A
   sub_topics:
-    - value types
-    - integers
+    - "value-types"
   difficulty_level: Medium
   choices:
     - content: uint8 x;
@@ -519,7 +500,7 @@
   answerKeys:
     - C
   sub_topics:
-    - mapping
+    - "mapping-type"
   difficulty_level: Low
   choices:
     - content: mapping(uint -> address) someMapping;
@@ -541,7 +522,7 @@
     - B
     - C
   sub_topics:
-    - value types
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: They can be declared with Keywords ufixedMxN and fixedMxN.
@@ -561,7 +542,7 @@
   answerKeys:
     - A
   sub_topics:
-    - operators
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: bool
@@ -582,7 +563,7 @@
   answerKeys:
     - A
   sub_topics:
-    - strings
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: Statement 1 is more gas efficient for longer strings than statement 2.
@@ -602,7 +583,7 @@
   answerKeys:
     - D
   sub_topics:
-    - address
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: "0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9"
@@ -624,7 +605,7 @@
     - B
     - D
   sub_topics:
-    - address
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: It corresponds to the last 20 bytes of the Keccak-256 hash of the public key.
@@ -644,7 +625,7 @@
   answerKeys:
     - C
   sub_topics:
-    - address
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: Transfer is the low level counterpart of send.
@@ -667,7 +648,7 @@
   answerKeys:
     - B
   sub_topics:
-    - address
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: Both Statement 1 and Statement 2 are correct.
@@ -687,7 +668,7 @@
   answerKeys:
     - C
   sub_topics:
-    - value types
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: V is the name of the newly introduced data type.
@@ -707,7 +688,7 @@
   answerKeys:
     - A
   sub_topics:
-    - contract types
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: Similar to classes in object oriented languages.
@@ -727,7 +708,7 @@
   answerKeys:
     - A
   sub_topics:
-    - variables
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: A variable name should not match with reserved keywords.
@@ -747,7 +728,7 @@
   answerKeys:
     - D
   sub_topics:
-    - contract types
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: Contracts support comparison operators.
@@ -767,8 +748,7 @@
   answerKeys:
     - B
   sub_topics:
-    - data location
-    - mapping
+    - "mapping-type"
   difficulty_level: Low
   choices:
     - content: memory
@@ -788,7 +768,7 @@
   answerKeys:
     - B
   sub_topics:
-    - function types
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: Contract type
@@ -811,7 +791,7 @@
   answerKeys:
     - B
   sub_topics:
-    - function types
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: public
@@ -832,8 +812,7 @@
     - A
     - D
   sub_topics:
-    - arrays
-    - data location
+    - "reference-types"
   difficulty_level: High
   choices:
     - content: they can be declared with the syntax , uint[] memory a = new uint[](size);
@@ -854,8 +833,7 @@
   answerKeys:
     - D
   sub_topics:
-    - operators
-    - integers
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: "255"
@@ -892,9 +870,7 @@
   answerKeys:
     - B
   sub_topics:
-    - function types
-    - value types
-    - integers
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: Line 1
@@ -914,8 +890,8 @@
   answerKeys:
     - D
   sub_topics:
-    - reference types
-    - mappings
+    - "reference-types"
+    - "mapping-type"
   difficulty_level: Low
   choices:
     - content: enum
@@ -937,8 +913,7 @@
   answerKeys:
     - B
   sub_topics:
-    - value types
-    - integers
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: "256"
@@ -960,8 +935,7 @@
     - B
     - C
   sub_topics:
-    - data location
-    - reference types
+    - "reference-types"
   difficulty_level: Hard
   choices:
     - content: Memory in solidity is a temporary storage.
@@ -991,7 +965,7 @@
   answerKeys:
     - A
   sub_topics:
-    - data location
+    - "reference-types"
   difficulty_level: Low
   choices:
     - content: State Variables
@@ -1012,8 +986,7 @@
     - B
     - D
   sub_topics:
-    - value types
-    - enums
+    - "value-types"
   difficulty_level: Medium
   choices:
     - content: enum integers {  1 , 2 , 3 , 4 }
@@ -1040,8 +1013,7 @@
   answerKeys:
     - D
   sub_topics:
-    - operators
-    - value types
+    - "value-types"
   difficulty_level: Hard
   choices:
     - content: "0"
@@ -1063,8 +1035,7 @@
     - B
     - C
   sub_topics:
-    - strings
-    - integers
+    - "value-types"
   difficulty_level: Low
   choices:
     - content: 2.5e1
@@ -1091,8 +1062,7 @@
   answerKeys:
     - C
   sub_topics:
-    - value types
-    - integers
+    - "value-types"
   difficulty_level: Hard
   choices:
     - content: Variables in both examples 1 and 2 are packed.
@@ -1123,8 +1093,7 @@
   answerKeys:
     - A
   sub_topics:
-    - value types
-    - enums
+    - "value-types"
   difficulty_level: Medium
   choices:
     - content: "0:uint8: 3"
