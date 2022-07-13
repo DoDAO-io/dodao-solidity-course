@@ -280,7 +280,7 @@
 
 - uuid: 1e3a6ea0-7b36-4e11-98c5-d4fd9f3e49e1
   type: SingleChoice
-  content: uint[][5] in solidity is -
+  content: "`uint[][5]` in solidity is -"
   hint: two dimensional arrays can be initialized in solidity.
   explanation: An array of 5 dynamic arrays of uint is written as `uint[][5]`. The notation is reversed compared to some other languages. In Solidity, X[3] is always an array containing three elements of type X, even if X is itself an array. This is not the case in other languages such as C.
   answerKeys:
@@ -320,8 +320,9 @@
 
 - uuid: b4b39948-5ba0-4791-886f-84ebae031b46
   type: SingleChoice
-  content: What does the following syntax do?
-            using SafeMath for uint;
+  content: |
+   What does the following syntax do?
+            `using SafeMath for uint;`
   hint: SafeMath is a library and can be imported in solidity.
   explanation: Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs. Using SafeMath reverts the transaction when an operation overflows.
   answerKeys:
@@ -381,17 +382,19 @@
 
 - uuid: 0251f4f5-c96b-4018-b33c-cf570ebfe638
   type: SingleChoice
-  content: "What is wrong with the following code ?
-              `// SPDX-License-Identifier: GPL-3.0
-              pragma solidity >=0.4.16 <0.9.0;
+  content: |
+   What is wrong with the following code ?
+    ```// SPDX-License-Identifier: GPL-3.0
+          pragma solidity >=0.4.16 <0.9.0;
 
-              contract C {
-                  function f(uint len) public pure {
-                      uint[] memory a = new uint[](7);
-                      b[6] = 8;
-                      b.push(5);
-                  }
-              }`"
+          contract C {
+            function f(uint len) public pure {
+                uint[] memory a = new uint[](7);
+                b[6] = 8;
+                b.push(5);
+            }
+          }
+    ```
   hint: noHint
   explanation: Memory arrays cannot be extended during runtime. The member function push does not exist. If you need to resize your memory array, you need to create a new array with the desired length and copy every element from the old array.
   answerKeys:
@@ -411,8 +414,10 @@
 
 - uuid: f92bdc52-4d0f-44de-b763-0462f3fe65c7
   type: SingleChoice
-  content: "Statement 1- The array literal `[-1,1]` is invalid. Statement 2- Calling `push()` member function on an array can be used to append a zero-initialized element at the end of the array.
-            Which of the following options is correct?"
+  content: |
+   Statement 1- The array literal `[-1,1]` is invalid. 
+   Statement 2- Calling `push()` member function on an array can be used to append a zero-initialized element at the end of the array.
+   Which of the following options is correct?
   hint: noHint
   explanation: The array literal [1, -1] is invalid because the type of the first expression is uint8 while the type of the second is int8 and they cannot be implicitly converted to each other. To make it work, you can use [int8(1), -1], for example. Methods .push() and .push(value) can be used to append a new element at the end of the array, where .push() appends a zero-initialized element and returns a reference to it.
   answerKeys:
@@ -561,8 +566,10 @@
 
 - uuid: 68640698-1c5f-4afb-8164-fe55360e698a
   type: SingleChoice
-  content: Regarding comparison of strings in solidity , based on the statements below , which of the following options is correct?
-           Statement 1 - Compare with the use of hashes. Statement 2 - Check by comparing each character including the length check.
+  content: |
+   Regarding comparison of strings in solidity , based on the statements below , which of the following options is correct?
+   Statement 1 - Compare with the use of hashes. 
+   Statement 2 - Check by comparing each character including the length check.
   hint: Solidity does not have string manipulation functions.
   explanation: For longer strings it is cost efficient to hash the string and then compare the byte value of the hashes.
   answerKeys:
@@ -644,10 +651,11 @@
 
 - uuid: 939f30f4-dcfd-4dea-8c48-94e32a0079c5
   type: SingleChoice
-  content: Consider the following statements.
-           Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32).
-           Statement 2 - `keccak256(address.code)` is cheaper than using `address.codehash`.
-           Which of the following options is correct considering the code and codehash methods of the address type.
+  content: |
+   Consider the following statements.
+   Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32).
+   Statement 2 - `keccak256(address.code)` is cheaper than using `address.codehash`.
+   Which of the following options is correct considering the code and codehash methods of the address type.
   hint: noHint
   explanation: Use .code to get the EVM bytecode as a bytes memory, which might be empty. Use .codehash get the Keccak-256 hash of that code (as a bytes32). Note that addr.codehash is cheaper than using keccak256(addr.code).
   answerKeys:
@@ -767,8 +775,9 @@
 
 - uuid: 653b974e-d79d-4103-a2ff-57a86506ada3
   type: MultipleChoice
-  content: The declaration below in solidity is an example of which type? 
-           `function f() public payable returns (bytes4){}`
+  content: |
+   The declaration below in solidity is an example of which type? 
+      `function f() public payable returns (bytes4){}`
   hint: noHint
   explanation: "`function f() public payable returns (bytes4){}` is a fuction declaration."
   answerKeys:
@@ -790,10 +799,11 @@
   type: MultipleChoice
   content: Which access classifier is used with a function type to only access it in the contract it is declared in ?
   hint: private is a subset of internal and external is a subset of public.
-  explanation: public - all can access
-               external - Cannot be accessed internally, only externally
-               internal - only this contract and contracts deriving from it can access
-               private - can be accessed only from this contract
+  explanation: |
+   public - all can access
+   external - Cannot be accessed internally, only externally
+   internal - only this contract and contracts deriving from it can access
+   private - can be accessed only from this contract
   answerKeys:
     - B
   sub_topics:
@@ -821,9 +831,9 @@
     - "reference-types"
   difficulty_level: High
   choices:
-    - content: they can be declared with the syntax , uint[] memory a = new uint[](size);
+    - content: they can be declared with the syntax , `uint[] memory a = new uint[](size);`
       key: A
-    - content: to add an element to the array , push() function is used.
+    - content: to add an element to the array , `push()` function is used.
       key: B
     - content: You can acess values in a memory array after execution of the smart contract.
       key: C
@@ -832,8 +842,9 @@
 
 - uuid: bb55a93a-05b2-4ea5-83b4-bd307cdf6c51
   type: MultipleChoice
-  content: "What will be the value of the following syntax executed in solidity?
-           `255 + (true ? 1 : 0)`"
+  content: |
+   What will be the value of the following syntax executed in solidity?
+      `255 + (true ? 1 : 0)`
   hint: "The ternary operator is used in expressions of the form <expression> ? <trueExpression> : <falseExpression>. It evaluates one of the latter two given expressions depending upon the result of the evaluation of the main <expression>. If <expression> evaluates to true, then <trueExpression> will be evaluated, otherwise <falseExpression> is evaluated."
   explanation: "The result type is determined from the types of the two operands in the ternary operator, converting to their mobile type first if required. As a consequence, 255 + (true ? 1 : 0) will revert due to arithmetic overflow. The reason is that (true ? 1 : 0) is of uint8 type, which forces the addition to be performed in uint8 as well, and 256 exceeds the range allowed for this type."
   answerKeys:
@@ -853,8 +864,10 @@
 
 - uuid: a2bc4929-787b-4184-959c-480659493663
   type: SingleChoice
-  content:  "In the following code snippet which line will result in an error-
-              ```// SPDX-License-Identifier: MIT
+  content: |
+    In the following code snippet which line will result in an error-
+    ```
+              // SPDX-License-Identifier: MIT
               pragma solidity ^0.8.10;
               contract C {
 
@@ -870,7 +883,8 @@
                   function add(uint i, uint j) public pure returns (uint) {
                       return i + j;
                   }
-              }```"
+              }
+      ```
   hint: Check whether the function declaration is correct.
   explanation: Pure declares that no state variable will be changed or read in a function. view tells us that by running the function, no data will be saved/changed. Here in line 2 a pure function is trying to read the data from a state variable. The declaration should have a view instead of pure.
   answerKeys:
@@ -911,9 +925,12 @@
 
 - uuid: 4e60aee2-0a82-44f1-a173-17cf88872017
   type: SingleChoice
-  content: On execution of the following code what will be the value of balance?
-                ```uint8 balance = 255;
-                   balance++;```
+  content: |
+   On execution of the following code what will be the value of balance?
+   ```
+      uint8 balance = 255;
+      balance++;
+   ```
   hint: Think of the range of values uint 8 can have .
   explanation: If you execute the code above the "balance" will be 0. This is a simple example of overflow. If you add 1 to binary 11111111, it resets back to 00000000. In Solidity 0.8, the compiler will automatically take care of checking for overflows and underflows.
   answerKeys:
@@ -955,17 +972,21 @@
 
 - uuid: 94432d54-9f7c-4b53-be49-314a4aa94d5a
   type: SingleChoice
-  content: "Look at the code snippet below,
-              ```pragma solidity ^0.5.0;
+  content: |
+   Look at the code snippet below,
+   ```
+              pragma solidity ^0.5.0;
               contract SolidityTest {
                 uint storedData;     
                 constructor() public {
                     storedData = 10;   
                 }
-              }```
-            What type of variable is storedData declared in the SolidityTest contract?"
+              }
+   ```
+   What type of variable is storedData declared in the SolidityTest contract?"
   hint: noHint
-  explanation: State Variables , Variables whose values are permanently stored in a contract storage.
+  explanation: |
+               State Variables , Variables whose values are permanently stored in a contract storage.
                Local Variables , Variables whose values are present till function is executing.
                Global Variables , Special variables which exist in the global namespace used to get information about the blockchain.
   answerKeys:
@@ -1006,14 +1027,17 @@
 
 - uuid: 3648ad26-bb00-458d-afaa-0762e70a5dbe
   type: SingleChoice
-  content: "Consider the following code snippet ,
-              ```pragma solidity ^0.5.0;
+  content: |
+   Consider the following code snippet ,
+   ```
+                 pragma solidity ^0.5.0;
                  contractC {
                    function foo(uint a) pure public returns (uint){
                      return a << 2;
                    }
-                 }```
-           What will be the output when a uint value 3 is passed in the function foo of the contract C?"
+                 }
+   ```
+   What will be the output when a uint value 3 is passed in the function foo of the contract C?"
   hint: The Left Shift operator (<<) moves all the bits in its first operand to the left by the number of places specified in the second operand.
   explanation: x << y is equivalent to the mathematical expression x * 2**y.
   answerKeys:
@@ -1055,14 +1079,21 @@
 
 - uuid: 2bb12876-aee8-4cbd-8662-e193bb5503aa
   type: SingleChoice
-  content: "Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations.
-            Example 1 -  ```uint128 a;
-                            uint256 b;
-                            uint128 c;```
-            Example 2 -  ```uint128 a;
-                            uint128 c;
-                            uint256 b;```
-            Which of the following statements are correct regarding variable packing in the above examples."
+  content: |
+   Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations.
+   Example 1 -
+     ```
+            uint128 a;
+            uint256 b;
+            uint128 c;
+     ```
+   Example 2 -
+     ```
+            uint128 a;
+            uint128 c;
+            uint256 b;
+     ```
+   Which of the following statements are correct regarding variable packing in the above examples."
   hint: Solidity contracts have contiguous 32 byte (256 bit) slots used for storage.
   explanation: In example 1 the variables are not packed. If b was packed with a, it would exceed the 32 byte limit so it is instead placed in a new storage slot. The same thing happens with c and b. In example 2 the  variables are packed. Because packing c with a does not exceed the 32 byte limit, they are stored in the same slot.
   answerKeys:
@@ -1082,18 +1113,20 @@
 
 - uuid: 47e3f7e4-b2e6-4c0f-acd7-e7c960203710
   type: SingleChoice
-  content: "Consider the following code snippet ,
-              ```// SPDX-License-Identifier: GPL-3.0
-                    pragma solidity ^0.8.8;
-                    contract test {
-                      enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
+  content: |
+   Consider the following code snippet ,
+   ```
+   // SPDX-License-Identifier: GPL-3.0
+   pragma solidity ^0.8.8;
+   contract test {
+     enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
 
-                      function foo() public pure returns (ActionChoices) {
-                          return type(ActionChoices).max;
-                      }
-                    }```
-            What will be the output when the function foo is called ?"
-
+     function foo() public pure returns (ActionChoices) {
+         return type(ActionChoices).max;
+     }
+   }
+   ```
+   What will be the output when the function foo is called ?
   hint: .max is used to get the largest value of the given enum.
   explanation: Under the hood, enums are integers, not strings. Solidity will automatically handle converting enums to ints.
   answerKeys:

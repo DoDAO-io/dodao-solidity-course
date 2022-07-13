@@ -106,7 +106,7 @@ Which of the following is not a valid data location for a reference data type in
 - [x] address
 - [ ] calldata
 
-uint[][5] in solidity is -
+`uint[][5]` in solidity is -
 
 - [ ] Incorrect way to initialize array
 - [ ] A dynamic array of 5 arrays
@@ -120,7 +120,8 @@ Which of the following is the correct way to compare two strings str1 and str2 i
 - [ ] `string.concat(s1, s2)`
 - [ ] All of above
 
-What does the following syntax do? using SafeMath for uint;
+What does the following syntax do?
+`using SafeMath for uint;`
 
 - [ ] Imports the SafeMath library
 - [ ] Makes uint variable immutable
@@ -141,14 +142,28 @@ Which of the following is an example of a byte value?
 - [ ] Hello World!
 - [ ] [10,20,30]
 
-What is wrong with the following code ? `// SPDX-License-Identifier: GPL-3.0 pragma solidity >=0.4.16 <0.9.0; contract C { function f(uint len) public pure { uint[] memory a = new uint[](7); b[6] = 8; b.push(5); } }`
+What is wrong with the following code ?
+
+```// SPDX-License-Identifier: GPL-3.0
+      pragma solidity >=0.4.16 <0.9.0;
+
+      contract C {
+        function f(uint len) public pure {
+            uint[] memory a = new uint[](7);
+            b[6] = 8;
+            b.push(5);
+        }
+      }
+```
 
 - [ ] It is not not possible to declare an array with new keyword
 - [ ] `b[6]=8` is incorrect assignment for a memory array
 - [x] It is not not possible to use push function with a memory array
 - [ ] The code is correct
 
-Statement 1- The array literal `[-1,1]` is invalid. Statement 2- Calling `push()` member function on an array can be used to append a zero-initialized element at the end of the array. Which of the following options is correct?
+Statement 1- The array literal `[-1,1]` is invalid.
+Statement 2- Calling `push()` member function on an array can be used to append a zero-initialized element at the end of the array.
+Which of the following options is correct?
 
 - [ ] Statement 1 is true.
 - [ ] Statement 2 is true.
@@ -197,7 +212,9 @@ Comparison operators like <= , >= are not applicable to which of the following v
 - [ ] int
 - [ ] address
 
-Regarding comparison of strings in solidity , based on the statements below , which of the following options is correct? Statement 1 - Compare with the use of hashes. Statement 2 - Check by comparing each character including the length check.
+Regarding comparison of strings in solidity , based on the statements below , which of the following options is correct?
+Statement 1 - Compare with the use of hashes.
+Statement 2 - Check by comparing each character including the length check.
 
 - [x] Statement 1 is more gas efficient for longer strings than statement 2.
 - [ ] Statement 2 is more gas efficient for longer strings than statement 1.
@@ -225,7 +242,10 @@ Which of the following statements is correct about send and transfer functions o
 - [x] In order to make a safe ether transaction it is better to use transfer.
 - [ ] None of these.
 
-Consider the following statements. Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32). Statement 2 - `keccak256(address.code)` is cheaper than using `address.codehash`. Which of the following options is correct considering the code and codehash methods of the address type.
+Consider the following statements.
+Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32).
+Statement 2 - `keccak256(address.code)` is cheaper than using `address.codehash`.
+Which of the following options is correct considering the code and codehash methods of the address type.
 
 - [ ] Both Statement 1 and Statement 2 are correct.
 - [x] Statement 1 is correct but Statement 2 is incorrect.
@@ -267,7 +287,8 @@ Which among the following is a valid data storage location for mapping type?
 - [ ] calldata
 - [ ] staticcall
 
-The declaration below in solidity is an example of which type? `function f() public payable returns (bytes4){}`
+The declaration below in solidity is an example of which type?
+`function f() public payable returns (bytes4){}`
 
 - [ ] Contract type
 - [x] Function type
@@ -283,19 +304,40 @@ Which access classifier is used with a function type to only access it in the co
 
 In the context of memory arrays which of the following statements are true?
 
-- [x] they can be declared with the syntax , uint[] memory a = new uint[](size);
-- [ ] to add an element to the array , push() function is used.
+- [x] they can be declared with the syntax , `uint[] memory a = new uint[](size);`
+- [ ] to add an element to the array , `push()` function is used.
 - [ ] You can acess values in a memory array after execution of the smart contract.
 - [x] They cost less gas compared to storage arrays.
 
-What will be the value of the following syntax executed in solidity? `255 + (true ? 1 : 0)`
+What will be the value of the following syntax executed in solidity?
+`255 + (true ? 1 : 0)`
 
 - [ ] 255
 - [ ] 256
 - [ ] 0
 - [x] the above statement will revert.
 
-In the following code snippet which line will result in an error- `// SPDX-License-Identifier: MIT pragma solidity ^0.8.10; contract C { //line 1 uint public x = 1; // line 2 function addToX(uint y) public pure returns (uint) { return x + y; } // line 3 function add(uint i, uint j) public pure returns (uint) { return i + j; } }`
+In the following code snippet which line will result in an error-
+
+```
+          // SPDX-License-Identifier: MIT
+          pragma solidity ^0.8.10;
+          contract C {
+
+              //line 1
+              uint public x = 1;
+
+              // line 2
+              function addToX(uint y) public pure returns (uint) {
+                  return x + y;
+              }
+
+              // line 3
+              function add(uint i, uint j) public pure returns (uint) {
+                  return i + j;
+              }
+          }
+```
 
 - [ ] Line 1
 - [x] Line 2
@@ -309,7 +351,12 @@ You have a list of teams and their respective scores in a tournament. You are tr
 - [ ] strings
 - [x] mappings
 
-On execution of the following code what will be the value of balance? `uint8 balance = 255; balance++;`
+On execution of the following code what will be the value of balance?
+
+```
+   uint8 balance = 255;
+   balance++;
+```
 
 - [ ] 256
 - [x] 0
@@ -323,7 +370,19 @@ Which of the following statements are correct in the context of storage and memo
 - [x] State variables and Local Variables of structs, array are always stored in storage by default. Function arguments are in memory.
 - [ ] None of these.
 
-Look at the code snippet below, `pragma solidity ^0.5.0; contract SolidityTest { uint storedData; constructor() public { storedData = 10; } }` What type of variable is storedData declared in the SolidityTest contract?
+Look at the code snippet below,
+
+```
+           pragma solidity ^0.5.0;
+           contract SolidityTest {
+             uint storedData;
+             constructor() public {
+                 storedData = 10;
+             }
+           }
+```
+
+What type of variable is storedData declared in the SolidityTest contract?"
 
 - [x] State Variables
 - [ ] Local Variables
@@ -337,7 +396,18 @@ Which of the following is a valid enum declaration in solidity?
 - [ ] `enum myEnums { }`
 - [x] `enum booleans { True , False }`
 
-Consider the following code snippet , `pragma solidity ^0.5.0; contractC { function foo(uint a) pure public returns (uint){ return a << 2; } }` What will be the output when a uint value 3 is passed in the function foo of the contract C?
+Consider the following code snippet ,
+
+```
+              pragma solidity ^0.5.0;
+              contractC {
+                function foo(uint a) pure public returns (uint){
+                  return a << 2;
+                }
+              }
+```
+
+What will be the output when a uint value 3 is passed in the function foo of the contract C?"
 
 - [ ] 0
 - [ ] 1
@@ -351,14 +421,45 @@ Which of the following are valid literals for solidity data types?
 - [x] hex"001122FF"
 - [ ] None of these
 
-Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations. Example 1 - `uint128 a; uint256 b; uint128 c;` Example 2 - `uint128 a; uint128 c; uint256 b;` Which of the following statements are correct regarding variable packing in the above examples.
+Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations.
+Example 1 -
+
+```
+       uint128 a;
+       uint256 b;
+       uint128 c;
+```
+
+Example 2 -
+
+```
+       uint128 a;
+       uint128 c;
+       uint256 b;
+```
+
+Which of the following statements are correct regarding variable packing in the above examples."
 
 - [ ] Variables in both examples 1 and 2 are packed.
 - [ ] Variables in example 1 are packed but not in example 2.
 - [x] Variables in example 2 are packed but not in example 1.
 - [ ] Variables in neither examples 1 and 2 are packed.
 
-Consider the following code snippet , `// SPDX-License-Identifier: GPL-3.0 pragma solidity ^0.8.8; contract test { enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill } function foo() public pure returns (ActionChoices) { return type(ActionChoices).max; } }` What will be the output when the function foo is called ?
+Consider the following code snippet ,
+
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.8;
+contract test {
+  enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
+
+  function foo() public pure returns (ActionChoices) {
+      return type(ActionChoices).max;
+  }
+}
+```
+
+What will be the output when the function foo is called ?
 
 - [x] `0:uint8: 3`
 - [ ] `0:uint8: 0`
