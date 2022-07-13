@@ -43,18 +43,18 @@
   type: SingleChoice
   content: Which of the following statements is incorrect regarding data types in solidity?
   hint: noHint
-  explanation: The range of uintx in solidity is [0,2**x -1], the range of intx is [-2**(x-1),2**(x-1)-1] , boolean values only take true/false values and address literals take 20 bytes hexadecimal values.
+  explanation: The range of uintx in solidity is $[0,2^x -1]$, the range of intx is $[-2^(x-1),2^(x-1)-1]$ , boolean values only take true/false values and address literals take 20 bytes hexadecimal values.
   answerKeys:
     - C
   sub_topics:
     - "value-types"
   difficulty_level: Medium
   choices:
-    - content: The range of uint32 data type is from 0 upto 2**32 -1
+    - content: The range of uint32 data type is from 0 upto $2^32 -1$
       key: A
     - content: Bool data type can only take true and false values.
       key: B
-    - content: The range of int256 data type is from -2**256+1 to 2**256-1
+    - content: The range of int256 data type is from $-2^256+1$ to $2^256-1$
       key: C
     - content: address data type holds a 20 byte value
       key: D
