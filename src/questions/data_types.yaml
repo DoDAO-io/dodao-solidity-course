@@ -6,9 +6,9 @@
   answerKeys:
     - B
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: bool
       key: A
@@ -26,9 +26,9 @@
   explanation: null and undefined do not exist in solidity.
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "null"
       key: A
@@ -46,9 +46,9 @@
   explanation: "The range of uintx in solidity is $[0,2^x -1]$, the range of intx is $[-2^{x-1},2^{x-1}-1]$ , boolean values only take true/false values and address literals take 20 bytes hexadecimal values."
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: "The range of uint32 data type is from 0 upto $2^{32} -1$"
       key: A
@@ -68,9 +68,9 @@
     - A
     - B
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: Address payable has a larger size compared to address.
       key: A
@@ -88,9 +88,9 @@
   explanation: keccak256 is a globally available function in solidity used to calculate the `keccak256` hash of an input . balance , codehash and transfer are methods of the address type.
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: balance
       key: A
@@ -109,9 +109,9 @@
   answerKeys:
     - A
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: For constant variables, the value has to be fixed at compile-time. For immutable, value can be assigned at construction time.
       key: A
@@ -129,9 +129,9 @@
   explanation: addresses holds 20 byte hexadecimal literals.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: address
       key: A
@@ -151,9 +151,9 @@
    `type[] arrayName;` declares an array of dynamic size in solidity.
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "`uint arr[10];`"
       key: A
@@ -184,9 +184,9 @@
     the array untouched.
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: "1"
       key: A
@@ -208,9 +208,9 @@
     - B
     - C
     - D
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: They can hold values of different data types.
       key: A
@@ -230,9 +230,9 @@
     - A
     - C
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: They require at least one member, and its default value when declared is the first member.
       key: A
@@ -250,9 +250,9 @@
   explanation: enum is a value type.
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: arrays
       key: A
@@ -270,9 +270,9 @@
   explanation: address is a value type in solidity whearas memory , storage and calldata are data locations for "reference-types".
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: memory
       key: A
@@ -293,9 +293,9 @@
     This is not the case in other languages such as C.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: Incorrect way to initialize array
       key: A
@@ -316,9 +316,9 @@
     and concatenate two strings using `string.concat(s1, s2)`.
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "reference-types" 
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "`str1 == str2`"
       key: A
@@ -340,9 +340,9 @@
   explanation: Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs. Using SafeMath reverts the transaction when an operation overflows.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Imports the SafeMath library
       key: A
@@ -360,9 +360,9 @@
   explanation: int8 can take values from -127 to 128.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "Null"
       key: A
@@ -380,9 +380,9 @@
   explanation: The bytes data type in Solidity is a dynamically sized `byte[]` array and can accept hexadecimal values beginning with 0x.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "`0x65`"
       key: A
@@ -413,9 +413,9 @@
   explanation: Memory arrays cannot be extended during runtime. The member function push does not exist. If you need to resize your memory array, you need to create a new array with the desired length and copy every element from the old array.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: It is not not possible to declare an array with new keyword
       key: A
@@ -440,9 +440,9 @@
     where .push() appends a zero-initialized element and returns a reference to it.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Statement 1 is true.
       key: A
@@ -461,9 +461,9 @@
   answerKeys:
     - B
     - C
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: It is possible for a struct to contain a member of its own type.
       key: A
@@ -481,9 +481,9 @@
   explanation: Mappings can only have a data location of storage. The KeyType can be any built-in value type, bytes, string, or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are not allowed. ValueType can be any type, including mappings, arrays and structs.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: User-defined or complex types, such as mappings, structs or array types are not allowed as key and "value-types" in a mapping.
       key: A
@@ -501,9 +501,9 @@
   explanation: In the example below, y and z, the operands of the addition, do not have the same type, but uint8 can be implicitly converted to uint16 and not vice-versa.  uint8 is convertible to uint16 and int128 to int256, but int8 is not convertible to uint256, because uint256 cannot hold values such as -1.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: 'uint8 x;
                 uint16 y;
@@ -531,9 +531,9 @@
     not allowed. ValueType can be any type, including mappings, arrays and structs.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "mapping-type"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "`mapping(uint -> address) someMapping;`"
       key: A
@@ -553,9 +553,9 @@
     - A
     - B
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: They can be declared with Keywords `ufixedMxN` and `fixedMxN`.
       key: A
@@ -573,9 +573,9 @@
   explanation: " '!' , '&&' , '||' , '==' , '!=' work with booleans. Comparison operators like <=, < etc do not work with booleans in solidity ."
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: bool
       key: A
@@ -596,9 +596,9 @@
   explanation: For longer strings it is cost efficient to hash the string and then compare the byte value of the hashes.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Statement 1 is more gas efficient for longer strings than statement 2.
       key: A
@@ -616,9 +616,9 @@
   explanation: addresses hold 20 byte hexadecimal values.
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "`0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9`"
       key: A
@@ -638,9 +638,9 @@
     - A
     - B
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: It corresponds to the last 20 bytes of the Keccak-256 hash of the public key.
       key: A
@@ -658,9 +658,9 @@
   explanation: It is possible to query the balance of an address using the property balance and to send Ether (in units of wei) to a payable address using the transfer function. Send is the low-level counterpart of transfer. 
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Transfer is the low level counterpart of send.
       key: A
@@ -682,9 +682,9 @@
   explanation: Use .code to get the EVM bytecode as a bytes memory, which might be empty. Use .codehash get the Keccak-256 hash of that code (as a bytes32). Note that addr.codehash is cheaper than using keccak256(addr.code).
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Both Statement 1 and Statement 2 are correct.
       key: A
@@ -702,9 +702,9 @@
   explanation: A user defined value type is defined using type C is V, where C is the name of the newly introduced type and V has to be a built-in value type (the “underlying type”). The function C.wrap is used to convert from the underlying type to the custom type. Similarly, the function C.unwrap is used to convert from the custom type to the underlying type.The type C does not have any operators or bound member functions. In particular, even the operator == is not defined. Explicit and implicit conversions to and from other types are disallowed.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: V is the name of the newly introduced data type.
       key: A
@@ -722,9 +722,9 @@
   explanation: Solidity Contracts are like a class in any other object-oriented programming language.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Similar to classes in object oriented languages.
       key: A
@@ -742,9 +742,9 @@
   explanation: A variable name should not match with reserved keywords. Variable names must start with a letter or an underscore (_), and may contain letters from “a to z” or “A to Z” or digits from “0 to 9” and characters also. The name of variables are case sensitive.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: A variable name should not match with reserved keywords.
       key: A
@@ -762,9 +762,9 @@
   explanation: explanation
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Contracts support comparison operators.
       key: A
@@ -782,9 +782,9 @@
   explanation: Mappings can only have a data location of storage.
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "mapping-type"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: memory
       key: A
@@ -804,9 +804,9 @@
   explanation: "`function f() public payable returns (bytes4){}` is a fuction declaration."
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Contract type
       key: A
@@ -828,9 +828,9 @@
    private - can be accessed only from this contract
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: public
       key: A
@@ -849,9 +849,9 @@
   answerKeys:
     - A
     - D
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: High
+  difficultyLevel: High
   choices:
     - content: they can be declared with the syntax , `uint[] memory a = new uint[](size);`
       key: A
@@ -871,9 +871,9 @@
   explanation: "The result type is determined from the types of the two operands in the ternary operator, converting to their mobile type first if required. As a consequence, 255 + (true ? 1 : 0) will revert due to arithmetic overflow. The reason is that (true ? 1 : 0) is of uint8 type, which forces the addition to be performed in uint8 as well, and 256 exceeds the range allowed for this type."
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "255"
       key: A
@@ -911,9 +911,9 @@
   explanation: Pure declares that no state variable will be changed or read in a function. view tells us that by running the function, no data will be saved/changed. Here in line 2 a pure function is trying to read the data from a state variable. The declaration should have a view instead of pure.
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: Line 1
       key: A
@@ -931,10 +931,10 @@
   explanation: A mapping is a table of keys and values (each with a pre-defined type). Fetching a piece of data from a mapping is far more efficient than fetching the same data from an array. To fetch data from an array requires iterating over the whole array until you find the element you're looking for.
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "reference-types"
     - "mapping-type"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: enum
       key: A
@@ -957,9 +957,9 @@
   explanation: If you execute the code above the "balance" will be 0. This is a simple example of overflow. If you add 1 to binary 11111111, it resets back to 00000000. In Solidity 0.8, the compiler will automatically take care of checking for overflows and underflows.
   answerKeys:
     - B
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "256"
       key: A
@@ -979,9 +979,9 @@
     - A
     - B
     - C
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Hard
+  difficultyLevel: Hard
   choices:
     - content: Memory in solidity is a temporary storage.
       key: A
@@ -1013,9 +1013,9 @@
                Global Variables , Special variables which exist in the global namespace used to get information about the blockchain.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "reference-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: State Variables
       key: A
@@ -1034,9 +1034,9 @@
   answerKeys:
     - B
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: "`enum integers {  1 , 2 , 3 , 4 }`"
       key: A
@@ -1064,9 +1064,9 @@
   explanation: x << y is equivalent to the mathematical expression x * 2**y.
   answerKeys:
     - D
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Hard
+  difficultyLevel: Hard
   choices:
     - content: "0"
       key: A
@@ -1086,9 +1086,9 @@
     - A
     - B
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Low
+  difficultyLevel: Low
   choices:
     - content: "`2.5e1`"
       key: A
@@ -1120,9 +1120,9 @@
   explanation: In example 1 the variables are not packed. If b was packed with a, it would exceed the 32 byte limit so it is instead placed in a new storage slot. The same thing happens with c and b. In example 2 the  variables are packed. Because packing c with a does not exceed the 32 byte limit, they are stored in the same slot.
   answerKeys:
     - C
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Hard
+  difficultyLevel: Hard
   choices:
     - content: Variables in both examples 1 and 2 are packed.
       key: A
@@ -1153,9 +1153,9 @@
   explanation: Under the hood, enums are integers, not strings. Solidity will automatically handle converting enums to ints.
   answerKeys:
     - A
-  sub_topics:
+  subTopics:
     - "value-types"
-  difficulty_level: Medium
+  difficultyLevel: Medium
   choices:
     - content: "`0:uint8: 3`"
       key: A
