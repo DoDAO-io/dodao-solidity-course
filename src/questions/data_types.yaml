@@ -395,17 +395,20 @@
 
 - uuid: 0251f4f5-c96b-4018-b33c-cf570ebfe638
   type: SingleChoice
-  content: "What is wrong with the following code ?
-              `// SPDX-License-Identifier: GPL-3.0
-              pragma solidity >=0.4.16 <0.9.0;
+  content: |
+    What is wrong with the following code ?
+    ```
+    // SPDX-License-Identifier: GPL-3.0
+      pragma solidity >=0.4.16 <0.9.0;
 
-              contract C {
-                  function f(uint len) public pure {
-                      uint[] memory a = new uint[](7);
-                      b[6] = 8;
-                      b.push(5);
-                  }
-              }`"
+      contract C {
+          function f(uint len) public pure {
+              uint[] memory a = new uint[](7);
+              b[6] = 8;
+              b.push(5);
+      }
+    }
+    ```
   hint: noHint
   explanation: Memory arrays cannot be extended during runtime. The member function push does not exist. If you need to resize your memory array, you need to create a new array with the desired length and copy every element from the old array.
   answerKeys:

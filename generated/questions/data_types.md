@@ -267,8 +267,20 @@ and concatenate two strings using `string.concat(s1, s2)`.
  
 
   ---
-  ##### What is wrong with the following code ? `// SPDX-License-Identifier: GPL-3.0 pragma solidity >=0.4.16 <0.9.0;
-contract C { function f(uint len) public pure { uint[] memory a = new uint[](7); b[6] = 8; b.push(5); } }`
+  ##### What is wrong with the following code ?
+```
+// SPDX-License-Identifier: GPL-3.0
+  pragma solidity >=0.4.16 <0.9.0;
+
+  contract C {
+      function f(uint len) public pure {
+          uint[] memory a = new uint[](7);
+          b[6] = 8;
+          b.push(5);
+  }
+}
+```
+
   
   - [ ]  It is not not possible to declare an array with new keyword
 - [ ]  `b[6]=8` is incorrect assignment for a memory array
