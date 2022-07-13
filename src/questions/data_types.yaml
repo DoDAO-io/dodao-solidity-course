@@ -54,7 +54,7 @@
       key: A
     - content: Bool data type can only take true and false values.
       key: B
-    - content: The range of int256 data type is from $-2^256+1$ to $2^256-1$
+    - content: The range of int256 data type is from -2²⁵⁶+1 to 2²⁵⁶-1
       key: C
     - content: address data type holds a 20 byte value
       key: D
@@ -83,9 +83,9 @@
 
 - uuid: d5773538-949b-4909-b91e-5f035808b8bc
   type: SingleChoice
-  content: Which of the following is not a valid member of type address?
+  content: Which of the following is not a valid member of type `address`?
   hint: noHint
-  explanation: keccak256 is a globally available function in solidity used to calculate the keccak256 hash of an input . balance , codehash and transfer are methods of the address type.
+  explanation: keccak256 is a globally available function in solidity used to calculate the `keccak256` hash of an input . balance , codehash and transfer are methods of the address type.
   answerKeys:
     - B
   sub_topics:
@@ -144,7 +144,7 @@
 
 - uuid: 944228da-440e-43d3-b0b8-a9a3751aa5b9
   type: SingleChoice
-  content: which of the following is not a valid array declaration?
+  content: which of the following is not a valid `array` declaration?
   hint: noHint
   explanation: | 
    `type arrayName [ arraySize ];` declares an array of fixed size in Solidity,
@@ -155,13 +155,13 @@
     - "reference-types"
   difficulty_level: Low
   choices:
-    - content: uint arr[10];
+    - content: "`uint arr[10];`"
       key: A
-    - content: int []arr;
+    - content: "`int []arr;`"
       key: B
     - content: "`uint arr[] = [1,2,3];`"
       key: C
-    - content: int [3]arr;
+    - content: "`int [3]arr;`"
       key: D
 
 - uuid: 42d6e1ad-75b3-41a8-88d7-7aa7f958619f
@@ -178,7 +178,10 @@
     ```
 
   hint: delete method does not change the length of the array.
-  explanation: array.push(x) is used to add element x to the end of the array , array.length returns the length of the array and delete array[x] deletes the item at index x of the array and leaves all other elements and the length of the array untouched.
+  explanation: | 
+    `array.push(x)` is used to add element x to the end of the array , `array.length` returns the length of the array 
+    and `delete array[x]` deletes the item at index x of the array and leaves all other elements and the length of 
+    the array untouched.
   answerKeys:
     - D
   sub_topics:
@@ -198,7 +201,9 @@
   type: MultipeChoice
   content: Which of the following statements is correct about arrays in solidity ?
   hint: arrays in solidity are homogenous.
-  explanation: arrays in solidity can store "value-types" like boolean , integers etc and can be declared with the new keyword. Array indexing in solidity starts with 0 like most other programming languages.
+  explanation: |
+    `arrays` in solidity can store "value-types" like boolean , integers etc and can be declared with the new keyword. 
+    Array indexing in solidity starts with 0 like most other programming languages.
   answerKeys:
     - B
     - C
@@ -213,7 +218,7 @@
       key: B
     - content: Array indexing in solidity starts with 0.
       key: C
-    - content: uint arr[] = new uint[](3) is a valid array declaration.
+    - content: "`uint arr[] = new uint[](3)` is a valid array declaration."
       key: D
 
 - uuid: b16b49ad-c70d-4c19-a19f-b51521a8f3b0
@@ -280,9 +285,12 @@
 
 - uuid: 1e3a6ea0-7b36-4e11-98c5-d4fd9f3e49e1
   type: SingleChoice
-  content: uint[][5] in solidity is -
+  content: "`uint[][5]` in solidity is -"
   hint: two dimensional arrays can be initialized in solidity.
-  explanation: An array of 5 dynamic arrays of uint is written as uint[][5]. The notation is reversed compared to some other languages. In Solidity, X[3] is always an array containing three elements of type X, even if X is itself an array. This is not the case in other languages such as C.
+  explanation: |
+    An array of 5 dynamic arrays of uint is written as `uint[][5]`. The notation is reversed compared to some other 
+    languages. In Solidity, X[3] is always an array containing three elements of type X, even if X is itself an array. 
+    This is not the case in other languages such as C.
   answerKeys:
     - C
   sub_topics:
@@ -302,26 +310,32 @@
   type: SingleChoice
   content: Which of the following is the correct way to compare two strings str1 and str2 in solidity?
   hint: noHint
-  explanation: Solidity does not have string manipulation functions, but there are third-party string libraries. You can also compare two strings by their keccak256-hash using keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2)) and concatenate two strings using string.concat(s1, s2).
+  explanation: |
+    Solidity does not have string manipulation functions, but there are third-party string libraries. You can also 
+    compare two strings by their keccak256-hash using  `keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))` 
+    and concatenate two strings using `string.concat(s1, s2)`.
   answerKeys:
     - B
   sub_topics:
     - "reference-types" 
   difficulty_level: Low
   choices:
-    - content: str1 == str2
+    - content: "`str1 == str2`"
       key: A
-    - content: keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))
+    - content: "`keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))`"
       key: B
-    - content: string.concat(s1, s2)
+    - content: "`string.concat(s1, s2)`"
       key: C
     - content: All of above
       key: D
 
 - uuid: b4b39948-5ba0-4791-886f-84ebae031b46
   type: SingleChoice
-  content: What does the following syntax do?
+  content: |
+      What does the following syntax do?
+      ```
             using SafeMath for uint;
+      ```
   hint: SafeMath is a library and can be imported in solidity.
   explanation: Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs. Using SafeMath reverts the transaction when an operation overflows.
   answerKeys:
@@ -363,20 +377,20 @@
   type: SingleChoice
   content: Which of the following is an example of a byte value?
   hint: bytes can accept hexadecimal values.
-  explanation: The bytes data type in Solidity is a dynamically sized byte[] array and can accept hexadecimal values beginning with 0x.
+  explanation: The bytes data type in Solidity is a dynamically sized `byte[]` array and can accept hexadecimal values beginning with 0x.
   answerKeys:
     - A
   sub_topics:
     - "value-types"
   difficulty_level: Low
   choices:
-    - content: "0x65"
+    - content: "`0x65`"
       key: A
     - content: True/False
       key: B
     - content: Hello World!
       key: C
-    - content: "[10,20,30]"
+    - content: "`[10,20,30]`"
       key: D
 
 - uuid: 0251f4f5-c96b-4018-b33c-cf570ebfe638
@@ -414,7 +428,11 @@
   content: "Statement 1- The array literal [-1,1] is invalid. Statement 2- Calling push() member function on an array can be used to append a zero-initialized element at the end of the array.
             Which of the following options is correct?"
   hint: noHint
-  explanation: The array literal [1, -1] is invalid because the type of the first expression is uint8 while the type of the second is int8 and they cannot be implicitly converted to each other. To make it work, you can use [int8(1), -1], for example. Methods .push() and .push(value) can be used to append a new element at the end of the array, where .push() appends a zero-initialized element and returns a reference to it.
+  explanation: |
+    The array literal `[1, -1]` is invalid because the type of the first expression is uint8 while the type of the 
+    second is int8 and they cannot be implicitly converted to each other. To make it work, you can use `[int8(1), -1]`, 
+    for example. Methods `.push()` and `.push(value)` can be used to append a new element at the end of the array, 
+    where .push() appends a zero-initialized element and returns a reference to it.
   answerKeys:
     - C
   sub_topics:
@@ -471,48 +489,26 @@
     - content: All of these.
       key: D
 
-- uuid: 861e7d61-22e2-48db-b6e9-5f95c4b0fbaa
-  type: SingleChoice
-  content:  In the following code snippets where is implicit type conversion possible?
-  hint: noHint
-  explanation: In the example below, y and z, the operands of the addition, do not have the same type, but uint8 can be implicitly converted to uint16 and not vice-versa.  uint8 is convertible to uint16 and int128 to int256, but int8 is not convertible to uint256, because uint256 cannot hold values such as -1.
-  answerKeys:
-    - A
-  sub_topics:
-    - "value-types"
-  difficulty_level: Medium
-  choices:
-    - content: uint8 x;
-               uint16 y;
-               uint32 z=x+y;
-      key: A
-    - content: uint8 x;
-               uint16 y;
-               uint8 z=x+y;
-      key: B
-    - content: int8 x;
-               uint16 y;
-               uint32 z=x+y;
-      key: C
-    - content: Implicit Type conversion is not possible in Solidity.
-      key: D
-
 - uuid: e383c36b-6272-4467-ae2e-c69c22ce60bc
   type: SingleChoice
   content: What is the correct declaration for a mapping type ?
   hint: noHint
-  explanation: mapping types use the syntax mapping(KeyType => ValueType) and variables of mapping type are declared using the syntax mapping(KeyType => ValueType) VariableName. The KeyType can be any built-in value type, bytes, string, or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are not allowed. ValueType can be any type, including mappings, arrays and structs.
+  explanation: |
+    mapping types use the syntax `mapping(KeyType => ValueType)` and variables of mapping type are declared using 
+    the syntax `mapping(KeyType => ValueType)` VariableName. The KeyType can be any built-in value type, bytes, string, 
+    or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are 
+    not allowed. ValueType can be any type, including mappings, arrays and structs.
   answerKeys:
     - C
   sub_topics:
     - "mapping-type"
   difficulty_level: Low
   choices:
-    - content: mapping(uint -> address) someMapping;
+    - content: "`mapping(uint -> address) someMapping;`"
       key: A
-    - content: mapping(struct -> address) someMapping;
+    - content: "`mapping(struct -> address) someMapping;`"
       key: B
-    - content: mapping (uint => address) someMapping;
+    - content: "`mapping (uint => address) someMapping;`"
       key: C
     - content: None of the above
       key: D
@@ -543,7 +539,7 @@
   type: SingleChoice
   content: Comparison operators like <= , >= are not applicable to which of the following value types?
   hint: noHint
-  explanation: " '!' , '&&' , '||' , '==' , '!=' work with bolleans. Comparision operators like <=, < etc do not work with booleans in solidity ."
+  explanation: " '!' , '&&' , '||' , '==' , '!=' work with booleans. Comparison operators like <=, < etc do not work with booleans in solidity ."
   answerKeys:
     - A
   sub_topics:
