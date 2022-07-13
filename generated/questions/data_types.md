@@ -549,7 +549,9 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### What will be the value of the following syntax executed in solidity? `255 + (true ? 1 : 0)`
+  ##### "What will be the value of the following syntax executed in solidity?
+   `255 + (true ? 1 : 0)`
+
   
   - [ ]  255
 - [ ]  256
@@ -562,10 +564,27 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### In the following code snippet which line will result in an error- ```// SPDX-License-Identifier: MIT pragma solidity ^0.8.10; contract C {
-//line 1 uint public x = 1;
-// line 2 function addToX(uint y) public pure returns (uint) { return x + y; }
-// line 3 function add(uint i, uint j) public pure returns (uint) { return i + j; } }```
+  ##### In the following code snippet which line will result in an error-
+  ```
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.8.10;
+  contract C {
+
+      //line 1
+      uint public x = 1;
+
+      // line 2
+      function addToX(uint y) public pure returns (uint) {
+          return x + y;
+      }
+
+      // line 3
+      function add(uint i, uint j) public pure returns (uint) {
+          return i + j;
+      }
+  }
+```
+
   
   - [ ]  Line 1
 - [x]  Line 2
@@ -660,7 +679,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
   
   - [x]  `2.5e1`
 - [x]   `'foo' 'bar'` 
-- [x]  hex"001122FF"
+- [x]  `hex"001122FF"`
 - [ ]  None of these         
   
   Hint: noHint

@@ -854,8 +854,9 @@
 
 - uuid: bb55a93a-05b2-4ea5-83b4-bd307cdf6c51
   type: MultipleChoice
-  content: "What will be the value of the following syntax executed in solidity?
-           `255 + (true ? 1 : 0)`"
+  content: |
+    "What will be the value of the following syntax executed in solidity?
+       `255 + (true ? 1 : 0)`
   hint: "The ternary operator is used in expressions of the form <expression> ? <trueExpression> : <falseExpression>. It evaluates one of the latter two given expressions depending upon the result of the evaluation of the main <expression>. If <expression> evaluates to true, then <trueExpression> will be evaluated, otherwise <falseExpression> is evaluated."
   explanation: "The result type is determined from the types of the two operands in the ternary operator, converting to their mobile type first if required. As a consequence, 255 + (true ? 1 : 0) will revert due to arithmetic overflow. The reason is that (true ? 1 : 0) is of uint8 type, which forces the addition to be performed in uint8 as well, and 256 exceeds the range allowed for this type."
   answerKeys:
@@ -875,24 +876,27 @@
 
 - uuid: a2bc4929-787b-4184-959c-480659493663
   type: SingleChoice
-  content:  "In the following code snippet which line will result in an error-
-              ```// SPDX-License-Identifier: MIT
-              pragma solidity ^0.8.10;
-              contract C {
+  content: |
+    In the following code snippet which line will result in an error-
+      ```
+      // SPDX-License-Identifier: MIT
+      pragma solidity ^0.8.10;
+      contract C {
 
-                  //line 1
-                  uint public x = 1;
+          //line 1
+          uint public x = 1;
 
-                  // line 2
-                  function addToX(uint y) public pure returns (uint) {
-                      return x + y;
-                  }
+          // line 2
+          function addToX(uint y) public pure returns (uint) {
+              return x + y;
+          }
 
-                  // line 3
-                  function add(uint i, uint j) public pure returns (uint) {
-                      return i + j;
-                  }
-              }```"
+          // line 3
+          function add(uint i, uint j) public pure returns (uint) {
+              return i + j;
+          }
+      }
+    ```
   hint: Check whether the function declaration is correct.
   explanation: Pure declares that no state variable will be changed or read in a function. view tells us that by running the function, no data will be saved/changed. Here in line 2 a pure function is trying to read the data from a state variable. The declaration should have a view instead of pure.
   answerKeys:
@@ -1070,7 +1074,7 @@
       key: A
     - content: " `'foo' 'bar'` "
       key: B
-    - content: hex"001122FF"
+    - content: "`hex\"001122FF\"`"
       key: C
     - content: None of these
       key: D
