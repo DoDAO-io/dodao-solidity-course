@@ -15,11 +15,11 @@ Questions should be written in the following format
   # should be from one of the predefined list of topics
   topic: "01_data_types"
   # should be from one of the predefined list of sub-topics, or can be a new one
-  sub_topics:
+  subTopics:
     - "string"
     - "variables"
   # Difficulty level should be one option from "Low" , "Medium", "High"
-  difficulty_level: "Low"
+  difficultyLevel: "Low"
   choices:
     # Content should be in Markdown format
     - content: It offers crypto based mining applications for effective utilization
