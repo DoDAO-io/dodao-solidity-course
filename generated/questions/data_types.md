@@ -35,14 +35,14 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
   ---
   ##### Which of the following statements is incorrect regarding data types in solidity?
   
-  - [ ]  The range of uint32 data type is from 0 upto $2^32 -1$
+  - [ ]  The range of uint32 data type is from 0 upto $2^{32} -1$
 - [ ]  Bool data type can only take true and false values.
-- [x]  The range of int256 data type is from -2²⁵⁶+1 to 2²⁵⁶-1
+- [x]  The range of int256 data type is from $-2^{256}+1$ to $2^{256}-1$
 - [ ]  address data type holds a 20 byte value         
   
   Hint: noHint
          
-  Explanation: The range of uintx in solidity is $[0,2^x -1]$, the range of intx is $[-2^(x-1),2^(x-1)-1]$ , boolean values only take true/false values and address literals take 20 bytes hexadecimal values.         
+  Explanation: The range of uintx in solidity is $[0,2^x -1]$, the range of intx is $[-2^{x-1},2^{x-1}-1]$ , boolean values only take true/false values and address literals take 20 bytes hexadecimal values.         
  
 
   ---
@@ -87,7 +87,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
   ---
   ##### in solidity `0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF` is an example of-
   
-  - [x]  `address`
+  - [x]  address
 - [ ]  uint
 - [ ]  string
 - [ ]  array         
@@ -158,11 +158,11 @@ Array indexing in solidity starts with 0 like most other programming languages.
   - [x]  They require at least one member, and its default value when declared is the first member.
 - [ ]  They cannot have more than 128 members.
 - [x]  Their options are represented by subsequent unsigned integer values starting from 0.
-- [x]  type(NameOfEnum).min gives the smallest value in the enum.         
+- [x]  `type(NameOfEnum).min` gives the smallest value in the enum.         
   
   Hint: Enums can have a maximum of 256 members.
          
-  Explanation: The options in enum are represented by subsequent unsigned integer values starting from 0. Using type(NameOfEnum).min and type(NameOfEnum).max you can get the smallest and respectively largest value of the given enum.         
+  Explanation: The options in enum are represented by subsequent unsigned integer values starting from 0. Using `type(NameOfEnum).min` and `type(NameOfEnum).max` you can get the smallest and respectively largest value of the given enum.         
  
 
   ---
@@ -267,11 +267,11 @@ and concatenate two strings using `string.concat(s1, s2)`.
  
 
   ---
-  ##### What is wrong with the following code ? // SPDX-License-Identifier: GPL-3.0 pragma solidity >=0.4.16 <0.9.0;
-contract C { function f(uint len) public pure { uint[] memory a = new uint[](7); b[6] = 8; b.push(5); } }
+  ##### What is wrong with the following code ? `// SPDX-License-Identifier: GPL-3.0 pragma solidity >=0.4.16 <0.9.0;
+contract C { function f(uint len) public pure { uint[] memory a = new uint[](7); b[6] = 8; b.push(5); } }`
   
   - [ ]  It is not not possible to declare an array with new keyword
-- [ ]  b[6]=8 is incorrect assignment for a memory array
+- [ ]  `b[6]=8` is incorrect assignment for a memory array
 - [x]  It is not not possible to use push function with a memory array
 - [ ]  The code is correct         
   
@@ -281,7 +281,7 @@ contract C { function f(uint len) public pure { uint[] memory a = new uint[](7);
  
 
   ---
-  ##### Statement 1- The array literal [-1,1] is invalid. Statement 2- Calling push() member function on an array can be used to append a zero-initialized element at the end of the array. Which of the following options is correct?
+  ##### Statement 1- The array literal `[-1,1]` is invalid. Statement 2- Calling `push()` member function on an array can be used to append a zero-initialized element at the end of the array. Which of the following options is correct?
   
   - [ ]  Statement 1 is true.
 - [ ]  Statement 2 is true.
@@ -324,6 +324,19 @@ where .push() appends a zero-initialized element and returns a reference to it.
  
 
   ---
+  ##### In the following code snippets where is implicit type conversion possible?
+  
+  - [x]  uint8 x; uint16 y; uint32 z=x+y;
+- [ ]  uint8 x; uint16 y; uint8 z=x+y;
+- [ ]  int8 x; uint16 y; uint32 z=x+y;
+- [ ]  Implicit Type conversion is not possible in Solidity.         
+  
+  Hint: noHint
+         
+  Explanation: In the example below, y and z, the operands of the addition, do not have the same type, but uint8 can be implicitly converted to uint16 and not vice-versa.  uint8 is convertible to uint16 and int128 to int256, but int8 is not convertible to uint256, because uint256 cannot hold values such as -1.         
+ 
+
+  ---
   ##### What is the correct declaration for a mapping type ?
   
   - [ ]  `mapping(uint -> address) someMapping;`
@@ -334,7 +347,7 @@ where .push() appends a zero-initialized element and returns a reference to it.
   Hint: noHint
          
   Explanation: mapping types use the syntax `mapping(KeyType => ValueType)` and variables of mapping type are declared using 
-the syntax `mapping(KeyType => ValueType)` VariableName. The KeyType can be any built-in value type, bytes, string, 
+the syntax `mapping(KeyType => ValueType)` VariableName`. The KeyType can be any built-in value type, bytes, string, 
 or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are 
 not allowed. ValueType can be any type, including mappings, arrays and structs.
          
@@ -343,7 +356,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
   ---
   ##### Which of the following statements is correct about fixed point numbers?
   
-  - [x]  They can be declared with Keywords ufixedMxN and fixedMxN.
+  - [x]  They can be declared with Keywords `ufixedMxN` and `fixedMxN`.
 - [x]  Fixed point numbers are not fully supported by Solidity yet. They can be declared, but cannot be assigned to or from.
 - [x]  M represents the number of bits taken by the type and N represents how many decimal points are available.
 - [ ]  M must be divisible by 8 and goes from 2 to 128 bits. N must be between 0 and 16, inclusive.         
@@ -382,10 +395,10 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
   ---
   ##### Which of the following is not a valid address ?
   
-  - [ ]  0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9
-- [ ]  0x577a6E294505A797976f218eFd751aB5557E1522
-- [ ]  0xc0ffee254729296a45a3885639AC7E10F9d54979
-- [x]  0x1011526z3H3fg4445xx556tuoa72288884869aAzl         
+  - [ ]  `0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9`
+- [ ]  `0x577a6E294505A797976f218eFd751aB5557E1522`
+- [ ]  `0xc0ffee254729296a45a3885639AC7E10F9d54979`
+- [x]  `0x1011526z3H3fg4445xx556tuoa72288884869aAzl`         
   
   Hint: noHint
          
@@ -419,7 +432,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### Consider the following statements. Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32). Statement 2 - keccak256(address.code) is cheaper than using address.codehash. Which of the following options is correct considering the code and codehash methods of the address type.
+  ##### Consider the following statements. Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32). Statement 2 - `keccak256(address.code)` is cheaper than using `address.codehash`. Which of the following options is correct considering the code and codehash methods of the address type.
   
   - [ ]  Both Statement 1 and Statement 2 are correct.
 - [x]  Statement 1 is correct but Statement 2 is incorrect.
@@ -432,11 +445,11 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### Which of the following options is correct regarding a user defined value type defined by the syntax ' type C is V ; ' in solidity.
+  ##### Which of the following options is correct regarding a user defined value type defined by the syntax `type C is V ;` in solidity.
   
   - [ ]  V is the name of the newly introduced data type.
 - [ ]  The type V does not have any operators or bound member functions. In particular, even the operator == is not defined.
-- [x]  The function C.wrap is used to convert from the underlying type to the custom type. Similarly, the function C.unwrap is used to convert from the custom type to the underlying type.
+- [x]  The function `C.wrap` is used to convert from the underlying type to the custom type. Similarly, the function `C.unwrap` is used to convert from the custom type to the underlying type.
 - [ ]  None of these.         
   
   Hint: noHint
@@ -497,7 +510,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### The declaration below in solidity is an example of which type? function f() public payable returns (bytes4){}
+  ##### The declaration below in solidity is an example of which type? `function f() public payable returns (bytes4){}`
   
   - [ ]  Contract type
 - [x]  Function type
@@ -506,7 +519,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
   
   Hint: noHint
          
-  Explanation: function f() public payable returns (bytes4){} is a fuction declaration.         
+  Explanation: `function f() public payable returns (bytes4){}` is a fuction declaration.         
  
 
   ---
@@ -536,7 +549,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### What will be the value of the following syntax executed in solidity? 255 + (true ? 1 : 0)
+  ##### What will be the value of the following syntax executed in solidity? `255 + (true ? 1 : 0)`
   
   - [ ]  255
 - [ ]  256
@@ -549,10 +562,10 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### In the following code snippet which line will result in an error- // SPDX-License-Identifier: MIT pragma solidity ^0.8.10; contract C {
+  ##### In the following code snippet which line will result in an error- ```// SPDX-License-Identifier: MIT pragma solidity ^0.8.10; contract C {
 //line 1 uint public x = 1;
 // line 2 function addToX(uint y) public pure returns (uint) { return x + y; }
-// line 3 function add(uint i, uint j) public pure returns (uint) { return i + j; } }
+// line 3 function add(uint i, uint j) public pure returns (uint) { return i + j; } }```
   
   - [ ]  Line 1
 - [x]  Line 2
@@ -578,7 +591,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### On execution of the following code what will be the value of balance? uint8 balance = 255; balance++;
+  ##### On execution of the following code what will be the value of balance? ```uint8 balance = 255; balance++;```
   
   - [ ]  256
 - [x]  0
@@ -604,7 +617,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### Look at the code snippet below, pragma solidity ^0.5.0; contract SolidityTest { uint storedData; constructor() public { storedData = 10; } } What type of variable is storedData declared in the SolidityTest contract?
+  ##### Look at the code snippet below, ```pragma solidity ^0.5.0; contract SolidityTest { uint storedData; constructor() public { storedData = 10; } }``` What type of variable is storedData declared in the SolidityTest contract?
   
   - [x]  State Variables
 - [ ]  Local Variables
@@ -619,10 +632,10 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
   ---
   ##### Which of the following is a valid enum declaration in solidity?
   
-  - [ ]  enum integers {  1 , 2 , 3 , 4 }
-- [x]  enum values { one , two , three }
-- [ ]  enum myEnums { }
-- [x]  enum booleans { True , False }         
+  - [ ]  `enum integers {  1 , 2 , 3 , 4 }`
+- [x]  `enum values { one , two , three }`
+- [ ]  `enum myEnums { }`
+- [x]  `enum booleans { True , False }`         
   
   Hint: there must be atleast one option in enum.
          
@@ -630,7 +643,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### Consider the following code snippet , pragma solidity ^0.5.0; contractC { function foo(uint a) pure public returns (uint){ return a << 2; } } What will be the output when a uint value 3 is passed in the function foo of the contract C?
+  ##### Consider the following code snippet , ```pragma solidity ^0.5.0; contractC { function foo(uint a) pure public returns (uint){ return a << 2; } }``` What will be the output when a uint value 3 is passed in the function foo of the contract C?
   
   - [ ]  0
 - [ ]  1
@@ -645,8 +658,8 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
   ---
   ##### Which of the following are valid literals for solidity data types?
   
-  - [x]  25
-- [x]   'foo' 'bar' 
+  - [x]  `2.5e1`
+- [x]   `'foo' 'bar'` 
 - [x]  hex"001122FF"
 - [ ]  None of these         
   
@@ -656,7 +669,7 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations. Example 1 -  uint128 a; uint256 b; uint128 c; Example 2 -  uint128 a; uint128 c; uint256 b; Which of the following statements are correct regarding variable packing in the above examples.
+  ##### Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations. Example 1 -  ```uint128 a; uint256 b; uint128 c;``` Example 2 -  ```uint128 a; uint128 c; uint256 b;``` Which of the following statements are correct regarding variable packing in the above examples.
   
   - [ ]  Variables in both examples 1 and 2 are packed.
 - [ ]  Variables in example 1 are packed but not in example 2.
@@ -669,13 +682,25 @@ not allowed. ValueType can be any type, including mappings, arrays and structs.
  
 
   ---
-  ##### Consider the following code snippet , // SPDX-License-Identifier: GPL-3.0 pragma solidity ^0.8.8; contract test { enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
-function foo() public pure returns (ActionChoices) { return type(ActionChoices).max; } } What will be the output when the function foo is called ?
+  ##### Consider the following code snippet ,
+  ```
+  // SPDX-License-Identifier: GPL-3.0
+  pragma solidity ^0.8.8;
+  contract test {
+    enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
+
+    function foo() public pure returns (ActionChoices) {
+        return type(ActionChoices).max;
+    }
+  }
+  ```
+What will be the output when the function foo is called?
+
   
-  - [x]  0:uint8: 3
-- [ ]  0:uint8: 0
-- [ ]  0:string: “SitStill”
-- [ ]  0:string: “GoLeft”         
+  - [x]  `0:uint8: 3`
+- [ ]  `0:uint8: 0`
+- [ ]  `0:string: “SitStill”`
+- [ ]  `0:string: “GoLeft”`         
   
   Hint: .max is used to get the largest value of the given enum.
          

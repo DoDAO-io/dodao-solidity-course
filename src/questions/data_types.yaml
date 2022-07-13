@@ -43,20 +43,20 @@
   type: SingleChoice
   content: Which of the following statements is incorrect regarding data types in solidity?
   hint: noHint
-  explanation: The range of uintx in solidity is $[0,2^x -1]$, the range of intx is $[-2^(x-1),2^(x-1)-1]$ , boolean values only take true/false values and address literals take 20 bytes hexadecimal values.
+  explanation: "The range of uintx in solidity is $[0,2^x -1]$, the range of intx is $[-2^{x-1},2^{x-1}-1]$ , boolean values only take true/false values and address literals take 20 bytes hexadecimal values."
   answerKeys:
     - C
   sub_topics:
     - "value-types"
   difficulty_level: Medium
   choices:
-    - content: The range of uint32 data type is from 0 upto $2^32 -1$
+    - content: "The range of uint32 data type is from 0 upto $2^{32} -1$"
       key: A
-    - content: Bool data type can only take true and false values.
+    - content: "Bool data type can only take true and false values."
       key: B
-    - content: The range of int256 data type is from -2²⁵⁶+1 to 2²⁵⁶-1
+    - content: "The range of int256 data type is from $-2^{256}+1$ to $2^{256}-1$"
       key: C
-    - content: address data type holds a 20 byte value
+    - content: "address data type holds a 20 byte value"
       key: D
 
 - uuid: f54382c5-2dfc-4cd8-9e29-5d764cf59d53
@@ -133,7 +133,7 @@
     - "value-types"
   difficulty_level: Low
   choices:
-    - content: "`address`"
+    - content: address
       key: A
     - content: uint
       key: B
@@ -225,7 +225,7 @@
   type: MultipleChoice
   content: Which of the following statements is correct about enums?
   hint: Enums can have a maximum of 256 members.
-  explanation: The options in enum are represented by subsequent unsigned integer values starting from 0. Using type(NameOfEnum).min and type(NameOfEnum).max you can get the smallest and respectively largest value of the given enum.
+  explanation: The options in enum are represented by subsequent unsigned integer values starting from 0. Using `type(NameOfEnum).min` and `type(NameOfEnum).max` you can get the smallest and respectively largest value of the given enum.
   answerKeys:
     - A
     - C
@@ -240,7 +240,7 @@
       key: B
     - content: Their options are represented by subsequent unsigned integer values starting from 0.
       key: C
-    - content: type(NameOfEnum).min gives the smallest value in the enum.
+    - content: "`type(NameOfEnum).min` gives the smallest value in the enum."
       key: D
 
 - uuid: 663929a6-3a12-43fd-b0ff-ac07c2e34467
@@ -396,7 +396,7 @@
 - uuid: 0251f4f5-c96b-4018-b33c-cf570ebfe638
   type: SingleChoice
   content: "What is wrong with the following code ?
-              // SPDX-License-Identifier: GPL-3.0
+              `// SPDX-License-Identifier: GPL-3.0
               pragma solidity >=0.4.16 <0.9.0;
 
               contract C {
@@ -405,7 +405,7 @@
                       b[6] = 8;
                       b.push(5);
                   }
-              }"
+              }`"
   hint: noHint
   explanation: Memory arrays cannot be extended during runtime. The member function push does not exist. If you need to resize your memory array, you need to create a new array with the desired length and copy every element from the old array.
   answerKeys:
@@ -416,7 +416,7 @@
   choices:
     - content: It is not not possible to declare an array with new keyword
       key: A
-    - content: b[6]=8 is incorrect assignment for a memory array
+    - content: "`b[6]=8` is incorrect assignment for a memory array"
       key: B
     - content: It is not not possible to use push function with a memory array
       key: C
@@ -425,7 +425,7 @@
 
 - uuid: f92bdc52-4d0f-44de-b763-0462f3fe65c7
   type: SingleChoice
-  content: "Statement 1- The array literal [-1,1] is invalid. Statement 2- Calling push() member function on an array can be used to append a zero-initialized element at the end of the array.
+  content: "Statement 1- The array literal `[-1,1]` is invalid. Statement 2- Calling `push()` member function on an array can be used to append a zero-initialized element at the end of the array.
             Which of the following options is correct?"
   hint: noHint
   explanation: |
@@ -489,13 +489,39 @@
     - content: All of these.
       key: D
 
+- uuid: 861e7d61-22e2-48db-b6e9-5f95c4b0fbaa
+  type: SingleChoice
+  content:  In the following code snippets where is implicit type conversion possible?
+  hint: noHint
+  explanation: In the example below, y and z, the operands of the addition, do not have the same type, but uint8 can be implicitly converted to uint16 and not vice-versa.  uint8 is convertible to uint16 and int128 to int256, but int8 is not convertible to uint256, because uint256 cannot hold values such as -1.
+  answerKeys:
+    - A
+  sub_topics:
+    - "value-types"
+  difficulty_level: Medium
+  choices:
+    - content: 'uint8 x;
+                uint16 y;
+                uint32 z=x+y;'
+      key: A
+    - content: 'uint8 x;
+                uint16 y;
+                uint8 z=x+y;'
+      key: B
+    - content: 'int8 x;
+                uint16 y;
+                uint32 z=x+y;'
+      key: C
+    - content: Implicit Type conversion is not possible in Solidity.
+      key: D
+
 - uuid: e383c36b-6272-4467-ae2e-c69c22ce60bc
   type: SingleChoice
   content: What is the correct declaration for a mapping type ?
   hint: noHint
   explanation: |
     mapping types use the syntax `mapping(KeyType => ValueType)` and variables of mapping type are declared using 
-    the syntax `mapping(KeyType => ValueType)` VariableName. The KeyType can be any built-in value type, bytes, string, 
+    the syntax `mapping(KeyType => ValueType)` VariableName`. The KeyType can be any built-in value type, bytes, string, 
     or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are 
     not allowed. ValueType can be any type, including mappings, arrays and structs.
   answerKeys:
@@ -526,7 +552,7 @@
     - "value-types"
   difficulty_level: Low
   choices:
-    - content: They can be declared with Keywords ufixedMxN and fixedMxN.
+    - content: They can be declared with Keywords `ufixedMxN` and `fixedMxN`.
       key: A
     - content: Fixed point numbers are not fully supported by Solidity yet. They can be declared, but cannot be assigned to or from.
       key: B
@@ -587,13 +613,13 @@
     - "value-types"
   difficulty_level: Low
   choices:
-    - content: "0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9"
+    - content: "`0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9`"
       key: A
-    - content: "0x577a6E294505A797976f218eFd751aB5557E1522"
+    - content: "`0x577a6E294505A797976f218eFd751aB5557E1522`"
       key: B
-    - content: "0xc0ffee254729296a45a3885639AC7E10F9d54979"
+    - content: "`0xc0ffee254729296a45a3885639AC7E10F9d54979`"
       key: C
-    - content: "0x1011526z3H3fg4445xx556tuoa72288884869aAzl"
+    - content: "`0x1011526z3H3fg4445xx556tuoa72288884869aAzl`"
       key: D
 
 - uuid: 26ca32d3-bc08-41b9-b24a-9cee819a6a34
@@ -642,7 +668,7 @@
   type: SingleChoice
   content: Consider the following statements.
            Statement 1 - code is used to get the EVM bytecode as a byte memory, codehash is used to get the Keccak-256 hash of that code (as a bytes32).
-           Statement 2 - keccak256(address.code) is cheaper than using address.codehash.
+           Statement 2 - `keccak256(address.code)` is cheaper than using `address.codehash`.
            Which of the following options is correct considering the code and codehash methods of the address type.
   hint: noHint
   explanation: Use .code to get the EVM bytecode as a bytes memory, which might be empty. Use .codehash get the Keccak-256 hash of that code (as a bytes32). Note that addr.codehash is cheaper than using keccak256(addr.code).
@@ -663,7 +689,7 @@
 
 - uuid: caa00c9b-61e5-4224-82fa-9a0bb613d436
   type: MultipleChoice
-  content: Which of the following options is correct regarding a user defined value type defined by the syntax ' type C is V ; ' in solidity.
+  content: Which of the following options is correct regarding a user defined value type defined by the syntax `type C is V ;` in solidity.
   hint: noHint
   explanation: A user defined value type is defined using type C is V, where C is the name of the newly introduced type and V has to be a built-in value type (the “underlying type”). The function C.wrap is used to convert from the underlying type to the custom type. Similarly, the function C.unwrap is used to convert from the custom type to the underlying type.The type C does not have any operators or bound member functions. In particular, even the operator == is not defined. Explicit and implicit conversions to and from other types are disallowed.
   answerKeys:
@@ -676,7 +702,7 @@
       key: A
     - content: The type V does not have any operators or bound member functions. In particular, even the operator == is not defined.
       key: B
-    - content: The function C.wrap is used to convert from the underlying type to the custom type. Similarly, the function C.unwrap is used to convert from the custom type to the underlying type.
+    - content: The function `C.wrap` is used to convert from the underlying type to the custom type. Similarly, the function `C.unwrap` is used to convert from the custom type to the underlying type.
       key: C
     - content: None of these.
       key: D
@@ -763,9 +789,10 @@
 
 - uuid: 653b974e-d79d-4103-a2ff-57a86506ada3
   type: MultipleChoice
-  content: The declaration below in solidity is an example of which type? function f() public payable returns (bytes4){}
+  content: The declaration below in solidity is an example of which type? 
+           `function f() public payable returns (bytes4){}`
   hint: noHint
-  explanation: function f() public payable returns (bytes4){} is a fuction declaration.
+  explanation: "`function f() public payable returns (bytes4){}` is a fuction declaration."
   answerKeys:
     - B
   sub_topics:
@@ -828,7 +855,7 @@
 - uuid: bb55a93a-05b2-4ea5-83b4-bd307cdf6c51
   type: MultipleChoice
   content: "What will be the value of the following syntax executed in solidity?
-           255 + (true ? 1 : 0)"
+           `255 + (true ? 1 : 0)`"
   hint: "The ternary operator is used in expressions of the form <expression> ? <trueExpression> : <falseExpression>. It evaluates one of the latter two given expressions depending upon the result of the evaluation of the main <expression>. If <expression> evaluates to true, then <trueExpression> will be evaluated, otherwise <falseExpression> is evaluated."
   explanation: "The result type is determined from the types of the two operands in the ternary operator, converting to their mobile type first if required. As a consequence, 255 + (true ? 1 : 0) will revert due to arithmetic overflow. The reason is that (true ? 1 : 0) is of uint8 type, which forces the addition to be performed in uint8 as well, and 256 exceeds the range allowed for this type."
   answerKeys:
@@ -849,7 +876,7 @@
 - uuid: a2bc4929-787b-4184-959c-480659493663
   type: SingleChoice
   content:  "In the following code snippet which line will result in an error-
-              // SPDX-License-Identifier: MIT
+              ```// SPDX-License-Identifier: MIT
               pragma solidity ^0.8.10;
               contract C {
 
@@ -865,7 +892,7 @@
                   function add(uint i, uint j) public pure returns (uint) {
                       return i + j;
                   }
-              }"
+              }```"
   hint: Check whether the function declaration is correct.
   explanation: Pure declares that no state variable will be changed or read in a function. view tells us that by running the function, no data will be saved/changed. Here in line 2 a pure function is trying to read the data from a state variable. The declaration should have a view instead of pure.
   answerKeys:
@@ -906,9 +933,9 @@
 
 - uuid: 4e60aee2-0a82-44f1-a173-17cf88872017
   type: SingleChoice
-  content: "On execution of the following code what will be the value of balance?
-                uint8 balance = 255;
-                balance++;"
+  content: On execution of the following code what will be the value of balance?
+                ```uint8 balance = 255;
+                   balance++;```
   hint: Think of the range of values uint 8 can have .
   explanation: If you execute the code above the "balance" will be 0. This is a simple example of overflow. If you add 1 to binary 11111111, it resets back to 00000000. In Solidity 0.8, the compiler will automatically take care of checking for overflows and underflows.
   answerKeys:
@@ -951,13 +978,13 @@
 - uuid: 94432d54-9f7c-4b53-be49-314a4aa94d5a
   type: SingleChoice
   content: "Look at the code snippet below,
-              pragma solidity ^0.5.0;
-            contract SolidityTest {
-              uint storedData;     
-              constructor() public {
-                  storedData = 10;   
-              }
-            }
+              ```pragma solidity ^0.5.0;
+              contract SolidityTest {
+                uint storedData;     
+                constructor() public {
+                    storedData = 10;   
+                }
+              }```
             What type of variable is storedData declared in the SolidityTest contract?"
   hint: noHint
   explanation: State Variables , Variables whose values are permanently stored in a contract storage.
@@ -990,24 +1017,24 @@
     - "value-types"
   difficulty_level: Medium
   choices:
-    - content: enum integers {  1 , 2 , 3 , 4 }
+    - content: "`enum integers {  1 , 2 , 3 , 4 }`"
       key: A
-    - content: enum values { one , two , three }
+    - content: "`enum values { one , two , three }`"
       key: B
-    - content: enum myEnums { }
+    - content: "`enum myEnums { }`"
       key: C
-    - content: enum booleans { True , False }
+    - content: "`enum booleans { True , False }`"
       key: D
 
 - uuid: 3648ad26-bb00-458d-afaa-0762e70a5dbe
   type: SingleChoice
   content: "Consider the following code snippet ,
-              pragma solidity ^0.5.0;
-              contractC {
-                function foo(uint a) pure public returns (uint){
-                  return a << 2;
-                }
-              }
+              ```pragma solidity ^0.5.0;
+                 contractC {
+                   function foo(uint a) pure public returns (uint){
+                     return a << 2;
+                   }
+                 }```
            What will be the output when a uint value 3 is passed in the function foo of the contract C?"
   hint: The Left Shift operator (<<) moves all the bits in its first operand to the left by the number of places specified in the second operand.
   explanation: x << y is equivalent to the mathematical expression x * 2**y.
@@ -1039,9 +1066,9 @@
     - "value-types"
   difficulty_level: Low
   choices:
-    - content: 2.5e1
+    - content: "`2.5e1`"
       key: A
-    - content: " 'foo' 'bar' "
+    - content: " `'foo' 'bar'` "
       key: B
     - content: hex"001122FF"
       key: C
@@ -1051,12 +1078,12 @@
 - uuid: 2bb12876-aee8-4cbd-8662-e193bb5503aa
   type: SingleChoice
   content: "Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations.
-            Example 1 -  uint128 a;
-                         uint256 b;
-                         uint128 c;
-            Example 2 -  uint128 a;
-                         uint128 c;
-                         uint256 b;
+            Example 1 -  ```uint128 a;
+                            uint256 b;
+                            uint128 c;```
+            Example 2 -  ```uint128 a;
+                            uint128 c;
+                            uint256 b;```
             Which of the following statements are correct regarding variable packing in the above examples."
   hint: Solidity contracts have contiguous 32 byte (256 bit) slots used for storage.
   explanation: In example 1 the variables are not packed. If b was packed with a, it would exceed the 32 byte limit so it is instead placed in a new storage slot. The same thing happens with c and b. In example 2 the  variables are packed. Because packing c with a does not exceed the 32 byte limit, they are stored in the same slot.
@@ -1077,18 +1104,20 @@
 
 - uuid: 47e3f7e4-b2e6-4c0f-acd7-e7c960203710
   type: SingleChoice
-  content: "Consider the following code snippet ,
-              // SPDX-License-Identifier: GPL-3.0
-                pragma solidity ^0.8.8;
-                contract test {
-                  enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
+  content: | 
+    Consider the following code snippet ,
+      ```
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity ^0.8.8;
+      contract test {
+        enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
 
-                  function foo() public pure returns (ActionChoices) {
-                      return type(ActionChoices).max;
-                  }
-                }
-            What will be the output when the function foo is called ?"
-
+        function foo() public pure returns (ActionChoices) {
+            return type(ActionChoices).max;
+        }
+      }
+      ```
+    What will be the output when the function foo is called?
   hint: .max is used to get the largest value of the given enum.
   explanation: Under the hood, enums are integers, not strings. Solidity will automatically handle converting enums to ints.
   answerKeys:
@@ -1097,11 +1126,11 @@
     - "value-types"
   difficulty_level: Medium
   choices:
-    - content: "0:uint8: 3"
+    - content: "`0:uint8: 3`"
       key: A
-    - content: "0:uint8: 0"
+    - content: "`0:uint8: 0`"
       key: B
-    - content: "0:string: “SitStill”"
+    - content: "`0:string: “SitStill”`"
       key: C
-    - content: "0:string: “GoLeft”"
+    - content: "`0:string: “GoLeft”`"
       key: D
