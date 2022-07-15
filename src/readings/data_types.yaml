@@ -1,11 +1,56 @@
-- uuid: 699f89a5-4c2a-4442-afe7-eabc1fb8f5fa
-  title: Introduction to Blockchain Technology
-  summary: Blockchain is a ledger
+- uuid: a150cd2d-1888-4210-8bee-9411eb25e3bf
+  title: Introduction to Solidity Data types
+  summary: In this video we're looking at the data types available in Solidity.
   type: YoutubeVideo
-  url: https://www.youtube.com/watch?v=u70_rafPs-0
+  url: https://www.youtube.com/watch?v=N1Jeeei_wtw
   subTopics:
     - "value-types"
+    - "reference-types"
+    - "mapping-type"
   description: |
     This video explains about
-    * Point 1
-    * Point 2
+    * Value Types - Integers , Booleans etc 
+    * Reference Types - Structs , Arrays .
+    * Mapping Type - Mapping.
+
+- uuid: ee869939-2186-42bb-a8a0-de3fd366862e
+  title: Solidity Tutorial - Variable Types
+  summary: In this video we are looking at an overview of all the variable types in Solidity and how to declare them.
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=N1Jeeei_wtw
+  subTopics:
+    - "value-types"
+    - "reference-types"
+    - "mapping-type"
+  description: |
+    This video explains about all the variables that can be declared using types : 
+    * uint
+    * bytes32
+    * string
+    * bytes
+    * arrays
+    * mappings
+    * structs
+    * enums
+
+- uuid: 747a3dca-1ba1-421e-adc0-b75f32b5ae99
+  title: Master Solidity Variables, Data Types, and Structs Master Solidity
+  summary: In this video we are looking at different solidity types and variables.
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=HxlxNwgoN8w
+  subTopics:
+    - "value-types"
+    - "reference-types"
+    - "mapping-type"
+  description: |
+    This video explains all the different variables that can be declared (state variables and Local Variables).
+
+- uuid: cb6cf918-b9ac-4c65-8506-f5a0bb3564bf
+  title: Solidity Tutorial, Arrays (Declare, Read, Update, Delete).
+  summary: This video explains how to declare and manipulate arrays in solidity.
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=HxlxNwgoN8w
+  subTopics:
+    - "reference-types"
+  description: |
+    This video explains 

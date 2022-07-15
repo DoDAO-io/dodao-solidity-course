@@ -6,8 +6,8 @@ description:  |
   "Line3"
 duration: 45 - 60 mins
 topics:
-  - title: Blockchain Basics
-    summary: This chapter explains the basics of blockchian
+  - title: Types
+    summary: This chapter explains the basics of data types used in Solidity.
     readings: data_types.yaml
     summaries: data_types.yaml
     questions: data_types.yaml
