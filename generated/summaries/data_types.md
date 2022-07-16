@@ -6,7 +6,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  ## Types
  
  **Value Types**        
-The following types are called value types because variables of these types will always be passed by value, i.e. they are always copied when used in function arguments or asssignments.   
+The following types are called value types because variables of these types will always be passed by value, i.e. they are always copied when used in function arguments or asssignments.
 - Booleans
   * They are declared using the keyword `bool`.
   * The possible values are constants true and false.
@@ -60,7 +60,8 @@ The following types are called value types because variables of these types will
   * Pure functions do not read and do not modify state of the block chain.   
  
  **Reference Types**        
-Values of reference type can be modified through multiple different names in contrast to value types where an independent copy is maintained whenever a variable of value type is used. While using a reference type a data location(where the variable is stored) has to be provided explicitly. Currently, reference types comprise of structs, arrays and mappings.   
+Values of reference type can be modified through multiple different names in contrast to value types where an independent copy is maintained whenever a variable of value type is used.
+While using a reference type a data location(where the variable is stored) has to be provided explicitly. Currently, reference types comprise of structs, arrays and mappings.
 - Data location
    * There are three data locations: memory, storage and calldata.
    * When placed in storage, a variable is written on the blockchain. Every contract has its own storage, so these variables are persistent. 
@@ -94,7 +95,7 @@ Values of reference type can be modified through multiple different names in con
    * For accessing any element of the structure the dot operator is used.  
  
  **Mapping Type**        
-Mapping in Solidity acts like a hash table or a dictionary. These are used to store the data in the form of key-value pairs.   
+Mapping in Solidity acts like a hash table or a dictionary. These are used to store the data in the form of key-value pairs.
 - Mapping types use the syntax `mapping(KeyType => ValueType)` and variables of mapping type are declared using the syntax `mapping(KeyType => ValueType) VariableName`.
 - The KeyType can be any built-in value type, bytes, string, or any contract or enum type. Other user-defined or complex types, such as mappings, structs or array types are not allowed.
 - ValueType can be any type, including mappings, arrays and structs.
