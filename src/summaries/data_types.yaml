@@ -1,7 +1,7 @@
 - title: Value Types
   key: value-types
   details: |
-    The following types are called value types because variables of these types will always be passed by value, i.e. they are always copied when used in function arguments or asssignments.
+    The following types are called value types because variables of these types will always be passed by value, i.e. unlike reference types they are always copied when used in function arguments or asssignments.
     - Booleans
       * They are declared using the keyword `bool`.
       * The possible values are constants true and false.
@@ -59,14 +59,9 @@
 - title: Reference Types
   key: reference-types
   details: |
+   In Solidity, unlike value types that stores it own data, reference types do not store the data directly to the variable, they contain a pointer to another memory location that holds the real data.
    Values of reference type can be modified through multiple different names in contrast to value types where an independent copy is maintained whenever a variable of value type is used.
    While using a reference type a data location(where the variable is stored) has to be provided explicitly. Currently, reference types comprise of structs, arrays and mappings.
-   - Data location
-      * There are three data locations: memory, storage and calldata.
-      * When placed in storage, a variable is written on the blockchain. Every contract has its own storage, so these variables are persistent. 
-      * Variables stored in memory are declared inside a function. They are temporary and their lifetime is dependent on the runtime of the function they correspond to.
-      * Calldata is also a temporary data location in Solidity. It acts like memory, in terms of its dependence on the functions execution.
-      * Storage is the most expensive data location one can use. Then there is memory, with the cheapest being calldata.
     
     - arrays
       * Arrays can have a compile-time fixed size, or they can have a dynamic size.
@@ -92,6 +87,34 @@
           }
         ```
       * For accessing any element of the structure the dot operator is used.  
+
+- title: Data location
+  key: data-location
+  details: |
+      * There are three data locations: memory, storage and calldata.
+      * When placed in storage, a variable is written on the blockchain. Every contract has its own storage, so these variables are persistent. 
+      * State variables and Local Variables of structs, array are always stored in storage by default.
+      * Variables stored in memory are declared inside a function. They are temporary and their lifetime is dependent on the runtime of the function they correspond to.
+      * Calldata is also a temporary data location in Solidity. It acts like memory, in terms of its dependence on the functions execution however it is only available for external function call parameters.
+      * Variables declared with memory data location are mutable (i.e. they can be overwritten and changed) whearas variables declared with calldata location are immutable and cannot be overwritten or changed.
+      * The below example explains the differences between memory and calldata.
+      ```
+        pragma solidity 0.8.15;
+
+        contract Test {
+            function memoryTest(string memory _exampleString) public pure returns (string memory) {
+                _exampleString = "example";  // You can modify memory
+                string memory newString = _exampleString;  // You can use memory within a function's logic
+                return newString;  // You can return memory
+            }
+            function calldataTest(string calldata _exampleString) external pure returns (string memory) {
+                // cannot modify _exampleString
+                return _exampleString; // but can return it
+            }
+        }
+      ```
+      * Storage is the most expensive data location one can use. Then there is memory, with the cheapest being calldata.
+
 
 - title: Mapping Type
   key: mapping-type

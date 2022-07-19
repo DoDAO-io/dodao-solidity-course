@@ -47,10 +47,12 @@ This video explains how to -
 - Read elements
 - Update elements
 - Delete elements
-- Iterate through elements
+- Iterate through elements  
+
 This video further explores the differences between-
 - Fixed-size and Dynamic size
-- Storage and memory arrays
+- Storage and memory arrays  
+
 and it also covers how to accept arrays argument in Solidity functions and return arrays from solidity functions.
     
  **Solidity Tutorial: Mappings (simple mappings, nested mappings, array in mappings...)**

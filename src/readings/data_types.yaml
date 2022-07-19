@@ -58,10 +58,12 @@
     - Read elements
     - Update elements
     - Delete elements
-    - Iterate through elements
+    - Iterate through elements  
+    
     This video further explores the differences between-
     - Fixed-size and Dynamic size
-    - Storage and memory arrays
+    - Storage and memory arrays  
+
     and it also covers how to accept arrays argument in Solidity functions and return arrays from solidity functions.
 
 - uuid: f936c72d-9d71-4c05-bf38-3b827b0d95f5
