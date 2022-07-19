@@ -1,11 +1,97 @@
-- uuid: 699f89a5-4c2a-4442-afe7-eabc1fb8f5fa
-  title: Introduction to Blockchain Technology
-  summary: Blockchain is a ledger
+- uuid: a150cd2d-1888-4210-8bee-9411eb25e3bf
+  title: Introduction to Solidity Data types
   type: YoutubeVideo
-  url: https://www.youtube.com/watch?v=u70_rafPs-0
+  url: https://www.youtube.com/watch?v=N1Jeeei_wtw
   subTopics:
     - "value-types"
-  description: |
-    This video explains about
-    * Point 1
-    * Point 2
+    - "reference-types"
+    - "mapping-type"
+  details: |
+    In this video we're looking at the data types available in Solidity.
+    This video explains about the use of -
+    * Value Types - Integers , Booleans etc 
+    * Reference Types - Structs , Arrays .
+    * Mapping Type - Mapping.
+
+- uuid: ee869939-2186-42bb-a8a0-de3fd366862e
+  title: Solidity Tutorial - Variable Types
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=TNZLonjrLYE
+  subTopics:
+    - "value-types"
+    - "reference-types"
+    - "mapping-type"
+  details: |
+    In this video we are looking at an overview of all the variable types in Solidity and how to declare them.
+    This video explains about all the variables that can be declared using types : 
+    * uint
+    * bytes32
+    * string
+    * bytes
+    * arrays
+    * mappings
+    * structs
+    * enums
+
+- uuid: 747a3dca-1ba1-421e-adc0-b75f32b5ae99
+  title: Master Solidity Variables, Data Types, and Structs Master Solidity
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=HxlxNwgoN8w
+  subTopics:
+    - "value-types"
+    - "reference-types"
+    - "mapping-type"
+  details: |
+    In this video we are looking at different solidity types and variables.
+    This video explains all the different variables that can be declared (state variables and Local Variables).
+
+- uuid: cb6cf918-b9ac-4c65-8506-f5a0bb3564bf
+  title: Solidity Tutorial, Arrays (Declare, Read, Update, Delete).
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=MPBOnChpi0c&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=14
+  subTopics:
+    - "reference-types"
+  details: |
+    This video explains how to - 
+    - Declare arrays
+    - Add elements
+    - Read elements
+    - Update elements
+    - Delete elements
+    - Iterate through elements  
+    
+    This video further explores the differences between-
+    - Fixed-size and Dynamic size
+    - Storage and memory arrays  
+
+    and it also covers how to accept arrays argument in Solidity functions and return arrays from solidity functions.
+
+- uuid: f936c72d-9d71-4c05-bf38-3b827b0d95f5
+  title: "Solidity Tutorial: Mappings (simple mappings, nested mappings, array in mappings...)"
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=U-wWqTq1zoQ&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=15
+  subTopics:
+    - "mapping-type"
+  details: |
+    This video explains how to declare and manipulate mappings in Solidity. It also covers simple mappings but also advanced mappings like nested mappings and array inside mappings. 
+
+- uuid: 7834704f-0749-4457-bd5b-7531ea34ff99
+  title: Solidity Tutorial, Arrays (Declare, Read, Update, Delete).
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=UkdU0cuAp9U&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=16
+  subTopics:
+    - "reference-types"
+  details: |
+    Solidity Structs allow you to represent structured data. This video explains how to declare, instantiate (create), read, update and delete structs in Solidity.
+    It will also show some more advanced struct manipulation like how to declare an array of structs and how to declare a mapping of structs.
+
+
+- uuid: 83565016-2bf9-4b07-a0a3-938cbe86749f
+  title: Solidity Tutorial, Arrays (Declare, Read, Update, Delete).
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=5ED_6FasZ68&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=17
+  subTopics:
+    - "reference-types"
+  details: |
+    Solidity Enums allow you to represent optional data.
+    This video covers how to declare enums, use enums, accept enums as argument in solidity functions.
