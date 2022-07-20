@@ -39,7 +39,7 @@
       * Enums require at least one member, and its default value when declared is the first member.
       * Enums cannot have more than 256 members.
       * The options in an enum are represented by subsequent unsigned integer values starting from 0.
-# TODO: Default value in an enum is the first value that is declared in the enum. 
+      * The default value of an enum when declared is its first member. 
 
     - User Defined Value Types
       * A user defined value type is defined using `type C is V`, where C is the name of the newly introduced type and V has to be a built-in value type (the “underlying type”). 
@@ -69,8 +69,7 @@
       * `type arrayName [ arraySize ];` declares an array of fixed size in Solidity.
       * `type[] arrayName;` declares an array of dynamic size in solidity.
       * Memory arrays with dynamic length can be created using the new operator eg `uint[] memory a = new uint[](7);` . As opposed to storage arrays, it is not possible to resize memory arrays.
-# TODO - arrays declared in a function are always fixed size, so new uint[](7) is also a fixed size array    
-# TODO - arrays in function have to be always delcared with the type memory
+      * Arrays inside a function can only be declared with memory data location and are always of fixed size, so `uint[] memory newArray = new uint[](10);` is a valid array declaration inside a function.
 
     - bytes and strings as arrays
       * Variables of type bytes and string are special arrays.
@@ -90,21 +89,45 @@
           }
         ```
       * For accessing any element of the structure the dot operator is used.
-# TODO -  Initilaize using named variables    
-# TODO - Updating a struct
+      * The below example shows how to initialize a struct in solidity.
+      ```
+      pragma solidity 0.8.15;
+      contract test {
+        // Declaring a structure
+        struct Course {
+            string title;
+            string subTopic;
+            uint id;
+        }
+        // Declaring a structure object
+        Course course1;
+      
+        // declaring a struct and assigning values to the fields
+        Course course2
+          = Course("Solidity Course",
+                  "No topic",1);
+        
+        function setSubTopicopic() public{
+            course2.subTopic="Reference Types";
+        }
+        function viewSubTopic() public view returns(string memory){
+            return course2.subTopic;
+        }
+      }
+      ```  
+      * In the above example the dot operator can be used inside the setTopic function to update the subtopic of Course struct.
 
 - title: Data location
   key: data-location
   details: |
       * There are three data locations: memory, storage and calldata.
       * When placed in storage, a variable is written on the blockchain. Every contract has its own storage, so these variables are persistent. 
-# TODO - If we have to persist/update the state data inside a function, we have to declate it as storage. We can update the data by using 
-# memory keyword, but the change will be lost after the function exits. 
+      * If we want to store variables and later update or make changes to its state, we have to declare it using storage. We can update the variables declared with memory data location aswell inside a function but the data can be used only within the function and any modification will not persist outside the function execution. 
       * State variables and Local Variables of structs, array are always stored in storage by default.
       * Variables stored in memory are declared inside a function. They are temporary and their lifetime is dependent on the runtime of the function they correspond to.
       * Calldata is also a temporary data location in Solidity. 
       * Calldata acts like memory, in terms of its dependence on the functions execution however it is only available for external function call parameters.
-# When we call a function which takes a array with memory keword, the array is copied. This leads to more gas fee. However with calldata, the array is not copied, but also the input cannot be modified when declated with keyword calldata.     
+      * When we call a function which takes an array with memory keword, the array is copied. This leads to more gas fee. However with calldata, the array is not copied, but also the data cannot be modified when declared with keyword calldata.     
       * Variables declared with memory data location are mutable (i.e. they can be overwritten and changed) whearas variables declared with calldata location are immutable and cannot be overwritten or changed.
       * The below example explains the differences between memory and calldata.
       ```
