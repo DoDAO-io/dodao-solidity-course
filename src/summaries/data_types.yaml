@@ -1,4 +1,5 @@
 - title: Value Types
+  shortTitle: Value Types
   key: value-types
   details: |
     The following types are called value types because variables of these types will always be passed by value, i.e. unlike reference types they are always copied when used in function arguments or asssignments.
@@ -58,6 +59,7 @@
 
 
 - title: Reference Types
+  shortTitle: Reference Types
   key: reference-types
   details: |
    In Solidity, unlike value types that stores it own data, reference types do not store the data directly to the variable, they contain a pointer to another memory location that holds the real data.
@@ -118,6 +120,7 @@
       * In the above example the dot operator can be used inside the setTopic function to update the subtopic of Course struct.
 
 - title: Data location
+  shortTitle: Data location
   key: data-location
   details: |
       * There are three data locations: memory, storage and calldata.
@@ -149,6 +152,7 @@
 
 
 - title: Mapping Type
+  shortTitle: Mapping Type
   key: mapping-type
   details: |
     Mapping in Solidity acts like a hash table or a dictionary. These are used to store the data in the form of key-value pairs.

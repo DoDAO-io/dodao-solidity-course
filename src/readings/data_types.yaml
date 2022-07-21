@@ -1,5 +1,6 @@
 - uuid: a150cd2d-1888-4210-8bee-9411eb25e3bf
   title: Introduction to Solidity Data types
+  shortTitle: Data Types Intro - 1
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=N1Jeeei_wtw
   subTopics:
@@ -15,6 +16,7 @@
 
 - uuid: ee869939-2186-42bb-a8a0-de3fd366862e
   title: Solidity Tutorial - Variable Types
+  shortTitle: Variable Types
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=TNZLonjrLYE
   subTopics:
@@ -35,6 +37,7 @@
 
 - uuid: 747a3dca-1ba1-421e-adc0-b75f32b5ae99
   title: Master Solidity Variables, Data Types, and Structs Master Solidity
+  shortTitle: Data Types Intro - 2
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=HxlxNwgoN8w
   subTopics:
@@ -47,6 +50,7 @@
 
 - uuid: cb6cf918-b9ac-4c65-8506-f5a0bb3564bf
   title: Solidity Tutorial, Arrays (Declare, Read, Update, Delete).
+  shortTitle: Arrays
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=MPBOnChpi0c&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=14
   subTopics:
@@ -68,6 +72,7 @@
 
 - uuid: f936c72d-9d71-4c05-bf38-3b827b0d95f5
   title: "Solidity Tutorial: Mappings (simple mappings, nested mappings, array in mappings...)"
+  shortTitle: Mappings
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=U-wWqTq1zoQ&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=15
   subTopics:
@@ -77,6 +82,7 @@
 
 - uuid: 7834704f-0749-4457-bd5b-7531ea34ff99
   title: Solidity Tutorial, Arrays (Declare, Read, Update, Delete).
+  shortTitle: Arrays
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=UkdU0cuAp9U&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=16
   subTopics:
@@ -88,6 +94,7 @@
 
 - uuid: 83565016-2bf9-4b07-a0a3-938cbe86749f
   title: Solidity Tutorial, Arrays (Declare, Read, Update, Delete).
+  shortTitle: Arrays
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=5ED_6FasZ68&list=PLbbtODcOYIoE0D6fschNU4rqtGFRpk3ea&index=17
   subTopics:
