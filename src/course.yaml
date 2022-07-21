@@ -1,14 +1,15 @@
 title: Solidity Course
 key: solidity-course
 summary: This is a Solidity Course
-description:  |
+details:  |
   "Line1" 
   "Line2" 
   "Line3"
 duration: 45 - 60 mins
 topics:
   - title: Types
-    summary: This chapter explains the basics of data types used in Solidity.
+    key: data-types
+    details: This chapter explains the basics of data types used in Solidity.
     readings: data_types.yaml
     summaries: data_types.yaml
     questions: data_types.yaml
