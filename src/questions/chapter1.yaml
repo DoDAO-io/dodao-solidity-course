@@ -7,7 +7,7 @@
     - B
     - D
   subTopics:
-    - "subtopic"
+    - "solidity-compiler"
   difficultyLevel: Low
   choices:
     - content: "1"
