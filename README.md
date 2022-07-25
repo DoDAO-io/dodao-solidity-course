@@ -14,6 +14,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
  ## Chapters
  
- | S.No        | Title       | Contents   | Links      | Status      | Completion Week |
- | ----------- | ----------- |----------- |----------- | ----------- | ----------- |
- | 1      | Types | * Value Types<br/> * Reference Types<br/> * Data location<br/> * Mapping Type| [Details](generated/topics/data-types.md) <br/> [Summary](generated/summaries/data_types.md) <br/> [Reading List](generated/readings/data_types.md) <br/> [Questions](generated/questions/data_types.md) | In Progress | July 18 | 
+ | S.No      | Title | Description |Contents |Reading List| Questions | Status | Completion Week |
+ | ----------- | ----------- |----------- |----------- |----------- |----------- | ----------- | ----------- |
+ | 1      | Your First Solidity Smart Contract | Description | [Summary](generated/summaries/chapter1.md) | [Reading List](generated/readings/chapter1.md) | [Questions](generated/questions/chapter1.md) | In Progress | July 30 |
+ | 2      | Types | Description | [Summary](generated/summaries/chapter2.md) | [Reading List](generated/readings/chapter2.md) | [Questions](generated/questions/chapter2.md) | In Progress | July 18 | 

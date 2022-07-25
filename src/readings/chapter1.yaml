@@ -1,0 +1,9 @@
+- uuid: be0f341e-e428-401c-98a0-d08061b3dadd
+  title: title
+  shortTitle: short title
+  type: YoutubeVideo
+  url: url
+  subTopics:
+    - subtopic
+  details: |
+    details

@@ -1,17 +1,27 @@
 title: Solidity Course
 key: solidity-course
 summary: This is a Solidity Course
-details:  |
+description:  |
   "Line1" 
   "Line2" 
   "Line3"
 duration: 45 - 60 mins
 topics:
+  - title: Your First Solidity Smart Contract
+    key: intro-solidity
+    summary: This chapter explains the solidity compiler and how to get started with solidity .
+        Further it explores the layout of a solidity source file and also the structure of smart contracts in solidity.
+    readings: chapter1.yaml
+    summaries: chapter1.yaml
+    questions: chapter1.yaml
+    status: In Progress
+    completionWeek:  July 30
+
   - title: Types
     key: data-types
-    details: This chapter explains the basics of data types used in Solidity.
-    readings: data_types.yaml
-    summaries: data_types.yaml
-    questions: data_types.yaml
+    summary: This chapter explains the basics of data types used in Solidity.
+    readings: chapter2.yaml
+    summaries: chapter2.yaml
+    questions: chapter2.yaml
     status: In Progress
     completionWeek:  July 18

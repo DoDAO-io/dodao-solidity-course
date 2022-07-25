@@ -1,0 +1,20 @@
+- uuid: 7f269731-98d7-41d1-a041-f83016aadaf1
+  type: MultipleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - B
+    - D
+  subTopics:
+    - "subtopic"
+  difficultyLevel: Low
+  choices:
+    - content: "1"
+      key: A
+    - content: "2"
+      key: B
+    - content: "3"
+      key: C
+    - content: "4"
+      key: D
