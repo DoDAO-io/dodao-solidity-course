@@ -83,7 +83,7 @@ While using a reference type a data location(where the variable is stored) has t
    * Structs in Solidity are used to create more complicated data types that have multiple properties.
    * They are useful for grouping together related data.
    * Syntax to declare a struct is -
-     ```
+     ```solidity
        struct <structure_name> {  
          <data type> variable_1;  
          <data type> variable_2; 
@@ -91,31 +91,31 @@ While using a reference type a data location(where the variable is stored) has t
      ```
    * For accessing any element of the structure the dot operator is used.
    * The below example shows how to initialize a struct in solidity.
-   ```
-   pragma solidity 0.8.15;
-   contract test {
-     // Declaring a structure
-     struct Course {
-         string title;
-         string subTopic;
-         uint id;
-     }
-     // Declaring a structure object
-     Course course1;
-   
-     // declaring a struct and assigning values to the fields
-     Course course2
-       = Course("Solidity Course",
-               "No topic",1);
-     
-     function setSubTopicopic() public{
-         course2.subTopic="Reference Types";
-     }
-     function viewSubTopic() public view returns(string memory){
-         return course2.subTopic;
-     }
-   }
-   ```  
+       ```solidity
+         pragma solidity 0.8.15;
+         contract test {
+           // Declaring a structure
+           struct Course {
+               string title;
+               string subTopic;
+               uint id;
+           }
+           // Declaring a structure object
+           Course course1;
+         
+           // declaring a struct and assigning values to the fields
+           Course course2
+             = Course("Solidity Course",
+                     "No topic",1);
+           
+           function setSubTopicopic() public{
+               course2.subTopic="Reference Types";
+           }
+           function viewSubTopic() public view returns(string memory){
+               return course2.subTopic;
+           }
+         }
+       ```  
    * In the above example the dot operator can be used inside the setTopic function to update the subtopic of Course struct.
  
  **Data location**        
@@ -129,21 +129,21 @@ While using a reference type a data location(where the variable is stored) has t
 * When we call a function which takes an array with memory keword, the array is copied. This leads to more gas fee. However with calldata, the array is not copied, but also the data cannot be modified when declared with keyword calldata.     
 * Variables declared with memory data location are mutable (i.e. they can be overwritten and changed) whearas variables declared with calldata location are immutable and cannot be overwritten or changed.
 * The below example explains the differences between memory and calldata.
-```
-  pragma solidity 0.8.15;
+  ```solidity
+    pragma solidity 0.8.15;
 
-  contract Test {
-      function memoryTest(string memory _exampleString) public pure returns (string memory) {
-          _exampleString = "example";  // You can modify memory
-          string memory newString = _exampleString;  // You can use memory within a function's logic
-          return newString;  // You can return memory
-      }
-      function calldataTest(string calldata _exampleString) external pure returns (string memory) {
-          // cannot modify _exampleString
-          return _exampleString; // but can return it
-      }
-  }
-```
+    contract Test {
+        function memoryTest(string memory _exampleString) public pure returns (string memory) {
+            _exampleString = "example";  // You can modify memory
+            string memory newString = _exampleString;  // You can use memory within a function's logic
+            return newString;  // You can return memory
+        }
+        function calldataTest(string calldata _exampleString) external pure returns (string memory) {
+            // cannot modify _exampleString
+            return _exampleString; // but can return it
+        }
+    }
+  ```
 * Storage is the most expensive data location one can use. Then there is memory, with the cheapest being calldata.
  
  **Mapping Type**        
