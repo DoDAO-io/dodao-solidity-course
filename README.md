@@ -14,10 +14,10 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
  ## Chapters
  
- | S.No      | Title | Description |Contents |Reading List| Questions | Status | Completion Week |
- | ----------- | ----------- |----------- |----------- |----------- |----------- | ----------- | ----------- |
- | 1      | Your First Solidity Smart Contract | Description | [Summary](generated/summaries/first_solidity_contract.md) | [Reading List](generated/readings/first_solidity_contract.md) | [Questions](generated/questions/first_solidity_contract.md) | In Progress | July 30 |
- | 2      | Types | Description | [Summary](generated/summaries/data_types.md) | [Reading List](generated/readings/data_types.md) | [Questions](generated/questions/data_types.md) | In Progress | July 18 |
- | 3      | Units and variables | Description | [Summary](generated/summaries/units_variables.md) | [Reading List](generated/readings/units_variables.md) | [Questions](generated/questions/units_variables.md) | In Progress | work not started |
- | 4      | Expressions and Control Structures | Description | [Summary](generated/summaries/expression_control.md) | [Reading List](generated/readings/expression_control.md) | [Questions](generated/questions/expression_control.md) | In Progress | work not started |
- | 5      | Object Oriented Programming (OOP) Concepts in Solidity | Description | [Summary](generated/summaries/oops.md) | [Reading List](generated/readings/oops.md) | [Questions](generated/questions/oops.md) | In Progress | work not started | 
+ | S.No        | Title       | Contents   | Links      | Status      | Completion Week |
+ | ----------- | ----------- |----------- |----------- | ----------- | ----------- |
+ | 1      | Your First Solidity Smart Contract | * Installing Solidity Compiler<br/> * Layout of a Source File<br/> * Structure of a Smart Contract<br/> * Error Handling| [Details](generated/topics/intro-solidity.md) <br/> [Summary](generated/summaries/first_solidity_contract.md) <br/> [Reading List](generated/readings/first_solidity_contract.md) <br/> [Questions](generated/questions/first_solidity_contract.md) | In Progress | July 30 |
+ | 2      | Types | * Value Types<br/> * Reference Types<br/> * Data location<br/> * Mapping Type| [Details](generated/topics/data-types.md) <br/> [Summary](generated/summaries/data_types.md) <br/> [Reading List](generated/readings/data_types.md) <br/> [Questions](generated/questions/data_types.md) | In Progress | July 18 |
+ | 3      | Units and variables | * Units<br/> * Globally available Variables| [Details](generated/topics/units-variables.md) <br/> [Summary](generated/summaries/units_variables.md) <br/> [Reading List](generated/readings/units_variables.md) <br/> [Questions](generated/questions/units_variables.md) | In Progress | work not started |
+ | 4      | Expressions and Control Structures | * Control Structure<br/> * Function Calls| [Details](generated/topics/expression-control.md) <br/> [Summary](generated/summaries/expression_control.md) <br/> [Reading List](generated/readings/expression_control.md) <br/> [Questions](generated/questions/expression_control.md) | In Progress | work not started |
+ | 5      | Object Oriented Programming (OOP) Concepts in Solidity | * Encapsulation<br/> * Inheritance<br/> * Polymorphism<br/> * Abstract Contracts and Interfaces| [Details](generated/topics/oops.md) <br/> [Summary](generated/summaries/oops.md) <br/> [Reading List](generated/readings/oops.md) <br/> [Questions](generated/questions/oops.md) | In Progress | work not started | 

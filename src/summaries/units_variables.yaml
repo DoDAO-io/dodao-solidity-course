@@ -6,7 +6,7 @@
     - ether units
 
 - title: Globally available Variables
-  shortTitle: Globally available Variables
+  shortTitle: Global Variables
   key: "variables"
   details: |
     - Block and transaction methods

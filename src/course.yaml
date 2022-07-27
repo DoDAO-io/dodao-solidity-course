@@ -1,7 +1,7 @@
 title: Solidity Course
 key: solidity-course
 summary: This is a Solidity Course
-description:  |
+details:  |
   "Line1" 
   "Line2" 
   "Line3"
@@ -15,7 +15,7 @@ thumbnail: https://cdn-dfnhb.nitrocdn.com/ncvMSDTJqBfzbhjurpWfVBRIBTRVNXNa/asset
 topics:
   - title: Your First Solidity Smart Contract
     key: intro-solidity
-    summary: This chapter explains the solidity compiler and how to get started with solidity .
+    details: This chapter explains the solidity compiler and how to get started with solidity .
         Further it explores the layout of a solidity source file and also the structure of smart contracts in solidity.
     readings: first_solidity_contract.yaml
     summaries: first_solidity_contract.yaml
@@ -25,7 +25,7 @@ topics:
 
   - title: Types
     key: data-types
-    summary: This chapter explains the basics of data types used in Solidity.
+    details: This chapter explains the basics of data types used in Solidity.
     readings: data_types.yaml
     summaries: data_types.yaml
     questions: data_types.yaml
@@ -34,7 +34,7 @@ topics:
 
   - title: Units and variables
     key: units-variables
-    summary: This chapter covers the units used in solidity and also discusses various functions available globally in Solidity and their properties.
+    details: This chapter covers the units used in solidity and also discusses various functions available globally in Solidity and their properties.
     readings: units_variables.yaml
     summaries: units_variables.yaml
     questions: units_variables.yaml
@@ -43,7 +43,7 @@ topics:
   
   - title: Expressions and Control Structures
     key: expression-control
-    summary: This chapter covers how to write expressions and covers the various Control Structures like if/else , for etc.
+    details: This chapter covers how to write expressions and covers the various Control Structures like if/else , for etc.
     readings: expression_control.yaml
     summaries: expression_control.yaml
     questions: expression_control.yaml
@@ -52,7 +52,7 @@ topics:
 
   - title: Object Oriented Programming (OOP) Concepts in Solidity
     key: oops
-    summary: Solidity is an object oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.
+    details: Solidity is an object oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.
     readings: oops.yaml
     summaries: oops.yaml
     questions: oops.yaml
