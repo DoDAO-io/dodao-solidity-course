@@ -17,17 +17,44 @@ topics:
     key: intro-solidity
     summary: This chapter explains the solidity compiler and how to get started with solidity .
         Further it explores the layout of a solidity source file and also the structure of smart contracts in solidity.
-    readings: chapter1.yaml
-    summaries: chapter1.yaml
-    questions: chapter1.yaml
+    readings: first_solidity_contract.yaml
+    summaries: first_solidity_contract.yaml
+    questions: first_solidity_contract.yaml
     status: In Progress
     completionWeek:  July 30
 
   - title: Types
     key: data-types
     summary: This chapter explains the basics of data types used in Solidity.
-    readings: chapter2.yaml
-    summaries: chapter2.yaml
-    questions: chapter2.yaml
+    readings: data_types.yaml
+    summaries: data_types.yaml
+    questions: data_types.yaml
     status: In Progress
     completionWeek:  July 18
+
+  - title: Units and variables
+    key: units-variables
+    summary: This chapter covers the units used in solidity and also discusses various functions available globally in Solidity and their properties.
+    readings: units_variables.yaml
+    summaries: units_variables.yaml
+    questions: units_variables.yaml
+    status: In Progress
+    completionWeek:  work not started
+  
+  - title: Expressions and Control Structures
+    key: expression-control
+    summary: This chapter covers how to write expressions and covers the various Control Structures like if/else , for etc.
+    readings: expression_control.yaml
+    summaries: expression_control.yaml
+    questions: expression_control.yaml
+    status: In Progress
+    completionWeek:  work not started
+
+  - title: Object Oriented Programming (OOP) Concepts in Solidity
+    key: oops
+    summary: Solidity is an object oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.
+    readings: oops.yaml
+    summaries: oops.yaml
+    questions: oops.yaml
+    status: In Progress
+    completionWeek:  work not started

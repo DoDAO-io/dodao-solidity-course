@@ -1,0 +1,31 @@
+- title: Encapsulation 
+  shortTitle: Encapsulation
+  key: "encapsulation"
+  details: |
+    - variable/function visibilty
+    - public
+    - private
+    - internal
+    - external
+
+- title: Inheritance
+  shortTitle: Inheritance
+  key: "inheritance"
+  details: |
+    - linear
+    - multiple
+
+- title: Polymorphism
+  shortTitle: Polymorphism
+  key: "polymorphism"
+  details: |
+    - function/modifier overloading 
+
+- title: Abstract Contracts and Interfaces
+  shortTitle: Abstract Contracts and Interfaces
+  key: "interfaces-abstract-contracts"
+  details: |
+    - Abstract Contracts
+    - Interfaces
+
+
