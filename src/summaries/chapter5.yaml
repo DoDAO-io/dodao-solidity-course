@@ -1,0 +1,136 @@
+- title: Understanding Encapsulation in Solidity
+  shortTitle: Encapsulation
+  key: encapsulation
+  details: |
+    It refers to the bundling of data, along with the methods that operate on that data, into a single unit.
+    It refers to the mechanism of manipulating the scope of variables, i.e., restricting the variable's access outside the scope.
+  
+    Syntax
+      ```
+      solidity
+      // Unlike in Java,
+      // the data type comes before the visibility modifier in Solidity
+      uint public num;
+      // <data type> <visibility> <variale name>;
+      ```
+  
+    - Public
+      * These objects can be accessed internally and externally as well as via messages also.
+      * External methods can inherit public elements.
+      * A getter function is generated automatically when a public variable is created.
+      * However, no setter function is created, implying that the external function can not modify the variable.
+  
+    - Internal
+      * As the name suggests, Internal objects can be accessed by internal or derived methods but cannot be accessed by external.
+      * Only a base contract and a derived contract have their access.
+  
+    - Private
+      * Private objects can only be accessed internally from the current contract instances.
+      * They cannot be accessed by derived methods also.
+  
+    - External
+      * These objects can be accessed externally but not internally, i.e., current contract instances cannot access it.
+      * They cannot be inherited.
+    
+    State Variable visibility
+      - Public
+      - Internal
+      - Private
+    
+    Function visibility
+      - External
+      - Public
+      - Internal
+      - Private
+  
+    One should always use the principle of least privilege when determining which level of visibility to use.
+ 
+- title: Understanding Inheritance in Solidity
+  shortTitle: Inheritance
+  key: inheritance
+  details: |
+    Inheritance is the process of defining multiple contracts related to each other through parent-child relationships.
+  
+    Solidity supports inheritance between smart contracts.
+      * Base contract: The contract from which other contracts inherit features.
+      * Derived contract: The contract which inherits the features.
+      * Simply, they are referred to as parent-child contracts.
+    
+    Syntax
+      ```
+      solidity
+        contract <Derived Contract Name> is <Base Contract Name>{
+      }
+      ```
+  
+    Solidity provides different types of inheritance.
+      - Single Inheritance
+        * In Single or single-level inheritance, the functions, and variables of one base contract are inherited to only one derived contract.
+        
+      - Multi-level Inheritance
+        * Very similar to single inheritance.
+        * Instead of just a single parent-child relationship, there are multiple levels of the parent-child relationship.
+  
+      - Hierarchical Inheritance
+        * Here, a single contract acts as a base contract for multiple derived contracts.
+        * It is mostly used when a common functionality is used in different places.
+  
+      - Multiple Inheritance
+        * Here, a single contract can be inherited from one or more contracts.
+      
+    Note : Solidity follows the path of Python and uses C3 Linearization, also known as Method Resolution Order (MRO), to force a specific order in graphs of base contracts. The order of execution is determined by order of the declaration at the contract level. It has nothing to do with the order you call/pass arguments up from the constructor's signature.
+ 
+- title: Polymorphism in Solidity
+  shortTitle: Polymorphism
+  key: polymorphism
+  details: |
+    It is an ability to process data in more than one form.
+  
+    Solidity supports two types of polymorphism.
+      - Function polymorphism
+        * It is also known as method overloading.
+        * Multiple functions are declared to have the same name within the same contract or inheriting the contract.
+        * Functions differ based on the number of parameters or parameter datatypes.
+        * Declaration of function cannot be overloaded by functions that differ only in return type.
+      
+      - Contract polymorphism
+        * Using multiple contract instances interchangeably when they are related to each other by using inheritance.
+ 
+- title: Constructor for Solidity
+  shortTitle: Constructor
+  key: constructor
+  details: |
+    It is a special method in any object-oriented programming language that gets called whenever an object of a class is initialized.
+    Solidity provides a constructor declaration inside the smart contract, and it invokes only once when the contract is deployed and is used to initialize the contract state.
+    The compiler creates a default constructor if there is no explicitly defined constructor.
+  
+    Syntax
+      ```
+      solidity
+      constructor() <Access Modifier> {         
+      }
+      ```
+  
+    Note
+      * It is very useful in a smart contract, a parameter value can be defined at the run time and can also restrict the method call.
+      * Constructor overloading is not supported in Solidity; it only allows one constructor at a time.
+ 
+- title: Abstraction in Solidity
+  shortTitle: Abstraction
+  key: abstraction
+  details: |
+    Hiding the implementation details and showing only important/useful parts to the user.
+  
+      - Abstract Contract
+        * These are contracts that have partial function definitions. One cannot create an instance of an abstract contract.
+        * It must be inherited by a child contract for utilizing its functions.
+        * Abstract contracts help define a contract's structure, and any class inheriting from it must ensure to provide an implementation for them.
+        * If the child contract does not provide the implementation for incomplete functions, even its instance cannot be created.
+        * A contract becomes an abstract class if it has functioned without implementation.
+        * There is no Solidity-provided keyword to mark a contract as abstract.
+      
+      - Interface
+        * These are like abstract contracts, but there are differences.
+        * Interfaces cannot contain any definition.
+        * They can only contain function declarations, which means functions in interfaces cannot contain any code.
+        * An interface can contain only the signature of functions.
