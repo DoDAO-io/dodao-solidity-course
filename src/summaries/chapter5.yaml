@@ -6,8 +6,7 @@
     It refers to the mechanism of manipulating the scope of variables, i.e., restricting the variable's access outside the scope.
   
     Syntax
-      ```
-      solidity
+      ```solidity
       // Unlike in Java,
       // the data type comes before the visibility modifier in Solidity
       uint public num;
@@ -57,8 +56,7 @@
       * Simply, they are referred to as parent-child contracts.
     
     Syntax
-      ```
-      solidity
+      ```solidity
         contract <Derived Contract Name> is <Base Contract Name>{
       }
       ```
@@ -87,15 +85,94 @@
     It is an ability to process data in more than one form.
   
     Solidity supports two types of polymorphism.
+      - Note
+        - Function overriding
+          * When the base class and derived class have member functions with exactly the same name, same return-type, and same arguments list.
+        
+        - Function overloading
+          * A set of different functions that happen to have the same name differ by their parameters.
+
       - Function polymorphism
         * It is also known as method overloading.
         * Multiple functions are declared to have the same name within the same contract or inheriting the contract.
         * Functions differ based on the number of parameters or parameter datatypes.
         * Declaration of function cannot be overloaded by functions that differ only in return type.
       
+        ```solidity
+          // Solidity program to demonstrate
+          // Function Polymorphism
+          pragma solidity ^0.5.0;
+            
+          // Contract definition
+          contract methodOverloading {
+            
+              // function to get value of 
+              // the unsigned integer variable 
+              function getData(uint _n) public pure returns(uint){
+                  return _n;
+              }
+                
+              // Function to get value 
+              // of the string variable
+              function getData(string memory _str) public pure returns(string memory){
+                  return _str;
+              }
+          }
+        ```
       - Contract polymorphism
         * Using multiple contract instances interchangeably when they are related to each other by using inheritance.
  
+        ```solidity
+        // Solidity program to demonstrate Contract Polymorphism
+        pragma solidity >=0.4.22 <0.6.0;
+
+        contract parent{  
+          uint internal sum;
+          
+          // Function to set the value of
+          // internal state variable sum
+          function setValue(uint _num1, uint _num2) public {
+            sum = _num1 + _num2;
+          }
+
+          // Function to return a value 10
+          function getValue() public view returns(uint) {
+            return 10;
+          }
+        }
+
+        // Defining child contract
+        contract child is parent{
+          
+          // Function getValue overloaded
+          // to return internal state
+          // variable sum defined in the
+          // parent contract
+          function getValue() public view returns(uint) {
+            return sum;
+          }
+        }
+
+        // Defining calling contract
+        contract ContractPolymorphism {
+          
+          // Creating object
+          parent pc = new child();
+            
+          // Function to set values
+          // of 2 unsigned integers
+          function getInput(uint _num1, uint _num2) public {
+            pc.setValue(_num1, _num2);
+          }
+
+          // Function to get value of
+          // internal state variable sum
+          function getSum() public view returns(uint){
+            return pc.getValue();
+          }
+        }
+        ```
+
 - title: Constructor for Solidity
   shortTitle: Constructor
   key: constructor
@@ -105,8 +182,7 @@
     The compiler creates a default constructor if there is no explicitly defined constructor.
   
     Syntax
-      ```
-      solidity
+      ```solidity
       constructor() <Access Modifier> {         
       }
       ```
@@ -134,3 +210,85 @@
         * Interfaces cannot contain any definition.
         * They can only contain function declarations, which means functions in interfaces cannot contain any code.
         * An interface can contain only the signature of functions.
+
+        ```solidity
+        // Solidity program to
+        // demonstrate the working
+        // of the interface
+
+        pragma solidity ^0.5.0;
+        interface InterfaceExample{
+          function getStr() public view returns(string memory);
+        }
+
+        // Contract that implements interface
+        contract thisContract is InterfaceExample{
+
+          // Function definitions of functions
+          // declared inside an interface
+          function getStr() public view returns(string memory){
+            return "GeeksForGeeks";
+          }
+        }
+        ```
+
+- title: Libraries in Solidity
+  shortTitle: Library
+  key: library
+  details: |
+      - Highlights
+        * A library has functions that can be called by other contracts. 
+        * Deploying a common code by creating a library reduces the gas cost. 
+        * Functions of the library can be called directly when they do not modify the state variables i.e. only pure and view   functions can be called from outside of the library. 
+        * It cannot be destroyed because it is assumed as stateless. 
+        * The library does not have state variables, it cannot inherit any element and cannot be inherited.
+
+      - Creating library
+        ```solidity
+        library <libraryName> {
+            // block of code
+        }
+        ```
+
+      - Deploying library
+
+        ```solidity
+        // import <libraryName> from “./library-file.sol”;
+
+        // Solidity program to demonstrate 
+        // how to deploy a library
+        pragma solidity ^0.5.0;
+
+        // Defining Library
+        library LibraryExample {
+            function pow(uint a, uint b) public view returns (uint, address) {
+                return (a ** b, address(this));
+            }
+        }
+
+        // library deployed with for keyword
+
+        contract LibExample {
+            
+          // Deploying library using 
+          // "for" keyword
+          using LibraryExample for unit;
+          address owner = address(this);
+            
+          function getPow(uint num1, uint num2) public view returns (uint, address) {
+              return num1.pow(num2);
+          }
+        }
+
+        // library can be used without for keyword
+
+        contract LibExample2{
+
+          // Deploying library without using 
+          // "for" keyword
+          
+          function getPow(uint num1, uint num2) public view returns (uint, address) {
+                return LibraryExample.pow(num1, num2);
+          }
+        }
+        ```
