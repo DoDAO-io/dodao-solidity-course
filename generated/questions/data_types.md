@@ -766,7 +766,7 @@ Sub Topics: reference-types, mapping-type
 ---
 
 ##### On execution of the following code what will be the value of balance?
-```
+```solidity
    uint8 balance = 255;
    balance++;
 ```
@@ -803,7 +803,7 @@ Sub Topics: reference-types
 ---
 
 ##### Look at the code snippet below,
-```
+```solidity
            pragma solidity ^0.5.0;
            contract SolidityTest {
              uint storedData;     
@@ -849,7 +849,7 @@ Sub Topics: value-types
 ---
 
 ##### Consider the following code snippet ,
-```
+```solidity
               pragma solidity ^0.5.0;
               contractC {
                 function foo(uint a) pure public returns (uint){
@@ -892,13 +892,13 @@ Sub Topics: value-types
 
 ##### Variable packing is one way solidity optimizes gas costs in storage state variables . Consider the following two examples of variable declarations.
 Example 1 -
-  ```
+  ```solidity
          uint128 a;
          uint256 b;
          uint128 c;
   ```
 Example 2 -
-  ```
+  ```solidity
          uint128 a;
          uint128 c;
          uint256 b;
@@ -921,7 +921,7 @@ Sub Topics: value-types
 ---
 
 ##### Consider the following code snippet ,
-  ```
+  ```solidity
   // SPDX-License-Identifier: GPL-3.0
   pragma solidity ^0.8.8;
   contract test {

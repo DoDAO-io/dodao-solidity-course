@@ -4,7 +4,9 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  ---
 
  ## Solidity Course
- This is a Solidity Course
+ Smart contracts allow users to implement conditions, rules and policies of the blockchain applications. 
+In this course you will learn how to write smart contracts and all the features of Solidity language.
+
  
  ## Description
  "Line1" 
