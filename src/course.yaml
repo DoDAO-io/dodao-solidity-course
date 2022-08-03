@@ -1,17 +1,20 @@
 title: Solidity Course
 key: solidity-course
-summary: This is a Solidity Course
+summary: |
+  Smart contracts allow users to implement conditions, rules and policies of the blockchain applications. 
+  In this course you will learn how to write smart contracts and all the features of Solidity language.
 details:  |
   "Line1" 
   "Line2" 
   "Line3"
-duration: 45 - 60 mins
+duration: 4 - 6 hours
 highlights:
-  - Explains in Detail
-  - Summaries for each chapter
-  - MCQ for each chapter
+  - Solidity smart contracts
+  - All the features of Solidity
+  - Advanced Solidity concepts
+  - Summaries and questions for each chapter
 publishStatus: Live
-thumbnail: https://cdn-dfnhb.nitrocdn.com/ncvMSDTJqBfzbhjurpWfVBRIBTRVNXNa/assets/static/optimized/rev-ac80957/wp-content/uploads/2021/08/Services-Page-DeFi-Development.jpg
+thumbnail: https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/Solidity/Solidity.png
 topics:
   - title: Your First Solidity Smart Contract
     key: intro-solidity
