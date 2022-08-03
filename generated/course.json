@@ -3764,7 +3764,7 @@
             "D"
           ],
           "subTopics": [
-            "inheritance"
+            "encapsulation"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -3795,35 +3795,47 @@
           "type": "YoutubeVideo",
           "url": "url",
           "subTopics": [
-            "inheritance"
+            "encapsulation"
           ],
           "details": "details\n"
         }
       ],
       "summaries": [
         {
-          "title": "Encapsulation",
+          "title": "Understanding Encapsulation in Solidity",
           "shortTitle": "Encapsulation",
           "key": "encapsulation",
-          "details": "- variable/function visibilty\n- public\n- private\n- internal\n- external\n"
+          "details": "It refers to the bundling of data, along with the methods that operate on that data, into a single unit.\nIt refers to the mechanism of manipulating the scope of variables, i.e., restricting the variable's access outside the scope.\n\nSyntax\n  ```solidity\n  // Unlike in Java,\n  // the data type comes before the visibility modifier in Solidity\n  uint public num;\n  // <data type> <visibility> <variale name>;\n  ```\n\n- Public\n  * These objects can be accessed internally and externally as well as via messages also.\n  * External methods can inherit public elements.\n  * A getter function is generated automatically when a public variable is created.\n  * However, no setter function is created, implying that the external function can not modify the variable.\n\n- Internal\n  * As the name suggests, Internal objects can be accessed by internal or derived methods but cannot be accessed by external.\n  * Only a base contract and a derived contract have their access.\n\n- Private\n  * Private objects can only be accessed internally from the current contract instances.\n  * They cannot be accessed by derived methods also.\n\n- External\n  * These objects can be accessed externally but not internally, i.e., current contract instances cannot access it.\n  * They cannot be inherited.\n\nState Variable visibility\n  - Public\n  - Internal\n  - Private\n\nFunction visibility\n  - External\n  - Public\n  - Internal\n  - Private\n\nOne should always use the principle of least privilege when determining which level of visibility to use.\n"
         },
         {
-          "title": "Inheritance",
+          "title": "Understanding Inheritance in Solidity",
           "shortTitle": "Inheritance",
           "key": "inheritance",
-          "details": "- linear\n- multiple\n"
+          "details": "Inheritance is the process of defining multiple contracts related to each other through parent-child relationships.\n\nSolidity supports inheritance between smart contracts.\n  * Base contract: The contract from which other contracts inherit features.\n  * Derived contract: The contract which inherits the features.\n  * Simply, they are referred to as parent-child contracts.\n\nSyntax\n  ```solidity\n    contract <Derived Contract Name> is <Base Contract Name>{\n  }\n  ```\n\nSolidity provides different types of inheritance.\n  - Single Inheritance\n    * In Single or single-level inheritance, the functions, and variables of one base contract are inherited to only one derived contract.\n    \n  - Multi-level Inheritance\n    * Very similar to single inheritance.\n    * Instead of just a single parent-child relationship, there are multiple levels of the parent-child relationship.\n\n  - Hierarchical Inheritance\n    * Here, a single contract acts as a base contract for multiple derived contracts.\n    * It is mostly used when a common functionality is used in different places.\n\n  - Multiple Inheritance\n    * Here, a single contract can be inherited from one or more contracts.\n  \nNote : Solidity follows the path of Python and uses C3 Linearization, also known as Method Resolution Order (MRO), to force a specific order in graphs of base contracts. The order of execution is determined by order of the declaration at the contract level. It has nothing to do with the order you call/pass arguments up from the constructor's signature.\n"
         },
         {
-          "title": "Polymorphism",
+          "title": "Polymorphism in Solidity",
           "shortTitle": "Polymorphism",
           "key": "polymorphism",
-          "details": "- function/modifier overloading \n"
+          "details": "It is an ability to process data in more than one form.\n\nSolidity supports two types of polymorphism.\n  - Note\n    - Function overriding\n      * When the base class and derived class have member functions with exactly the same name, same return-type, and same arguments list.\n    \n    - Function overloading\n      * A set of different functions that happen to have the same name differ by their parameters.\n\n  - Function polymorphism\n    * It is also known as method overloading.\n    * Multiple functions are declared to have the same name within the same contract or inheriting the contract.\n    * Functions differ based on the number of parameters or parameter datatypes.\n    * Declaration of function cannot be overloaded by functions that differ only in return type.\n  \n    ```solidity\n      // Solidity program to demonstrate\n      // Function Polymorphism\n      pragma solidity ^0.5.0;\n        \n      // Contract definition\n      contract methodOverloading {\n        \n          // function to get value of \n          // the unsigned integer variable \n          function getData(uint _n) public pure returns(uint){\n              return _n;\n          }\n            \n          // Function to get value \n          // of the string variable\n          function getData(string memory _str) public pure returns(string memory){\n              return _str;\n          }\n      }\n    ```\n  - Contract polymorphism\n    * Using multiple contract instances interchangeably when they are related to each other by using inheritance.\n\n    ```solidity\n    // Solidity program to demonstrate Contract Polymorphism\n    pragma solidity >=0.4.22 <0.6.0;\n\n    contract parent{  \n      uint internal sum;\n      \n      // Function to set the value of\n      // internal state variable sum\n      function setValue(uint _num1, uint _num2) public {\n        sum = _num1 + _num2;\n      }\n\n      // Function to return a value 10\n      function getValue() public view returns(uint) {\n        return 10;\n      }\n    }\n\n    // Defining child contract\n    contract child is parent{\n      \n      // Function getValue overloaded\n      // to return internal state\n      // variable sum defined in the\n      // parent contract\n      function getValue() public view returns(uint) {\n        return sum;\n      }\n    }\n\n    // Defining calling contract\n    contract ContractPolymorphism {\n      \n      // Creating object\n      parent pc = new child();\n        \n      // Function to set values\n      // of 2 unsigned integers\n      function getInput(uint _num1, uint _num2) public {\n        pc.setValue(_num1, _num2);\n      }\n\n      // Function to get value of\n      // internal state variable sum\n      function getSum() public view returns(uint){\n        return pc.getValue();\n      }\n    }\n    ```\n"
         },
         {
-          "title": "Abstract Contracts and Interfaces",
-          "shortTitle": "Abstract Contracts and Interfaces",
-          "key": "interfaces-abstract-contracts",
-          "details": "- Abstract Contracts\n- Interfaces\n"
+          "title": "Constructor for Solidity",
+          "shortTitle": "Constructor",
+          "key": "constructor",
+          "details": "It is a special method in any object-oriented programming language that gets called whenever an object of a class is initialized.\nSolidity provides a constructor declaration inside the smart contract, and it invokes only once when the contract is deployed and is used to initialize the contract state.\nThe compiler creates a default constructor if there is no explicitly defined constructor.\n\nSyntax\n  ```solidity\n  constructor() <Access Modifier> {         \n  }\n  ```\n\nNote\n  * It is very useful in a smart contract, a parameter value can be defined at the run time and can also restrict the method call.\n  * Constructor overloading is not supported in Solidity; it only allows one constructor at a time.\n"
+        },
+        {
+          "title": "Abstraction in Solidity",
+          "shortTitle": "Abstraction",
+          "key": "abstraction",
+          "details": "Hiding the implementation details and showing only important/useful parts to the user.\n\n  - Abstract Contract\n    * These are contracts that have partial function definitions. One cannot create an instance of an abstract contract.\n    * It must be inherited by a child contract for utilizing its functions.\n    * Abstract contracts help define a contract's structure, and any class inheriting from it must ensure to provide an implementation for them.\n    * If the child contract does not provide the implementation for incomplete functions, even its instance cannot be created.\n    * A contract becomes an abstract class if it has functioned without implementation.\n    * There is no Solidity-provided keyword to mark a contract as abstract.\n  \n  - Interface\n    * These are like abstract contracts, but there are differences.\n    * Interfaces cannot contain any definition.\n    * They can only contain function declarations, which means functions in interfaces cannot contain any code.\n    * An interface can contain only the signature of functions.\n\n    ```solidity\n    // Solidity program to\n    // demonstrate the working\n    // of the interface\n\n    pragma solidity ^0.5.0;\n    interface InterfaceExample{\n      function getStr() public view returns(string memory);\n    }\n\n    // Contract that implements interface\n    contract thisContract is InterfaceExample{\n\n      // Function definitions of functions\n      // declared inside an interface\n      function getStr() public view returns(string memory){\n        return \"GeeksForGeeks\";\n      }\n    }\n    ```\n"
+        },
+        {
+          "title": "Libraries in Solidity",
+          "shortTitle": "Library",
+          "key": "library",
+          "details": "- Highlights\n  * A library has functions that can be called by other contracts. \n  * Deploying a common code by creating a library reduces the gas cost. \n  * Functions of the library can be called directly when they do not modify the state variables i.e. only pure and view   functions can be called from outside of the library. \n  * It cannot be destroyed because it is assumed as stateless. \n  * The library does not have state variables, it cannot inherit any element and cannot be inherited.\n\n- Creating library\n  ```solidity\n  library <libraryName> {\n      // block of code\n  }\n  ```\n\n- Deploying library\n\n  ```solidity\n  // import <libraryName> from “./library-file.sol”;\n\n  // Solidity program to demonstrate \n  // how to deploy a library\n  pragma solidity ^0.5.0;\n\n  // Defining Library\n  library LibraryExample {\n      function pow(uint a, uint b) public view returns (uint, address) {\n          return (a ** b, address(this));\n      }\n  }\n\n  // library deployed with for keyword\n\n  contract LibExample {\n      \n    // Deploying library using \n    // \"for\" keyword\n    using LibraryExample for unit;\n    address owner = address(this);\n      \n    function getPow(uint num1, uint num2) public view returns (uint, address) {\n        return num1.pow(num2);\n    }\n  }\n\n  // library can be used without for keyword\n\n  contract LibExample2{\n\n    // Deploying library without using \n    // \"for\" keyword\n    \n    function getPow(uint num1, uint num2) public view returns (uint, address) {\n          return LibraryExample.pow(num1, num2);\n    }\n  }\n  ```\n"
         }
       ]
     }

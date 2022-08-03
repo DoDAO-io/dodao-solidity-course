@@ -12,5 +12,5 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  details
     
  
- Sub Topics: inheritance    
+ Sub Topics: encapsulation    
  

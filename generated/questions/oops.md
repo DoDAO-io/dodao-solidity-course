@@ -19,5 +19,5 @@ Hint: noHint
          
 Explanation: explanation
 
-Sub Topics: inheritance
+Sub Topics: encapsulation
  

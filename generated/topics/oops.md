@@ -10,6 +10,6 @@ Solidity is an object oriented programming language . This chapters explains how
 ## Links
 [Reading List](./../../generated/readings/oops.md)
 
-[Summary](./../../generated/summaries/oops.md)
+[Summary](./../../generated/summaries/chapter5.md)
 
 [Questions](./../../generated/questions/oops.md)
