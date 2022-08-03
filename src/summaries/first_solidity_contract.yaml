@@ -33,7 +33,9 @@
       * For example, `pragma solidity ^0.4.0;`,  the pragma for a file using the above statement will not compile earlier than version 0.4.0 and it will also not work on a compiler starting from version 0.5.0, this condition is taken care off by ^. 
       * Another example is, `pragma solidity >=0.6.0 <0.8.0;` where the pragma directive instructs the compiler to compile code for Solidity version greater than equal to 0.6.0 till up to but not including 0.8.0.
       * #TODO - ABI encoder pragma
-    - Single-line comments (//) and multi-line comments (/*...*/) are possible. Any text after // or between /* and */ is ignored by the compiler.
+
+    - Comments
+      * Single-line comments (//) and multi-line comments (/*...*/) are possible. Any text after // or between /* and */ is ignored by the compiler.
         ```
         // This is a single-line comment.
 
@@ -42,6 +44,21 @@
         multi-line comment.
         */
         ```
+      * You can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.
+      * You should insert all documentation using comments before class, interface, and function keywords.
+      * You can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.
+        ```
+        /// @author ishaan
+
+        /**
+        @notice introducing Solidity NAtSpec comments.
+        This is a
+        multi-line comment.
+        /*
+        ```
+      * NAtSpec comments ca be used with oprional tags , in the above code snippet @author shows the name of the author and @notice explain to an end user what it does.
+      * The Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.
+
     - Imports
       * Solidity supports import statements to modularise code similar to those available in JavaScript (from ES6 on).
       * At a global level, you can use import statements of the following form: `import "filename";`. This statement imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. 
@@ -132,6 +149,17 @@
             product = a * b;
         }
         ```
+      * Solidity has a fallback function which is executed if none of the other functions match the function identifier or no data was provided with the function call. 
+      * Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.
+      * Check the following code to declare a fallback function.
+        ```
+        function() public payable
+        {
+            balance[msg.sender] += msg.value;
+        }
+        ```
+        The above fallback function is called in two cases- A contract receives only Ether and no data,
+        or when no function calls matched even though the account received data.
       * Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.
         ```
         contract ViewAndPure {

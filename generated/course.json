@@ -19,14 +19,15 @@
       "order": 0,
       "questions": [
         {
-          "uuid": "7f269731-98d7-41d1-a041-f83016aadaf1",
+          "uuid": "0dfd7a32-7eb3-4751-b35e-7f3b9ca775bc",
           "type": "MultipleChoice",
-          "content": "question",
+          "content": "Which of the following is a valid pragma verion declaration in Solidity?",
           "hint": "noHint",
-          "explanation": "explanation",
+          "explanation": "pragma solidity 0.6.12  - Only compiles with version 0.6.12\npragma solidity ^0.6.12 - Compiles with version 0.6.12 and above\npragma solidity >=0.4.0 <0.6.0 - Compiles with all versions between 0.4.0 and 0.6.0.\n",
           "answerKeys": [
+            "A",
             "B",
-            "D"
+            "C"
           ],
           "subTopics": [
             "solidity-compiler"
@@ -34,20 +35,1798 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "content": "1",
-              "key": "A"
+              "content": "`pragma solidity 0.6.12;`",
+              "key": "A",
+              "order": 0
             },
             {
-              "content": "2",
-              "key": "B"
+              "content": "`pragma solidity ^0.6.12;`",
+              "key": "B",
+              "order": 1
             },
             {
-              "content": "3",
-              "key": "C"
+              "content": "`pragma solidity >=0.4.0 <0.6.0;`",
+              "key": "C",
+              "order": 2
             },
             {
-              "content": "4",
-              "key": "D"
+              "content": "`pragma solidity -0.5.2;`",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "85f2abbc-9acb-4ebe-a624-3c952da70b22",
+          "type": "SingleChoice",
+          "content": "A Solidity Contract file has a pragma versioning `pragma solidity ^0.5.2;`. With which of the following compilers will the contract run?",
+          "hint": "Think of what condition is applicable with `^` symbol in solidity versioning.",
+          "explanation": "A source file with the line above does not compile with a compiler earlier than version 0.5.2, and it also does not work on a compiler starting from version 0.6.0 (this second condition is added by using ^).",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "solidity-compiler"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Compiler version 0.5.1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "Compiler version 0.4.1",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "Compiler version 0.5.5",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "Compiler version 0.6.1",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "6bc53ece-fffd-4f7f-bb54-c8200d629d16",
+          "type": "MultipleChoice",
+          "content": "Which of the following statements is incorrect regarding pragmas in solidity?",
+          "hint": "ABI coder pragma can be used to select between the two implementations of the ABI encoder and decoder and experimental pragma can be used to enable features of the compiler or language that are not yet enabled by default.",
+          "explanation": "The pragma keyword is used to enable certain compiler features or checks. A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project. If you import another file, the pragma from that file does not automatically apply to the importing file.\nBy using pragma abicoder v1 or pragma abicoder v2 you can select between the two implementations of the ABI encoder and decoder. It can be used to enable features of the compiler or language that are not yet enabled by default. The following experimental pragmas are currently supported: ABIEncoderV2 , SMTChecker.\n",
+          "answerKeys": [
+            "A",
+            "D"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "In Solidity `pragma` keyword is only used to specify the version of the compiler the code should compile with.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "The `pragma` keyword is used to enable certain compiler features or checks.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "The following code will only compile with compiler version 0.6.12, `pragma solidity 0.6.12;`.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "If you import another file, the pragma from that file will automatically apply to the importing file.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "d336edf3-75ef-43c7-b77d-74bafcaa92b9",
+          "type": "SingleChoice",
+          "content": "Which of the following pragma declarations is incorrect?",
+          "hint": "noHint",
+          "explanation": "By using pragma abicoder v1 or pragma abicoder v2 you can select between the two implementations of the ABI encoder and decoder.\nIf you use pragma experimental SMTChecker;, then you get additional safety warnings which are obtained by querying an SMT solver.\n",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "pragma experimental SMTChecker;",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "pragma abicoder v1;",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "pragma solidity ^0.5.2;",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "pragma version 0.6.2;",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "1e3de4e3-fd09-446a-ba8a-2d223b59f587",
+          "type": "SingleChoice",
+          "content": "If you want to import a sile in your solidity code which of the following will be a correct but inefficient way to do so?",
+          "hint": "All import statements are correct.",
+          "explanation": "The statement `import \"filename\";` imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. It is better to import specific symbols explicitly.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "import * as symbolName from \"filename\";",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "import \"filename\" as symbolName;",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "import {symbol1 as alias, symbol2} from \"filename\";",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "import \"filename\";",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "f3f566ee-680f-40e0-be77-d8b3572c154c",
+          "type": "SingleChoice",
+          "content": "In the context of the following comment `// SPDX-License-Identifier: MIT` which of the following statements is incorrect?",
+          "hint": "noHint",
+          "explanation": "The compiler does not validate that the license is part of the list allowed by SPDX, but it does include the supplied string in the bytecode metadata.\nThe comment is recognized by the compiler anywhere in the file at the file level, but it is recommended to put it at the top of the file.\nThe liscense should be one from the the list given in the SPDX. \n",
+          "answerKeys": [
+            "A",
+            "C"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "This comment gets validated by the solidity compiler and then supplies the string in the bytecode metadata.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "The comment is recognized by the compiler anywhere in the file at the file level.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "Only MIT liscense should be used to validate smart contracts.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "If you do not want to specify a license or if the source code is not open-source, you can use the special value UNLICENSED.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "70f2e739-5097-4606-be32-9fc2dc766c0e",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "25239107-bb81-48b8-9485-9c8df81a5514",
+          "type": "MultipleChoice",
+          "content": "Which of the following comments is invalid in a Solidity Code?",
+          "hint": "noHint",
+          "explanation": "Single-line comments (//) and multi-line comments (/*...*/) are possible in Solidity. \nAdditionally, there is another type of comment called a NatSpec comment, they are written with a triple slash (///) or a double asterisk block (/** ... */) and they should be used directly above function declarations or statements.\n",
+          "answerKeys": [
+            "A",
+            "D"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "/This is a single line comment.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "//This is a single line comment.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "///This is a single line comment.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "/*This is a single line comment.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "6de1c98d-d533-4b04-937c-6f90db4fc63e",
+          "type": "MultipleChoice",
+          "content": "In the context of NatSpec comments which of the following is true?",
+          "hint": "Solidity supports NatSpec comments in addition to the simple single/multi line comments.",
+          "explanation": "NatSpec stands for Ethereum Natural Language Specification Format.\nIf no tags are used then the Solidity compiler will interpret a /// or /** comment in the same way as if it were tagged with @notice.\nThe Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.\n",
+          "answerKeys": [
+            "A",
+            "C"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "NatSpec stands for Ethereum Natural Language Specification Format.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "NatSpec comments provide tags and in case if no tags are used , the solidity compiler will interpret (///) as (//).",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "The Solidity compiler only interprets tags if they are external or public.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "Comments in solidity can only be made using (//) for Single-line and (/*...*/) for multi-line.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "e854f94d-5e49-4e3f-9e2a-0f8a1a4d1f83",
+          "type": "SingleChoice",
+          "content": "Regarding constructors in solidity which statement is correct?",
+          "hint": "Only one constructor is allowed.",
+          "explanation": "A constructor is optional. Only one constructor is allowed, which means overloading is not supported.\nAfter the constructor has executed, the final code of the contract is stored on the blockchain. \nThe deployed code does not include the constructor code or internal functions only called from the constructor.\n",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Constructor overloading is supported.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "A constructor is optional.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "The contract deployed on the blockchain will also contain the constructor code.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "None of these",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "611c7208-9eb2-4c4a-8d10-160081de6710",
+          "type": "SingleChoice",
+          "content": "Which of the options regarding the statements below are correct?\nStatement 1 - A contract in the sense of Solidity is a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain.\nStatement 2 - Contracts in Solidity are similar to classes in object-oriented languages.\n",
+          "hint": "noHint",
+          "explanation": "Contracts in Solidity are similar to classes in object-oriented languages. They contain persistent data in state variables, and functions that can modify these variables.\n",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Statement 1 is correct but Statement 2 is incorrect.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "Statement 2 is correct but Statement 1 is incorrect.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "Both are correct.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "Neither is correct.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "b8e4a65e-683e-43a0-b0c1-7f6271177181",
+          "type": "SingleChoice",
+          "content": "Which of the following options are correct based on the code snippet below?\n```\ncontract OriginCoordinates {\n    uint constant x_coordinate;\n    uint immutable y_coordinate;\n\n    constructor(){\n        x_coordinate=0;\n        y_coordinate=0;\n    }\n\n\n    function get() public view returns (uint,uint) {\n        return (x_coordinate,y_coordinate);\n    }\n}\n```\n",
+          "hint": "Check the declaration of the state variables.",
+          "explanation": "The state variable x_coordinate cannot be initialized in the constructor as it is declared as constant.\nFor constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time.\n",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "This code will not compile as solidity functions cannot have multipe return values.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "This code will not compile because State Variables declared immutable cannot be initialised in a constructor.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "This code will not compile because State Variables declared constant cannot be initialised in a constructor.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "The code has no errors and can be deployed.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "5e40d1c1-0bbc-45f6-ae2e-eeee3715168b",
+          "type": "MultipleChoice",
+          "content": "Which of the following statements is correct regarding functions ?",
+          "hint": "noHint",
+          "explanation": "Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.\n",
+          "answerKeys": [
+            "A",
+            "C",
+            "D"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Functions outside of a contract are also called 'free functions'.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "Functions declared as view can modify the state variables.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "In Solidity the function is simply invoked by writing the name of the function where it has to be called.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "Functions can have multiple return values.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "c60393ac-3492-4d4b-a7c7-ecee0e09e9d7",
+          "type": "MultipleChoice",
+          "content": "Which of the following options is correct regarding \"free functions\"?",
+          "hint": "Free functions in Solidity are functions created outside of the scope of a contract.",
+          "explanation": "A free function behaves like an internal function of the contract that called it. \nThe main difference is that a free function cannot directly access state variables and internal functions of contracts.\n",
+          "answerKeys": [
+            "B",
+            "D"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Free functions in solidity are functions declared inside a contract with public Visibility.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "Their code is included in all contracts that call them.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "They can access state variables and internal functions directly.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "A free function behaves like an internal function of the contract that called it.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "c97bee69-c7c1-4932-a6f8-60c2cf4df840",
+          "type": "SingleChoice",
+          "content": "What does the following syntax do? \n`import * as symbolName from \"filename\";`\n",
+          "hint": "noHint",
+          "explanation": "The following example creates a new global symbol symbolName whose members are all the global symbols from \"filename\":\n`import * as symbolName from \"filename\";` which results in all global symbols being available in the format symbolName.symbol.\n",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "file-layout"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "This statement imports all global symbols from “filename” into the current global scope.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "This statement creates a new global symbol symbolName whose members are all the global symbols from \"filename\".",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "This statement imports symbolName member from \"filename\".",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "None of these.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "985403b3-673a-4017-9099-76a5cc0d5f10",
+          "type": "SingleChoice",
+          "content": "In which scenarios is a fallback function triggered?",
+          "hint": "noHint",
+          "explanation": "A fallback function is called in two cases- A contract receives only Ether and no data,\nor when no function calls matched even though the account received data.\n",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Contract received ether and no data.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "Contract received data but no function matched the function called.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "Contract sent insufficient gas.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "Both A & B",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "2f2949ba-7998-425b-adf0-8f5fac5541bc",
+          "type": "SingleChoice",
+          "content": "Remix IDE is used for the development of small contracts. What does IDE stand for?",
+          "hint": "noHint",
+          "explanation": "Remix IDE is part of the Remix Project which can be used for the development of small contracts and for quickly learning Solidity. IDE stands for Integrated Development Environment.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "solidity-compiler"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Integrated Development Engine",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "Integrated Development Environment",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "Integrated DApp Engin",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "Internet Development Environment",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "e288ce1e-aa2e-48b1-9878-f7133359198c",
+          "type": "SingleChoice",
+          "content": "What happens when an event is called ?",
+          "hint": "noHint",
+          "explanation": "Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "When called, events flag an error to the caller.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "They provide a condition under which event a function calling the event should be executed.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "They cause the arguments to be stored in the transactions log - a special data structure in the blockchain.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "None of these.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "138e8326-fe39-421f-ae9e-ac5a6cfb0ad0",
+          "type": "MUltipleChoice",
+          "content": "What are events used for?",
+          "hint": "When called, events cause the arguments to be stored in the transactions log - a special data structure in the blockchain.",
+          "explanation": "Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.\nAll information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts. \n",
+          "answerKeys": [
+            "A",
+            "C"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Events can be used to communicate with external users about a transaction that happened on the blockchain.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "They are used for error handling.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "They can be used to inform a user of any action that happened on the blockchain and can thus ease the development of outside systems in cooperation with smart contracts.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "None of these.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "42d7664b-47e1-4f1e-9162-af63a8c0db22",
+          "type": "MultipleChoice",
+          "content": "In the following snippet, what is the purpose of the code?\n```\naddress owner;\nstring private name;\nconstructor() {\n  owner = msg.sender;\n}\nmodifier onlyOwner() {\n  require(msg.sender == owner, 'Not Owner');\n  _;\n}\nfunction setName(string memory newName) public onlyOwner{\n  name = newName;\n}\n```\n",
+          "hint": "Function modifiers can be used to change the behaviour of functions in a declarative way.",
+          "explanation": "In the code, constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner. the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.",
+          "answerKeys": [
+            "A",
+            "B",
+            "D"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Upon contract creation, the owner address is initialized to the user who deployed the contract.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "The function setName can only be called by the owner of the contract.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "onlyOwner is a function which will throw an error each time it is called by a non-owner.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "onlyOwner can be used to modify the behaviour of a function.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "d8609639-3532-48ff-8f33-7ae8ce2ade62",
+          "type": "SingleChoice",
+          "content": "Which of the following can be used to restrict access of a function?",
+          "hint": "noHint",
+          "explanation": "Modifiers assist in the execution of a functions behavior. They can be used to restrict access of a function.\n",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "function",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "function modifier",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "event",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "constructor",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "33eab1f8-3a7c-4cd9-8c0d-f42a2f9f4fd3",
+          "type": "SingleChoice",
+          "content": "Where is `_;` instruction used in Solidity?",
+          "hint": "noHint",
+          "explanation": "In Solidity, `_;` is used inside a modifier to specify when the function should be executed.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It is used in a function.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "It is used in aconstructor.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "It is used in a modifier.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "It can be used anywhere at the file level.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "aa3caf4e-b9d8-46f9-95ac-d588df2558a7",
+          "type": "SingleChoice",
+          "content": "What is the returned value when `set` is called first then `get`.\n```\ncontract UnderScore {\n    uint a;\n    constructor(){\n        a=10;\n    }\n    modifier m(){\n      _;\n      if(a<=15){\n          a=a+10;\n      }\n    }\n    function set() public m {\n        a=a+10;\n    }\n    function get() public view returns (uint) {\n        return a;\n    }\n}\n```\n",
+          "hint": "Notice how the function set will execute because of the modifier m.",
+          "explanation": "In Solidity, `_;` is used inside a modifier to specify when the function should be executed. As the modifier has `_;` before the modifier statements, so the function code will execute first and then the modifier code. The function set will update the value of a to 20 and then the modifier code will check if the value is greater than 15 or not.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "10",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "15",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "20",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "30",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "07881a7f-600c-4bfc-baf9-787f3fa70700",
+          "type": "SingleChoice",
+          "content": "Which of the following is a correct declaration of a function ?",
+          "hint": "noHint",
+          "explanation": "The basic syntax of a function is shown below.\n```\n  function function-name(parameter-list) scope returns() {\n    //statements\n  }\n```\n",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "contract-structure"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "public function foo() view returns(){}",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "public view function foo() returns(){}",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "function foo() view returns() public{}",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "function foo() public view returns(){}",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "0767755b-6790-44cd-8364-7c56acb77457",
+          "type": "SingleChoice",
+          "content": "Which of the following options are true regarding the statements below.  \nStatement 1 - A constructor can be either public or internal.  \nStatement 2 - A constructor code is executed once when a contract is created and it is used to initialize contract state.\n",
+          "hint": "noHint",
+          "explanation": "A constructor is an optional funtion and is used to initialize state variables of a contract.\nIt is executed once when a contract is created and it is used to initialize contract state.\nA constructor can be either public or internal.\n",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Statement 1 is true but Statement 2 is false.",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "Statement 2 is true but Statement 1 is false.",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "Both are true.",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "Neither is true.",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "77cd176f-04d5-464d-86fa-64992e2d4db8",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "421abb3d-6f87-4e4a-a22f-af467d34035b",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "2fb21e8c-429e-4229-817b-6077c945fca0",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "f6d9abaf-0f05-4376-ad34-58c366ebee76",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "437f24c0-fa13-4ac8-bd39-3c4649aadb0c",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "38d84a22-7517-4aaf-9018-75b533aa3e7e",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "d73be206-d0fe-4f75-b6d3-693275d1b069",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "a8f4d89b-bfc8-4dc0-8f9e-5aab0088f13a",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "61bc26de-8555-40ef-8f26-8235ada76c94",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "4b1b0494-f540-4a22-af9a-bdd791fb2834",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "411289f8-19ca-4f57-8bd1-c55aea028b5a",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "c513ceac-7031-4473-aaa0-d17870eeeb0a",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "3c2e68b2-0577-411b-8980-2389c0d859ac",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "734e92a7-07e9-43d6-b346-3be5d5e20109",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "c3b40fc3-0ff1-49d8-aa2b-9a454ef568f0",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "c4123a41-b80e-4a83-adc7-7a189e1a6041",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "fea2cad9-970c-40cc-8fa9-ec46f0b3155a",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "6c484192-0531-42ec-a0fc-494132dea432",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "f6231249-cc8e-402b-9536-20dedb877205",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "4ac8bea3-1844-4e91-babf-5cd065d14b4e",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "285aa1cb-75de-4cf8-9d33-8987e14955a7",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "84c2a59c-64aa-4e9b-922d-7ed4ce76b92f",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "3a266ee5-43fc-4cae-b4fd-a32f91375537",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "5ffdf81e-6254-439f-aa8e-2e2fbf7414d6",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "uuid": "d0a9daba-7de0-4b4a-9714-d71f25a21472",
+          "type": "SingleChoice",
+          "content": "question",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "variables"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "option 1",
+              "key": "A",
+              "order": 0
+            },
+            {
+              "content": "option 2",
+              "key": "B",
+              "order": 1
+            },
+            {
+              "content": "option 3",
+              "key": "C",
+              "order": 2
+            },
+            {
+              "content": "option 4",
+              "key": "D",
+              "order": 3
             }
           ]
         }
@@ -76,13 +1855,13 @@
           "title": "Layout of a Source File",
           "shortTitle": "File Layout",
           "key": "file-layout",
-          "details": "- SPDX License Identifier\n  * Trust in smart contracts is better established if their source code is available and open source. Since making it available always touches on legal problems with regards to copyright, the Solidity compiler encourages the use of machine-readable SPDX license identifiers.\n  * Every solidity source file should start with a comment indicating its license. eg. `// SPDX-License-Identifier: MIT` .\n  * The Software Package Data Exchange (SPDX) is an open standard used for communicating licenses , copyrights and security references.\n\n- Pragmas\n  * pragma is a directive used to configure compiler features and checks.\n  * A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project.\n  * If you import another file, the pragma from that file does not automatically apply to the importing file.\n  * A Version pragma is a directive that specifies the compiler version to be used for current Solidity file.\n  * For example, `pragma solidity ^0.4.0;`,  the pragma for a file using the above statement will not compile earlier than version 0.4.0 and it will also not work on a compiler starting from version 0.5.0, this condition is taken care off by ^. \n  * Another example is, `pragma solidity >=0.6.0 <0.8.0;` where the pragma directive instructs the compiler to compile code for Solidity version greater than equal to 0.6.0 till up to but not including 0.8.0.\n  * #TODO - ABI encoder pragma\n- Single-line comments (//) and multi-line comments (/*...*/) are possible. Any text after // or between /* and */ is ignored by the compiler.\n    ```\n    // This is a single-line comment.\n\n    /*\n    This is a\n    multi-line comment.\n    */\n    ```\n- Imports\n  * Solidity supports import statements to modularise code similar to those available in JavaScript (from ES6 on).\n  * At a global level, you can use import statements of the following form: `import \"filename\";`. This statement imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. \n  * The following example creates a new global symbol symbolName whose members are all the global symbols from \"filename\": `import * as symbolName from \"filename\";`\n    which results in all global symbols being available in the format symbolName.symbol.\n  * If there is a naming collision, you can rename symbols while importing. `import {symbol1 as alias, symbol2} from \"filename\";`. \n"
+          "details": "- SPDX License Identifier\n  * Trust in smart contracts is better established if their source code is available and open source. Since making it available always touches on legal problems with regards to copyright, the Solidity compiler encourages the use of machine-readable SPDX license identifiers.\n  * Every solidity source file should start with a comment indicating its license. eg. `// SPDX-License-Identifier: MIT` .\n  * The Software Package Data Exchange (SPDX) is an open standard used for communicating licenses , copyrights and security references.\n\n- Pragmas\n  * pragma is a directive used to configure compiler features and checks.\n  * A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project.\n  * If you import another file, the pragma from that file does not automatically apply to the importing file.\n  * A Version pragma is a directive that specifies the compiler version to be used for current Solidity file.\n  * For example, `pragma solidity ^0.4.0;`,  the pragma for a file using the above statement will not compile earlier than version 0.4.0 and it will also not work on a compiler starting from version 0.5.0, this condition is taken care off by ^. \n  * Another example is, `pragma solidity >=0.6.0 <0.8.0;` where the pragma directive instructs the compiler to compile code for Solidity version greater than equal to 0.6.0 till up to but not including 0.8.0.\n  * #TODO - ABI encoder pragma\n\n- Comments\n  * Single-line comments (//) and multi-line comments (/*...*/) are possible. Any text after // or between /* and */ is ignored by the compiler.\n    ```\n    // This is a single-line comment.\n\n    /*\n    This is a\n    multi-line comment.\n    */\n    ```\n  * You can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\n  * You should insert all documentation using comments before class, interface, and function keywords.\n  * You can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\n    ```\n    /// @author ishaan\n\n    /**\n    @notice introducing Solidity NAtSpec comments.\n    This is a\n    multi-line comment.\n    /*\n    ```\n  * NAtSpec comments ca be used with oprional tags , in the above code snippet @author shows the name of the author and @notice explain to an end user what it does.\n  * The Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.\n\n- Imports\n  * Solidity supports import statements to modularise code similar to those available in JavaScript (from ES6 on).\n  * At a global level, you can use import statements of the following form: `import \"filename\";`. This statement imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. \n  * The following example creates a new global symbol symbolName whose members are all the global symbols from \"filename\": `import * as symbolName from \"filename\";`\n    which results in all global symbols being available in the format symbolName.symbol.\n  * If there is a naming collision, you can rename symbols while importing. `import {symbol1 as alias, symbol2} from \"filename\";`. \n"
         },
         {
           "title": "Structure of a Smart Contract",
           "shortTitle": "Contract Structure",
           "key": "contract-structure",
-          "details": "Contracts in Solidity are similar to classes in object-oriented languages. \nEach contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types.\n\n- State Variables\n  * State variables are variables whose values are permanently stored in contract storage.\n  * In the following code snippet `storedData` is an example of a state variable.\n  ```\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity >=0.4.0 <0.9.0;\n\n  contract SimpleStorage {\n      uint storedData; // State variable\n      // ...\n  }\n  ```\n  * State variables can be declared as `constant` or `immutable`. In both cases, the variables cannot be modified after the contract has been constructed.\n  * For constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time. Constant variables can also be declared at the file level.\n  * Not all types for constants and immutables are implemented at this time. The only supported types are strings (only for constants) and value types.\n  * The example below shows the use of constant and immutable state variables.\n    ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity >=0.7.4;\n\n    uint constant X = 32**22 + 8;\n\n    contract C {\n        string constant TEXT = \"abc\";\n        bytes32 constant MY_HASH = keccak256(\"abc\");\n        uint immutable decimals;\n        uint immutable maxBalance;\n        address immutable owner = msg.sender;\n\n        constructor(uint decimals_, address ref) {\n            decimals = decimals_;\n            maxBalance = ref.balance;\n        }\n    }\n    ```\n\n- Functions \n  * Functions are the executable units of code. \n    Functions are usually defined inside a contract, but they can also be defined outside of contracts.\n  * In the code below helper function is defined outside the contract whearas arithmetic function is declared inside the contract.\n    ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity >=0.7.1 <0.9.0;\n\n    contract Simple {\n        function arithmetic(uint a, uint b)\n            public\n            pure\n            returns (uint sum, uint product)\n        {\n            return (a + b, a * b);\n        }\n    }\n\n    // Helper function defined outside of a contract\n    function helper(uint x) pure returns (uint) {\n        return x * 2;\n    }\n    ```\n  * Functions outside of a contract are also called 'free function' and their code is included in all contracts that call them.\n  * The main difference to functions defined inside a contract is that free functions do not have direct access to storage variables and functions not in their scope.\n  * Functions take typed parameters as input and can also return an arbitrary number of values as output.\n  * In the code snippet above , the contract `Simple` has a function arithmetic which takes two input parameters `uint a` and `uint b`.\n  * The function arithmetic also returns two values `uint sum` and `uint product`.\n  * the return values in a function can also be explicitly assigned to return variables instead of a return statememnt like in the code below.\n    ```\n    function arithmetic(uint a, uint b)\n        public\n        pure\n        returns (uint sum, uint product)\n    {\n        sum = a + b;\n        product = a * b;\n    }\n    ```\n  * Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.\n    ```\n    contract ViewAndPure {\n        uint public x = 1;\n\n        // Promise not to modify the state.\n        function addToX(uint y) public view returns (uint) {\n            return x + y;\n        }\n\n        // Promise not to modify or read from the state.\n        function add(uint i, uint j) public pure returns (uint) {\n            return i + j;\n        }\n    }\n    ```\n    The above view function `addToX` can read the state variable x but cannot update its state whearas the pure function `add` can neither read nor update the state.\n\n- Constructors \n  * A constructor is an optional function declared with the constructor keyword which is executed upon contract creation, and where you can run contract initialisation code.\n  * Before the constructor code is executed, state variables are initialised to their specified value if you initialise them inline, or their default value if you do not.\n  * If there is no constructor, the contract will assume the default constructor, which is equivalent to constructor() {}.\n  * The code snippet below explains the use of a constructor, \n    ```\n      uint public x;\n      uint public y;\n      address public owner;\n      uint public createdAt;\n      Constructor (uint _x, uint _y) public {\n                  x=_x;\n                  y=_y;\n                  owner = msg.sender;\n                  createdAt = block.timestamp;\n    ```\n  * Constructors are very useful in Solidity , if you do not implement a function to change the state variable it will remain as long as the block chain is running. So using a constructor is a way to set a state variable that you do not want to change.\n\n- Events\n  * Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.\n  * Events are defined within the contracts as global and called within their functions. Events are declared by using the event keyword as follows , `event <eventName>(parameters) ;`.\n  * The example below shows the declaration of an event and its use in its function. In this example, the Deposit event is emitted when a user sends Ether to the smart contract with the deposit function.\n\n   ```\n    event Deposit(\n    address indexed from,\n    bytes32 indexed id,\n    uint value\n    );\n\n    function deposit(bytes32 id) public payable {\n        emit Deposit(msg.sender, id, msg.value);\n    }\n  ```\n  * Events are ways to communicate with a client application or front-end website that something has happened on the blockchain. The above event Deposit can be detected from\n    the JavaScript API by filtering for `Deposit`.\n\n- Function Modifiers\n  * Function modifiers can be used to change the behaviour of functions in a declarative way.\n  * A modifier can be used automatically to check a condition prior to execution of the function.\n  * In the code snippet below constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner. \n    the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.\n    ```\n    pragma solidity ^0.7.0;\n    contract C {\n        address owner;\n        string private name;\n        constructor() {\n            owner = msg.sender;\n        }\n        modifier onlyOwner() {\n            require(msg.sender == owner, 'Not Owner');\n            _;\n        }\n        function setName(string memory newName) public onlyOwner{\n            name = newName;\n        }\n    }\n    ```\n\n  * “_;” is a special code only used in the function modifier. It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.\n  * \"_;\" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing \"_;\" before or after the modifier code;\n"
+          "details": "Contracts in Solidity are similar to classes in object-oriented languages. \nEach contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types.\n\n- State Variables\n  * State variables are variables whose values are permanently stored in contract storage.\n  * In the following code snippet `storedData` is an example of a state variable.\n  ```\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity >=0.4.0 <0.9.0;\n\n  contract SimpleStorage {\n      uint storedData; // State variable\n      // ...\n  }\n  ```\n  * State variables can be declared as `constant` or `immutable`. In both cases, the variables cannot be modified after the contract has been constructed.\n  * For constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time. Constant variables can also be declared at the file level.\n  * Not all types for constants and immutables are implemented at this time. The only supported types are strings (only for constants) and value types.\n  * The example below shows the use of constant and immutable state variables.\n    ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity >=0.7.4;\n\n    uint constant X = 32**22 + 8;\n\n    contract C {\n        string constant TEXT = \"abc\";\n        bytes32 constant MY_HASH = keccak256(\"abc\");\n        uint immutable decimals;\n        uint immutable maxBalance;\n        address immutable owner = msg.sender;\n\n        constructor(uint decimals_, address ref) {\n            decimals = decimals_;\n            maxBalance = ref.balance;\n        }\n    }\n    ```\n\n- Functions \n  * Functions are the executable units of code. \n    Functions are usually defined inside a contract, but they can also be defined outside of contracts.\n  * In the code below helper function is defined outside the contract whearas arithmetic function is declared inside the contract.\n    ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity >=0.7.1 <0.9.0;\n\n    contract Simple {\n        function arithmetic(uint a, uint b)\n            public\n            pure\n            returns (uint sum, uint product)\n        {\n            return (a + b, a * b);\n        }\n    }\n\n    // Helper function defined outside of a contract\n    function helper(uint x) pure returns (uint) {\n        return x * 2;\n    }\n    ```\n  * Functions outside of a contract are also called 'free function' and their code is included in all contracts that call them.\n  * The main difference to functions defined inside a contract is that free functions do not have direct access to storage variables and functions not in their scope.\n  * Functions take typed parameters as input and can also return an arbitrary number of values as output.\n  * In the code snippet above , the contract `Simple` has a function arithmetic which takes two input parameters `uint a` and `uint b`.\n  * The function arithmetic also returns two values `uint sum` and `uint product`.\n  * the return values in a function can also be explicitly assigned to return variables instead of a return statememnt like in the code below.\n    ```\n    function arithmetic(uint a, uint b)\n        public\n        pure\n        returns (uint sum, uint product)\n    {\n        sum = a + b;\n        product = a * b;\n    }\n    ```\n  * Solidity has a fallback function which is executed if none of the other functions match the function identifier or no data was provided with the function call. \n  * Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.\n  * Check the following code to declare a fallback function.\n    ```\n    function() public payable\n    {\n        balance[msg.sender] += msg.value;\n    }\n    ```\n    The above fallback function is called in two cases- A contract receives only Ether and no data,\n    or when no function calls matched even though the account received data.\n  * Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.\n    ```\n    contract ViewAndPure {\n        uint public x = 1;\n\n        // Promise not to modify the state.\n        function addToX(uint y) public view returns (uint) {\n            return x + y;\n        }\n\n        // Promise not to modify or read from the state.\n        function add(uint i, uint j) public pure returns (uint) {\n            return i + j;\n        }\n    }\n    ```\n    The above view function `addToX` can read the state variable x but cannot update its state whearas the pure function `add` can neither read nor update the state.\n\n- Constructors \n  * A constructor is an optional function declared with the constructor keyword which is executed upon contract creation, and where you can run contract initialisation code.\n  * Before the constructor code is executed, state variables are initialised to their specified value if you initialise them inline, or their default value if you do not.\n  * If there is no constructor, the contract will assume the default constructor, which is equivalent to constructor() {}.\n  * The code snippet below explains the use of a constructor, \n    ```\n      uint public x;\n      uint public y;\n      address public owner;\n      uint public createdAt;\n      Constructor (uint _x, uint _y) public {\n                  x=_x;\n                  y=_y;\n                  owner = msg.sender;\n                  createdAt = block.timestamp;\n    ```\n  * Constructors are very useful in Solidity , if you do not implement a function to change the state variable it will remain as long as the block chain is running. So using a constructor is a way to set a state variable that you do not want to change.\n\n- Events\n  * Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.\n  * Events are defined within the contracts as global and called within their functions. Events are declared by using the event keyword as follows , `event <eventName>(parameters) ;`.\n  * The example below shows the declaration of an event and its use in its function. In this example, the Deposit event is emitted when a user sends Ether to the smart contract with the deposit function.\n\n   ```\n    event Deposit(\n    address indexed from,\n    bytes32 indexed id,\n    uint value\n    );\n\n    function deposit(bytes32 id) public payable {\n        emit Deposit(msg.sender, id, msg.value);\n    }\n  ```\n  * Events are ways to communicate with a client application or front-end website that something has happened on the blockchain. The above event Deposit can be detected from\n    the JavaScript API by filtering for `Deposit`.\n\n- Function Modifiers\n  * Function modifiers can be used to change the behaviour of functions in a declarative way.\n  * A modifier can be used automatically to check a condition prior to execution of the function.\n  * In the code snippet below constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner. \n    the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.\n    ```\n    pragma solidity ^0.7.0;\n    contract C {\n        address owner;\n        string private name;\n        constructor() {\n            owner = msg.sender;\n        }\n        modifier onlyOwner() {\n            require(msg.sender == owner, 'Not Owner');\n            _;\n        }\n        function setName(string memory newName) public onlyOwner{\n            name = newName;\n        }\n    }\n    ```\n\n  * “_;” is a special code only used in the function modifier. It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.\n  * \"_;\" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing \"_;\" before or after the modifier code;\n"
         },
         {
           "title": "Error Handling",
