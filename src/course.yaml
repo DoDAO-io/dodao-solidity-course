@@ -57,7 +57,7 @@ topics:
     key: oops
     details: Solidity is an object oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.
     readings: oops.yaml
-    summaries: oops.yaml
+    summaries: chapter5.yaml
     questions: oops.yaml
     status: In Progress
     completionWeek:  work not started

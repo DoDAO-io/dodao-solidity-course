@@ -4,6 +4,6 @@
   type: YoutubeVideo
   url: url
   subTopics:
-    - "inheritance"
+    - "encapsulation"
   details: |
     details

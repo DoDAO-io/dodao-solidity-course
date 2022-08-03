@@ -7,7 +7,7 @@
     - B
     - D
   subTopics:
-    - "inheritance"
+    - "encapsulation"
   difficultyLevel: Low
   choices:
     - content: "1"
