@@ -1,0 +1,92 @@
+- uuid: 048a44ca-13d8-11ed-861d-0242ac120002
+  title: Understanding Encapsulation in Solidity
+  shortTitle: Encapsulation
+  type: YoutubeVideo
+  url: 
+    - https://www.youtube.com/watch?v=thADMg9cKPM
+    - https://www.youtube.com/watch?v=tfk25O-5Ppg
+  subTopics:
+    - "access-modifiers"
+    - "state-variable-visibility"
+  details: |
+    In this video we're looking at the inheritance in Solidity.
+    This video explains about
+    - Visibility
+    - What is Function modifier
+
+- uuid: 048a4f74-13d8-11ed-861d-0242ac120002
+  title: Inheritance in Solidity
+  shortTitle: Inheritance
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=LwKIEj60dks
+  subTopics:
+    - "solidity-inheritance"
+    - "contract-intraction"
+  details: |
+    In this video we're looking at the inheritance in Solidity.
+    This video explains about
+    - Inheritance with example
+    - Smart contract intraction
+
+- uuid: 048a50be-13d8-11ed-861d-0242ac120002
+  title: Polymorphism in Solidity
+  shortTitle: Polymorphism
+  type: YoutubeVideo
+  url: 
+    - https://www.youtube.com/watch?v=l_E5F5qnbtk
+    - https://www.youtube.com/watch?v=-ByfpJIqm-Y
+  subTopics:
+    - "function-overriding"
+    - "function-overloading"
+  details: |
+    In this video we're looking at the polymorphism in Solidity.
+    This video explains about
+    - polymorphism with example
+    - Contract function intraction
+
+
+- uuid: 048a51e0-13d8-11ed-861d-0242ac120002
+  title: Constructor for Solidity
+  shortTitle: Constructor
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=ADVifGOanVU
+  subTopics:
+    - "constructor-declaration"
+    - "constructor-call"
+  details: |
+    In this video we're looking at the constructor in Solidity.
+    This video explains about
+    * How to declare a constructor in Solidity
+    * Differences between a constructor and regular functions
+    * How to call a parent constructor from an inherited contract
+
+- uuid: 048a52ee-13d8-11ed-861d-0242ac120002
+  title: Abstraction in Solidity
+  shortTitle: Abstraction
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=iAB_6ZwqGG0
+  subTopics:
+    - "abstract-contract"
+    - "solidity-interfaces"
+  details: |
+    In this video we're looking at the abstraction in Solidity.
+    This video explains about
+    * How to declare an Abstract Contract
+    * Abstract Contract Explained
+    * How to use Interfaces
+
+- uuid: 048a55a0-13d8-11ed-861d-0242ac120002
+  title: Libraries in Solidity
+  shortTitle: Libraries
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=25MLAnIzXRw
+  subTopics:
+    - "pure-function"
+    - "deployed-library"
+    - "embedded-library"
+  details: |
+    In this video we're looking at the libraries in Solidity.
+    This video explains about
+    - Simple example with pure function
+    - Advanced example with a struct
+    - Deployed vs Embedded libraries
