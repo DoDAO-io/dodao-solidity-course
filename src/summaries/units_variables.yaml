@@ -1,0 +1,16 @@
+- title: Units
+  shortTitle: Units
+  key: "units"
+  details: |
+    - time units
+    - ether units
+
+- title: Globally available Variables
+  shortTitle: Global Variables
+  key: "variables"
+  details: |
+    - Block and transaction methods
+    - ABi Encoding and Decoding methods
+    - Error handling methods
+    - Mathematic and cryptographic functions
+    - others

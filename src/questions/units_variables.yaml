@@ -1,0 +1,20 @@
+- uuid: 47a244a5-80b1-4653-bc5d-9b0d3c8b5a83
+  type: MultipleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - B
+    - D
+  subTopics:
+    - "variables"
+  difficultyLevel: Low
+  choices:
+    - content: "1"
+      key: A
+    - content: "2"
+      key: B
+    - content: "3"
+      key: C
+    - content: "4"
+      key: D

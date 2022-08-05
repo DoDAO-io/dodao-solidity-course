@@ -1,0 +1,20 @@
+- uuid: b3bd428b-7fd9-44b7-8139-c3a9f577793b
+  type: MultipleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - B
+    - D
+  subTopics:
+    - "control-structure"
+  difficultyLevel: Low
+  choices:
+    - content: "1"
+      key: A
+    - content: "2"
+      key: B
+    - content: "3"
+      key: C
+    - content: "4"
+      key: D

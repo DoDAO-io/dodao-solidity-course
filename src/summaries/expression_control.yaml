@@ -1,0 +1,18 @@
+- title: Control Structure
+  shortTitle: Control Structure
+  key: "control-structure"
+  details: |
+    - if/else
+    - for
+    - while
+    - do
+    - break,continue
+    - return
+
+- title: Function Calls
+  shortTitle: Function Calls
+  key: "func-call"
+  details: |
+    - Internal Function Calls
+    - External Function Calls
+

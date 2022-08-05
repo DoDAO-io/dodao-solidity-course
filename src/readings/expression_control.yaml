@@ -1,0 +1,9 @@
+- uuid: 5bfe6b20-4efc-48f8-a981-49d86534ff19
+  title: title
+  shortTitle: short title
+  type: YoutubeVideo
+  url: url
+  subTopics:
+    - "control-structure"
+  details: |
+    details

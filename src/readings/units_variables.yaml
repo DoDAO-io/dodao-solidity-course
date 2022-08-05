@@ -1,0 +1,9 @@
+- uuid: 1b6f7a4a-5f9e-40f0-8259-7a029e372747
+  title: title
+  shortTitle: short title
+  type: YoutubeVideo
+  url: url
+  subTopics:
+    - "variables"
+  details: |
+    details
