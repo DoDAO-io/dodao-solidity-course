@@ -1,9 +1,57 @@
 - uuid: be0f341e-e428-401c-98a0-d08061b3dadd
-  title: title
-  shortTitle: short title
+  title: Declaring a function
+  shortTitle: Declaring a function
   type: YoutubeVideo
-  url: url
+  url: https://youtu.be/71cmPaD_AnQ
   subTopics:
-    - "solidity-compiler"
+    - "functions"
   details: |
-    details
+    This video covers function declaration in Solidity and also explains view function (read-only) and non-view functions (can change Blockchain data).
+
+- uuid: 490e6379-87ca-4827-8a62-f2a42bd66383
+  title: Function Modifiers
+  shortTitle: Function Modifier
+  type: YoutubeVideo
+  url: https://youtu.be/b6FBWsz7VaI
+  subTopics:
+    - "modifiers"
+  details: |
+    Function modifiers allow your code to have less repetitive, re-useable code logic. This video explains the declaration and use of modifiers.
+
+- uuid: bfaa19ee-63d9-423d-828c-a7f7fe5bf600
+  title: Events
+  shortTitle: events
+  type: YoutubeVideo
+  url: https://youtu.be/jaMHPT-78HM
+  subTopics:
+    - "events"
+  details: |
+    In Solidity, you can use events to push data to outside consumers, like web frontends.
+    This video shows how to declare and emit events in Solidity.
+
+- uuid: f18d61c9-9680-4cac-991f-1a15a11525f9
+  title: Error Handling
+  shortTitle: Error Handling
+  type: YoutubeVideo
+  url: https://youtu.be/1Mi1ub9bIv8
+  subTopics:
+    - "errors"
+    - "revert"
+    - "require"
+    - "try-catch"
+    - "assert"
+  details: |
+    Solidity uses state-reverting exceptions to handle errors. 
+    This video covers how error handling in solidity is done using revert, require, assert and try/catch.
+
+- uuid: 5793d857-a2e7-4345-a067-d16c7c8c4241
+  title: Structure of Smart contract
+  shortTitle: Contract Structure
+  type: YoutubeVideo
+  url: https://youtu.be/yzcp594R92c
+  subTopics:
+    - "file-layout"
+    - "contract-structure"
+  details: |
+    This video explains the typical layout of a Solidity source file: pragma statement, imports, contract declaration, variable and function declarations.
+
