@@ -16,16 +16,16 @@
   choices:
     - content: "`pragma solidity 0.6.12;`"
       key: A
-      order: 0
+      
     - content: "`pragma solidity ^0.6.12;`"
       key: B
-      order: 1
+      
     - content: "`pragma solidity >=0.4.0 <0.6.0;`"
       key: C
-      order: 2
+      
     - content: "`pragma solidity -0.5.2;`"
       key: D
-      order: 3
+      
 
 - uuid: 85f2abbc-9acb-4ebe-a624-3c952da70b22
   type: SingleChoice
@@ -40,16 +40,16 @@
   choices:
     - content: Compiler version 0.5.1
       key: A
-      order: 0
+      
     - content: Compiler version 0.4.1
       key: B
-      order: 1
+      
     - content: Compiler version 0.5.5
       key: C
-      order: 2
+      
     - content: Compiler version 0.6.1
       key: D
-      order: 3
+      
 
 - uuid: 6bc53ece-fffd-4f7f-bb54-c8200d629d16
   type: MultipleChoice
@@ -67,16 +67,16 @@
   choices:
     - content: In Solidity `pragma` keyword is only used to specify the version of the compiler the code should compile with.
       key: A
-      order: 0
+      
     - content: The `pragma` keyword is used to enable certain compiler features or checks.
       key: B
-      order: 1
+      
     - content: The following code will only compile with compiler version 0.6.12, `pragma solidity 0.6.12;`. 
       key: C
-      order: 2
+      
     - content: If you import another file, the pragma from that file will automatically apply to the importing file.
       key: D
-      order: 3
+      
 
 - uuid: d336edf3-75ef-43c7-b77d-74bafcaa92b9
   type: SingleChoice
@@ -93,20 +93,20 @@
   choices:
     - content: pragma experimental SMTChecker;
       key: A
-      order: 0
+      
     - content: pragma abicoder v1;
       key: B
-      order: 1
+      
     - content: pragma solidity ^0.5.2;
       key: C
-      order: 2
+      
     - content: pragma version 0.6.2;
       key: D
-      order: 3
+      
 
 - uuid: 1e3de4e3-fd09-446a-ba8a-2d223b59f587
   type: SingleChoice
-  content: If you want to import a sile in your solidity code which of the following will be a correct but inefficient way to do so?
+  content: If you want to import a file in your solidity code which of the following will be a correct but inefficient way to do so?
   hint: All import statements are correct.
   explanation: The statement `import "filename";` imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. It is better to import specific symbols explicitly.
   answerKeys:
@@ -117,69 +117,44 @@
   choices:
     - content: import * as symbolName from "filename";
       key: A
-      order: 0
+      
     - content: import "filename" as symbolName;
       key: B
-      order: 1
+      
     - content: import {symbol1 as alias, symbol2} from "filename";
       key: C
-      order: 2
+      
     - content: import "filename";
       key: D
-      order: 3
-
-- uuid: f3f566ee-680f-40e0-be77-d8b3572c154c
-  type: SingleChoice
-  content: "In the context of the following comment `// SPDX-License-Identifier: MIT` which of the following statements is incorrect?"
-  hint: noHint
-  explanation: |
-    The compiler does not validate that the license is part of the list allowed by SPDX, but it does include the supplied string in the bytecode metadata.
-    The comment is recognized by the compiler anywhere in the file at the file level, but it is recommended to put it at the top of the file.
-    The liscense should be one from the the list given in the SPDX. 
-
-  answerKeys:
-    - A
-    - C
-  subTopics:
-    - "file-layout"
-  difficultyLevel: Low
-  choices:
-    - content: This comment gets validated by the solidity compiler and then supplies the string in the bytecode metadata.
-      key: A
-      order: 0
-    - content: The comment is recognized by the compiler anywhere in the file at the file level.
-      key: B
-      order: 1
-    - content: Only MIT liscense should be used to validate smart contracts. 
-      key: C
-      order: 2
-    - content: If you do not want to specify a license or if the source code is not open-source, you can use the special value UNLICENSED.
-      key: D
-      order: 3
 
 - uuid: 70f2e739-5097-4606-be32-9fc2dc766c0e
   type: SingleChoice
-  content: question
+  content: |
+    Which of the following statements regarding solidity files is correct?
+    Statement 1 - It is a better practice to modularize code by writing contracts in different source files and using imports.
+    Statement 2 - The export declaration is used to export functions from a Contract.
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Solidity supports import statements to help modularise your code that are similar to those available in JavaScript (from ES6 on). 
+    However, Solidity does not support the concept of a default export.
   answerKeys:
     - A
   subTopics:
     - "file-layout"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Statement 1 is true but Statement 2 is false.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Statement 2 is true but Statement 1 is false.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Both are true.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: Neither is true.
       key: D
-      order: 3
+      
 
 - uuid: 25239107-bb81-48b8-9485-9c8df81a5514
   type: MultipleChoice
@@ -197,16 +172,16 @@
   choices:
     - content: /This is a single line comment.
       key: A
-      order: 0
+      
     - content: //This is a single line comment.
       key: B
-      order: 1
+      
     - content: ///This is a single line comment.
       key: C
-      order: 2
+      
     - content: /*This is a single line comment.
       key: D
-      order: 3
+      
 
 - uuid: 6de1c98d-d533-4b04-937c-6f90db4fc63e
   type: MultipleChoice
@@ -225,16 +200,72 @@
   choices:
     - content: NatSpec stands for Ethereum Natural Language Specification Format.
       key: A
-      order: 0
+      
     - content: NatSpec comments provide tags and in case if no tags are used , the solidity compiler will interpret (///) as (//).
       key: B
-      order: 1
+      
     - content: The Solidity compiler only interprets tags if they are external or public.
       key: C
-      order: 2
+      
     - content: Comments in solidity can only be made using (//) for Single-line and (/*...*/) for multi-line.
       key: D
-      order: 3
+      
+
+- uuid: 77cd176f-04d5-464d-86fa-64992e2d4db8
+  type: SingleChoice
+  content: What does the basic structure of a contract contain?
+  hint: noHint
+  explanation: |
+    Each contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types.
+  answerKeys:
+    - D
+  subTopics:
+    - "contract-structure"
+  difficultyLevel: Low
+  choices:
+    - content: Pragma directive
+      key: A
+      
+    - content: Name of the contract
+      key: B
+      
+    - content: Data and functions
+      key: C
+      
+    - content: All of the above
+      key: D
+      
+
+- uuid: 421abb3d-6f87-4e4a-a22f-af467d34035b
+  type: SingleChoice
+  content: What does a simple function definition in Solidity contain?
+  hint: noHint
+  explanation: |
+    The basic syntax is shown here.
+    ```
+      function function-name(parameter-list) scope returns() {
+        //statements
+      }
+    ```
+  answerKeys:
+    - C
+  subTopics:
+    - "functions"
+  difficultyLevel: Low
+  choices:
+    - content: Modifier definitions
+      key: A
+      
+    - content: Fallback definition
+      key: B
+      
+    - content: Function header and code
+      key: C
+      
+    - content: Event
+      key: D
+      
+
 
 - uuid: e854f94d-5e49-4e3f-9e2a-0f8a1a4d1f83
   type: SingleChoice
@@ -252,16 +283,16 @@
   choices:
     - content: Constructor overloading is supported.
       key: A
-      order: 0
+      
     - content: A constructor is optional.
       key: B
-      order: 1
+      
     - content: The contract deployed on the blockchain will also contain the constructor code.
       key: C
-      order: 2
+      
     - content: None of these
       key: D
-      order: 3
+      
 
 - uuid: 611c7208-9eb2-4c4a-8d10-160081de6710
   type: SingleChoice
@@ -280,16 +311,16 @@
   choices:
     - content: Statement 1 is correct but Statement 2 is incorrect.
       key: A
-      order: 0
+      
     - content: Statement 2 is correct but Statement 1 is incorrect.
       key: B
-      order: 1
+      
     - content: Both are correct.
       key: C
-      order: 2
+      
     - content: Neither is correct.
       key: D
-      order: 3
+      
 
 - uuid: b8e4a65e-683e-43a0-b0c1-7f6271177181
   type: SingleChoice
@@ -318,25 +349,25 @@
   answerKeys:
     - C
   subTopics:
-    - "contract-structure"
+    - "state-variables"
   difficultyLevel: Low
   choices:
     - content: This code will not compile as solidity functions cannot have multipe return values.
       key: A
-      order: 0
+      
     - content: This code will not compile because State Variables declared immutable cannot be initialised in a constructor.
       key: B
-      order: 1
+      
     - content: This code will not compile because State Variables declared constant cannot be initialised in a constructor.
       key: C
-      order: 2
+      
     - content: The code has no errors and can be deployed.
       key: D
-      order: 3
+      
 
 - uuid: 5e40d1c1-0bbc-45f6-ae2e-eeee3715168b
   type: MultipleChoice
-  content: Which of the following statements is correct regarding functions ?
+  content: Which of the following statements is correct regarding functions?
   hint: noHint
   explanation: |
     Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.
@@ -345,21 +376,21 @@
     - C
     - D
   subTopics:
-    - "contract-structure"
+    - "functions"
   difficultyLevel: Low
   choices:
     - content: Functions outside of a contract are also called 'free functions'.
       key: A
-      order: 0
+      
     - content: Functions declared as view can modify the state variables.
       key: B
-      order: 1
+      
     - content: In Solidity the function is simply invoked by writing the name of the function where it has to be called.
       key: C
-      order: 2
+      
     - content: Functions can have multiple return values.
       key: D
-      order: 3
+      
 
 - uuid: c60393ac-3492-4d4b-a7c7-ecee0e09e9d7
   type: MultipleChoice
@@ -372,21 +403,21 @@
     - B
     - D
   subTopics:
-    - "contract-structure"
+    - "functions"
   difficultyLevel: Medium
   choices:
     - content: Free functions in solidity are functions declared inside a contract with public Visibility.
       key: A
-      order: 0
+      
     - content: Their code is included in all contracts that call them.
       key: B
-      order: 1
+      
     - content: They can access state variables and internal functions directly.
       key: C
-      order: 2
+      
     - content: A free function behaves like an internal function of the contract that called it.
       key: D
-      order: 3
+      
 
 - uuid: c97bee69-c7c1-4932-a6f8-60c2cf4df840
   type: SingleChoice
@@ -398,23 +429,23 @@
     The following example creates a new global symbol symbolName whose members are all the global symbols from "filename":
     `import * as symbolName from "filename";` which results in all global symbols being available in the format symbolName.symbol.
   answerKeys:
-    - A
+    - B
   subTopics:
     - "file-layout"
   difficultyLevel: Low
   choices:
     - content: This statement imports all global symbols from “filename” into the current global scope.
       key: A
-      order: 0
+      
     - content: This statement creates a new global symbol symbolName whose members are all the global symbols from "filename".
       key: B
-      order: 1
+      
     - content: This statement imports symbolName member from "filename".
       key: C
-      order: 2
+      
     - content: None of these.
       key: D
-      order: 3
+      
 
 - uuid: 985403b3-673a-4017-9099-76a5cc0d5f10
   type: SingleChoice
@@ -426,69 +457,45 @@
   answerKeys:
     - D
   subTopics:
-    - "contract-structure"
+    - "functions"
   difficultyLevel: Low
   choices:
     - content: Contract received ether and no data.
       key: A
-      order: 0
+      
     - content: Contract received data but no function matched the function called.
       key: B
-      order: 1
+      
     - content: Contract sent insufficient gas.
       key: C
-      order: 2
+      
     - content: Both A & B
       key: D
-      order: 3
-
-- uuid: 2f2949ba-7998-425b-adf0-8f5fac5541bc
-  type: SingleChoice
-  content: Remix IDE is used for the development of small contracts. What does IDE stand for?
-  hint: noHint
-  explanation: Remix IDE is part of the Remix Project which can be used for the development of small contracts and for quickly learning Solidity. IDE stands for Integrated Development Environment.
-  answerKeys:
-    - B
-  subTopics:
-    - "solidity-compiler"
-  difficultyLevel: Low
-  choices:
-    - content: Integrated Development Engine
-      key: A
-      order: 0
-    - content: Integrated Development Environment
-      key: B
-      order: 1
-    - content: Integrated DApp Engin
-      key: C
-      order: 2
-    - content: Internet Development Environment
-      key: D
-      order: 3
+          
 
 - uuid: e288ce1e-aa2e-48b1-9878-f7133359198c
   type: SingleChoice
-  content: What happens when an event is called ?
+  content: What happens when an event is called?
   hint: noHint
   explanation: Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
   answerKeys:
     - C
   subTopics:
-    - "contract-structure"
+    - "events"
   difficultyLevel: Low
   choices:
     - content: When called, events flag an error to the caller. 
       key: A
-      order: 0
+      
     - content: They provide a condition under which event a function calling the event should be executed.
       key: B
-      order: 1
+      
     - content: They cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
       key: C
-      order: 2
+      
     - content: None of these.
       key: D
-      order: 3
+      
 
 - uuid: 138e8326-fe39-421f-ae9e-ac5a6cfb0ad0
   type: MUltipleChoice
@@ -501,21 +508,21 @@
     - A
     - C
   subTopics:
-    - "contract-structure"
+    - "events"
   difficultyLevel: Low
   choices:
     - content: Events can be used to communicate with external users about a transaction that happened on the blockchain.
       key: A
-      order: 0
+      
     - content: They are used for error handling.
       key: B
-      order: 1
+      
     - content: They can be used to inform a user of any action that happened on the blockchain and can thus ease the development of outside systems in cooperation with smart contracts.
       key: C
-      order: 2
+      
     - content: None of these.
       key: D
-      order: 3
+      
 
 - uuid: 42d7664b-47e1-4f1e-9162-af63a8c0db22
   type: MultipleChoice
@@ -548,16 +555,16 @@
   choices:
     - content: Upon contract creation, the owner address is initialized to the user who deployed the contract.
       key: A
-      order: 0
+      
     - content: The function setName can only be called by the owner of the contract.
       key: B
-      order: 1
+      
     - content: onlyOwner is a function which will throw an error each time it is called by a non-owner.
       key: C
-      order: 2
+      
     - content: onlyOwner can be used to modify the behaviour of a function.
       key: D
-      order: 3
+      
 
 - uuid: d8609639-3532-48ff-8f33-7ae8ce2ade62
   type: SingleChoice
@@ -568,21 +575,22 @@
   answerKeys:
     - B
   subTopics:
-    - "contract-structure"
+    - "functions"
+    - "modifiers"
   difficultyLevel: Low
   choices:
     - content: function
       key: A
-      order: 0
+      
     - content: function modifier 
       key: B
-      order: 1
+      
     - content: event
       key: C
-      order: 2
+      
     - content: constructor
       key: D
-      order: 3
+      
 
 - uuid: 33eab1f8-3a7c-4cd9-8c0d-f42a2f9f4fd3
   type: SingleChoice
@@ -592,21 +600,21 @@
   answerKeys:
     - C
   subTopics:
-    - "contract-structure"
+    - "modifiers"
   difficultyLevel: Low
   choices:
     - content: It is used in a function.
       key: A
-      order: 0
+      
     - content: It is used in aconstructor.
       key: B
-      order: 1
+      
     - content: It is used in a modifier.
       key: C
-      order: 2
+      
     - content: It can be used anywhere at the file level.
       key: D
-      order: 3
+      
 
 - uuid: aa3caf4e-b9d8-46f9-95ac-d588df2558a7
   type: SingleChoice
@@ -637,25 +645,26 @@
   answerKeys:
     - C
   subTopics:
-    - "contract-structure"
+    - "functions"
+    - "modifiers"
   difficultyLevel: Medium
   choices:
     - content: "10"
       key: A
-      order: 0
+      
     - content: "15"
       key: B
-      order: 1
+      
     - content: "20"
       key: C
-      order: 2
+      
     - content: "30"
       key: D
-      order: 3
+      
 
 - uuid: 07881a7f-600c-4bfc-baf9-787f3fa70700
   type: SingleChoice
-  content: Which of the following is a correct declaration of a function ?
+  content: Which of the following is a correct declaration of a function?
   hint: noHint
   explanation: |
     The basic syntax of a function is shown below.
@@ -667,21 +676,21 @@
   answerKeys:
     - D
   subTopics:
-    - "contract-structure"
+    - "functions"
   difficultyLevel: Low
   choices:
     - content: public function foo() view returns(){}
       key: A
-      order: 0
+      
     - content: public view function foo() returns(){}
       key: B
-      order: 1
+      
     - content: function foo() view returns() public{}
       key: C
-      order: 2
+      
     - content: function foo() public view returns(){}
       key: D
-      order: 3
+      
 
 - uuid: 0767755b-6790-44cd-8364-7c56acb77457
   type: SingleChoice
@@ -697,596 +706,540 @@
   answerKeys:
     - C
   subTopics:
-    - variables
+    - "contract-structure"
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-      order: 0
+      
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-      order: 1
+      
     - content: Both are true.
       key: C
-      order: 2
+      
     - content: Neither is true.
       key: D
-      order: 3
-
-- uuid: 77cd176f-04d5-464d-86fa-64992e2d4db8
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - variables
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-      order: 0
-    - content: option 2
-      key: B
-      order: 1
-    - content: option 3
-      key: C
-      order: 2
-    - content: option 4
-      key: D
-      order: 3
-
-- uuid: 421abb3d-6f87-4e4a-a22f-af467d34035b
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - variables
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-      order: 0
-    - content: option 2
-      key: B
-      order: 1
-    - content: option 3
-      key: C
-      order: 2
-    - content: option 4
-      key: D
-      order: 3
+      
 
 - uuid: 2fb21e8c-429e-4229-817b-6077c945fca0
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: Which of the following is true about function modifier `_;`?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    “_;” is a special code only used in the function modifier. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
+    "_;" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing "_;" before or after the modifier code.
   answerKeys:
     - A
+    - B
   subTopics:
-    - variables
+    - "modifiers"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Specified at the entry of a function and executed after the function ends.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Specified at the entry to a function and executed before the function begins.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Specified at the exit of a function and executed after the function ends.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: None of these.
       key: D
-      order: 3
+      
+
 - uuid: f6d9abaf-0f05-4376-ad34-58c366ebee76
   type: SingleChoice
-  content: question
+  content: How many constructors can be there in a Solidity contract?
   hint: noHint
-  explanation: explanation
+  explanation: A contract can have only one constructor.
   answerKeys:
     - A
   subTopics:
-    - variables
+    - "contract-structure"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: "1"
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: "2"
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: "3"
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: Many
       key: D
-      order: 3
+      
+
 - uuid: 437f24c0-fa13-4ac8-bd39-3c4649aadb0c
   type: SingleChoice
-  content: question
+  content: Which of the following is true regarding `_;` used in function modifiers?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    “_;” is a special code only used in the function modifier. Having `_;` more than once in a modifier is valid.
+    It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
   answerKeys:
     - A
+    - B
+    - C
   subTopics:
-    - variables
+    - "modifiers"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: “_;” is a special code only used in the function modifier. 
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Having `_;` more than once in a modifier is valid.
       key: C
-      order: 2
+      
     - content: option 4
       key: D
-      order: 3
+      
+
 - uuid: 38d84a22-7517-4aaf-9018-75b533aa3e7e
   type: SingleChoice
-  content: question
+  content: |
+    What will be the value of a,b and c when function func() is called?
+    ```
+    contract C {
+        uint a;
+        uint b;
+        uint c;
+
+        modifier modA() {
+            a = a + 1;
+            _;
+        }
+
+        modifier modB() {
+            b = b + 1;
+            _;
+            b = b + 1;
+            _;
+        }
+
+        function func() public modA modB {
+            c = c + 1;
+        }
+    }
+
+    ```
   hint: noHint
-  explanation: explanation
+  explanation: The default value of uint is zero so when func() is called modA code will run first, the `_;` will be replaced by modifier's code and the `_;` in the modB modifier's is replaced by the func function's code. Therefore `a=1` , `b=2` and `c=2`.
   answerKeys:
-    - A
+    - B
   subTopics:
-    - variables
-  difficultyLevel: Low
+    - "functions"
+    - "modifiers"
+  difficultyLevel: Medium
   choices:
-    - content: option 1
+    - content: 0,0,0
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: 1,2,2
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: 0,0,1
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: 1,2,1
       key: D
-      order: 3
+      
+
 - uuid: d73be206-d0fe-4f75-b6d3-693275d1b069
   type: SingleChoice
-  content: question
+  content: Which of the following is true about modifiers?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    A function can have any number of modifiers.
+    Visibility modifiers for a function should come before custom access modifiers.
+    Modifiers can be without any parameters.
   answerKeys:
-    - A
+    - D
   subTopics:
-    - variables
+    - "functions"
+    - "modifiers"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: A function can have any number of modifiers.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Visibility modifiers for a function should come before custom access modifiers.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Modifiers can be without any parameters.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: All the above.
       key: D
-      order: 3
+      
+
 - uuid: a8f4d89b-bfc8-4dc0-8f9e-5aab0088f13a
   type: SingleChoice
-  content: question
+  content: |
+    Which of tshe following options is true regarding the below statemens?
+    Statement 1 - It is allowed to emit an event in function modifiers.
+    Statement 2 - A modifier can update a state variable when used with a function declared as view.
   hint: noHint
-  explanation: explanation
+  explanation: A function declared as view can only read the state variables and not make updates to them , any modifiers attached to such function can also not make changes to the state of variables.
   answerKeys:
     - A
   subTopics:
-    - variables
+    - "events"
+    - "modifiers"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Statement 1 is true but Statement 2 is false.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Statement 2 is true but Statement 1 is false.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Both are true.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: Neither is true.
       key: D
-      order: 3
+      
+
 - uuid: 61bc26de-8555-40ef-8f26-8235ada76c94
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: What does the indexed keyword do in events?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    You can add the attribute indexed to up to three parameters which adds them to a special data structure known as “topics” instead of the data part of the log. The indexed keyword helps you to filter the logs to find the wanted data.
+    All non-indexed arguments will be stored in the data part of the log.
   answerKeys:
-    - A
+    - B
+    - C
   subTopics:
-    - variables
+    - "events"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: All indexed arguments will be stored in the data part of the log.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: indexed keyword is used to log values as topics rather than data part of the log.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: The indexed keyword helps you to filter the logs to find the wanted data.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: None of these.
       key: D
-      order: 3
+      
+
 - uuid: 4b1b0494-f540-4a22-af9a-bdd791fb2834
   type: SingleChoice
-  content: question
+  content: Which of the following scenarios will result in a runtime time errors?
   hint: noHint
-  explanation: explanation
+  explanation: Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.
   answerKeys:
-    - A
+    - D
   subTopics:
-    - variables
+    - "errors"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: out-of-gas error  
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: data type overflow error
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: divide by zero error
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: All of these
       key: D
-      order: 3
+      
+
 - uuid: 411289f8-19ca-4f57-8bd1-c55aea028b5a
   type: SingleChoice
-  content: question
+  content: Error handling and validations in Solidity can be done using which of the following?
   hint: noHint
-  explanation: explanation
+  explanation: Error handling and validations in solidity is done using revert, require, assert and try/catch.
   answerKeys:
-    - A
+    - D
   subTopics:
-    - variables
+    - "errors"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: revert
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: require
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: assert
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: All of these
       key: D
-      order: 3
+      
+
 - uuid: c513ceac-7031-4473-aaa0-d17870eeeb0a
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: Which of the following scenarios will cause a Panic type exception to be generated?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    A Panic exception is generated in the following situations.
+        * If you call assert with an argument that evaluates to false.
+        * If an arithmetic operation results in underflow or overflow.
+        * If you divide or modulo by zero.
+      Calling require(x) where x evaluates to false will result in an Error exception.
   answerKeys:
     - A
+    - B
+    - C
   subTopics:
-    - variables
+    - "errors"
+    - "assert"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: If you call assert with an argument that evaluates to false.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: If an arithmetic operation results in underflow or overflow.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: If you divide or modulo by zero.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: Calling require(x) where x evaluates to false.
       key: D
-      order: 3
+      
+
 - uuid: 3c2e68b2-0577-411b-8980-2389c0d859ac
   type: SingleChoice
-  content: question
+  content: |
+    Consider the statements below regarding Error(string) and Panic(uint256) type error signatures.
+    Statement 1 - Error(string) is used for regular error conditions while Panic(uint256) is used for errors that should not be present in bug-free code.
+    Statement 2 - Panic type exception occurs via require and Error via assert.
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Solidity supports two error signatures: Error(string) and Panic(uint256). Error(string) is used for regular error conditions while Panic(uint256) is used for errors that should not be present in bug-free code.
+    Panic is generated by calling assert with an argument showing false and error is generated by calling require with an argument showing false.
   answerKeys:
     - A
   subTopics:
-    - variables
+    - "errors"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Statement 1 is true but Statement 2 is false.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Statement 2 is true but Statement 1 is false.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Neither is true.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: Both are true.
       key: D
-      order: 3
+      
+
 - uuid: 734e92a7-07e9-43d6-b346-3be5d5e20109
   type: SingleChoice
-  content: question
+  content: Which of the following scenarios will cause an Error type exception to be generated?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    An Error exception is generated by the compiler in the following cases-
+      * Calling require(x) where x evaluates to false.
+      * If you perform an external function call targeting a contract that contains no code.
+      * If you use revert() or revert("description").
   answerKeys:
-    - A
+    - D
   subTopics:
-    - variables
+    - "errors"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Calling require(x) where x evaluates to false.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: If you perform an external function call targeting a contract that contains no code.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: If you use revert() or revert("description").
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: All of these.
       key: D
-      order: 3
+      
+
 - uuid: c3b40fc3-0ff1-49d8-aa2b-9a454ef568f0
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: Which of the following options in correct regarding errors?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Using revert() causes a revert without any error data while revert("description") will create an Error(string) error.
+    Using a custom error instance will usually be much cheaper than a string description, because you can use the name of the error to describe it, which is encoded in only four bytes.
+    The two ways if (!condition) revert(...); and require(condition, ...); are equivalent as long as the arguments to revert and require do not have side-effects, for example if they are just strings.
   answerKeys:
     - A
+    - B
+    - C
   subTopics:
-    - variables
+    - "errors"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: The two ways if (!condition) revert(...); and require(condition, ...); are equivalent.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Using a custom error instance will usually be much cheaper than a revert.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Using revert() causes a revert without any error data while revert("description") will create an Error(string) error.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: None of these.
       key: D
-      order: 3
+      
+
 - uuid: c4123a41-b80e-4a83-adc7-7a189e1a6041
   type: SingleChoice
-  content: question
+  content: To check an integer overflow/underflow , which of the following function should be used?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Assert should only be used to test for internal errors, and to check invariants. 
+    Properly functioning code should never create a Panic, not even on invalid external input.
+    In this case integer overflow/underflow is undesirable and will lead to a bug wich needs to be fixed.
   answerKeys:
-    - A
+    - B
   subTopics:
-    - variables
+    - "errors"
+    - "assert"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: revert
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: assert
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: require
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: None of these
       key: D
-      order: 3
+      
+
 - uuid: fea2cad9-970c-40cc-8fa9-ec46f0b3155a
   type: SingleChoice
-  content: question
+  content: Which of the following catch blocks is valid ?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Solidity supports different kinds of catch blocks depending on the type of errors.
+      * `catch Error(string memory reason) { ... }`, This catch clause is executed if the error was caused by `revert("reasonString")` or `require(false, "reasonString")`.
+      * `catch Panic(uint errorCode) { ... }`, If the error was caused by a panic, i.e. by a failing assert, division by zero, invalid array access, arithmetic overflow and others, this catch clause will be run.
+      * `catch (bytes memory lowLevelData) { ... }`, This clause is executed if the error signature does not match any other clause, if there was an error while decoding the error message, or if no error data was provided with the exception. The declared variable provides access to the low-level error data in that case.
+      * We can just use catch { … } if we are not interested in error data.
   answerKeys:
-    - A
+    - D
   subTopics:
-    - variables
+    - "errors"
+    - "try-catch"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: "`catch Error(string memory reason) { ... }`"
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: "`catch Panic(uint errorCode) { ... }`"
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: "`catch (bytes memory lowLevelData) { ... }`"
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: All of these
       key: D
-      order: 3
+      
+
 - uuid: 6c484192-0531-42ec-a0fc-494132dea432
   type: SingleChoice
-  content: question
+  content: |
+    Which of the following options is correct regarding the statements below,
+    Statement 1 - Solidity has special functions like the receive ether function and the fallback function.
+    Statement 2 - The declaration `receive() external payable { ... }` is not a valid function declaration.
   hint: noHint
-  explanation: explanation
+  explanation: |
+    A Receive Ether Function is declared using `receive() external payable { ... }` (without the function keyword). 
+    This function cannot have arguments, cannot return anything and must have external visibility and payable state mutability. It can be virtual, can override and can have modifiers.
   answerKeys:
     - A
   subTopics:
-    - variables
+    - "contract-structure"
+    - "functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Statement 1 is true but Statement 2 is false.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Statement 2 is true but Statement 1 is false.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Both are true.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: Neither is true.
       key: D
-      order: 3
+      
+
 - uuid: f6231249-cc8e-402b-9536-20dedb877205
   type: SingleChoice
-  content: question
+  content: Which of the following options is correct?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Functions can be defined at file-level. Such functions are called “free functions” (as opposed to functions bound to a specific contract).
+    Free functions are always internal functions and are meant to replace internal library functions and their very special behaviour.
+    A free function behaves like an internal function of the contract that called it. The main difference is that a free function cannot directly access state variables and internal functions of contracts.
   answerKeys:
-    - A
+    - D
   subTopics:
-    - variables
+    - "contract-structure"
+    - "functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: It is not necessary for functions to be bound to a specific contract.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: Free functions cannot have visibility.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: Free functions are like internal functions.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: All of these.
       key: D
-      order: 3
-- uuid: 4ac8bea3-1844-4e91-babf-5cd065d14b4e
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - variables
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-      order: 0
-    - content: option 2
-      key: B
-      order: 1
-    - content: option 3
-      key: C
-      order: 2
-    - content: option 4
-      key: D
-      order: 3
+      
 - uuid: 285aa1cb-75de-4cf8-9d33-8987e14955a7
   type: SingleChoice
-  content: question
+  content: What effect does a "require" keyword have on an if/else statement when it's false?
   hint: noHint
-  explanation: explanation
+  explanation: "`require` accepts a single argument and returns a boolean value after evaluation, it also has a custom string message option. If false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state."
   answerKeys:
-    - A
+    - C
   subTopics:
-    - variables
+    - "errors"
+    - "require"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: It goes to the next function.
       key: A
-      order: 0
-    - content: option 2
+      
+    - content: It triggers the fallback function.
       key: B
-      order: 1
-    - content: option 3
+      
+    - content: It stops the contract and returns any unused gas.
       key: C
-      order: 2
-    - content: option 4
+      
+    - content: None of these.
       key: D
-      order: 3
-- uuid: 84c2a59c-64aa-4e9b-922d-7ed4ce76b92f
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - variables
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-      order: 0
-    - content: option 2
-      key: B
-      order: 1
-    - content: option 3
-      key: C
-      order: 2
-    - content: option 4
-      key: D
-      order: 3
-- uuid: 3a266ee5-43fc-4cae-b4fd-a32f91375537
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - variables
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-      order: 0
-    - content: option 2
-      key: B
-      order: 1
-    - content: option 3
-      key: C
-      order: 2
-    - content: option 4
-      key: D
-      order: 3
-- uuid: 5ffdf81e-6254-439f-aa8e-2e2fbf7414d6
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - variables
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-      order: 0
-    - content: option 2
-      key: B
-      order: 1
-    - content: option 3
-      key: C
-      order: 2
-    - content: option 4
-      key: D
-      order: 3
-- uuid: d0a9daba-7de0-4b4a-9714-d71f25a21472
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - variables
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-      order: 0
-    - content: option 2
-      key: B
-      order: 1
-    - content: option 3
-      key: C
-      order: 2
-    - content: option 4
-      key: D
-      order: 3
+      
+
+
+  
+

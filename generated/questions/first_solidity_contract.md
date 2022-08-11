@@ -79,7 +79,7 @@ Sub Topics: file-layout
 
 ---
 
-##### If you want to import a sile in your solidity code which of the following will be a correct but inefficient way to do so?  
+##### If you want to import a file in your solidity code which of the following will be a correct but inefficient way to do so?  
 
 - [ ]  import * as symbolName from "filename";
 - [ ]  import "filename" as symbolName;
@@ -95,35 +95,21 @@ Sub Topics: file-layout
 
 ---
 
-##### In the context of the following comment `// SPDX-License-Identifier: MIT` which of the following statements is incorrect?  
+##### Which of the following statements regarding solidity files is correct?
+Statement 1 - It is a better practice to modularize code by writing contracts in different source files and using imports.
+Statement 2 - The export declaration is used to export functions from a Contract.
+  
 
-- [x]  This comment gets validated by the solidity compiler and then supplies the string in the bytecode metadata.
-- [ ]  The comment is recognized by the compiler anywhere in the file at the file level.
-- [x]  Only MIT liscense should be used to validate smart contracts.
-- [ ]  If you do not want to specify a license or if the source code is not open-source, you can use the special value UNLICENSED.
+- [x]  Statement 1 is true but Statement 2 is false.
+- [ ]  Statement 2 is true but Statement 1 is false.
+- [ ]  Both are true.
+- [ ]  Neither is true.
   
 Hint: noHint
          
-Explanation: The compiler does not validate that the license is part of the list allowed by SPDX, but it does include the supplied string in the bytecode metadata.
-The comment is recognized by the compiler anywhere in the file at the file level, but it is recommended to put it at the top of the file.
-The liscense should be one from the the list given in the SPDX. 
+Explanation: Solidity supports import statements to help modularise your code that are similar to those available in JavaScript (from ES6 on). 
+However, Solidity does not support the concept of a default export.
 
-
-Sub Topics: file-layout
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
 
 Sub Topics: file-layout
  
@@ -163,6 +149,45 @@ The Solidity compiler only interprets tags if they are external or public. You c
 
 
 Sub Topics: file-layout
+ 
+
+---
+
+##### What does the basic structure of a contract contain?  
+
+- [ ]  Pragma directive
+- [ ]  Name of the contract
+- [ ]  Data and functions
+- [x]  All of the above
+  
+Hint: noHint
+         
+Explanation: Each contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types.
+
+
+Sub Topics: contract-structure
+ 
+
+---
+
+##### What does a simple function definition in Solidity contain?  
+
+- [ ]  Modifier definitions
+- [ ]  Fallback definition
+- [x]  Function header and code
+- [ ]  Event
+  
+Hint: noHint
+         
+Explanation: The basic syntax is shown here.
+```
+  function function-name(parameter-list) scope returns() {
+    //statements
+  }
+```
+
+
+Sub Topics: functions
  
 
 ---
@@ -236,12 +261,12 @@ Explanation: The state variable x_coordinate cannot be initialized in the constr
 For constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time.
 
 
-Sub Topics: contract-structure
+Sub Topics: state-variables
  
 
 ---
 
-##### Which of the following statements is correct regarding functions ?  
+##### Which of the following statements is correct regarding functions?  
 
 - [x]  Functions outside of a contract are also called 'free functions'.
 - [ ]  Functions declared as view can modify the state variables.
@@ -253,7 +278,7 @@ Hint: noHint
 Explanation: Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.
 
 
-Sub Topics: contract-structure
+Sub Topics: functions
  
 
 ---
@@ -271,7 +296,7 @@ Explanation: A free function behaves like an internal function of the contract t
 The main difference is that a free function cannot directly access state variables and internal functions of contracts.
 
 
-Sub Topics: contract-structure
+Sub Topics: functions
  
 
 ---
@@ -280,8 +305,8 @@ Sub Topics: contract-structure
 `import * as symbolName from "filename";`
   
 
-- [x]  This statement imports all global symbols from “filename” into the current global scope.
-- [ ]  This statement creates a new global symbol symbolName whose members are all the global symbols from "filename".
+- [ ]  This statement imports all global symbols from “filename” into the current global scope.
+- [x]  This statement creates a new global symbol symbolName whose members are all the global symbols from "filename".
 - [ ]  This statement imports symbolName member from "filename".
 - [ ]  None of these.
   
@@ -309,28 +334,12 @@ Explanation: A fallback function is called in two cases- A contract receives onl
 or when no function calls matched even though the account received data.
 
 
-Sub Topics: contract-structure
+Sub Topics: functions
  
 
 ---
 
-##### Remix IDE is used for the development of small contracts. What does IDE stand for?  
-
-- [ ]  Integrated Development Engine
-- [x]  Integrated Development Environment
-- [ ]  Integrated DApp Engin
-- [ ]  Internet Development Environment
-  
-Hint: noHint
-         
-Explanation: Remix IDE is part of the Remix Project which can be used for the development of small contracts and for quickly learning Solidity. IDE stands for Integrated Development Environment.
-
-Sub Topics: solidity-compiler
- 
-
----
-
-##### What happens when an event is called ?  
+##### What happens when an event is called?  
 
 - [ ]  When called, events flag an error to the caller.
 - [ ]  They provide a condition under which event a function calling the event should be executed.
@@ -341,7 +350,7 @@ Hint: noHint
          
 Explanation: Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
 
-Sub Topics: contract-structure
+Sub Topics: events
  
 
 ---
@@ -359,7 +368,7 @@ Explanation: Events are used to inform external users that something happened on
 All information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts. 
 
 
-Sub Topics: contract-structure
+Sub Topics: events
  
 
 ---
@@ -407,7 +416,7 @@ Hint: noHint
 Explanation: Modifiers assist in the execution of a functions behavior. They can be used to restrict access of a function.
 
 
-Sub Topics: contract-structure
+Sub Topics: functions, modifiers
  
 
 ---
@@ -423,7 +432,7 @@ Hint: noHint
          
 Explanation: In Solidity, `_;` is used inside a modifier to specify when the function should be executed.
 
-Sub Topics: contract-structure
+Sub Topics: modifiers
  
 
 ---
@@ -460,12 +469,12 @@ Hint: Notice how the function set will execute because of the modifier m.
          
 Explanation: In Solidity, `_;` is used inside a modifier to specify when the function should be executed. As the modifier has `_;` before the modifier statements, so the function code will execute first and then the modifier code. The function set will update the value of a to 20 and then the modifier code will check if the value is greater than 15 or not.
 
-Sub Topics: contract-structure
+Sub Topics: functions, modifiers
  
 
 ---
 
-##### Which of the following is a correct declaration of a function ?  
+##### Which of the following is a correct declaration of a function?  
 
 - [ ]  public function foo() view returns(){}
 - [ ]  public view function foo() returns(){}
@@ -482,7 +491,7 @@ Explanation: The basic syntax of a function is shown below.
 ```
 
 
-Sub Topics: contract-structure
+Sub Topics: functions
  
 
 ---
@@ -504,405 +513,363 @@ It is executed once when a contract is created and it is used to initialize cont
 A constructor can be either public or internal.
 
 
-Sub Topics: variables
+Sub Topics: contract-structure
  
 
 ---
 
-##### question  
+##### Which of the following is true about function modifiers?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [x]  Specified at the entry of a function and executed after the function ends.
+- [x]  Specified at the entry to a function and executed before the function begins.
+- [ ]  Specified at the exit of a function and executed after the function ends.
+- [ ]  None of these.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: “_;” is a special code only used in the function modifier. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
+"_;" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing "_;" before or after the modifier code.
 
-Sub Topics: variables
+
+Sub Topics: modifiers
  
 
 ---
 
-##### question  
+##### How many constructors can be there in a Solidity contract?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [x]  1
+- [ ]  2
+- [ ]  3
+- [ ]  Many
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: A contract can have only one constructor.
 
-Sub Topics: variables
+Sub Topics: contract-structure
  
 
 ---
 
-##### question  
+##### Which of the following is true regarding `_;` used in function modifiers?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
+- [x]  “_;” is a special code only used in the function modifier.
+- [x]  It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
+- [x]  Having `_;` more than once in a modifier is valid.
 - [ ]  option 4
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: “_;” is a special code only used in the function modifier. Having `_;` more than once in a modifier is valid.
+It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
 
-Sub Topics: variables
+
+Sub Topics: modifiers
  
 
 ---
 
-##### question  
+##### What will be the value of a,b and c when function func() is called?
+```
+contract C {
+    uint a;
+    uint b;
+    uint c;
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+    modifier modA() {
+        a = a + 1;
+        _;
+    }
+
+    modifier modB() {
+        b = b + 1;
+        _;
+        b = b + 1;
+        _;
+    }
+
+    function func() public modA modB {
+        c = c + 1;
+    }
+}
+
+```
+  
+
+- [ ]  0,0,0
+- [x]  1,2,2
+- [ ]  0,0,1
+- [ ]  1,2,1
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: The default value of uint is zero so when func() is called modA code will run first, the `_;` will be replaced by modifier's code and the `_;` in the modB modifier's is replaced by the func function's code. Therefore `a=1` , `b=2` and `c=2`.
 
-Sub Topics: variables
+Sub Topics: functions, modifiers
  
 
 ---
 
-##### question  
+##### Which of the following is true about modifiers?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  A function can have any number of modifiers.
+- [ ]  Visibility modifiers for a function should come before custom access modifiers.
+- [ ]  Modifiers can be without any parameters.
+- [x]  All the above.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: A function can have any number of modifiers.
+Visibility modifiers for a function should come before custom access modifiers.
+Modifiers can be without any parameters.
 
-Sub Topics: variables
+
+Sub Topics: functions, modifiers
  
 
 ---
 
-##### question  
+##### Which of tshe following options is true regarding the below statemens?
+Statement 1 - It is allowed to emit an event in function modifiers.
+Statement 2 - A modifier can update a state variable when used with a function declared as view.
+  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [x]  Statement 1 is true but Statement 2 is false.
+- [ ]  Statement 2 is true but Statement 1 is false.
+- [ ]  Both are true.
+- [ ]  Neither is true.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: A function declared as view can only read the state variables and not make updates to them , any modifiers attached to such function can also not make changes to the state of variables.
 
-Sub Topics: variables
+Sub Topics: events, modifiers
  
 
 ---
 
-##### question  
+##### What does the indexed keyword do in events?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  All indexed arguments will be stored in the data part of the log.
+- [x]  indexed keyword is used to log values as topics rather than data part of the log.
+- [x]  The indexed keyword helps you to filter the logs to find the wanted data.
+- [ ]  None of these.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: You can add the attribute indexed to up to three parameters which adds them to a special data structure known as “topics” instead of the data part of the log. The indexed keyword helps you to filter the logs to find the wanted data.
+All non-indexed arguments will be stored in the data part of the log.
 
-Sub Topics: variables
+
+Sub Topics: events
  
 
 ---
 
-##### question  
+##### Which of the following scenarios will result in a compile time error?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  out-of-gas error
+- [ ]  data type overflow error
+- [ ]  divide by zero error
+- [x]  All of these
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.
 
-Sub Topics: variables
+Sub Topics: errors
  
 
 ---
 
-##### question  
+##### Error handling in Solidity can be done using which of the following?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  revert
+- [ ]  require
+- [ ]  assert
+- [x]  All of these
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: Error handling in solidity is done using revert, require, assert and try/catch.
 
-Sub Topics: variables
+Sub Topics: errors
  
 
 ---
 
-##### question  
+##### Which of the following scenarios will cause a Panic type exception to be generated?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [x]  If you call assert with an argument that evaluates to false.
+- [x]  If an arithmetic operation results in underflow or overflow.
+- [x]  If you divide or modulo by zero.
+- [ ]  Calling require(x) where x evaluates to false.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: A Panic exception is generated in the following situations.
+    * If you call assert with an argument that evaluates to false.
+    * If an arithmetic operation results in underflow or overflow.
+    * If you divide or modulo by zero.
+  Calling require(x) where x evaluates to false will result in an Error exception.
 
-Sub Topics: variables
+
+Sub Topics: errors, assert
  
 
 ---
 
-##### question  
+##### Consider the statements below regarding Error(string) and Panic(uint256) type error signatures.
+Statement 1 - Error(string) is used for regular error conditions while Panic(uint256) is used for errors that should not be present in bug-free code.
+Statement 2 - Panic type exception occurs via require and Error via assert.
+  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [x]  Statement 1 is true but Statement 2 is false.
+- [ ]  Statement 2 is true but Statement 1 is false.
+- [ ]  Neither is true.
+- [ ]  Both are true.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: Solidity supports two error signatures: Error(string) and Panic(uint256). Error(string) is used for regular error conditions while Panic(uint256) is used for errors that should not be present in bug-free code.
+Panic is generated by calling assert with an argument showing false and error is generated by calling require with an argument showing false.
 
-Sub Topics: variables
+
+Sub Topics: errors
  
 
 ---
 
-##### question  
+##### Which of the following scenarios will cause an Error type exception to be generated?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  Calling require(x) where x evaluates to false.
+- [ ]  If you perform an external function call targeting a contract that contains no code.
+- [ ]  If you use revert() or revert("description").
+- [x]  All of these.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: An Error exception is generated by the compiler in the following cases-
+  * Calling require(x) where x evaluates to false.
+  * If you perform an external function call targeting a contract that contains no code.
+  * If you use revert() or revert("description").
 
-Sub Topics: variables
+
+Sub Topics: errors
  
 
 ---
 
-##### question  
+##### Which of the following options in correct regarding errors?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [x]  The two ways if (!condition) revert(...); and require(condition, ...); are equivalent.
+- [x]  Using a custom error instance will usually be much cheaper than a revert.
+- [x]  Using revert() causes a revert without any error data while revert("description") will create an Error(string) error.
+- [ ]  None of these.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: Using revert() causes a revert without any error data while revert("description") will create an Error(string) error.
+Using a custom error instance will usually be much cheaper than a string description, because you can use the name of the error to describe it, which is encoded in only four bytes.
+The two ways if (!condition) revert(...); and require(condition, ...); are equivalent as long as the arguments to revert and require do not have side-effects, for example if they are just strings.
 
-Sub Topics: variables
+
+Sub Topics: errors
  
 
 ---
 
-##### question  
+##### To check an integer overflow/underflow , which of the following function should be used?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  revert
+- [x]  assert
+- [ ]  require
+- [ ]  None of these
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: Assert should only be used to test for internal errors, and to check invariants. 
+Properly functioning code should never create a Panic, not even on invalid external input.
+In this case integer overflow/underflow is undesirable and will lead to a bug wich needs to be fixed.
 
-Sub Topics: variables
+
+Sub Topics: errors, assert
  
 
 ---
 
-##### question  
+##### Which of the following catch blocks is valid ?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  `catch Error(string memory reason) { ... }`
+- [ ]  `catch Panic(uint errorCode) { ... }`
+- [ ]  `catch (bytes memory lowLevelData) { ... }`
+- [x]  All of these
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: Solidity supports different kinds of catch blocks depending on the type of errors.
+  * `catch Error(string memory reason) { ... }`, This catch clause is executed if the error was caused by `revert("reasonString")` or `require(false, "reasonString")`.
+  * `catch Panic(uint errorCode) { ... }`, If the error was caused by a panic, i.e. by a failing assert, division by zero, invalid array access, arithmetic overflow and others, this catch clause will be run.
+  * `catch (bytes memory lowLevelData) { ... }`, This clause is executed if the error signature does not match any other clause, if there was an error while decoding the error message, or if no error data was provided with the exception. The declared variable provides access to the low-level error data in that case.
+  * We can just use catch { … } if we are not interested in error data.
 
-Sub Topics: variables
+
+Sub Topics: errors, try-catch
  
 
 ---
 
-##### question  
+##### Which of the following options is correct regarding the statements below,
+Statement 1 - Solidity has special functions like the receive ether function and the fallback function.
+Statement 2 - The declaration `receive() external payable { ... }` is not a valid function declaration.
+  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [x]  Statement 1 is true but Statement 2 is false.
+- [ ]  Statement 2 is true but Statement 1 is false.
+- [ ]  Both are true.
+- [ ]  Neither is true.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: A Receive Ether Function is declared using `receive() external payable { ... }` (without the function keyword). 
+This function cannot have arguments, cannot return anything and must have external visibility and payable state mutability. It can be virtual, can override and can have modifiers.
 
-Sub Topics: variables
+
+Sub Topics: contract-structure, functions
  
 
 ---
 
-##### question  
+##### Which of the following options is correct?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  It is not necessary for functions to be bound to a specific contract.
+- [ ]  Free functions cannot have visibility.
+- [ ]  Free functions are like internal functions.
+- [x]  All of these.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: Functions can be defined at file-level. Such functions are called “free functions” (as opposed to functions bound to a specific contract).
+Free functions are always internal functions and are meant to replace internal library functions and their very special behaviour.
+A free function behaves like an internal function of the contract that called it. The main difference is that a free function cannot directly access state variables and internal functions of contracts.
 
-Sub Topics: variables
+
+Sub Topics: contract-structure, functions
  
 
 ---
 
-##### question  
+##### What effect does a "require" keyword have on an if/else statement when it's false?  
 
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
+- [ ]  It goes to the next function.
+- [ ]  It triggers the fallback function.
+- [x]  It stops the contract and returns any unused gas.
+- [ ]  None of these.
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: `require` accepts a single argument and returns a boolean value after evaluation, it also has a custom string message option. If false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.
 
-Sub Topics: variables
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
-
-Sub Topics: variables
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
-
-Sub Topics: variables
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
-
-Sub Topics: variables
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
-
-Sub Topics: variables
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
-
-Sub Topics: variables
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
-
-Sub Topics: variables
- 
-
----
-
-##### question  
-
-- [x]  option 1
-- [ ]  option 2
-- [ ]  option 3
-- [ ]  option 4
-  
-Hint: noHint
-         
-Explanation: explanation
-
-Sub Topics: variables
+Sub Topics: errors, require
  
