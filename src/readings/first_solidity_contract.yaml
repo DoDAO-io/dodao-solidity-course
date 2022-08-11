@@ -6,7 +6,9 @@
   subTopics:
     - "functions"
   details: |
-    This video covers function declaration in Solidity and also explains view function (read-only) and non-view functions (can change Blockchain data).
+    This video covers 
+    1) Function declaration in Solidity 
+    2) View functions (read-only) and non-view functions (can change Blockchain data).
 
 - uuid: 490e6379-87ca-4827-8a62-f2a42bd66383
   title: Function Modifiers
@@ -53,5 +55,9 @@
     - "file-layout"
     - "contract-structure"
   details: |
-    This video explains the typical layout of a Solidity source file: pragma statement, imports, contract declaration, variable and function declarations.
-
+    This video explains the typical layout of a Solidity source file: 
+    1) Pragma statement
+    2) Imports
+    3) Contract declaration
+    4) Variable 
+    5) Function declarations
