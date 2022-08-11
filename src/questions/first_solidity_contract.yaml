@@ -724,7 +724,7 @@
 
 - uuid: 2fb21e8c-429e-4229-817b-6077c945fca0
   type: MultipleChoice
-  content: Which of the following is true about function modifiers?
+  content: Which of the following is true about function modifier `_;`?
   hint: noHint
   explanation: |
     “_;” is a special code only used in the function modifier. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
@@ -936,7 +936,7 @@
 
 - uuid: 4b1b0494-f540-4a22-af9a-bdd791fb2834
   type: SingleChoice
-  content: Which of the following scenarios will result in a compile time error?
+  content: Which of the following scenarios will result in a runtime time errors?
   hint: noHint
   explanation: Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.
   answerKeys:
@@ -960,9 +960,9 @@
 
 - uuid: 411289f8-19ca-4f57-8bd1-c55aea028b5a
   type: SingleChoice
-  content: Error handling in Solidity can be done using which of the following?
+  content: Error handling and validations in Solidity can be done using which of the following?
   hint: noHint
-  explanation: Error handling in solidity is done using revert, require, assert and try/catch.
+  explanation: Error handling and validations in solidity is done using revert, require, assert and try/catch.
   answerKeys:
     - D
   subTopics:
