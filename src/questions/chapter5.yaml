@@ -424,7 +424,7 @@
 
 - uuid: d608a41e-befd-4633-b74d-aef833e1f8e6
   type: SingleChoice
-  content: Type of functions those can be called directily from outside of the library.
+  content: WHich type of functions can be called directly from outside of the library.
   hint: noHint
   explanation: Functions of the library can be called directly when they do not modify the state variables i.e. only pure and view functions can be called from outside of the library.
   answerKeys:
@@ -470,31 +470,6 @@
       key: C
       order: 2
     - content: Interface can have state variables.
-      key: D
-      order: 3
-
-- uuid: b3466145-78de-407c-b6c3-8dec7756cbb3
-  type: SingleChoice
-  content: Which of following a interface can not have?
-  hint: noHint
-  explanation: Interfaces do not have any definition or any state variables, constructors, or any function with implementation, they only contain function declarations i.e. functions in interfaces do not have any statements.
-  answerKeys:
-    - D
-  topic: Abstraction
-  subTopics:
-    - interface
-  difficultyLevel: Low
-  choices:
-    - content: state variable
-      key: A
-      order: 0
-    - content: constructor
-      key: B
-      order: 1
-    - content: function with implementation
-      key: C
-      order: 2
-    - content: All of these
       key: D
       order: 3
 
@@ -705,7 +680,9 @@
   type: SingleChoice
   content: Choose the correct statement from below options about constructor in solidity. 
   hint: noHint
-  explanation: Constructors are very useful in a smart contract, a parameter value can be defined at the run time and can also restrict the method call.
+  explanation: 
+    - A parameter value can be defined at the run time in a constructor.
+    - Constructor can also restrict the method call.
   answerKeys:
     - C
   topic: Constructor
@@ -822,7 +799,7 @@
     - content: It get invoked only once when the contract is deployed. 
       key: B
       order: 1
-    - content: Constructors are need to be called from outside of a contract.
+    - content: Constructor can't restrict the method call.
       key: C
       order: 2
     - content: None
@@ -909,7 +886,11 @@
   type: SingleChoice
   content: '"Declaration of function cannot be overload by functions that differ only in return type in solidity." The statement is' 
   hint: noHint
-  explanation: Null
+  explanation: 
+    - We can have multiple definitions for the same function name in the same scope. The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. 
+    - We cannot overload function declarations that differ only by return type.
+
+
   answerKeys:
     - A
   topic: Polymorphism
@@ -975,31 +956,6 @@
       key: D
       order: 3
 
-- uuid: 709b35aa-7827-4cf0-9e01-6a90d7453dc4
-  type: SingleChoice
-  content: Which of the following is an object oriented programming language?
-  hint: noHint
-  explanation: Solidity is a object-oriented programming language.
-  answerKeys:
-    - D
-  topic: OOP
-  subTopics:
-    - oop
-  difficultyLevel: Low
-  choices:
-    - content: Pascal
-      key: A
-      order: 0
-    - content: C
-      key: B
-      order: 1
-    - content: Fortan
-      key: C
-      order: 2
-    - content: Solidity
-      key: D
-      order: 3
-
 - uuid: da6462e4-8e42-4768-a9b9-78b723168303
   type: SingleChoice
   content: Is it accurate that private variables are truly private?
@@ -1021,27 +977,26 @@
 
 - uuid: 9678bd2b-b38d-41b5-a25a-a48401d8df1b
   type: SingleChoice
-  content: Number of types of libraries avialable in solidity
+  content: Which of types belongs to libraries avialable in solidity
   hint: noHint
   explanation: 
     There are 2 types of libraries
     - Deployed- They have their own address, and several other smart contracts can use them.
     - Embedded- They don’t have their own address and are deployed as part of the code of the smart contract that uses them.
   answerKeys:
-    - B
-  topic: Library
+    - C
   subTopics:
     - types
     - libraries
   difficultyLevel: Low
   choices:
-    - content: one
+    - content: Deployed
       key: A
       order: 0
-    - content: two
+    - content: Embedded
       key: B
       order: 1
-    - content: three
+    - content: Both A and B
       key: C
       order: 2
     - content: None
