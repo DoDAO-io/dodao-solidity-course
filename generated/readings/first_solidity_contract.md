@@ -9,7 +9,9 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
  [![Declaring a function](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
  
- This video covers function declaration in Solidity and also explains view function (read-only) and non-view functions (can change Blockchain data).
+ This video covers 
+1) Function declaration in Solidity 
+2) View functions (read-only) and non-view functions (can change Blockchain data).
     
  
  Sub Topics: functions    
@@ -43,7 +45,12 @@ This video covers how error handling in solidity is done using revert, require, 
  
  [![Structure of Smart contract](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
  
- This video explains the typical layout of a Solidity source file: pragma statement, imports, contract declaration, variable and function declarations.
+ This video explains the typical layout of a Solidity source file: 
+1) Pragma statement
+2) Imports
+3) Contract declaration
+4) Variable 
+5) Function declarations
     
  
  Sub Topics: file-layout, contract-structure    

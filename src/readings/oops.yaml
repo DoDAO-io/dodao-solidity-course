@@ -1,9 +1,0 @@
-- uuid: f7a54b96-2fc7-46ef-961e-1ce6a50af8dc
-  title: title
-  shortTitle: short title
-  type: YoutubeVideo
-  url: url
-  subTopics:
-    - "encapsulation"
-  details: |
-    details

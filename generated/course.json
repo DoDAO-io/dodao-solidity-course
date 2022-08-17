@@ -835,7 +835,7 @@
         {
           "uuid": "2fb21e8c-429e-4229-817b-6077c945fca0",
           "type": "MultipleChoice",
-          "content": "Which of the following is true about function modifiers?",
+          "content": "Which of the following is true about function modifier `_;`?",
           "hint": "noHint",
           "explanation": "“_;” is a special code only used in the function modifier. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.\n\"_;\" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing \"_;\" before or after the modifier code.\n",
           "answerKeys": [
@@ -1066,7 +1066,7 @@
         {
           "uuid": "4b1b0494-f540-4a22-af9a-bdd791fb2834",
           "type": "SingleChoice",
-          "content": "Which of the following scenarios will result in a compile time error?",
+          "content": "Which of the following scenarios will result in a runtime time errors?",
           "hint": "noHint",
           "explanation": "Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.",
           "answerKeys": [
@@ -1098,9 +1098,9 @@
         {
           "uuid": "411289f8-19ca-4f57-8bd1-c55aea028b5a",
           "type": "SingleChoice",
-          "content": "Error handling in Solidity can be done using which of the following?",
+          "content": "Error handling and validations in Solidity can be done using which of the following?",
           "hint": "noHint",
-          "explanation": "Error handling in solidity is done using revert, require, assert and try/catch.",
+          "explanation": "Error handling and validations in solidity is done using revert, require, assert and try/catch.",
           "answerKeys": [
             "D"
           ],
@@ -1436,7 +1436,7 @@
           "subTopics": [
             "functions"
           ],
-          "details": "This video covers function declaration in Solidity and also explains view function (read-only) and non-view functions (can change Blockchain data).\n"
+          "details": "This video covers \n1) Function declaration in Solidity \n2) View functions (read-only) and non-view functions (can change Blockchain data).\n"
         },
         {
           "uuid": "490e6379-87ca-4827-8a62-f2a42bd66383",
@@ -1485,7 +1485,7 @@
             "file-layout",
             "contract-structure"
           ],
-          "details": "This video explains the typical layout of a Solidity source file: pragma statement, imports, contract declaration, variable and function declarations.\n"
+          "details": "This video explains the typical layout of a Solidity source file: \n1) Pragma statement\n2) Imports\n3) Contract declaration\n4) Variable \n5) Function declarations\n"
         }
       ],
       "summaries": [
@@ -3445,19 +3445,485 @@
       ]
     },
     {
-      "title": "Object Oriented Programming (OOP) Concepts in Solidity",
+      "title": "Object-Oriented Programming (OOP) Concepts in Solidity",
       "key": "oops",
-      "details": "Solidity is an object oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.",
+      "details": "Solidity is an object-oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.",
       "order": 4,
       "questions": [
         {
-          "uuid": "9dbcbbce-9235-4a56-9846-aee5ec618532",
-          "type": "MultipleChoice",
-          "content": "question",
+          "uuid": "bd6b88a6-ea79-4745-8a9e-3fcccf36a7ab",
+          "type": "SingleChoice",
+          "content": "The feature in object-oriented programming that allows the same operation to be carried out differently, depending on the object, is",
           "hint": "noHint",
-          "explanation": "explanation",
+          "explanation": "Polymorphism is an ability to process data in more than one form.",
           "answerKeys": [
-            "B",
+            "B"
+          ],
+          "subTopics": [
+            "polymorphism"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Inheritance",
+              "key": "A"
+            },
+            {
+              "content": "Polymorphism",
+              "key": "B"
+            },
+            {
+              "content": "Overriding",
+              "key": "C"
+            },
+            {
+              "content": "Overloading",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "f02bba8b-1836-4052-abdb-cb58f6f30554",
+          "type": "SingleChoice",
+          "content": "Consider the following two statements related to inheritance * (a)A publicly derived class is a subtype of its base class. * (b)Inheritance provides for code reuse.",
+          "hint": "noHint",
+          "explanation": [
+            "A publicly derived class is a subtype of its base class.",
+            "Inheritance provides for code reuse."
+          ],
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Both the statements (a) and (b) are correct.",
+              "key": "A"
+            },
+            {
+              "content": "Statements (a) is correct and statement (b) is incorrect.",
+              "key": "B"
+            },
+            {
+              "content": "Statements (a) is incorrect and statement (b) is correct.",
+              "key": "C"
+            },
+            {
+              "content": "Both the statements (a) and (b) are incorrect.",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "4c08743a-6381-4508-9575-bd315a9dd1d0",
+          "type": "SingleChoice",
+          "content": "Abstraction and encapsulation are fundamental principles that underlie the object oriented approach to software development. What can you say about the following two statements ? * I. Abstraction talks about bundling data and methods together in one contract. * II. Encapsulation allows us to consider complex ideas while ignoring irrelevant detail that would confuse us.",
+          "hint": "noHint",
+          "explanation": "Encapsulation allows us to focus on what something does without considering the complexities of how it works. Abstraction allows us to consider complex ideas while ignoring irrelevant detail that would confuse us. So, option (A) is correct.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "inheritance",
+            "encapsulation"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Neither I nor II is correct.",
+              "key": "A"
+            },
+            {
+              "content": "Both I and II are correct.",
+              "key": "B"
+            },
+            {
+              "content": "Only I is correct.",
+              "key": "C"
+            },
+            {
+              "content": "Only II is correct.",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ab278067-188b-4087-8dee-6b64e300aaaf",
+          "type": "SingleChoice",
+          "content": "Which one of the following are essential features of object oriented language? * A. Abstraction and encapsulation * B. Strictly-typed * C. Type-safe property coupled with sub-type rule * D. Polymorphism in the presence of inheritance",
+          "hint": "noHint",
+          "explanation": "Abstraction, Encapsulation, Polymorphism and Inheritance are the essential features of a OOP Language.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "inheritance",
+            "encapsulation",
+            "polymorphism"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "A and B only",
+              "key": "A"
+            },
+            {
+              "content": "A, D and B only",
+              "key": "B"
+            },
+            {
+              "content": "A and D only",
+              "key": "C"
+            },
+            {
+              "content": "A, C and B only",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "46a72ca3-f513-417c-bf3e-099c9610f7e9",
+          "type": "SingleChoice",
+          "content": "Which objects can only be accessed internally from the current contract instances?",
+          "hint": "noHint",
+          "explanation": [
+            "Private properties can only be accessed internally from the current contract instances.",
+            "Internal properties can be accessed from child contracts, but not from external contracts.",
+            "Private properties can't be accessed even from child contracts."
+          ],
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "encapsulation"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "public",
+              "key": "A"
+            },
+            {
+              "content": "private",
+              "key": "B"
+            },
+            {
+              "content": "internal",
+              "key": "C"
+            },
+            {
+              "content": "external",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "5d6b3cca-0774-4bea-90bc-c0fb6bb0c0c0",
+          "type": "SingleChoice",
+          "content": "Which of the following does not belong to state visibility?",
+          "hint": "noHint",
+          "explanation": [
+            "Values of state variables are permanently stored in the contract storage. Each function has its own scope, and state variables should always be defined outside of that scope.",
+            "Only functions can be marked external. External functions are part of the contract interface and can be called from other contracts and transactions. They can't be called internally. This leads to external functions being cheaper to execute."
+          ],
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "encapsulation"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Public",
+              "key": "A"
+            },
+            {
+              "content": "Internal",
+              "key": "B"
+            },
+            {
+              "content": "Private",
+              "key": "C"
+            },
+            {
+              "content": "External",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "6fdde9f4-9853-413c-a110-7c4ee6c8aabb",
+          "type": "SingleChoice",
+          "content": "The process of defining multiple contracts related to each other through parent-child relationships is called?",
+          "hint": "noHint",
+          "explanation": null,
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Abstraction",
+              "key": "A"
+            },
+            {
+              "content": "Encapsulation",
+              "key": "B"
+            },
+            {
+              "content": "Inheritance",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "79ff51fb-9703-44ea-bf0d-a092cea80e17",
+          "type": "SingleChoice",
+          "content": "Solidity uses to force a specific order in graphs of base contracts is known as",
+          "hint": "noHint",
+          "explanation": [
+            "C3 linearization is consistent with three properties: a consistent extended precedence graph, preservation of local precedence order, and. fitting a monotonicity criterion.",
+            "Solidity follows C3 Linearization."
+          ],
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "C1 Linearization",
+              "key": "A"
+            },
+            {
+              "content": "Method Revolution Order",
+              "key": "B"
+            },
+            {
+              "content": "C3 Linearization",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "3c8b8711-b120-46db-9bc8-46d6fa292dae",
+          "type": "SingleChoice",
+          "content": "Which of the following inheritance does not belongs to solidity?",
+          "hint": "noHint",
+          "explanation": null,
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Single Inheritance",
+              "key": "A"
+            },
+            {
+              "content": "Hybrid Inheritance: A combination of single, multiple inheritance and hierarchical inheritance.",
+              "key": "B"
+            },
+            {
+              "content": "Hierarchical Inheritance: A parent has more than one child class/contract",
+              "key": "C"
+            },
+            {
+              "content": "Multiple Inheritance",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "0d4494ae-27cf-40d7-bb43-071a9c11833a",
+          "type": "SingleChoice",
+          "content": "Which of the following explain about Multi-level Inheritance?",
+          "hint": "noHint",
+          "explanation": "Multi-level inheritance is similar to single inheritance, but it has levels of the relationship between the parent and the child.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "A single contract can be inherited from one or more contracts.",
+              "key": "A"
+            },
+            {
+              "content": "Single contract acts as a base contract for multiple derived contracts.",
+              "key": "B"
+            },
+            {
+              "content": "Multiple levels of the parent-child relationship.",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "672fcc59-0567-436f-8eaf-c43858082344",
+          "type": "SingleChoice",
+          "content": "Which of the following is a inbuilt library of solidity?",
+          "hint": "noHint",
+          "explanation": "Dapp-bin was created by Ethereum includes interesting and useful libraries like DoublyLinkedList, StringUtils, IterableMapping, etc.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "library"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Dapp-bin",
+              "key": "A"
+            },
+            {
+              "content": "Matplotlib",
+              "key": "B"
+            },
+            {
+              "content": "Seaborn",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ed3525c5-5e27-49b2-9975-7e421099e239",
+          "type": "SingleChoice",
+          "content": "Which of the below solidity keyword is used while importing library.",
+          "hint": "noHint",
+          "explanation": [
+            "'for' keyword is used to attach library functions to any type.",
+            "<libraryName> for <dataType>: libraryName is the name of the desired library to import, dataType is the variable type for which we want to access the library."
+          ],
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "library"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "of",
+              "key": "A"
+            },
+            {
+              "content": "for",
+              "key": "B"
+            },
+            {
+              "content": "apply",
+              "key": "C"
+            },
+            {
+              "content": "match",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "2233d367-dd48-40d5-aeac-44a3a606578d",
+          "type": "SingleChoice",
+          "content": "Which of the below property is incorrect about libraries in solidity?",
+          "hint": "noHint",
+          "explanation": "All the properties are correct regarding library in solidity.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "library"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It does not have state variables.",
+              "key": "A"
+            },
+            {
+              "content": "It can not inherit any element.",
+              "key": "B"
+            },
+            {
+              "content": "It can not be inherited",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "42152571-7564-440b-83c5-79cb91a6c4a7",
+          "type": "SingleChoice",
+          "content": "Choose the correct description about the popular solidity library OpenZeppelin.",
+          "hint": "noHint",
+          "explanation": "OpenZeppelin Contracts helps you minimize risk by using battle-tested libraries of smart contracts for Ethereum and other blockchains.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "library"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Includes many modular libraries that are very useful for implementation like ArrayUtils, Token, CrowdSale, Vesting, StringUtils, LinkedList, Wallet, etc.",
+              "key": "A"
+            },
+            {
+              "content": "Includes interesting and useful libraries like DoublyLinkedList, StringUtils, IterableMapping, etc.",
+              "key": "B"
+            },
+            {
+              "content": "Includes other supporting libraries are Roles, MerkleProof, ECDSA, Math, Address, SafeERC20, ERC165Checker, SafeMath, Arrays, etc which protects from overflow.",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "40d58c0b-7475-41f7-abf8-c9af2646f78b",
+          "type": "SingleChoice",
+          "content": "Choose the data type that can not be used in solidity library.",
+          "hint": "noHint",
+          "explanation": "Library in solidity can implement some data types like struct and enums which are user-defined, and constant variables that are stored in a stack of Ethereum, not in storage.",
+          "answerKeys": [
             "D"
           ],
           "subTopics": [
@@ -3466,19 +3932,779 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "content": "1",
+              "content": "struct",
               "key": "A"
             },
             {
-              "content": "2",
+              "content": "enums",
               "key": "B"
             },
             {
-              "content": "3",
+              "content": "constant variables",
               "key": "C"
             },
             {
-              "content": "4",
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "46bab6f7-0612-4b6d-9b09-3e3d8f4db9c4",
+          "type": "SingleChoice",
+          "content": "Which of the following can not be declared inside a library in solidity?",
+          "hint": "noHint",
+          "explanation": "Libraries do not have any storage thus it cannot hold state variables, fallback or payable functions also cannot be created inside the library as it cannot store ethers.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "encapsulation"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "state variable",
+              "key": "A"
+            },
+            {
+              "content": "fallback",
+              "key": "B"
+            },
+            {
+              "content": "None",
+              "key": "C"
+            },
+            {
+              "content": "Both A and B",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "d608a41e-befd-4633-b74d-aef833e1f8e6",
+          "type": "SingleChoice",
+          "content": "Which type of functions can be called directly from outside of the library.",
+          "hint": "noHint",
+          "explanation": "Functions of the library can be called directly when they do not modify the state variables i.e. only pure and view functions can be called from outside of the library.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "library"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "pure",
+              "key": "A"
+            },
+            {
+              "content": "view",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "5112f0d8-19b8-4140-ae06-ae1309acd783",
+          "type": "SingleChoice",
+          "content": "Find the incorrect property about Interface.",
+          "hint": "noHint",
+          "explanation": "You can't put any state variables inside Interfaces, because interfaces define contracts which can be implemented in various ways. T",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Interface can not have any function with implementation.",
+              "key": "A"
+            },
+            {
+              "content": "Functions of an interface can be only of type external.",
+              "key": "B"
+            },
+            {
+              "content": "Interface can not have constructor.",
+              "key": "C"
+            },
+            {
+              "content": "Interface can have state variables.",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "3f034ef2-066b-404a-9a3b-dc0992e37d37",
+          "type": "SingleChoice",
+          "content": "Functions of Interface can be only of type",
+          "hint": "noHint",
+          "explanation": "Functions of Interface can be only of type external.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "public",
+              "key": "A"
+            },
+            {
+              "content": "external",
+              "key": "B"
+            },
+            {
+              "content": "private",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "60a66ec6-4e7d-4791-986a-738c68363dee",
+          "type": "SingleChoice",
+          "content": "From where an interface can inherit?",
+          "hint": "noHint",
+          "explanation": "An interface can inherit from other interfaces, but they can’t inherit from other contracts.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "other interface",
+              "key": "A"
+            },
+            {
+              "content": "other contract",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "3add6edb-45d2-45a5-ad44-0414d7aada76",
+          "type": "SingleChoice",
+          "content": "Which of the following data type can be used in an interface?",
+          "hint": "noHint",
+          "explanation": "An interface can have enum, structs which can be accessed using interface name dot notation.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "enum",
+              "key": "A"
+            },
+            {
+              "content": "struct",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "c4b24502-802b-4cc1-a172-0737b32ccfeb",
+          "type": "SingleChoice",
+          "content": "Select the correct property regarding abstract contracts.",
+          "hint": "noHint",
+          "explanation": "explanation",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Abstract contracts are contracts that have at least one function without its implementation.",
+              "key": "A"
+            },
+            {
+              "content": "When we don’t intend to create a contract directly we can consider the contract to be abstract.",
+              "key": "B"
+            },
+            {
+              "content": "An instance of an abstract cannot be created.",
+              "key": "C"
+            },
+            {
+              "content": "All of these",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "41899c0d-e985-42b6-b532-34760b1d1d2b",
+          "type": "SingleChoice",
+          "content": "If the derived contract of an abstract contract is also not implementing the incomplete functions then that derived contract will also be marked as",
+          "hint": "noHint",
+          "explanation": null,
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "interface",
+              "key": "A"
+            },
+            {
+              "content": "abstract",
+              "key": "B"
+            },
+            {
+              "content": "library",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "67c5c94c-42f8-4c65-a2dc-a7cdc121db6a",
+          "type": "SingleChoice",
+          "content": "Which of the following keyword is used to declare an abstract contract?",
+          "hint": "noHint",
+          "explanation": "An abstract contract is declared using the abstract keyword.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "inheritance"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "interface",
+              "key": "A"
+            },
+            {
+              "content": "library",
+              "key": "B"
+            },
+            {
+              "content": "abstract",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "4d443bb2-d84b-475e-8337-55ab3fcb4d33",
+          "type": "SingleChoice",
+          "content": "Which of the below statement is correct regarding constructor in solidity?",
+          "hint": "noHint",
+          "explanation": "Solidity provides a constructor declaration inside the smart contract and it invokes only once when the contract is deployed and is used to initialize the contract state.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "constructor"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "A constructor can be called multiple times.",
+              "key": "A"
+            },
+            {
+              "content": "A constructor can not accept arguments.",
+              "key": "B"
+            },
+            {
+              "content": "A constructor can be invoked only once.",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "60ad4e34-501c-4039-a3bb-da0a5730a52b",
+          "type": "SingleChoice",
+          "content": "Which of the following key word is used to declare a constructor?",
+          "hint": "noHint",
+          "explanation": "A Constructor is defined using a constructor keyword without any function name followed by an access modifier.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "constructor"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "pragma",
+              "key": "A"
+            },
+            {
+              "content": "abstract",
+              "key": "B"
+            },
+            {
+              "content": "interface",
+              "key": "C"
+            },
+            {
+              "content": "constructor",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8e9bf2dd-0481-4edf-88db-5dfad785f513",
+          "type": "SingleChoice",
+          "content": "Choose the correct statement from below options about constructor in solidity.",
+          "hint": "noHint",
+          "explanation": [
+            "A parameter value can be defined at the run time in a constructor.",
+            "Constructor can also restrict the method call."
+          ],
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "constructor"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "A parameter value can be defined at the run time in a constructor.",
+              "key": "A"
+            },
+            {
+              "content": "A constructor can also restrict method call.",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "2ad6f765-fb79-458e-841c-f1ae5cc4f9c1",
+          "type": "SingleChoice",
+          "content": "Ways of calling parent contract's constructor",
+          "hint": "noHint",
+          "explanation": "There are two ways of calling a parent contract’s constructor i.e. Direct Initialization and Indirect Initialization.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "constructor",
+            "inheritance"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Direct Initialization: This method is used to initialize the constructor of the parent class.",
+              "key": "A"
+            },
+            {
+              "content": "Indirect Initialization: By using Base(string(abi.encodePacked(_info, _info))) is done to initialize the constructor of the base class.",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "6e67e159-1acf-4df7-95f7-be2e2ea61629",
+          "type": "SingleChoice",
+          "content": "If the child contract is not passing any parameter to the parent’s constructor the child contract will become",
+          "hint": "noHint",
+          "explanation": "If the child contract is not passing any parameter to the parent’s constructor the child contract will become an abstract contract.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "inheritance",
+            "constructor"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "library",
+              "key": "A"
+            },
+            {
+              "content": "interface",
+              "key": "B"
+            },
+            {
+              "content": "abstract contract",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "c909f776-9923-4e74-b489-98e302e4da2e",
+          "type": "SingleChoice",
+          "content": "Solidity keyword to declare a constructor is",
+          "hint": "noHint",
+          "explanation": "'constructor' keyword is used to declare a constructor",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "constructor"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "const",
+              "key": "A"
+            },
+            {
+              "content": "constructor",
+              "key": "B"
+            },
+            {
+              "content": "construct",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "9324eacb-ffe2-437e-a85d-40f80543815e",
+          "type": "SingleChoice",
+          "content": "How to call a constructor in contract.",
+          "hint": "noHint",
+          "explanation": "Constructor invokes only once when the contract is deployed and is used to initialize the contract state.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "constructor"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Constructor are called from other functions in the solidity.",
+              "key": "A"
+            },
+            {
+              "content": "It get invoked only once when the contract is deployed.",
+              "key": "B"
+            },
+            {
+              "content": "Constructor can't restrict the method call.",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "6ff16f09-7170-416b-948d-991e7ddcc4b4",
+          "type": "SingleChoice",
+          "content": "Which of the following is not belongs to polymorphism in solidity?",
+          "hint": "noHint",
+          "explanation": "Solidity supports two types of polymorphism, Function Polymorphism, and Contract Polymorphism.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "polymorphism"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Function Polymorphism",
+              "key": "A"
+            },
+            {
+              "content": "Variable Polymorphism",
+              "key": "B"
+            },
+            {
+              "content": "Contract Polymorphism",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "60e9111a-fa13-47c4-ac5e-5c8a4508dcea",
+          "type": "SingleChoice",
+          "content": "Function Polymorphism is also known as",
+          "hint": "noHint",
+          "explanation": "Function Polymorphism is also known as method overloading.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "polymorphism"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "method calling",
+              "key": "A"
+            },
+            {
+              "content": "method overriding",
+              "key": "B"
+            },
+            {
+              "content": "method overloading",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "abb0ca8a-6082-40f5-a4e7-85ea1e31dec7",
+          "type": "SingleChoice",
+          "content": "In function polymorphism, functions are differ by",
+          "hint": "noHint",
+          "explanation": "In function polymorphism, multiple functions are declared having the same name within the same contract or inheriting contract. Functions differ on the basis of the number of parameters or parameter datatypes.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "polymorphism"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "number of parameters",
+              "key": "A"
+            },
+            {
+              "content": "function name",
+              "key": "B"
+            },
+            {
+              "content": "access modifier",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "56639933-4852-4f0e-b9ac-893e5eb3cce7",
+          "type": "SingleChoice",
+          "content": "\"Declaration of function cannot be overload by functions that differ only in return type in solidity.\" The statement is",
+          "hint": "noHint",
+          "explanation": [
+            "We can have multiple definitions for the same function name in the same scope. The definition of the function must differ from each other by the types and/or the number of arguments in the argument list.",
+            "We cannot overload function declarations that differ only by return type."
+          ],
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "polymorphism"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "7390eb9d-f096-44e9-82c4-93cfe8786885",
+          "type": "SingleChoice",
+          "content": "Using multiple contract instances interchangeably when they are related to each other by using inheritance is known as",
+          "hint": "noHint",
+          "explanation": "Contract polymorphism means using multiple contract instances interchangeably when they are related to each other by using inheritance.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "polymorphism"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Method overloading",
+              "key": "A"
+            },
+            {
+              "content": "Contract Polymorphism",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "e6ea1839-6aa6-431b-a354-60175b35a938",
+          "type": "SingleChoice",
+          "content": "Which of the following explains polymorphism",
+          "hint": "noHint",
+          "explanation": "Polymorphism is an ability to process data in more than one form. Like any other programming language Solidity also supports polymorphism.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "polymorphism"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "An ability to process data in more than one form.",
+              "key": "A"
+            },
+            {
+              "content": "The mechanism of manipulation of the scope of variables.",
+              "key": "B"
+            },
+            {
+              "content": "Way of extending the functionality of a program, used to separate the code, reduces the dependency, and increases the re-usability of the existing code.",
+              "key": "C"
+            },
+            {
+              "content": "None",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "da6462e4-8e42-4768-a9b9-78b723168303",
+          "type": "SingleChoice",
+          "content": "Is it accurate that private variables are truly private?",
+          "hint": "noHint",
+          "explanation": "No, Only the EVM has access to private information (Ethereum Virtual Machine, the part of Ethereum that executes smart contracts). On the other hand, smart contract data is stored on the Ethereum blockchain, which is open to the world. Anyone can read secret variables of smart contracts using a particular tool for analyzing blockchain data.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "encapsulation"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "Yes",
+              "key": "A"
+            },
+            {
+              "content": "No",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "9678bd2b-b38d-41b5-a25a-a48401d8df1b",
+          "type": "SingleChoice",
+          "content": "Which of types belongs to libraries avialable in solidity",
+          "hint": "noHint",
+          "explanation": "There are 2 types of libraries - Deployed- They have their own address, and several other smart contracts can use them. - Embedded- They don’t have their own address and are deployed as part of the code of the smart contract that uses them.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "library"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Deployed",
+              "key": "A"
+            },
+            {
+              "content": "Embedded",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B",
+              "key": "C"
+            },
+            {
+              "content": "None",
               "key": "D"
             }
           ]
@@ -3486,15 +4712,92 @@
       ],
       "readings": [
         {
-          "uuid": "f7a54b96-2fc7-46ef-961e-1ce6a50af8dc",
-          "title": "title",
-          "shortTitle": "short title",
+          "uuid": "048a44ca-13d8-11ed-861d-0242ac120002",
+          "title": "Understanding Encapsulation in Solidity",
+          "shortTitle": "Encapsulation",
           "type": "YoutubeVideo",
-          "url": "url",
+          "url": "https://www.youtube.com/watch?v=thADMg9cKPM",
           "subTopics": [
             "encapsulation"
           ],
-          "details": "details\n"
+          "details": "In this video we're looking at the inheritance in Solidity.\nThis video explains about\n- Visibility\n- What is Function modifier\n"
+        },
+        {
+          "uuid": "7e6c6d52-76e5-44f1-90da-a722a07689dc",
+          "title": "Understanding Encapsulation in Solidity",
+          "shortTitle": "Encapsulation",
+          "type": "YoutubeVideo",
+          "url": "https://https://www.youtube.com/watch?v=tfk25O-5Ppg",
+          "subTopics": [
+            "encapsulation"
+          ],
+          "details": "In this video we're looking at the inheritance in Solidity.\nThis video explains about\n- Visibility\n- What is Function modifier\n"
+        },
+        {
+          "uuid": "048a4f74-13d8-11ed-861d-0242ac120002",
+          "title": "Inheritance in Solidity",
+          "shortTitle": "Inheritance",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=LwKIEj60dks",
+          "subTopics": [
+            "inheritance"
+          ],
+          "details": "In this video we're looking at the inheritance in Solidity.\nThis video explains about\n- Inheritance with example\n- Smart contract intraction\n"
+        },
+        {
+          "uuid": "048a50be-13d8-11ed-861d-0242ac120002",
+          "title": "Polymorphism in Solidity",
+          "shortTitle": "Polymorphism",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=l_E5F5qnbtk",
+          "subTopics": [
+            "polymorphism"
+          ],
+          "details": "In this video we're looking at the polymorphism in Solidity.\nThis video explains about\n- polymorphism with example\n- Contract function intraction\n"
+        },
+        {
+          "uuid": "241e570b-10a8-4856-b344-9641f19af397",
+          "title": "Polymorphism in Solidity",
+          "shortTitle": "Polymorphism",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=-ByfpJIqm-Y",
+          "subTopics": [
+            "polymorphism"
+          ],
+          "details": "In this video we're looking at the polymorphism in Solidity.\nThis video explains about\n- polymorphism with example\n- Contract function intraction\n"
+        },
+        {
+          "uuid": "048a51e0-13d8-11ed-861d-0242ac120002",
+          "title": "Constructor for Solidity",
+          "shortTitle": "Constructor",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=ADVifGOanVU",
+          "subTopics": [
+            "constructor"
+          ],
+          "details": "In this video we're looking at the constructor in Solidity.\nThis video explains about\n* How to declare a constructor in Solidity\n* Differences between a constructor and regular functions\n* How to call a parent constructor from an inherited contract\n"
+        },
+        {
+          "uuid": "048a52ee-13d8-11ed-861d-0242ac120002",
+          "title": "Abstraction in Solidity",
+          "shortTitle": "Abstraction",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=iAB_6ZwqGG0",
+          "subTopics": [
+            "inheritance"
+          ],
+          "details": "In this video we're looking at the abstraction in Solidity.\nThis video explains about\n* How to declare an Abstract Contract\n* Abstract Contract Explained\n* How to use Interfaces\n"
+        },
+        {
+          "uuid": "048a55a0-13d8-11ed-861d-0242ac120002",
+          "title": "Libraries in Solidity",
+          "shortTitle": "Libraries",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=25MLAnIzXRw",
+          "subTopics": [
+            "library"
+          ],
+          "details": "In this video we're looking at the libraries in Solidity.\nThis video explains about\n- Simple example with pure function\n- Advanced example with a struct\n- Deployed vs Embedded libraries\n"
         }
       ],
       "summaries": [

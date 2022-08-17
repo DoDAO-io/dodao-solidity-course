@@ -3,7 +3,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
 
  ---
  
- ## Object Oriented Programming (OOP) Concepts in Solidity
+ ## Object-Oriented Programming (OOP) Concepts in Solidity
  
  **Understanding Encapsulation in Solidity**        
 It refers to the bundling of data, along with the methods that operate on that data, into a single unit.

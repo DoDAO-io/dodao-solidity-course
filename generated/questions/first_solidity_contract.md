@@ -518,7 +518,7 @@ Sub Topics: contract-structure
 
 ---
 
-##### Which of the following is true about function modifiers?  
+##### Which of the following is true about function modifier `_;`?  
 
 - [x]  Specified at the entry of a function and executed after the function ends.
 - [x]  Specified at the entry to a function and executed before the function begins.
@@ -667,7 +667,7 @@ Sub Topics: events
 
 ---
 
-##### Which of the following scenarios will result in a compile time error?  
+##### Which of the following scenarios will result in a runtime time errors?  
 
 - [ ]  out-of-gas error
 - [ ]  data type overflow error
@@ -683,7 +683,7 @@ Sub Topics: errors
 
 ---
 
-##### Error handling in Solidity can be done using which of the following?  
+##### Error handling and validations in Solidity can be done using which of the following?  
 
 - [ ]  revert
 - [ ]  require
@@ -692,7 +692,7 @@ Sub Topics: errors
   
 Hint: noHint
          
-Explanation: Error handling in solidity is done using revert, require, assert and try/catch.
+Explanation: Error handling and validations in solidity is done using revert, require, assert and try/catch.
 
 Sub Topics: errors
  

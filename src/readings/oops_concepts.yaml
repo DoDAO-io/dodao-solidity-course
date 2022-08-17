@@ -2,12 +2,22 @@
   title: Understanding Encapsulation in Solidity
   shortTitle: Encapsulation
   type: YoutubeVideo
-  url: 
-    - https://www.youtube.com/watch?v=thADMg9cKPM
-    - https://www.youtube.com/watch?v=tfk25O-5Ppg
+  url:  https://www.youtube.com/watch?v=thADMg9cKPM
   subTopics:
-    - "access-modifiers"
-    - "state-variable-visibility"
+    - encapsulation
+  details: |
+    In this video we're looking at the inheritance in Solidity.
+    This video explains about
+    - Visibility
+    - What is Function modifier
+
+- uuid: 7e6c6d52-76e5-44f1-90da-a722a07689dc
+  title: Understanding Encapsulation in Solidity
+  shortTitle: Encapsulation
+  type: YoutubeVideo
+  url: https://https://www.youtube.com/watch?v=tfk25O-5Ppg
+  subTopics:
+    - encapsulation
   details: |
     In this video we're looking at the inheritance in Solidity.
     This video explains about
@@ -20,8 +30,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=LwKIEj60dks
   subTopics:
-    - "solidity-inheritance"
-    - "contract-intraction"
+    - inheritance
   details: |
     In this video we're looking at the inheritance in Solidity.
     This video explains about
@@ -32,12 +41,22 @@
   title: Polymorphism in Solidity
   shortTitle: Polymorphism
   type: YoutubeVideo
-  url: 
-    - https://www.youtube.com/watch?v=l_E5F5qnbtk
-    - https://www.youtube.com/watch?v=-ByfpJIqm-Y
+  url: https://www.youtube.com/watch?v=l_E5F5qnbtk
   subTopics:
-    - "function-overriding"
-    - "function-overloading"
+    - polymorphism
+  details: |
+    In this video we're looking at the polymorphism in Solidity.
+    This video explains about
+    - polymorphism with example
+    - Contract function intraction
+
+- uuid: 241e570b-10a8-4856-b344-9641f19af397
+  title: Polymorphism in Solidity
+  shortTitle: Polymorphism
+  type: YoutubeVideo
+  url: https://www.youtube.com/watch?v=-ByfpJIqm-Y
+  subTopics:
+    - polymorphism
   details: |
     In this video we're looking at the polymorphism in Solidity.
     This video explains about
@@ -51,8 +70,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=ADVifGOanVU
   subTopics:
-    - "constructor-declaration"
-    - "constructor-call"
+    - constructor
   details: |
     In this video we're looking at the constructor in Solidity.
     This video explains about
@@ -66,8 +84,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=iAB_6ZwqGG0
   subTopics:
-    - "abstract-contract"
-    - "solidity-interfaces"
+    - inheritance
   details: |
     In this video we're looking at the abstraction in Solidity.
     This video explains about
@@ -81,9 +98,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=25MLAnIzXRw
   subTopics:
-    - "pure-function"
-    - "deployed-library"
-    - "embedded-library"
+    - library
   details: |
     In this video we're looking at the libraries in Solidity.
     This video explains about

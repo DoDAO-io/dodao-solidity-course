@@ -24,8 +24,8 @@ topics:
     readings: first_solidity_contract.yaml
     summaries: first_solidity_contract.yaml
     questions: first_solidity_contract.yaml
-    status: In Progress
-    completionWeek:  July 30
+    status: Done
+    completionWeek:  Done
 
   - title: Types
     key: data-types
@@ -33,8 +33,8 @@ topics:
     readings: data_types.yaml
     summaries: data_types.yaml
     questions: data_types.yaml
-    status: In Progress
-    completionWeek:  July 18
+    status: Done
+    completionWeek:  Done
 
   - title: Units and variables
     key: units-variables
@@ -54,11 +54,11 @@ topics:
     status: In Progress
     completionWeek:  work not started
 
-  - title: Object Oriented Programming (OOP) Concepts in Solidity
+  - title: Object-Oriented Programming (OOP) Concepts in Solidity
     key: oops
-    details: Solidity is an object oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.
-    readings: oops.yaml
+    details: Solidity is an object-oriented programming language . This chapters explains how solidity implements various object oriented paradigms like abstraction , inheritance , polymorphism , encapsulation etc.
+    readings: oops_concepts.yaml
     summaries: oops_concepts.yaml
-    questions: oops.yaml
-    status: In Progress
-    completionWeek:  work not started
+    questions: oops_concepts.yaml
+    status: Done
+    completionWeek: Done
