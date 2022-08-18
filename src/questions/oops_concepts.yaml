@@ -181,7 +181,7 @@
   type: SingleChoice
   content: Which of the following inheritance does not belongs to solidity?
   hint: noHint
-  explanation:
+  explanation: TODO
   answerKeys:
     - B
   subTopics:

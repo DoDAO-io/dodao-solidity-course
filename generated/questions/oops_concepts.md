@@ -152,7 +152,7 @@ Sub Topics: inheritance
   
 Hint: noHint
          
-Explanation: null
+Explanation: TODO
 
 Sub Topics: inheritance
  
