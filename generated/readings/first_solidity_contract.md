@@ -7,7 +7,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
   **Declaring a function**
  
- [![Declaring a function](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
+ [![Declaring a function](https://img.youtube.com/vi/71cmPaD_AnQ/0.jpg)](https://www.youtube.com/watch?v=71cmPaD_AnQ)     
  
  This video covers 
 1) Function declaration in Solidity 
@@ -17,7 +17,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  Sub Topics: functions    
   **Function Modifiers**
  
- [![Function Modifiers](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
+ [![Function Modifiers](https://img.youtube.com/vi/b6FBWsz7VaI/0.jpg)](https://www.youtube.com/watch?v=b6FBWsz7VaI)     
  
  Function modifiers allow your code to have less repetitive, re-useable code logic. This video explains the declaration and use of modifiers.
     
@@ -25,7 +25,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  Sub Topics: modifiers    
   **Events**
  
- [![Events](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
+ [![Events](https://img.youtube.com/vi/jaMHPT-78HM/0.jpg)](https://www.youtube.com/watch?v=jaMHPT-78HM)     
  
  In Solidity, you can use events to push data to outside consumers, like web frontends.
 This video shows how to declare and emit events in Solidity.
@@ -34,7 +34,7 @@ This video shows how to declare and emit events in Solidity.
  Sub Topics: events    
   **Error Handling**
  
- [![Error Handling](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
+ [![Error Handling](https://img.youtube.com/vi/1Mi1ub9bIv8/0.jpg)](https://www.youtube.com/watch?v=1Mi1ub9bIv8)     
  
  Solidity uses state-reverting exceptions to handle errors. 
 This video covers how error handling in solidity is done using revert, require, assert and try/catch.
@@ -43,7 +43,7 @@ This video covers how error handling in solidity is done using revert, require, 
  Sub Topics: errors, revert, require, try-catch, assert    
   **Structure of Smart contract**
  
- [![Structure of Smart contract](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
+ [![Structure of Smart contract](https://img.youtube.com/vi/yzcp594R92c/0.jpg)](https://www.youtube.com/watch?v=yzcp594R92c)     
  
  This video explains the typical layout of a Solidity source file: 
 1) Pragma statement

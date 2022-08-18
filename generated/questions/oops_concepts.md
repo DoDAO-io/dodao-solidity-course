@@ -118,7 +118,9 @@ Sub Topics: encapsulation
   
 Hint: noHint
          
-Explanation: TODO
+Explanation: - Inheritance is the process of defining multiple contracts that are related to each other through parent-child relationships. 
+- The contract that is inherited is called the parent contract and the contract that inherits is called the child contract.
+
 
 Sub Topics: inheritance
  
@@ -152,7 +154,9 @@ Sub Topics: inheritance
   
 Hint: noHint
          
-Explanation: TODO
+Explanation: - Hybrid inheritance is a combination of single, multiple inheritance and hierarchical inheritance.
+- There is no Hybrid inheritance concept avialable in solidity. 
+
 
 Sub Topics: inheritance
  
@@ -362,7 +366,10 @@ Sub Topics: inheritance
   
 Hint: noHint
          
-Explanation: explanation
+Explanation: - Abstract contracts are contracts that have at least one function without its implementation. 
+- When we don’t intend to create a contract directly we can consider the contract to be abstract.
+- An instance of an abstract cannot be created.
+
 
 Sub Topics: inheritance
  
@@ -378,7 +385,9 @@ Sub Topics: inheritance
   
 Hint: noHint
          
-Explanation: TODO
+Explanation: - The abstract contract defines the structure of the contract and any derived contract inherited from it should provide an implementation for the incomplete functions.
+- If the derived contract is also not implementing the incomplete functions then that derived contract will also be marked as abstract.
+
 
 Sub Topics: inheritance
  
