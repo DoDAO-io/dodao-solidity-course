@@ -33,7 +33,7 @@ Sub Topics: polymorphism
   
 Hint: noHint
          
-Explanation: A publicly derived class is a subtype of its base class.,Inheritance provides for code reuse.
+Explanation: A publicly derived class is a subtype of its base class and Inheritance provides for code reuse.
 
 Sub Topics: inheritance
  

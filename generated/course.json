@@ -3487,10 +3487,7 @@
           "type": "SingleChoice",
           "content": "Consider the following two statements related to inheritance * (a)A publicly derived class is a subtype of its base class. * (b)Inheritance provides for code reuse.",
           "hint": "noHint",
-          "explanation": [
-            "A publicly derived class is a subtype of its base class.",
-            "Inheritance provides for code reuse."
-          ],
+          "explanation": "A publicly derived class is a subtype of its base class and Inheritance provides for code reuse.",
           "answerKeys": [
             "A"
           ],
