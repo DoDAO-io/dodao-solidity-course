@@ -81,7 +81,10 @@ Sub Topics: inheritance, encapsulation, polymorphism
   
 Hint: noHint
          
-Explanation: Private properties can only be accessed internally from the current contract instances.,Internal properties can be accessed from child contracts, but not from external contracts.,Private properties can't be accessed even from child contracts.
+Explanation: - Private properties can only be accessed internally from the current contract instances.
+- Internal properties can be accessed from child contracts, but not from external contracts.
+- Private properties can't be accessed even from child contracts.
+
 
 Sub Topics: encapsulation
  
@@ -97,7 +100,9 @@ Sub Topics: encapsulation
   
 Hint: noHint
          
-Explanation: Values of state variables are permanently stored in the contract storage. Each function has its own scope, and state variables should always be defined outside of that scope.,Only functions can be marked external. External functions are part of the contract interface and can be called from other contracts and transactions. They can't be called internally. This leads to external functions being cheaper to execute.
+Explanation: - Values of state variables are permanently stored in the contract storage. Each function has its own scope, and state variables should always be defined outside of that scope.
+- Only functions can be marked external. External functions are part of the contract interface and can be called from other contracts and transactions. They can't be called internally. This leads to external functions being cheaper to execute.
+
 
 Sub Topics: encapsulation
  
@@ -113,7 +118,7 @@ Sub Topics: encapsulation
   
 Hint: noHint
          
-Explanation: null
+Explanation: TODO
 
 Sub Topics: inheritance
  
@@ -129,7 +134,9 @@ Sub Topics: inheritance
   
 Hint: noHint
          
-Explanation: C3 linearization is consistent with three properties: a consistent extended precedence graph, preservation of local precedence order, and. fitting a monotonicity criterion.,Solidity follows C3 Linearization.
+Explanation: - C3 linearization is consistent with three properties: a consistent extended precedence graph, preservation of local precedence order, and. fitting a monotonicity criterion
+- Solidity follows C3 Linearization.
+
 
 Sub Topics: inheritance
  
@@ -193,7 +200,9 @@ Sub Topics: library
   
 Hint: noHint
          
-Explanation: 'for' keyword is used to attach library functions to any type.,<libraryName> for <dataType>: libraryName is the name of the desired library to import, dataType is the variable type for which we want to access the library.
+Explanation: - `for` keyword is used to attach library functions to any type
+-  `<libraryName> for <dataType>: libraryName is the name of the desired library to import, dataType is the variable type for which we want to access the library`
+
 
 Sub Topics: library
  
@@ -369,7 +378,7 @@ Sub Topics: inheritance
   
 Hint: noHint
          
-Explanation: null
+Explanation: TODO
 
 Sub Topics: inheritance
  
@@ -433,7 +442,9 @@ Sub Topics: constructor
   
 Hint: noHint
          
-Explanation: A parameter value can be defined at the run time in a constructor.,Constructor can also restrict the method call.
+Explanation: - A parameter value can be defined at the run time in a constructor.
+- Constructor can also restrict the method call.
+
 
 Sub Topics: constructor
  
@@ -559,7 +570,9 @@ Sub Topics: polymorphism
   
 Hint: noHint
          
-Explanation: We can have multiple definitions for the same function name in the same scope. The definition of the function must differ from each other by the types and/or the number of arguments in the argument list.,We cannot overload function declarations that differ only by return type.
+Explanation: - We can have multiple definitions for the same function name in the same scope. The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. 
+- We cannot overload function declarations that differ only by return type.
+
 
 Sub Topics: polymorphism
  
@@ -621,7 +634,10 @@ Sub Topics: encapsulation
   
 Hint: noHint
          
-Explanation: There are 2 types of libraries - Deployed- They have their own address, and several other smart contracts can use them. - Embedded- They don’t have their own address and are deployed as part of the code of the smart contract that uses them.
+Explanation: There are 2 types of libraries
+- Deployed- They have their own address, and several other smart contracts can use them.
+- Embedded- They don’t have their own address and are deployed as part of the code of the smart contract that uses them.
+
 
 Sub Topics: library
  
