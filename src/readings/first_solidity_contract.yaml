@@ -2,7 +2,7 @@
   title: Declaring a function
   shortTitle: Declaring a function
   type: YoutubeVideo
-  url: https://youtu.be/71cmPaD_AnQ
+  url: https://www.youtube.com/watch?v=71cmPaD_AnQ
   subTopics:
     - "functions"
   details: |
@@ -14,7 +14,7 @@
   title: Function Modifiers
   shortTitle: Function Modifier
   type: YoutubeVideo
-  url: https://youtu.be/b6FBWsz7VaI
+  url: https://www.youtube.com/watch?v=b6FBWsz7VaI
   subTopics:
     - "modifiers"
   details: |
@@ -24,7 +24,7 @@
   title: Events
   shortTitle: events
   type: YoutubeVideo
-  url: https://youtu.be/jaMHPT-78HM
+  url: https://www.youtube.com/watch?v=jaMHPT-78HM
   subTopics:
     - "events"
   details: |
@@ -35,7 +35,7 @@
   title: Error Handling
   shortTitle: Error Handling
   type: YoutubeVideo
-  url: https://youtu.be/1Mi1ub9bIv8
+  url: https://www.youtube.com/watch?v=1Mi1ub9bIv8
   subTopics:
     - "errors"
     - "revert"
@@ -50,7 +50,7 @@
   title: Structure of Smart contract
   shortTitle: Contract Structure
   type: YoutubeVideo
-  url: https://youtu.be/yzcp594R92c
+  url: https://www.youtube.com/watch?v=yzcp594R92c
   subTopics:
     - "file-layout"
     - "contract-structure"
