@@ -43,7 +43,7 @@ topics:
     summaries: units_variables.yaml
     questions: units_variables.yaml
     status: In Progress
-    completionWeek:  work not started
+    completionWeek:  27 Aug
   
   - title: Expressions and Control Structures
     key: expression-control
