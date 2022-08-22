@@ -5,12 +5,13 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
  ## Units and variables
  
-  **title**
+  **Global Variables**
  
- [![title](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
+ [![Global Variables](https://img.youtube.com/vi/null/0.jpg)](https://www.youtube.com/watch?v=null)     
  
- details
+ Global variables contain information about blockchain, transaction and caller of the function. 
+This video explains the use of some of the block and trasaction properties available in Solidity like `msg.sender`, `block.timestamp` and `block.number`.
     
  
- Sub Topics: variables    
+ Sub Topics: global-variables, block-transaction    
  

@@ -7,7 +7,7 @@
     - B
     - D
   subTopics:
-    - "variables"
+    - "block-transaction"
   difficultyLevel: Low
   choices:
     - content: "1"

@@ -3325,7 +3325,7 @@
             "D"
           ],
           "subTopics": [
-            "variables"
+            "block-transaction"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -3351,14 +3351,15 @@
       "readings": [
         {
           "uuid": "1b6f7a4a-5f9e-40f0-8259-7a029e372747",
-          "title": "title",
-          "shortTitle": "short title",
+          "title": "Global Variables",
+          "shortTitle": "Global Variables",
           "type": "YoutubeVideo",
-          "url": "url",
+          "url": "https://youtu.be/ryA86ZiSD-w",
           "subTopics": [
-            "variables"
+            "global-variables",
+            "block-transaction"
           ],
-          "details": "details\n"
+          "details": "Global variables contain information about blockchain, transaction and caller of the function. \nThis video explains the use of some of the block and trasaction properties available in Solidity like `msg.sender`, `block.timestamp` and `block.number`.\n"
         }
       ],
       "summaries": [
@@ -3366,13 +3367,43 @@
           "title": "Units",
           "shortTitle": "Units",
           "key": "units",
-          "details": "- time units\n- ether units\n"
+          "details": "- Ether Units\n  * In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether.\n  * Lowest unit is wei and $1e12$ represents $1 * 10^{12}$.\n  * `1 wei = 1;`\n  * `1 gwei = 1e9;`\n  * `1 ether = 1e18;`\n\n- Time Units\n  * We can use seconds, minutes, hours, days and weeks as suffix to denote time.\n  * Lowest unit of time is `seconds`.\n  * `1 seconds = 1;`\n  * `1 minutes = 60 seconds;`\n  * `1 hours = 60 minutes;`\n  * `1 day = 24 hours;`\n  * `1 week = 7 days;`  \n"
         },
         {
           "title": "Globally available Variables",
           "shortTitle": "Global Variables",
-          "key": "variables",
-          "details": "- Block and transaction methods\n- ABi Encoding and Decoding methods\n- Error handling methods\n- Mathematic and cryptographic functions\n- others\n"
+          "key": "global-variables",
+          "details": "- There are special variables and functions which always exist in the global namespace and are mainly used to provide \n  information about the blockchain or are general-use utility functions.\n- These are of various types having specific properties.\n  * Block and Transaction properties.\n  * ABI Encoding and Decoding functions.\n  * Members of bytes and string.\n  * Error handling methods.\n  * Mathematical and Cryptographic functions.\n  * Members of address type.\n  * Contract related.\n  * Type Information.   \n\n  Few of the important functions of each type will be discussed in the following sections.\n"
+        },
+        {
+          "title": "Block and Transaction properties",
+          "shortTitle": "Block Properties",
+          "key": "block-transaction",
+          "details": "- `blockhash(uint blockNumber) returns (bytes32)`: Gives hash of the given block and will only work for the 256 most recent block due to the reason of scalability.\n- `block.basefee (uint)`: current blocks base fee.\n- `block.chainid (uint)`: current chain id.\n- `block.coinbase (address payable)`: current block miners address.\n- `block.difficulty (uint)`: current block difficulty.\n- `block.gaslimit (uint)`: current block gaslimit.\n- `block.number (uint)`: current block number.\n- `block.timestamp (uint)`: current block timestamp as seconds since unix epoch.\n- `gasleft() returns (uint256)`: remaining gas.\n- `msg.data (bytes calldata)`: complete calldata.\n- `msg.sender (address)`: sender of the message (current call).\n- `msg.sig (bytes4)`: first four bytes of the calldata (i.e. function identifier).\n- `msg.value (uint)`: number of wei sent with the message.\n- `tx.gasprice (uint)`: gas price of the transaction.\n- `tx.origin (address)`: sender of the transaction (full call chain).\n- The code snippet below demonstrates the use of some of the Block and transaction properties.\n  ```\n    contract C {\n      function blockInfo() public view returns(uint,uint,bytes32,address){\n          address sender=msg.sender;\n          uint blockNum=block.number;\n          uint blockTime=block.timestamp;\n          bytes32 hash=blockhash(blockNum);\n          return (blockNum,blockTime,hash,sender);\n      }\n    }\n  ```\n  The output of the function `blockInfo` is:-\n  ```\n    0:uint256: 27\n    1:uint256: 1661098178\n    2:bytes32: 0x0000000000000000000000000000000000000000000000000000000000000000\n    3:address: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\n  ```\n- The values of all members of msg can change for every external function call.\n- `block.timestamp` and `blockhash` as a source of randomness are not secure. Timestamp and the blockhash can be influenced by the miners.\n"
+        },
+        {
+          "title": "ABI Encoding and Decoding functions.",
+          "shortTitle": "Encoding/Decoding Functions",
+          "key": "encoding-decoding",
+          "details": "- To send data to the contract, we need to send it in a way that the contract can read it. That is, they need to be encoded.\n- Solidity has a global variable called abi that has an encode and decode method, so we can use it to encode the parameters of any function.\n- `abi.encode(...) returns (bytes memory)`: ABI-encodes the given arguments.\n- `abi.decode(bytes memory encodedData, (...)) returns (...)`: ABI-decodes the given data, while the types are given in parentheses as second argument. \n  Example: `(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))`\n- The example below demonstrates encoding and decoding.\n  ```\n  contract Encode {\n    function encode(string memory _string1, uint _uint) public pure returns (bytes memory) {\n            return (abi.encode(_string1, _uint));\n        }\n    function decode(bytes memory data) public pure returns (string memory _str1, uint _number) {\n            (_str1, _number) = abi.decode(data, (string, uint));            \n        }\n    }\n  ```\n  On calling function `encode` with values (Hi , 5), returns bytes array \n  `0:bytes: 0x0000000000000000000000000000000000000000000000000000000000\n  0000400000000000000000000000000000000000000000000000000000000000000005\n  0000000000000000000000000000000000000000000000000000000000000003486920\n  0000000000000000000000000000000000000000000000000000000000`  \n  The encoded data can be decoded by calling function `decode` with the above bytes array.\n  The returned values are \n  ```\n    0:string: _str1 Hi\n    1:uint256: _number 5\n  ```\n- `abi.encodePacked(...) returns (bytes memory)`: Performs packed encoding of the given arguments.\n- `abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)`: ABI-encodes the given arguments starting from the second and prepends the given four-byte selector.\n- `abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)`: Equivalent to `abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)`.\n- `abi.encodeCall(function functionPointer, (...)) returns (bytes memory)`: ABI-encodes a call to functionPointer with the arguments found in the tuple. Performs a full type-check, ensuring the types match the function signature. Result `equals abi.encodeWithSelector(functionPointer.selector, (...))`abi.decode.\n"
+        },
+        {
+          "title": "Mathematical and Cryptographic Functions",
+          "shortTitle": "Mathematical Functions",
+          "key": "math-functions",
+          "details": "- `addmod(uint x, uint y, uint k) returns (uint)`\n  - This functions will compute the expression `(x + y) % k`.\n  - The code snippet below shows the use of the addmod functions.\n    ```\n    contract C {\n      function foo() public pure returns(uint){\n          return addmod(1,4,3);\n      }\n    }\n    ``` \n    The function `foo` will return the modulous of `(1 + 4)` with 3 which is 2.\n  - The addition is performed with arbitrary precision and does not wrap around at $2^{256}$.\n\n- `mulmod(uint x, uint y, uint k) returns (uint)`\n  - This function will compute the expression `(x * y) % k`.\n  - - The code snippet below shows the use of the mulmod functions.\n    ```\n    contract C {\n      function bar() public pure returns(uint){\n          return mulmod(5,7,3);\n      }\n    }\n    ```\n    The function `bar` will return the modulous of `(5 * 7)` with 3 which is 2.\n  - The multiplication is performed with arbitrary precision and does not wrap around at $2^{256}$.\n\n- `keccak256(bytes memory) returns (bytes32)`\n  - This function will compute and return the Keccak-256 hash of the input.\n\n- `sha256(bytes memory) returns (bytes32)`\n  - This function will compute and return the SHA-256 hash of the input.\n"
+        },
+        {
+          "title": "Contract Related Functions",
+          "shortTitle": "Contract Related",
+          "key": "contract-related",
+          "details": "- `this`: `this` is the pointer to the current instance of the type derived from Address which is the current contract.\n- `selfdestruct(address payable recipient)`: Destroy the current contract, sending its funds to the given Address and end execution.\n"
+        },
+        {
+          "title": "Functions for Type Information",
+          "shortTitle": "Type Information",
+          "key": "type-info",
+          "details": "The expression type(X) can be used to retrieve information about the type X.\nCurrently, there is limited support for this feature (X can be either a contract or an integer type).\nThe following properties are available for a contract type C:\n- `type(C).name`\n  - The name of the contract.\n\n- `type(C).creationCode`\n  - Memory byte array that contains the creation bytecode of the contract.\n\n- `type(C).runtimeCode`\n  - Memory byte array that contains the runtime bytecode of the contract.\n\nIn addition to the properties above, the following properties are available for an interface type I: \n\n- `type(I).interfaceId`\n  - A bytes4 value containing the EIP-165 interface identifier of the given interface I.\n\nThe following properties are available for an integer type T:\n\n- `type(T).min`\n  - The smallest value representable by type T.\n\n- `type(T).max`\n  - The largest value representable by type T.\n\n- The following code demonstrates the use of type(T). The function `foo` will return -128 which is the minimum value of `int8` value type and 255 which is the maximum value of `uint8` value type.\n  ```\n  contract C {\n    function foo() public pure returns(int,uint){\n        return (type(int8).min,type(uint8).max);\n    }\n  }\n  ```\n"
         }
       ]
     },
