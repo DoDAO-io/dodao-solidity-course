@@ -1,20 +1,990 @@
-- uuid: 47a244a5-80b1-4653-bc5d-9b0d3c8b5a83
+- uuid: 49138998-5fbb-4437-b9cd-f92f8f11af94
   type: MultipleChoice
-  content: question
+  content: Which of the following is a valid subdemonination of Ether in the latest version of Solidity?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    A literal number can take a suffix of `wei`, `gwei` or `ether` to specify a subdenomination of Ether. 
+    The denominations `finney` and `szabo` have been removed in version 0.7.0.
+
   answerKeys:
+    - A
+    - B
+  subTopics:
+    - "units"
+  difficultyLevel: Low
+  choices:
+    - content: wei
+      key: A
+    - content: gwei
+      key: B
+    - content: finney
+      key: C
+    - content: szabo
+      key: D
+
+- uuid: 2ba13ded-426b-4dfd-b20c-3de783fcfdc3
+  type: SingleChoice
+  content: Which of the following is not a valid unit of time ?
+  hint: noHint
+  explanation: "`seconds`, `minutes`, `hours`, `days` and `weeks` can be used to specify units of time."
+  answerKeys:
+    - D
+  subTopics:
+    - "units"
+  difficultyLevel: Low
+  choices:
+    - content: "`seconds`"
+      key: A
+    - content: "`minutes`"
+      key: B
+    - content: "`hours`"
+      key: C
+    - content: "`years`"
+      key: D
+
+- uuid: 44bf7f79-9ca9-4a32-89e6-bc3ff41633ea
+  type: SingleChoice
+  content: What is the value of 1 gwei?
+  hint: noHint
+  explanation: |
+    - Lowest unit is wei and $1e12$ represents $1 * 10^{12}$.
+      - `1 wei = 1;`
+      - `1 gwei = 1e9;`
+      - `1 ether = 1e18;`
+  answerKeys:
+    - C
+  subTopics:
+    - "units"
+  difficultyLevel: Low
+  choices:
+    - content: 1 gwei = 1 ether
+      key: A
+    - content: 1 gwei = $10^9$ ether
+      key: B
+    - content: 1 gwei = $10^9$ wei
+      key: C
+    - content: 1 gwei = $10^18$ wei
+      key: D
+
+- uuid: 36ddb8ed-c494-473d-b894-31c11ea73a4a
+  type: SingleChoice
+  content: Which of the following properties is used to get information about the current block?
+  hint: noHint
+  explanation: |
+    `blockhash` gives the hash of the current block, `block.basefee` gives current blocks base fee and `block.gaslimit` gives the gaslimit of the current block.
+  answerKeys:
+    - D
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: "`blockhash`"
+      key: A
+    - content: "`basefee`"
+      key: B
+    - content: "`gaslimit`"
+      key: C
+    - content: All of these.
+      key: D
+
+- uuid: 334cfbc3-4ab4-4134-bb3c-4cb9aa7dd1c4
+  type: MultipleChoice
+  content: Which of the following is true regarding block and transaction properties?
+  hint: noHint
+  explanation: |
+    `block.timestamp` and `blockhash` as a source of randomness are not secure. Timestamp and the blockhash can be influenced by the miners.
+    The block hashes are not available for all blocks for scalability reasons. You can only access the hashes of the most recent 256 blocks.
+    `msg.value` contains the amount of wei (ether / 1e18) sent in the transaction.
+    The difficulty of a block is a measure of how difficult it is to mine a block.
+  answerKeys:
+    - A
+    - B
+    - C
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Medium
+  choices:
+    - content: block.timestamp` and `blockhash` as a source of randomness are not secure.
+      key: A
+    - content: The block hashes are not available for all blocks.
+      key: B
+    - content: Block difficulty represents the ease with which a block can be mined.
+      key: C
+    - content: msg.value contains the amount of ether sent in the transaction.
+      key: D
+
+- uuid: 1dd1fc38-1188-4e1d-a085-83408f402893
+  type: MultipleChoice
+  content: |
+    Which of the following options is correct regarding the code below?
+    ```
+        function randMod() public view returns(uint){
+          return uint(keccak256(abi.encodePacked(block.timestamp))) % 2;
+        }
+    ```
+  hint: "`block.timetamp` is current block timestamp as seconds which will change every second."
+  explanation: |
+    block.timestamp returns current block timestamp as seconds which will change every second so it can be used as a source of randomness. 
+    Taking the Keccak-256 hash of the value will result in a byte32 type random value whose modulous with 2 will give either 0 or 1.
+    However it should not be used to make applications using randoms because the contract can be influenced by miners.
+    A miner running a node, can publish a transaction only to his own node and not share it. 
+    The functions `randMod` can be run until a function returns a winning value and then the miner can share the transaction.
+  answerKeys:
+    - A
+    - C
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Hard
+  choices:
+    - content: The function `randMod` will return a random integer in the range [0,1].
+      key: A
+    - content: The function `randMod` will return a random integer in the range [0,2].
+      key: B
+    - content: "`block.timestamp` should not be used to generate random numbers."
+      key: C
+    - content: This function can be used to make a dApp where we generate an integer where a certain number is the winning number.
+      key: D
+
+- uuid: 4adfdac0-c48f-4803-88e1-1d22330ae2cc
+  type: MultipleChoice
+  content: What is `msg` in Solidity?
+  hint: noHint
+  explanation: |
+    The `msg` global variables in particular are special global variables that contain properties which allow access to the blockchain. 
+    For instance, `msg.sender` is always the address where the current (external) function call came from.
+    he values of all members of msg, including msg.sender and msg.value can change for every external function call.
+  answerKeys:
+    - A
     - B
     - D
   subTopics:
     - "block-transaction"
   difficultyLevel: Low
   choices:
-    - content: "1"
+    - content: The `msg` is a special global variable that contain properties which allow access to the blockchain.
       key: A
-    - content: "2"
+    - content: Values of all members of `msg` can change for every external function call.
       key: B
-    - content: "3"
+    - content: Values of all members of `msg` cannot change for every external function call.
       key: C
-    - content: "4"
+    - content: The `msg.sender` special global variable is used to obtain the current users address.
+      key: D
+    
+- uuid: 3190aeb2-1d7d-4adb-950f-01cfda8d6164
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+
+- uuid: 420bf665-0bd3-4b2c-860d-b0816126c974
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 54e85b5c-2de1-47ce-8abf-2e63f1f14f07
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: fa48e97c-7b08-425e-be88-92aecf0ef81a
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 1c06be94-53cf-4b1b-8989-87f0aba557a7
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 74932f5f-8a08-4b5c-afc3-7d57c90111e1
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 6a131770-4859-45e8-9a1a-0d5828648be5
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: efcab7ee-106e-4a14-81c2-b71b4ec84a82
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 33896ba7-2f65-4dad-b611-5e019e2a10b1
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 56fd9c11-7f9c-4d57-973f-e91a9ae2d661
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 9a42f50c-2667-4677-b3f1-40d2a714e24e
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: afb85d5c-a9f2-4271-8cb7-d04f9d66e2c3
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: abe82746-9aef-4683-b8a4-8149ed4d9261
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 8bdd0f4b-fbb7-4524-abde-aa12cc1d19fb
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 62cce1c3-0b4a-47f1-9e13-98748fa52266
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 3fe8cd83-6d7e-4db7-9786-dd934513c65c
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 89ae4ee5-30ef-4927-82e1-8a3d390a401b
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 0271fb33-0019-47e5-94f2-aac7cd4144d2
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 32cc38d2-e0f4-4169-ad09-267650411ed0
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 3b965e9e-0976-4426-af2b-9f71b08c7cc2
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: ca4b7841-d73b-4630-9602-c4777553786e
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 041f5a22-2efd-4ce9-baef-69c2243b4703
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 29189ccf-69f5-446a-a6b0-4a87d7854766
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 1fff2dea-d5a9-4b89-af31-cdf9147ef127
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 07cabeaa-d693-4346-9293-28e8b7aba346
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 25073a6e-60fe-43a3-b95b-9440e0a7c141
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 0741a691-a8cb-48de-8148-59974b4804fc
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: de653a8b-fc0f-4509-a891-716f6ad316bc
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 295846f8-221a-474b-a5aa-916379f4e58f
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: fb264114-7251-4110-a42e-2cb91bdc89f1
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 9af7c152-de7d-4b7b-b453-bfa78f89c9c7
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 8cdb0db5-30fd-4bf6-8c3a-181827a73d79
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 899f9f74-be50-4de5-bde6-4161418bfbc8
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 1363e80b-b583-4b96-a800-1eddd18c094e
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 759c996f-a665-443e-99ec-9fe0bb664ed4
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: d5800c17-38af-41f9-b36a-5c07794d3233
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: b3e88036-37f4-4ce0-8fe0-02d72fb8f499
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 79d51957-4d2d-4f5c-9056-2ba95abaff77
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 77825e05-1bc5-4076-9d95-a4fa649bf68e
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 49507ccf-c272-4c94-8301-81a7bb6e98dd
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: dc421b03-b40f-422d-a0d4-0df0bd70321c
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 3c7ff50c-cbb9-4372-b314-28a5e4cc7245
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
+      key: D
+- uuid: 9c022424-f37e-40cd-bf68-76e6e6286e97
+  type: SingleChoice
+  content: question
+  hint: noHint
+  explanation: explanation
+  answerKeys:
+    - A
+  subTopics:
+    - "block-transaction"
+  difficultyLevel: Low
+  choices:
+    - content: option 1
+      key: A
+    - content: option 2
+      key: B
+    - content: option 3
+      key: C
+    - content: option 4
       key: D

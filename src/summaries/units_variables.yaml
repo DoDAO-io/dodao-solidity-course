@@ -3,20 +3,39 @@
   key: "units"
   details: |
     - Ether Units
-      * In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether.
-      * Lowest unit is wei and $1e12$ represents $1 * 10^{12}$.
-      * `1 wei = 1;`
-      * `1 gwei = 1e9;`
-      * `1 ether = 1e18;`
-
+      - In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether.
+      - Lowest unit is wei and $1e12$ represents $1 * 10^{12}$.
+      - `1 wei = 1;`
+      - `1 gwei = 1e9;`
+      - `1 ether = 1e18;`
+      - The following code snippet demonstrates a simple function to convert the total `wei` (default unit in Solidity) to Ether.
+        ```
+        contract C
+        {
+          function func() public view returns(uint){
+              uint bal = address(this).balance / 1 ether;
+              return bal;
+          }
+        }
+        ```
     - Time Units
-      * We can use seconds, minutes, hours, days and weeks as suffix to denote time.
-      * Lowest unit of time is `seconds`.
-      * `1 seconds = 1;`
-      * `1 minutes = 60 seconds;`
-      * `1 hours = 60 minutes;`
-      * `1 day = 24 hours;`
-      * `1 week = 7 days;`  
+      - We can use seconds, minutes, hours, days and weeks as suffix to denote time.
+      - Lowest unit of time is `seconds`.
+      - `1 seconds = 1;`
+      - `1 minutes = 60 seconds;`
+      - `1 hours = 60 minutes;`
+      - `1 day = 24 hours;`
+      - `1 week = 7 days;`  
+      - On calling function `func` below the value of `block.timestamp` returns 1661554329 seconds however the returned value will be 143558295494400 seconds because 
+        `block.timestamp` gets multiplied with 24*60*60 due to the `days` time denomination.
+      ```
+        contract C
+        {
+          function func() public view returns(uint){
+              return block.timestamp * 1 days;
+          }
+        }
+      ```  
 
 - title: Globally available Variables
   shortTitle: Global Variables
@@ -25,16 +44,16 @@
     - There are special variables and functions which always exist in the global namespace and are mainly used to provide 
       information about the blockchain or are general-use utility functions.
     - These are of various types having specific properties.
-      * Block and Transaction properties.
-      * ABI Encoding and Decoding functions.
-      * Members of bytes and string.
-      * Error handling methods.
-      * Mathematical and Cryptographic functions.
-      * Members of address type.
-      * Contract related.
-      * Type Information.   
+      - Block and Transaction properties.
+      - ABI Encoding and Decoding functions.
+      - Members of bytes and string.
+      - Error handling methods.
+      - Mathematical and Cryptographic functions.
+      - Members of address type.
+      - Contract related.
+      - Type Information.   
 
-      Few of the important functions of each type will be discussed in the following sections.
+      Few of the important functions of each type will be discussed in the following sections.  
 
 - title: Block and Transaction properties
   shortTitle: Block Properties
@@ -148,6 +167,76 @@
 
     - `sha256(bytes memory) returns (bytes32)`
       - This function will compute and return the SHA-256 hash of the input.
+
+- title: Members of bytes and string
+  shortTitle: bytes/string properties
+  key: "bytes-strings"
+  details: |
+    - `bytes.concat(...) returns (bytes memory)`: 
+      Concatenates variable number of bytes and bytes1, …, bytes32 arguments to one byte array.
+
+    - `string.concat(...) returns (string memory)`: 
+      Concatenates variable number of string arguments to one string array.
+
+    - The Contract C below demonstrates the use of `bytes.concat` and `string.concat` to concatenate two strings a and b.
+      ```
+      contract C
+      {
+        function testStringConcat(string memory a,string memory b) public pure returns (string memory) {
+              return string.concat(a , b);
+          }
+
+          function testByteConcat(string memory a,string memory b) public pure returns (string memory){
+              return string(bytes.concat(bytes(a), " ", bytes(b)));
+          } 
+      }
+      ```
+
+- title: Error Handling Functions
+  shortTitle: Error Handling Functions
+  key: "error-handling"
+  details: | 
+    - `assert(bool condition)`: 
+      Causes a Panic error and thus state change reversion if the condition is not met - to be used for internal errors.
+
+    - `require(bool condition)`: 
+      reverts if the condition is not met - to be used for errors in inputs or external components.
+
+    - `require(bool condition, string memory message)`: 
+      reverts if the condition is not met - to be used for errors in inputs or external components. Also provides an error message.
+
+    - `revert()`: 
+      abort execution and revert state changes.
+
+    - `revert(string memory reason)`: 
+      abort execution and revert state changes, providing an explanatory string.
+    
+    - Working and detailed explanation of all the functions has been covered in Chapter- `Your First Solidity Smart Contract` under subtopic `Error Handling`.
+
+- title: Members of Address Type
+  shortTitle: Address Properties
+  key: "address-properties"
+  details: |
+    - `<address>.balance (uint256)`:
+      Returns the balance of the Address in Wei. The function below is used to return the current balance of the sender.
+      ```
+      function getBalance() public view returns(uint256){
+          return msg.sender.balance;
+      }
+      ```
+
+    - `<address>.codehash (bytes32)`:
+      the codehash of the Address.
+
+    - `<address payable>.transfer(uint256 amount)`: 
+      - The receiving smart contract should have a fallback function defined or else the transfer call will throw an error. There is a gas limit of 2300 gas, which is enough to complete the transfer operation.
+      - The syntax of the transfer function looks like: `receivingAddress.transfer(amount);`.
+      - The transfer function fails when the balance of the sending smart contract is not large enough or the receiving contract rejects the payment. In a failure case, the transfer function reverts.
+
+    - `<address payable>.send(uint256 amount) returns (bool)`: 
+      - Send is similar to transfer. But if the payment fails, it will not revert. Instead, it returns false. The failure handling is left to the calling contract.
+      - The syntax of the send function looks like: `receivingAddress.send(10);`.
+      - Send forwards 2300 gas to the receiving contract.
 
 - title: Contract Related Functions
   shortTitle: Contract Related
