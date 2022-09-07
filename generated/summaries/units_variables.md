@@ -98,6 +98,7 @@ Few of the important functions of each type will be discussed in the following s
  **ABI Encoding and Decoding functions.**        
 - To send data to the contract, we need to send it in a way that the contract can read it. That is, they need to be encoded.
 - Solidity has a global variable called abi that has an encode and decode method, so we can use it to encode the parameters of any function.
+- ABI stands for application binary interface. It's basically how you can encode Solidity contract calls for the EVM and, backwards, how to read the data out of transactions.
 - `abi.encode(...) returns (bytes memory)`: ABI-encodes the given arguments.
 - `abi.decode(bytes memory encodedData, (...)) returns (...)`: ABI-decodes the given data, while the types are given in parentheses as second argument. 
   Example: `(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))`
@@ -157,9 +158,13 @@ Few of the important functions of each type will be discussed in the following s
 
 - `keccak256(bytes memory) returns (bytes32)`
   - This function will compute and return the Keccak-256 hash of the input.
+  - Keccak-256 is part of Solidity (SHA-3 Family). 
+  - This function computes the hash of an input to a fixed-length output, yielding a singular 32-byte hash from any number of inputs.
+  - This cryptographic hash function can only be used in one direction and cannot be reversed.
 
 - `sha256(bytes memory) returns (bytes32)`
   - This function will compute and return the SHA-256 hash of the input.
+  - The SHA-256 is weaker than Keccak-256.
  
  **Members of bytes and string**        
 - `bytes.concat(...) returns (bytes memory)`: 

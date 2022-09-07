@@ -5,7 +5,6 @@
   explanation: |
     A literal number can take a suffix of `wei`, `gwei` or `ether` to specify a subdenomination of Ether. 
     The denominations `finney` and `szabo` have been removed in version 0.7.0.
-
   answerKeys:
     - A
     - B
@@ -172,819 +171,767 @@
     
 - uuid: 3190aeb2-1d7d-4adb-950f-01cfda8d6164
   type: SingleChoice
-  content: question
+  content: What does `abi` stand for?
   hint: noHint
-  explanation: explanation
+  explanation: ABI stands for application binary interface.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
+    - "encoding-decoding"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: application binary interface
       key: A
-    - content: option 2
+    - content: application binding interface
       key: B
-    - content: option 3
+    - content: audio binary interface
       key: C
-    - content: option 4
+    - content: application binding information
       key: D
 
 - uuid: 420bf665-0bd3-4b2c-860d-b0816126c974
   type: SingleChoice
-  content: question
+  content: WHat is the need for encoding/decoding in Solidity?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    In general, an ABI is the interface between two program modules, one of which is often at the level of machine code. 
+    The interface is the de facto method for encoding/decoding data into/out of the machine code.
+    It is very similar to API (Application Program Interface), a human-readable representation of a codes interface. 
+    ABI defines the methods and structures used to interact with the binary contract, just like API does but on a lower-level.
   answerKeys:
-    - A
+    - B
   subTopics:
-    - "block-transaction"
+    - "encoding-decoding"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: There is no need.
       key: A
-    - content: option 2
+    - content: Data needs to be encoded in a machine readible format to communicate with a contract.
       key: B
-    - content: option 3
+    - content: Encoding is necessary to make the data human readible.
       key: C
-    - content: option 4
+    - content: ABI is exactly like API.
       key: D
+
 - uuid: 54e85b5c-2de1-47ce-8abf-2e63f1f14f07
   type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
+  content: |
+    A bytes array is given as followes which contains the abi encoding of an address and an int:
+    ```
+      0x0000000000000000000000005b38da6a701c568545dcfcb03fcb875f56beddc4  
+      000000000000000000000000000000000000000000000000000000000000007f
+    ```
+    Can you decode this string manually to retrieve the address and the int?
+
+  hint: Address holds a 20 byte value.
+  explanation: |
+    A quick analysis of the result shows us that it has 64 bytes.
+    This is because the encoding occurs in multiples of 32 bytes.
+    The first 32 bytes contain the address (20 bytes) and the other 32 bytes contain the integer, 7f. 
+    Encoding is always in hexadecimal, and 7f in hex is 127.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
+    - "encoding-decoding"
+  difficultyLevel: Medium
   choices:
-    - content: option 1
+    - content: (0x5B38Da6a701c568545dCfcB03FcB875f56beddC4,127)
       key: A
-    - content: option 2
+    - content: (0x5B38Da6a701c568545dCfcB03FcB875f56beddC4,7)
       key: B
-    - content: option 3
+    - content: (0x5B38Da6a701c568545dCfcB03FcB875f56beddC4,7f)
       key: C
-    - content: option 4
+    - content: (0x0000000000000000000000005b38da6a701c568545dcfcb03fcb875f56beddc4,127)
       key: D
+
 - uuid: fa48e97c-7b08-425e-be88-92aecf0ef81a
   type: SingleChoice
-  content: question
+  content: what is the difference between abi.encode and abi.encodePacked?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Through abi.encodePacked(), Solidity supports a non-standard packed mode where:
+    - types shorter than 32 bytes are neither zero padded nor sign extended and
+    - dynamic types are encoded in-place and without the length.
+    - array elements are padded, but still encoded in-place.
+
   answerKeys:
-    - A
+    - B
   subTopics:
-    - "block-transaction"
+    - "encoding-decoding"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: They use different methods for encoding.
       key: A
-    - content: option 2
+    - content: Types encoded with encode get zero padded whearas with encodePacked they do not.
       key: B
-    - content: option 3
+    - content: Types encoded with encodePacked get zero padded whearas with encode they do not.
       key: C
-    - content: option 4
+    - content: There is no difference.
       key: D
+
 - uuid: 1c06be94-53cf-4b1b-8989-87f0aba557a7
   type: SingleChoice
-  content: question
+  content: What does tx stand for?
   hint: noHint
-  explanation: explanation
+  explanation: tx stands for "transaction".
   answerKeys:
-    - A
+    - B
   subTopics:
     - "block-transaction"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: tax
       key: A
-    - content: option 2
+    - content: transaction
       key: B
-    - content: option 3
+    - content: gas
       key: C
-    - content: option 4
+    - content: None of these.
       key: D
+
 - uuid: 74932f5f-8a08-4b5c-afc3-7d57c90111e1
   type: SingleChoice
-  content: question
+  content: Which of the following is not a member of global variable `tx`?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    `tx.gasprice (uint)`: gas price of the transaction.  
+    `tx.origin (address)`: sender of the transaction (full call chain).  
+    whearas gaslimit is a member of block, `block.gaslimit (uint)`: gives the current block gaslimit.
   answerKeys:
-    - A
+    - C
   subTopics:
     - "block-transaction"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: gasprice
       key: A
-    - content: option 2
+    - content: origin
       key: B
-    - content: option 3
+    - content: gaslimit
       key: C
-    - content: option 4
+    - content: None of these
       key: D
+
 - uuid: 6a131770-4859-45e8-9a1a-0d5828648be5
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: Which of the following is not an available Mathematical function?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    The function addmod takes parameters (uint x, uint y, uint k) and will compute the expression `(x + y) % k`.
+    The function mulmod takes parameters (uint x, uint y, uint k) and will compute the expression `(x * y) % k`.
   answerKeys:
-    - A
+    - B
+    - D
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: addmod
       key: A
-    - content: option 2
+    - content: submod
       key: B
-    - content: option 3
+    - content: mulmod
       key: C
-    - content: option 4
+    - content: divmod
       key: D
+
 - uuid: efcab7ee-106e-4a14-81c2-b71b4ec84a82
   type: SingleChoice
-  content: question
+  content: Which of the following expressions will the function `mulmod(uint x, uint y, uint k) returns (uint)` compute?
   hint: noHint
   explanation: explanation
   answerKeys:
-    - A
+    - D
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: "`(x * y) * k`"
       key: A
-    - content: option 2
+    - content: "`(x % y) * k`"
       key: B
-    - content: option 3
+    - content: "`(x % k) * y`"
       key: C
-    - content: option 4
+    - content: "`(x * y) % k`"
       key: D
+
 - uuid: 33896ba7-2f65-4dad-b611-5e019e2a10b1
   type: SingleChoice
-  content: question
+  content: |
+    What is the output of the following function?
+    ```
+    function func() public pure returns(uint){
+         return mulmod(addmod(4,5,2),7,2);
+      }
+    ```
   hint: noHint
-  explanation: explanation
+  explanation: |
+    addmod(4,5,2) will evaluate (4+5)%2 which is equal to 1. mulmod of (1,7,2) is (1*7)%2 which is 1.
   answerKeys:
-    - A
+    - C
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: "3"
       key: A
-    - content: option 2
+    - content: "0"
       key: B
-    - content: option 3
+    - content: "1"
       key: C
-    - content: option 4
+    - content: None of these
       key: D
+
 - uuid: 56fd9c11-7f9c-4d57-973f-e91a9ae2d661
   type: SingleChoice
-  content: question
+  content: Which of the following are not valid cryptographic hashing functions?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    `keccak256(bytes memory) returns (bytes32)`: computes the Keccak-256 hash of the input.  
+    `sha256(bytes memory) returns (bytes32)`: computes the SHA-256 hash of the input.  
+    `ripemd160(bytes memory) returns (bytes20)`: compute RIPEMD-160 hash of the input.  
   answerKeys:
-    - A
+    - D
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: keccak256
       key: A
-    - content: option 2
+    - content: sha256
       key: B
-    - content: option 3
+    - content: ripemd160
       key: C
-    - content: option 4
+    - content: All of these
       key: D
+
 - uuid: 9a42f50c-2667-4677-b3f1-40d2a714e24e
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: |
+    Which of the following options is correct regarding the statements below?  
+    Statement 1-The keccak256 (SHA-3 family) algorithm computes the hash of an input to a fixed length output. 
+    Statement 2- It can be decoded in reverse to retrieve the original input.
   hint: noHint
-  explanation: explanation
+  explanation: |
+    The keccak256 (SHA-3 family) algorithm computes the hash of an input to a fixed length output. 
+    The input can be a variable length string or number, but the result will always be a fixed bytes32 data type.
+    It is a one-way cryptographic hash function, which cannot be decoded in reverse.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Statement 1 is true but Statement 2 is false.
       key: A
-    - content: option 2
+    - content: Statement 2 is true but Statement 1 is false.
       key: B
-    - content: option 3
+    - content: Both are true.
       key: C
-    - content: option 4
+    - content: Neither is true.
       key: D
+      
 - uuid: afb85d5c-a9f2-4271-8cb7-d04f9d66e2c3
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: Which of the following is true regarding keccak256 hash function?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    The input can be a variable length string or number, but the result of the hash function will always be a fixed bytes32 data type.
+    The slightest modification or change in the string results in a massive change in the hash digest.
   answerKeys:
     - A
+    - C
+    - D
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Size of the output of the fuction does not depend on size of input.
       key: A
-    - content: option 2
+    - content: Size of the output of the fuction depends on the size of input.
       key: B
-    - content: option 3
+    - content: Small change in input results in massive change in output.
       key: C
-    - content: option 4
+    - content: The output of the function is a bytes32 data type.
       key: D
+
 - uuid: abe82746-9aef-4683-b8a4-8149ed4d9261
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
+  type: MultipleChoice
+  content: |
+    A collision occurs in a hash function when two different inputs produce the same output. 
+    You are calculating the hash of two strings using `keccak256(abi.encodePacked(_string1, _string2));`.
+    Which of the following options is correct?
+  hint: |
+    Is it possible for a input in `abi.encodePacked(_string1, _string2)` to produce similar output with a different input? 
+    Think of how encoding is done with `abi.encodePacked`.
+  explanation: |
+    Take for example the following inputs:
+    (AAA, BBB) -> AAABBB,      
+    (AA, ABBB) -> AAABBB  
+    They are supposed to be different from each other, but when concatenated as a single string, they actually will produce the same output.
+    On encoding the input with `abi.encode`, you will have padded zeroes while in abi.encodePacked you do not. Therefore with `abi.encodePacked`, there will always be a collision if the two strings of the two different inputs concatenate to the same string.
+    If there is likelihood of inputs resulting in outputs that can cause a collision it is recommended to use abi.encode instead of abi.encodePacked.
   answerKeys:
-    - A
+    - B
+    - C
+    - D
   subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
+    - "math-functions"
+  difficultyLevel: Hard
   choices:
-    - content: option 1
+    - content: Collision is not possible with keccak256 hashing function.
       key: A
-    - content: option 2
+    - content: There can be certain cases when the two strings will result in a collision.
       key: B
-    - content: option 3
+    - content: Collision can be prevented using `abi.encode`.
       key: C
-    - content: option 4
+    - content: Hashing is an important aspect of cryptographic security for digital wallets and transactions on the blockchain.
       key: D
+
 - uuid: 8bdd0f4b-fbb7-4524-abde-aa12cc1d19fb
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: |
+    Which of the following options is correct regarding tx.origin and msg.sender?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    The `tx.origin` global variable refers to the original external account that started the transactions.  
+    msg.sender refers to the immediate account (it could be external or another contract account) that invokes the function.
   answerKeys:
     - A
+    - B
+    - D
   subTopics:
     - "block-transaction"
-  difficultyLevel: Low
+  difficultyLevel: Medium
   choices:
-    - content: option 1
+    - content: The `tx.origin` global variable refers to the original external account that started the transactions.
       key: A
-    - content: option 2
+    - content: msg.sender refers to the immediate account (it could be external or another contract account) that invokes the function.
       key: B
-    - content: option 3
+    - content: Both functions can be used interchangeably.
       key: C
-    - content: option 4
+    - content: Both can produce the same output when invoked.
       key: D
+      
 - uuid: 62cce1c3-0b4a-47f1-9e13-98748fa52266
   type: SingleChoice
-  content: question
+  content: Which of the following cannot be used to concatenate two strings `a` and `b`?
   hint: noHint
-  explanation: explanation
+  explanation: Solidity doesn't provide built-in string concatenation and string comparison. Comparision like (a==b) can also not be done.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
+    - "bytes-strings"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: "`a+b`"
       key: A
-    - content: option 2
+    - content: "`string(bytes.concat(bytes(a),bytes(b)));`"
       key: B
-    - content: option 3
+    - content: "`string(abi.encodePacked(a,' ',b));`"
       key: C
-    - content: option 4
+    - content: "`string.concat(a,b);`"
       key: D
+
 - uuid: 3fe8cd83-6d7e-4db7-9786-dd934513c65c
   type: SingleChoice
-  content: question
+  content: Which of the following options is not correct regarding hashing functions?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Keccak-256, a cryptographic function, is part of Solidity (SHA-3 Family). 
+    This function computes the hash of an input to a fixed-length output, yielding a singular 32-byte hash from any number of inputs. 
+    Even the slightest alteration or modification to the string has a significant impact on the hash digest.
+    The SHA-256 is weaker than Keccak-256.
   answerKeys:
-    - A
+    - C
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: The SHA-256 is weaker than Keccak-256.
       key: A
-    - content: option 2
+    - content: Even the slightest alteration or modification to the input string has a significant impact on the hash digest.
       key: B
-    - content: option 3
+    - content: Keccak-256, a cryptographic function, is part of Solidity (SHA-256 Family).
       key: C
-    - content: option 4
+    - content: None of these.
       key: D
+
 - uuid: 89ae4ee5-30ef-4927-82e1-8a3d390a401b
   type: SingleChoice
-  content: question
+  content: Which of the following is not an error handling function?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    `assert`, `require`, `revert` is used for error handling in Solidity.
   answerKeys:
-    - A
+    - D
   subTopics:
-    - "block-transaction"
+    - "error-handling"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: assert
       key: A
-    - content: option 2
+    - content: require
       key: B
-    - content: option 3
+    - content: revert
       key: C
-    - content: option 4
+    - content: request
       key: D
+
 - uuid: 0271fb33-0019-47e5-94f2-aac7cd4144d2
   type: SingleChoice
-  content: question
+  content: What is the unit of `tx.gasprice`?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    The unit is wei.
+    Wei is the lowest possible denomination that can be handled by Solidity.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
+    - "encoding-decoding"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Ether
       key: A
-    - content: option 2
+    - content: wei
       key: B
-    - content: option 3
+    - content: kwei
       key: C
-    - content: option 4
+    - content: gwei
       key: D
+
 - uuid: 32cc38d2-e0f4-4169-ad09-267650411ed0
   type: SingleChoice
-  content: question
+  content: Which of the following is the correct way to return the address of the current contract in a function?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    The `this` keyword in Solidity refers to the current contract. It is convertible to the address type using `address(this)`.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
+    - "contract-related"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: "`return address(this);`"
       key: A
-    - content: option 2
+    - content: "`return this;`"
       key: B
-    - content: option 3
+    - content: "`return this.MyContract;`"
       key: C
-    - content: option 4
+    - content: None of these.
       key: D
+
 - uuid: 3b965e9e-0976-4426-af2b-9f71b08c7cc2
-  type: SingleChoice
-  content: question
+  type: MultipleChoice
+  content: What is the `this` keyword in Solidity?
   hint: noHint
-  explanation: explanation
+  explanation: The `this` keyword in Solidity refers to the current contract. It is convertible to the address type using `address(this)`.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
+    - "contract-related"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: The `this` keyword in Solidity refers to the current contract.
       key: A
-    - content: option 2
+    - content: The `this` keyword in Solidity refers to the current contracts address.
       key: B
-    - content: option 3
+    - content: The `this` keyword in Solidity refers to the instance of the function from where it is called.
       key: C
-    - content: option 4
+    - content: None of these.
       key: D
+
 - uuid: ca4b7841-d73b-4630-9602-c4777553786e
   type: SingleChoice
-  content: question
+  content: Which function is used to destroy a contract?
   hint: noHint
-  explanation: explanation
+  explanation: "`selfdestruct(address payable recipient)`: is used to destroy the current contract, sending its funds to the given Address and end execution."
   answerKeys:
-    - A
+    - C
   subTopics:
-    - "block-transaction"
+    - "contract-related"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: suicide
       key: A
-    - content: option 2
+    - content: revert
       key: B
-    - content: option 3
+    - content: selfdestruct
       key: C
-    - content: option 4
+    - content: assert
       key: D
+
 - uuid: 041f5a22-2efd-4ce9-baef-69c2243b4703
   type: SingleChoice
-  content: question
+  content: What is the return type for keccak256 hash function?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    `keccak256(bytes memory) returns (bytes32)`: computes the Keccak-256 hash of the input in the form of a bytes32 type output.
   answerKeys:
-    - A
+    - D
   subTopics:
-    - "block-transaction"
+    - "math-functions"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: uint8
       key: A
-    - content: option 2
+    - content: bytes20
       key: B
-    - content: option 3
+    - content: uint 32
       key: C
-    - content: option 4
+    - content: bytes32
       key: D
-- uuid: 29189ccf-69f5-446a-a6b0-4a87d7854766
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
+
 - uuid: 1fff2dea-d5a9-4b89-af31-cdf9147ef127
   type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
+  content: How will you retrieve the current contracts balance?
+  hint: this keyword referss to the current contracts instance.
+  explanation: |
+    `this` keyword referss to the current contracts instance. 
+    `address(this)` will give the address of the current contract. `address(this).balance` will retrieve the balance associated with the current contract.
   answerKeys:
-    - A
+    - B
   subTopics:
-    - "block-transaction"
+    - "contract-related"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: this.balance
       key: A
-    - content: option 2
+    - content: address(this).balance
       key: B
-    - content: option 3
+    - content: balance(this)
       key: C
-    - content: option 4
+    - content: MyContract.balance
       key: D
-- uuid: 07cabeaa-d693-4346-9293-28e8b7aba346
+
+- uuid: 29189ccf-69f5-446a-a6b0-4a87d7854766
   type: SingleChoice
-  content: question
+  content: Which of the following is not a way of sending ether?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    In Solidity, there are three ways in which one can send ether. Namely transfer(), send() and call().
   answerKeys:
-    - A
+    - D
   subTopics:
-    - "block-transaction"
+    - "address-properties"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: send
       key: A
-    - content: option 2
+    - content: transfer
       key: B
-    - content: option 3
+    - content: call
       key: C
-    - content: option 4
+    - content: codehash
       key: D
+
+- uuid: 07cabeaa-d693-4346-9293-28e8b7aba346
+  type: MultipleChoice
+  content: Which of the following options is correct regarding send and transfer?
+  hint: noHint
+  explanation: |
+    Send is similar to transfer. But if the payment fails, it will not reverts.
+    "The syntax of the transfer function looks like: `receivingAddress.transfer(amount);`."
+  answerKeys:
+    - A
+    - C
+  subTopics:
+    - "address-properties"
+  difficultyLevel: Low
+  choices:
+    - content: Send is similar to transfer. But if the payment fails, it will not revert.
+      key: A
+    - content: Transfer is similar to send. But if the payment fails, it will not revert.
+      key: B
+    - content: "The syntax of the transfer function looks like: `receivingAddress.transfer(amount);`."
+      key: C
+    - content: "The syntax of the transfer function looks like: `transfer(receivingAddress,amount);`."
+      key: D
+
 - uuid: 25073a6e-60fe-43a3-b95b-9440e0a7c141
   type: SingleChoice
-  content: question
+  content: What is the difference between transfer and call?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    - `address.transfer()`
+      - throws on failure.
+      - forwards 2,300 gas stipend, safe against reentrancy.
+    - `address.call.value().gas()()`
+      - returns false on failure.
+      - forwards all available gas, allows specifying how much gas to forward.
   answerKeys:
     - A
+    - B
+    - C
   subTopics:
-    - "block-transaction"
+    - "address-properties"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: transfer reverts if the send falis.
       key: A
-    - content: option 2
+    - content: transfer forwards 2,300 gas stipend.
       key: B
-    - content: option 3
+    - content: call forwards all available gas, allows specifying how much gas to forward.
       key: C
-    - content: option 4
+    - content: call reverts on failure.
       key: D
+
 - uuid: 0741a691-a8cb-48de-8148-59974b4804fc
   type: SingleChoice
-  content: question
+  content: Which of the following is not correct?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Send and transfer forwards 2300 gas to the receiving contract.
+    Since the amount of gas forwarded to the called smart contract is very low, the called smart contract can easily run out of gas.
+    Using call allows for re-entrancy attacks. The receiver contract calls the function again where the call() statement is given. If the sender contract is improperly coded, it can result in draining larger amounts of funds from it than planned.
   answerKeys:
-    - A
+    - B
   subTopics:
     - "block-transaction"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Both send and transfer have a gas limit of 2300 gas.
       key: A
-    - content: option 2
+    - content: send/transfer is better than call.
       key: B
-    - content: option 3
+    - content: transfer is hardcoded to prevent re-entrancy attacks while call is not.
       key: C
-    - content: option 4
+    - content: As the amount of gas forwarded in send and transfer is very low, the called contract can run out of gas.
       key: D
+
 - uuid: de653a8b-fc0f-4509-a891-716f6ad316bc
   type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
+  content: "What is incorrect with the following expresion: `address(this).balance = 0`."
+  hint: "`.balance` returns a uint256 type value."
+  explanation: |
+    You cannot do address(this).balance = 0 , because address(this).balance is a number not a variable.
   answerKeys:
-    - A
+    - C
   subTopics:
-    - "block-transaction"
+    - "address-properties"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: The expression is correct and will compile.
       key: A
-    - content: option 2
+    - content: The expression will assign balance of current contracts address to 0.
       key: B
-    - content: option 3
+    - content: The expression will give typeError.
       key: C
-    - content: option 4
+    - content: None of these.
       key: D
+
 - uuid: 295846f8-221a-474b-a5aa-916379f4e58f
   type: SingleChoice
-  content: question
+  content: |
+    Which of the following options is correct regarding the statements below?
+    Statement 1- `block.number` givess the the block on the blockchain where the contract is mined in.
+    Statement 2- `block.number` also corresponds to the block number of the block which includes the transaction of ETH sent to a contract function.
   hint: noHint
-  explanation: explanation
+  explanation: |
+    Any Solidity method call that changes the state is a transaction. 
+    To log or return the block info of that transaction, you can use block.number. 
+    This is possible because that method call can only take effect on the state once the block that the transaction belongs to is mined and upon mining, those properties expose all that info about that block.
   answerKeys:
-    - A
+    - D
   subTopics:
     - "block-transaction"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: Statement 1 is true but Statement 2 is false.
       key: A
-    - content: option 2
+    - content: Statement 2 is true but Statement 1 is false.
       key: B
-    - content: option 3
+    - content: Both are true.
       key: C
-    - content: option 4
+    - content: Neither is true.
       key: D
+
 - uuid: fb264114-7251-4110-a42e-2cb91bdc89f1
   type: SingleChoice
-  content: question
+  content: Which of the following is not a special variable available in the global namespace?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    There exist special variables like `msg`, `tx`, and `block` in solidity which exist in the global namespace and are mainly used to provide information about the blockchain.
   answerKeys:
-    - A
+    - D
   subTopics:
     - "block-transaction"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: msg
       key: A
-    - content: option 2
+    - content: tx
       key: B
-    - content: option 3
+    - content: block
       key: C
-    - content: option 4
+    - content: None of these.
       key: D
+
 - uuid: 9af7c152-de7d-4b7b-b453-bfa78f89c9c7
   type: SingleChoice
-  content: question
+  content: What does `abi.encodeWithSelector` do?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    ABI-encodes the given arguments starting from the second and prepends the given four-byte selector.
+    `abi.encodePacked` doesn't do this. It does a packed encoding of all arguments combined.
   answerKeys:
-    - A
+    - B
   subTopics:
-    - "block-transaction"
+    - "encoding-decoding"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: It is similar to `abi.encodePacked(FUNC_SELECTOR, _param1, _param2)`.
       key: A
-    - content: option 2
+    - content: ABI-encodes the given arguments starting from the second and prepends the given four-byte selector.
       key: B
-    - content: option 3
+    - content: ABI-encodes all the the given arguments .
       key: C
-    - content: option 4
+    - content: None of these.
       key: D
+
 - uuid: 8cdb0db5-30fd-4bf6-8c3a-181827a73d79
   type: SingleChoice
-  content: question
+  content: Which of the following is equivalent to `abi.encodeWithSignature(string memory signature, ...)`?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    `abi.encodeWithSelector` ABI-encodes the given arguments starting from the second and prepends the given four-byte selector, 
+    `abi.encodeWithSignature(string memory signature, ...)` is equivalent to `abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)`.
   answerKeys:
     - A
   subTopics:
-    - "block-transaction"
+    - "encoding-decoding"
   difficultyLevel: Low
   choices:
-    - content: option 1
+    - content: "`abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)`"
       key: A
-    - content: option 2
+    - content: "`abi.encodePacked(signature, ...)`"
       key: B
-    - content: option 3
+    - content: "`abi.encodeWithSelector(signature, ...)`"
       key: C
-    - content: option 4
+    - content: None of these
       key: D
+
 - uuid: 899f9f74-be50-4de5-bde6-4161418bfbc8
-  type: SingleChoice
-  content: question
+  type: MultipeChoice
+  content: Why does `msg.sig` return first four bytes of the calldata as a function identifier?
   hint: noHint
-  explanation: explanation
+  explanation: |
+    You can address in theory $2^{32}$ (4294967296 as 4 bytes have 32 bits) different methods in any single contract.
+    It seems enough for any possible contract, giving furthermore the presence of a code size limit of 24 kbytes or so (The major of them have five-to-twenty methods).
+    Choosing 4 bytes is a reasonable choice because, the probability of a collision is very low so you are assured in any case of a lot of unique entries for methods in the single contract.
   answerKeys:
     - A
+    - C
   subTopics:
     - "block-transaction"
-  difficultyLevel: Low
+  difficultyLevel: Hard
   choices:
-    - content: option 1
+    - content: Using four bytes is a tradeoff as even big contracts have maximum five-to-twenty methods.
       key: A
-    - content: option 2
+    - content: 4 bytes can be used to denote any number of methods in a contract.
       key: B
-    - content: option 3
+    - content: There can be a total of 4294967296 different methods in any single contract.
       key: C
-    - content: option 4
+    - content: A collision can never happen using 4 bytes.
       key: D
-- uuid: 1363e80b-b583-4b96-a800-1eddd18c094e
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: 759c996f-a665-443e-99ec-9fe0bb664ed4
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: d5800c17-38af-41f9-b36a-5c07794d3233
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: b3e88036-37f4-4ce0-8fe0-02d72fb8f499
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: 79d51957-4d2d-4f5c-9056-2ba95abaff77
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: 77825e05-1bc5-4076-9d95-a4fa649bf68e
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: 49507ccf-c272-4c94-8301-81a7bb6e98dd
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: dc421b03-b40f-422d-a0d4-0df0bd70321c
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: 3c7ff50c-cbb9-4372-b314-28a5e4cc7245
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
-- uuid: 9c022424-f37e-40cd-bf68-76e6e6286e97
-  type: SingleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
-  answerKeys:
-    - A
-  subTopics:
-    - "block-transaction"
-  difficultyLevel: Low
-  choices:
-    - content: option 1
-      key: A
-    - content: option 2
-      key: B
-    - content: option 3
-      key: C
-    - content: option 4
-      key: D
+
