@@ -1,9 +1,11 @@
 - uuid: 1b6f7a4a-5f9e-40f0-8259-7a029e372747
-  title: title
-  shortTitle: short title
+  title: Global Variables
+  shortTitle: Global Variables
   type: YoutubeVideo
-  url: url
+  url: https://www.youtube.com/watch?v=ryA86ZiSD-w
   subTopics:
-    - "variables"
+    - "global-variables"
+    - "block-transaction"
   details: |
-    details
+    Global variables contain information about blockchain, transaction and caller of the function. 
+    This video explains the use of some of the block and trasaction properties available in Solidity like `msg.sender`, `block.timestamp` and `block.number`.
