@@ -98,7 +98,7 @@
     - `block.timestamp` and `blockhash` as a source of randomness are not secure. Timestamp and the blockhash can be influenced by the miners.
 
 - title: ABI Encoding and Decoding functions.
-  shortTitle: Encoding/Decoding Functions
+  shortTitle: Encoding/Decoding
   key: "encoding-decoding"
   details: |
     - To send data to the contract, we need to send it in a way that the contract can read it. That is, they need to be encoded.
@@ -135,7 +135,7 @@
     - `abi.encodeCall(function functionPointer, (...)) returns (bytes memory)`: ABI-encodes a call to functionPointer with the arguments found in the tuple. Performs a full type-check, ensuring the types match the function signature. Result `equals abi.encodeWithSelector(functionPointer.selector, (...))`abi.decode.
 
 - title: Mathematical and Cryptographic Functions
-  shortTitle: Mathematical Functions
+  shortTitle: Math Functions
   key: "math-functions"
   details: |
     - `addmod(uint x, uint y, uint k) returns (uint)`
@@ -175,7 +175,7 @@
       - The SHA-256 is weaker than Keccak-256.
 
 - title: Members of bytes and string
-  shortTitle: bytes/string properties
+  shortTitle: bytes/string props
   key: "bytes-strings"
   details: |
     - `bytes.concat(...) returns (bytes memory)`: 
@@ -199,7 +199,7 @@
       ```
 
 - title: Error Handling Functions
-  shortTitle: Error Handling Functions
+  shortTitle: Error Functions
   key: "error-handling"
   details: |
     - `assert(bool condition)`: 
