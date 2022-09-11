@@ -191,7 +191,7 @@
 
 - uuid: 420bf665-0bd3-4b2c-860d-b0816126c974
   type: SingleChoice
-  content: WHat is the need for encoding/decoding in Solidity?
+  content: What is the need for encoding/decoding in Solidity?
   hint: noHint
   explanation: |
     In general, an ABI is the interface between two program modules, one of which is often at the level of machine code. 
@@ -384,7 +384,7 @@
 
 - uuid: 56fd9c11-7f9c-4d57-973f-e91a9ae2d661
   type: SingleChoice
-  content: Which of the following are not valid cryptographic hashing functions?
+  content: Which of the following are valid cryptographic hashing functions?
   hint: noHint
   explanation: |
     `keccak256(bytes memory) returns (bytes32)`: computes the Keccak-256 hash of the input.  
@@ -554,7 +554,7 @@
       key: B
     - content: Keccak-256, a cryptographic function, is part of Solidity (SHA-256 Family).
       key: C
-    - content: None of these.
+    - content: None of these are correct.
       key: D
 
 - uuid: 89ae4ee5-30ef-4927-82e1-8a3d390a401b
@@ -586,7 +586,7 @@
     The unit is wei.
     Wei is the lowest possible denomination that can be handled by Solidity.
   answerKeys:
-    - A
+    - B
   subTopics:
     - "encoding-decoding"
   difficultyLevel: Low
