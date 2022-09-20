@@ -1,0 +1,5 @@
+- title: Understanding Encapsulation in Solidity
+  shortTitle: Encapsulation
+  key: encapsulation
+  details: |
+    It refers to the bundling of data, along with the methods that operate on that data, into a single unit.
