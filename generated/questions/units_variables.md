@@ -161,7 +161,7 @@ Sub Topics: encoding-decoding
 
 ---
 
-##### WHat is the need for encoding/decoding in Solidity?  
+##### What is the need for encoding/decoding in Solidity?  
 
 - [ ]  There is no need.
 - [x]  Data needs to be encoded in a machine readible format to communicate with a contract.
@@ -319,7 +319,7 @@ Sub Topics: math-functions
 
 ---
 
-##### Which of the following are not valid cryptographic hashing functions?  
+##### Which of the following are valid cryptographic hashing functions?  
 
 - [ ]  keccak256
 - [ ]  sha256
@@ -445,7 +445,7 @@ Sub Topics: bytes-strings
 - [ ]  The SHA-256 is weaker than Keccak-256.
 - [ ]  Even the slightest alteration or modification to the input string has a significant impact on the hash digest.
 - [x]  Keccak-256, a cryptographic function, is part of Solidity (SHA-256 Family).
-- [ ]  None of these.
+- [ ]  None of these are correct.
   
 Hint: noHint
          
@@ -479,8 +479,8 @@ Sub Topics: error-handling
 
 ##### What is the unit of `tx.gasprice`?  
 
-- [x]  Ether
-- [ ]  wei
+- [ ]  Ether
+- [x]  wei
 - [ ]  kwei
 - [ ]  gwei
   
