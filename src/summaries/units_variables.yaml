@@ -42,8 +42,7 @@
   shortTitle: Global Variables
   key: "global-variables"
   details: |
-    - There are special variables and functions which always exist in the global namespace and are mainly used to provide 
-        information about the blockchain or are general-use utility functions.
+    - There are special variables and functions which always exist in the global namespace and are mainly used to provide information about the blockchain or are general-use utility functions.
     - These are of various types having specific properties.
       - Block and Transaction properties.
       - ABI Encoding and Decoding functions.
