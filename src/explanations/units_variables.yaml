@@ -37,9 +37,8 @@
           }
         ```
     - Time Units
-      After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit.
-      - We can use seconds, minutes, hours, days and weeks as suffix to denote time.
-      - Lowest unit of time is `seconds`.
+      After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit. We can use seconds, minutes, hours, days and weeks as suffix to denote time. Lowest unit of time is `seconds`.  Below are some time unit examples from solidity. 
+      
       - `1 seconds = 1;`
       - `1 minutes = 60 seconds;`
       - `1 hours = 60 minutes;`
