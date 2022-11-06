@@ -2,7 +2,7 @@
   shortTitle: Units
   key: "units"
   details: |
-    - Ether Units
+    ### Ether Units
       While using Ethereum, we may encounter different units, such as Wei and Gwei. In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether. 
       Wei is the smallest unit of measurement. One Wei is worth 0.000000000000000001 Ether (or 10-18). Because it cannot deal with decimal numbers, the EVM (Ethereum Virtual Machine) employs Wei as its base unit. Gwei, another common unit, is 1000000000 Wei, or 0.000000001 (or 10-9) Ether. 
       
@@ -36,7 +36,7 @@
               }
           }
         ```
-    - Time Units
+    ### Time Units
       After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit. We can use seconds, minutes, hours, days and weeks as suffix to denote time. Lowest unit of time is `seconds`.  Below are some time unit examples from solidity. 
       
       - `1 seconds = 1;`
