@@ -348,32 +348,38 @@
   details: |
     Solidity has a plethora of error-handling functions. Errors can occur during compile or runtime. Solidity is compiled to byte code, and a syntax error check occurs at compile time, whereas runtime errors are difficult to detect and occur primarily during contract execution. Out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, and so on are examples of runtime errors. Solidity had a single throw statement until version 4.10, so to handle errors, multiple if...else statements must be implemented for checking the values and throwing errors, which consumes more gas. After version 4.10, new error-handling constructs assert, require, and revert statements were added, and the throw function was made absolute.
 
-    Assert has the same syntax as the require statement. After evaluating the condition, it returns a boolean value. The programme will either continue to execute or throw an exception based on the return value. Instead of returning unused gas, the assert statement consumes the entire gas supply and then returns the state to its original state. Before the contract is executed, Assert is used to validate the current state and function conditions. Some cases with assert type exceptions
-      - An assert is called with a condition that yields a false result.
-      - A function's zero-initialized variable is called.
-      - Converting a large or negative value to an enum.
-      - A value is modulo or divided by zero.
-      - Accessing an array with an index that is either too large or too small.
+    ### Assert
+      Assert has the same syntax as the require statement. After evaluating the condition, it returns a boolean value. The programme will either continue to execute or throw an exception based on the return value. Instead of returning unused gas, the assert statement consumes the entire gas supply and then returns the state to its original state. Before the contract is executed, Assert is used to validate the current state and function conditions. 
+      
+      Some cases with assert type exceptions
+        - An `assert` is called with a condition that yields a false result.
+        - A function's zero-initialized variable is called.
+        - Converting a large or negative value to an enum.
+        - A value is modulo or divided by zero.
+        - Accessing an array with an index that is either too large or too small.
 
-    - `assert(bool condition)`: 
-      Causes a Panic error and thus state change reversion if the condition is not met - to be used for internal errors.
+      - `assert(bool condition)`: 
+        Causes a Panic error and thus state change reversion if the condition is not met - to be used for internal errors.
 
-    The `require` statements declare the prerequisites for running the function, i.e. the constraints that must be met before executing the code. It takes a single argument and after evaluation returns a boolean value; it also has a custom string message option. If false, an exception is thrown and the execution is terminated. The unused gas is returned to the caller, and the state is reset to its original setting.
-    
-    - `require(bool condition)`: 
-      reverts if the condition is not met - to be used for errors in inputs or external components.
+    ### Require
+      The `require` statements declare the prerequisites for running the function, i.e. the constraints that must be met before executing the code. It takes a single argument and after evaluation returns a boolean value; it also has a custom string message option. If false, an exception is thrown and the execution is terminated. The unused gas is returned to the caller, and the state is reset to its original setting.
+      
+      - `require(bool condition)`: 
+        reverts if the condition is not met - to be used for errors in inputs or external components.
 
-    - `require(bool condition, string memory message)`: 
-      reverts if the condition is not met - to be used for errors in inputs or external components. Also provides an error message.
+      - `require(bool condition, string memory message)`: 
+        reverts if the condition is not met - to be used for errors in inputs or external components. Also provides an error message.
 
-    Revert is comparable to the require statement. It does not evaluate any condition or rely on any state or statement. It's used to throw exceptions, show errors, and revert the function call. This statement includes a string message that describes the problem with the exception's information. A revert statement implies that an exception is thrown, the unused gas is returned, and the state is reset to its original state. Revert is used to handle the same types of exceptions that require does, but with slightly more complex logic.
+    ### Revert
+      Revert is comparable to the require statement. It does not evaluate any condition or rely on any state or statement. It's used to throw exceptions, show errors, and revert the function call. This statement includes a string message that describes the problem with the exception's information. A revert statement implies that an exception is thrown, the unused gas is returned, and the state is reset to its original state. Revert is used to handle the same types of exceptions that require does, but with slightly more complex logic.
 
-    - `revert()`: 
-      abort execution and revert state changes.
+      - `revert()`: 
+        abort execution and revert state changes.
 
-    - `revert(string memory reason)`: 
-      abort execution and revert state changes, providing an explanatory string.
+      - `revert(string memory reason)`: 
+        abort execution and revert state changes, providing an explanatory string.
 
+    Please gothrough the code for better understanding
     ```
       pragma solidity ^0.6.0;
 
