@@ -49,7 +49,7 @@
 
       On calling function `func` below, the value of `block.timestamp` returns 1661554329 seconds however the returned value will be 143558295494400 seconds because `block.timestamp` gets multiplied with 24*60*60 due to the `days` time denomination.
 
-      ```
+      ```solidity
         contract C
         {
           function func() public view returns(uint){
@@ -99,7 +99,7 @@
       - `tx.origin (address)`: sender of the transaction (full call chain).
 
     The code snippet below demonstrates the use of some of the Block and transaction properties.
-      ```
+      ```solidity
         pragma solidity ^0.8.0;
 
         contract Block{
@@ -179,7 +179,8 @@
     
     To send data to the contract, we need to send it in a way that the contract can read it. That is, they need to be encoded. Solidity has  global variable i.e, abi that has an encode and decode method, so we can use it to encode the parameters of any function. 
 
-The encode/dicode method on the `abi` global variable in Solidity lets us easily encode/decode the parameters of any function.
+    The encode/dicode method on the `abi` global variable in Solidity lets us easily encode/decode the parameters of any function.
+    
     ABI encoding is mostly automated, handled by compilers such as REMIX or wallets that interact with the blockchain. JSON is used to represent contract ABI. There are specific instructions for encoding and decoding a contract ABI.
 
     - `abi.encode(...) returns (bytes memory)`: ABI-encodes the given arguments.
@@ -188,7 +189,7 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
     Example: `(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))`
 
     - The example below demonstrates encoding and decoding.
-      ```
+      ```solidity
       contract Encode {
         function encode(string memory _string1, uint _uint) public pure returns (bytes memory) {
                 return (abi.encode(_string1, _uint));
@@ -214,7 +215,7 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
     - `abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)`: Equivalent to `abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)`.
     - `abi.encodeCall(function functionPointer, (...)) returns (bytes memory)`: ABI-encodes a call to functionPointer with the arguments found in the tuple. Performs a full type-check, ensuring the types match the function signature. Result `equals abi.encodeWithSelector(functionPointer.selector, (...))`abi.decode. `abi.encodeCall` not works with interfaces. 
 
-    ```
+    ```solidity
       pragma solidity ^0.8.0;
 
       interface IERC20 {
@@ -262,7 +263,7 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
       This functions will compute the expression `(x + y) % k`. The addition is performed with arbitrary precision and does not wrap around at $2^{256}$.
       
       The code snippet below shows the use of the addmod functions.
-        ```
+        ```solidity
         contract C {
           function foo() public pure returns(uint){
               return addmod(1,4,3);
@@ -275,7 +276,7 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
       This function will compute the expression `(x * y) % k`. The multiplication is performed with arbitrary precision and does not wrap around at $2^{256}$.
       
       The code snippet below shows the use of the mulmod functions.
-        ```
+        ```solidity
         contract C {
           function bar() public pure returns(uint){
               return mulmod(5,7,3);
@@ -294,7 +295,7 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
     - `sha256(bytes memory) returns (bytes32)`
       This function will compute and return the SHA-256 hash of the input. It is weaker than Keccak-256.
 
-      ```
+      ```solidity
         pragma solidity ^0.5.12;
 
         contract Hash
@@ -330,7 +331,7 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
         Concatenates variable number of bytes and bytes1, …, bytes32 arguments to one byte array.
 
       The Contract C below demonstrates the use of `bytes.concat` and `string.concat` to concatenate two strings a and b.
-      ```
+      ```solidity
       contract C
       {
         function testStringConcat(string memory a,string memory b) public pure returns (string memory) {
@@ -381,7 +382,7 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
         abort execution and revert state changes, providing an explanatory string.
 
     Please gothrough the code for better understanding
-    ```
+    ```solidity
       pragma solidity ^0.6.0;
 
       contract ErrorHandling{
@@ -439,4 +440,118 @@ The encode/dicode method on the `abi` global variable in Solidity lets us easily
       }
         
     ```
+
+- title: Members of Address Type
+  shortTitle: Address Properties
+  key: "address-properties"
+  details: |
+    An address value type is intended to hold up to 20B, or 160 bits, the size of an Ethereum address. In fact, Solidity has two address value types: address and address payable. The distinction between the two is that address payable can send and receive Ether. An address can be used to obtain a balance using the.balance method and to transfer a balance using the.transfer method.
+
+    - `<address>.balance (uint256)`:
+      Returns the balance of the Address in Wei. The function below is used to return the current balance of the sender.
+      ```solidity
+        function getBalance() public view returns(uint256){
+            return msg.sender.balance;
+        }
+      ```
+
+    - `<address>.codehash (bytes32)`: the codehash of the Address.
+
+    - `<address payable>.transfer(uint256 amount)`: 
+      The receiving smart contract should have a fallback function defined or else the transfer call will throw an error. There is a gas limit of 2300 gas, which is enough to complete the transfer operation.
+      
+      The syntax of the transfer function looks like: `receivingAddress.transfer(amount);`. The transfer function fails when the balance of the sending smart contract is not large enough or the receiving contract rejects the payment. In a failure case, the transfer function reverts.
+
+    - `<address payable>.send(uint256 amount) returns (bool)`: 
+      Send is similar to transfer. But if the payment fails, it will not revert. Instead, it returns false. The failure handling is left to the calling contract. The syntax of the send function looks like: `receivingAddress.send(10);`. Send forwards 2300 gas to the receiving contract.
+    
+    ```solidity
+      pragma solidity ^0.8.0;
+
+      contract Address{
+          //taking adress of popular NFT smart contract Crypto Punks
+          function balance(address add)public view returns(uint256){
+              return add.balance;
+          }
+          // input: "address add": "0xe785E82358879F061BC3dcAC6f0444462D4b5330"
+          // output: "uint256: 0"
+
+          function codehash(address add)public view returns(bytes32){
+              return add.codehash;
+          }
+          // input: "address add": "0xe785E82358879F061BC3dcAC6f0444462D4b5330"
+          // output: "bytes32: 0x0000000000000000000000000000000000000000000000000000000000000000"
+
+          function transfer(address payable add, uint256 amount)public{
+              add.transfer(amount);
+          }
+
+          function send(address payable add, uint256 amount)public returns(bool){
+              return add.send(amount);
+          }
+          // input: "address add": "0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2", "uint256 amount": "10"
+          // output: "bool: false"
+      }
+    ```
+
+- title: Contract Related Functions
+  shortTitle: Contract Related
+  key: "contract-related"
+  details: |
+    `this` is the pointer to the current instance of the type derived from Address which is the current contract.
+
+    `selfdestruct(address payable recipient)`: Destroy the current contract, after sending its funds to the given Address and end execution.
+
+    please gothrough the below code for better understanding
+    ```solidity
+      function destruct(address payable addr)public payable{
+        selfdestruct(addr);
+      }
+      // input: "address addr": "0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2"
+      // output: "null"
+
+      function checkBalance(address payable addr)public view return(uint){
+        uint balance = address(this).balance;
+        return balance;
+      }
+      // input: "address addr": "0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2"
+      // output: "uint: 0"
+
+    ```
+
+
+- title: Functions for Type Information
+  shortTitle: Type Information
+  key: "type-info"
+  details: |  
+    The expression type(X) can be used to retrieve information about the type X.
+    Currently, there is limited support for this feature (X can be either a contract or an integer type).
+    The following properties are available for a contract type C:
+    - `type(C).name`: The name of the contract.
+
+    - `type(C).creationCode`: Memory byte array that contains the creation bytecode of the contract.
+
+    - `type(C).runtimeCode`: Memory byte array that contains the runtime bytecode of the contract.
+
+    In addition to the properties above, the following properties are available for an interface type I: 
+
+    - `type(I).interfaceId`: A bytes4 value containing the EIP-165 interface identifier of the given interface I.
+
+    The following properties are available for an integer type T:
+
+    - `type(T).min`: The smallest value representable by type T.
+    - `type(T).max`: The largest value representable by type T.
+
+    The following code demonstrates the use of type(T). The function `foo` will return -128 which is the minimum value of `int8` value type and 255 which is the maximum value of `uint8` value type.
+    
+    ```solidity
+      contract C {
+        function foo() public pure returns(int,uint){
+            return (type(int8).min,type(uint8).max);
+        }
+      }
+    ```
+
+
+
 
