@@ -1,0 +1,172 @@
+## Header
+This is the course header. This will be added on top of every page. Do to [DoDAO.io](https://www.dodao.io) to know more.
+
+ ---
+ 
+ ## Units and variables
+ 
+ **Units**        
+### Ether Units
+  While using Ethereum, we may encounter different units, such as Wei and Gwei. In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether. 
+  Wei is the smallest unit of measurement. One Wei is worth 0.000000000000000001 Ether (or 10-18). Because it cannot deal with decimal numbers, the EVM (Ethereum Virtual Machine) employs Wei as its base unit. Gwei, another common unit, is 1000000000 Wei, or 0.000000001 (or 10-9) Ether. 
+  
+  Following are unit conversions on basis of 1 Wei
+  - `1 Wei = 1;`
+  - `1 Kwei = 1e3;`
+  - `1 Mwei = 1e6;`
+  - `1 Gwei = 1e9;`
+  - `1 Szabo = 1e12;`
+  - `1 Finney = 1e15;`
+  - `1 Ether = 1e18;`
+  - `1 Kether = 1e21;`
+  - `1 Mether = 1e24;`
+  - `1 Gether = 1e27;`
+  - `1 Tether = 1e30;`
+    
+  The following code snippet demonstrates a simple function to convert the total `wei` and `gwei` (default unit in Solidity) to Ether.
+    
+  ```solidity
+    contract ConvertUnits {
+      function etherToGWei(uint value_ether) public pure returns (uint){
+        return value_ether*(10**9);
+      }
+      function gweiToEther(uint gwei) public pure returns (uint){
+        return gwei/(10**9);
+      }
+      function etherToWei(uint value_ether) public pure returns (uint){
+        return value_ether*(10**18);
+      }
+      function weiToEther(uint value_wei) public pure returns (uint){
+        return value_wei/(10**18);
+      }
+    }
+  ```
+### Time Units
+  After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit. We can use seconds, minutes, hours, days and weeks as suffix to denote time. Lowest unit of time is `seconds`.  
+  
+  Below are some time unit examples from solidity. 
+  - `1 seconds = 1;`
+  - `1 minutes = 60 seconds;`
+  - `1 hours = 60 minutes;`
+  - `1 day = 24 hours;`
+  - `1 week = 7 days;`  
+
+  On calling function `func` below, the value of `block.timestamp` returns 1661554329 seconds however the returned value will be 143558295494400 seconds because `block.timestamp` gets multiplied with 24*60*60 due to the `days` time denomination.
+
+  ```
+    contract C
+    {
+      function func() public view returns(uint){
+          return block.timestamp * 1 days;
+      }
+    }
+  ```
+  After version 0.5.0, solidity no longer uses the suffix "years" for the reasons of leap units(i.e. leap year).
+ 
+ **Globally available Variables**        
+A Variable is basically a placeholder for the data which can be manipulated at runtime. Variables allow users to retrieve and change the stored information. There are special variables and functions which always exist in the global namespace and are mainly used to provide information about the blockchain or are general-use utility functions.
+
+These are of various types having specific properties.
+  - Block and Transaction properties.
+  - ABI Encoding and Decoding functions.
+  - Members of bytes and string.
+  - Error handling methods.
+  - Mathematical and Cryptographic functions.
+  - Members of address type.
+  - Contract related.
+  - Type Information.
+ 
+ **Block and Transaction properties**        
+A key idea in Ethereum is the concept of blocks. Blocks serve as transactional containers. Multiple transactions are contained in a block. The number of transactions in each block varies depending on the gas limit and block size. A blockchain is created by chaining the blocks together. Each block has a parent block, and the header of each block contains the parent block's hash. Only the first block, also referred to as the genesis block, lacks a parent.
+
+Below are block and transaction properties with their functionalities 
+  - `blockhash(uint blockNumber) returns (bytes32)`: Gives hash of the given block and will only work for the 256 most recent block due to the reason of scalability.
+  - `block.basefee (uint)`: current blocks base fee.
+  - `block.chainid (uint)`: current chain id.
+  - `block.coinbase (address payable)`: current block miners address.
+  - `block.difficulty (uint)`: current block difficulty.
+  - `block.gaslimit (uint)`: current block gaslimit.
+  - `block.number (uint)`: current block number.
+  - `block.timestamp (uint)`: current block timestamp as seconds since unix epoch.
+  - `gasleft() returns (uint256)`: remaining gas.
+  - `msg.data (bytes calldata)`: complete calldata.
+  - `msg.sender (address)`: sender of the message (current call).
+  - `msg.sig (bytes4)`: first four bytes of the calldata (i.e. function identifier).
+  - `msg.value (uint)`: number of wei sent with the message.
+  - `tx.gasprice (uint)`: gas price of the transaction.
+  - `tx.origin (address)`: sender of the transaction (full call chain).
+
+The code snippet below demonstrates the use of some of the Block and transaction properties.
+  ```
+    pragma solidity ^0.8.0;
+
+    contract Block{
+        ///////// block functions //////////////
+
+        function basefee()public view returns(uint){
+            return block.basefee;
+        }//output: "0": "uint256: 1"
+
+        function chainid()public view returns(uint){
+            return block.chainid;
+        }//output: "0": "uint256: 1"
+
+        function coinbase()public view returns(address payable){
+            return block.coinbase;
+        }//output: "0": "address: 0x8945A..."
+
+        // try this with pragma solidity ^0.6.0;
+        // function gaselimit()public view returns(uint){
+        //     return block.gaselimit;
+        // }//output: "0": "uint256: 1"
+
+        function number()public view returns(uint){
+            return block.number;
+        }//output: "0": "uint256: 2"
+
+        function blockhash_()public view returns(bytes32){
+            return blockhash(number());
+        }//output: "0": "bytes32: 0x0000000000000000000000000000000000000000000000000000000000000000"
+
+        function timestamp()public view returns(uint){
+            return block.timestamp;
+        }//output: "0": "uint256: 1667312686"
+
+        function gasleft_()public view returns(uint256){
+            return gasleft();
+        }//output: "0": "uint256: 2978818"
+
+        /////////// msg functions //////////////
+
+        function data()public pure returns(bytes calldata){
+            return msg.data;
+        }//output: "0": "bytes: 0x73d4a13a"
+
+        function sender()public view returns(address){
+            return msg.sender;
+        }//output: "0": "address: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4"
+
+        function sig()public pure returns(bytes4){
+            return msg.sig;
+        }//output: "0": "bytes4: 0x00a7029b"
+
+        function value()internal view returns(uint){
+            return msg.value;
+        }//output: "0": "uint256: 2978818"
+
+        ////////// tx functions ////////////
+
+        function gasprice()public view returns(uint){
+            return tx.gasprice;
+        }//output: "0": "uint256: 1"
+
+        function origin()public view returns(address){
+            return tx.origin;
+        }//output: "0": "address: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4"
+
+    }
+
+  ```
+The values of all members of msg can change for every external function call. In solidity `block.timestamp` and `blockhash` are sources of randomness are not secure. Timestamp and the blockhash can be influenced by the miners.
+ 
+ 
