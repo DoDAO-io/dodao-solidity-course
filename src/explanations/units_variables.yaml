@@ -18,7 +18,7 @@
       - `1 Gether	=	1e27;`
       - `1 Tether	=	1e30;`
       
-      Some of the above unit names honour figures like  Charles Babbage, Wei Dai, Ada Lovelace, Claude Shannon, Nick Szabo, and Hal Finney who made significant contributions to the development of the computer or the blockchain. The following code snippet demonstrates a simple function to convert the total `wei` and 'gwei' (default unit in Solidity) to Ether.
+      The following code snippet demonstrates a simple function to convert the total `wei` and 'gwei' (default unit in Solidity) to Ether.
         
         ```
           contract ConvertUnits {
