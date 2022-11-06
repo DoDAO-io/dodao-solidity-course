@@ -39,6 +39,7 @@ topics:
   - title: Units and variables
     key: units-variables
     details: This chapter covers the units used in solidity and also discusses various functions available globally in Solidity and their properties.
+    explanations: units_variables.yaml
     readings: units_variables.yaml
     summaries: units_variables.yaml
     questions: units_variables.yaml
