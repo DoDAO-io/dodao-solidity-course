@@ -527,4 +527,28 @@ The following code demonstrates the use of type(T). The function `foo` will retu
   }
 ```
  
+ **References**        
+Units and Globally Available Variables
+  - https://docs.soliditylang.org/en/v0.8.16/units-and-global-variables.html
+  - http://man.hubwiz.com/docset/Solidity.docset/Contents/Resources/Documents/units-and-global-variables.html#units-and-globally-available-variables
+
+Block and Transaction properties.
+  - https://www.geeksforgeeks.org/solidity-special-variables/
+
+ABI Encoding and Decoding functions.
+  - https://www.quicknode.com/guides/smart-contract-development/what-is-an-abi
+  - https://coinsbench.com/solidity-tutorial-all-about-abi-46da8b517e7
+
+Members of bytes and string.
+  - https://www.tutorialspoint.com/solidity/solidity_strings.htm
+
+Error handling methods.
+  - https://www.geeksforgeeks.org/solidity-error-handling/#:~:text=Solidity%20is%20compiled%20to%20byte,of%2Dindex%20error%2C%20etc.
+
+Cryptographic functions.
+  - https://www.geeksforgeeks.org/what-is-hashing-in-solidity/
+
+Members of address type.
+  - https://docs.soliditylang.org/en/latest/units-and-global-variables.html#members-of-address-types
+ 
  
