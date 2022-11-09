@@ -111,8 +111,35 @@ The simpleProgram contract is calling the free function `add` to add two numbers
 The `fallback` and `receive` functions are two special types of functions that are often used together. The `fallback` function is a function that is called if none of the other functions match the function 
 identifier or if ether is transferred to the contract with some data. The `receive` function is a function that is called when someone sends ether to a contract. If the contract does not have a `receive` function, 
 then the `fallback` function will be executed. If ether is sent with some data directly to the contract, then the `fallback`function will be executed even if a `receive` function is defined. 
+While defining the recieve function payable keyword must be added in order to receive ether. Visibility of receive and fallback functions must be defined.
+
 There are two keywords which can restrict functions: `pure` and `view`. If `pure` is used in a function, that function will not be able to read or write. If `view` is used in a function, 
-that function will not be able to write, but will have read access.
+that function will not be able to write, but will have read access. 
+
+Sample code explaining how to use recieve and fallback functions.
+```
+// SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.5;
+
+    contract Solidity_course {
+        uint public a =0;
+        receive() payable external {
+            setValue(24);
+        }
+        function setValue(uint x)internal {
+            a = x;
+        }
+        function check_a() public view returns(uint value){ // view keyword restrict the function check_a to read only
+            value = a;
+        }
+        fallback () external {
+            setValue(12);
+        }
+
+    }
+
+
+```
  
  **Events and Function modifiers**        
 #### Events
