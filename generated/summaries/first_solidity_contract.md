@@ -48,7 +48,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
     multi-line comment.
     /*
     ```
-  * NAtSpec comments can be used with oprional tags, in the above code snippet @author shows the name of the author and @notice explain to an end user what it does.
+  * NAtSpec comments can be used with optional tags, in the above code snippet @author shows the name of the author and @notice explain to an end user what it does.
   * The Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.
 
 - Imports
