@@ -161,7 +161,7 @@
     }
 
     ```
-    The `deposit` function is called whenever a user sends Ether to the contract. The value that is sent and the sender's address are logged and stored in the blockchain. These events are very useful for maintaining transaction logs. 
+    The `deposit` function is called whenever a user sends Ether to the contract. The value that is sent and the sender's address are logged and stored in the blockchain as an event. `emit Log(msg.value,msg.sender);` defines emitting of the event with the message value and the senders address. These events are very useful for maintaining transaction logs. 
     They can be viewed in `Etherscan` if the contract is deployed in Ethereum or any of its testnets.
     
     Events are ways to communicate with a client application or front-end website that something has happened on the blockchain. The above event Deposit can be detected from the JavaScript API by filtering for `Deposit`.
