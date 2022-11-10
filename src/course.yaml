@@ -24,6 +24,7 @@ topics:
     readings: first_solidity_contract.yaml
     summaries: first_solidity_contract.yaml
     questions: first_solidity_contract.yaml
+    explanations: first_solidity_contract.yaml
     status: Done
     completionWeek:  Done
 
