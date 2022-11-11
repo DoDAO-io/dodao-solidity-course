@@ -39,7 +39,7 @@ You can also write your Solidity comments in the Ethereum Natural Language Speci
 You can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.
 example code snippet.
 
-```solidity
+```sol
 //SPDX-License-Identifier:MIT
 pragma solidity ^0.8.2;
 
@@ -48,16 +48,16 @@ import "priceconverter.sol" as pc; // if you want to import one file but with di
 import { price1 as p1, price2 } from "storagefactory.sol"; // If we want to import only specific variables or functions from a file
 
 contract SolidityStructure {
-address public owner;
+  address public owner;
 
-constructor() {
-    owner = msg.sender;
-}
+  constructor() {
+      owner = msg.sender;
+  }
 
-/* msg.sender is the address that has called or initiated a function or created a transaction. 
-        But at the time of deployment it will be the address of the deployer of the contract */
+  /* msg.sender is the address that has called or initiated a function or created a transaction. 
+          But at the time of deployment it will be the address of the deployer of the contract */
 
-/// @author admin
+  /// @author admin
 }
 
 ```
