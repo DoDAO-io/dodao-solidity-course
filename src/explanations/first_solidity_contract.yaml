@@ -216,14 +216,14 @@
     not even on invalid external input. If this happens, then there is a bug in your contract which you should fix.
 
     A Panic exception is generated in the following situations.
-        * If you call assert with an argument that evaluates to false.
-        * If an arithmetic operation results in underflow or overflow.
-        * If you divide or modulo by zero.
-        * If you convert a value that is too big or negative into an enum type.
-        * If you call .pop() on an empty array.
-        * If you access an array or an array slice at an out-of-bounds or negative index.
-        * If you allocate too much memory or create an array that is too large.
-        * If you call a zero-initialized variable of internal function type.
+    * If you call assert with an argument that evaluates to false.
+    * If an arithmetic operation results in underflow or overflow.
+    * If you divide or modulo by zero.
+    * If you convert a value that is too big or negative into an enum type.
+    * If you call .pop() on an empty array.
+    * If you access an array or an array slice at an out-of-bounds or negative index.
+    * If you allocate too much memory or create an array that is too large.
+    * If you call a zero-initialized variable of internal function type.
     
     #### Require
     The require function takes two parameters. The first argument is the condition and the second is the custom string text which will be displayed if the condition returns false. this second parameter is optional.
