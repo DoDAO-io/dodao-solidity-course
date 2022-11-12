@@ -4,7 +4,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=71cmPaD_AnQ
   subTopics:
-    - "functions"
+    - "state-variables-and-functions"
   details: |
     This video covers 
     1) Function declaration in Solidity 
@@ -16,7 +16,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=b6FBWsz7VaI
   subTopics:
-    - "modifiers"
+    - "events-modifiers"
   details: |
     Function modifiers allow your code to have less repetitive, re-useable code logic. This video explains the declaration and use of modifiers.
 
@@ -26,7 +26,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=jaMHPT-78HM
   subTopics:
-    - "events"
+    - "events-modifiers"
   details: |
     In Solidity, you can use events to push data to outside consumers, like web frontends.
     This video shows how to declare and emit events in Solidity.
@@ -38,10 +38,6 @@
   url: https://www.youtube.com/watch?v=1Mi1ub9bIv8
   subTopics:
     - "errors"
-    - "revert"
-    - "require"
-    - "try-catch"
-    - "assert"
   details: |
     Solidity uses state-reverting exceptions to handle errors. 
     This video covers how error handling in solidity is done using revert, require, assert and try/catch.
@@ -52,8 +48,7 @@
   type: YoutubeVideo
   url: https://www.youtube.com/watch?v=yzcp594R92c
   subTopics:
-    - "file-layout"
-    - "contract-structure"
+    - smart-contract
   details: |
     This video explains the typical layout of a Solidity source file: 
     1) Pragma statement

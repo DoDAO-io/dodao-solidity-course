@@ -18,11 +18,11 @@ pragma solidity ^0.8.2;
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 contract HelloWorld {
-string word = "helloworld";
-// this is a single line comment
+    string word = "helloworld";
+    // this is a single line comment
 
-/* this is a 
-    multi line comment */
+    /* this is a 
+        multi line comment */
 }
 
 ```
@@ -39,7 +39,7 @@ You can also write your Solidity comments in the Ethereum Natural Language Speci
 You can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.
 example code snippet.
 
-```sol
+```solidity
 //SPDX-License-Identifier:MIT
 pragma solidity ^0.8.2;
 
@@ -48,16 +48,16 @@ import "priceconverter.sol" as pc; // if you want to import one file but with di
 import { price1 as p1, price2 } from "storagefactory.sol"; // If we want to import only specific variables or functions from a file
 
 contract SolidityStructure {
-  address public owner;
+    address public owner;
 
-  constructor() {
-      owner = msg.sender;
-  }
+    constructor() {
+        owner = msg.sender;
+    }
 
-  /* msg.sender is the address that has called or initiated a function or created a transaction. 
-          But at the time of deployment it will be the address of the deployer of the contract */
+    /* msg.sender is the address that has called or initiated a function or created a transaction. 
+            But at the time of deployment it will be the address of the deployer of the contract */
 
-  /// @author admin
+    /// @author admin
 }
 
 ```
@@ -97,7 +97,7 @@ contract SimpleProgram {
 }
 
 function add(uint a, uint b) pure returns (uint sum) {
-sum = a + b;
+    sum = a + b;
 }
 
 ```
@@ -204,8 +204,6 @@ contract FunctionModifiers {
 Solidity uses state-reverting exceptions to handle errors. Such an exception undoes all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller.
 Solidity has many functions for error handling. Errors can occur at compile time or runtime. Solidity is compiled to byte code and there a syntax error check happens at compile-time, while runtime 
 errors occur mainly while executing the contracts. Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.
-Error handling in solidity is done using revert, require, assert. 
-
 Error handling can be done using assert, revert, require, "try-catch" and custom errors.
 
 #### Assert 
@@ -263,10 +261,9 @@ Calling a revert statement implies an exception is thrown, the unused gas is ret
 revert takes an optional argument of string type.
 
 ```solidity
-function checker(uint x) public return(bool y){
+function checker(uint x) public pure returns(bool y){
     if(x>=10){
-    return false;
-    revert("value exceeded");
+        revert("value exceeded");
     }
     else{
         return true;
@@ -275,7 +272,6 @@ function checker(uint x) public return(bool y){
 ```
  
  **Custom Errors and try-catch**        
-```
 #### Try Catch in Solidity
 In a try catch statement, the try block will execute some code. If it gets any errors, the caught statement will be executed. A failure in an external call can be caught using a try/catch statement.
 A external call is a function calling from one contract to another contract. 
@@ -343,8 +339,8 @@ contract FeedConsumer {
 ```
 
 #### Custom Errors
-Creating custom errors in your code can actually help you conserve gas usage. How? Well, normal errors come with pre-written, lengthy error messages that can really guzzle up a lot of gas. However, when you create a c
-ustom error using the `error` keyword, you can specify the message yourself. These custom errors can be called using a conditional and revert statement.
+Creating custom errors in your code can actually help you conserve gas usage. How? Well, normal errors come with pre-written, lengthy error messages that can really guzzle up a lot of gas. However, when you create a 
+custom error using the `error` keyword, you can specify the message yourself. These custom errors can be called using a conditional and revert statement.
 
 An example of an custom error is shown below.
 
@@ -357,7 +353,7 @@ contract CustomError {
 
     function testCustom_error(uint x) public pure {
         if (x > 10) {
-        revert Logic("the value exceeded 10");
+            revert Logic("the value exceeded 10");
         }
     }
 }

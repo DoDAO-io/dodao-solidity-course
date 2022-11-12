@@ -3,80 +3,77 @@
   content: Which of the following is a valid pragma verion declaration in Solidity?
   hint: noHint
   explanation: |
-      pragma solidity 0.6.12  - Only compiles with version 0.6.12
-      pragma solidity ^0.6.12 - Compiles with version 0.6.12 and above
-      pragma solidity >=0.4.0 <0.6.0 - Compiles with all versions between 0.4.0 and 0.6.0.
+    pragma solidity 0.6.12  - Only compiles with version 0.6.12
+    pragma solidity ^0.6.12 - Compiles with version 0.6.12 and above
+    pragma solidity >=0.4.0 <0.6.0 - Compiles with all versions between 0.4.0 and 0.6.0.
   answerKeys:
     - A
     - B
     - C
   subTopics:
-    - "solidity-compiler"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: "`pragma solidity 0.6.12;`"
       key: A
-      
+
     - content: "`pragma solidity ^0.6.12;`"
       key: B
-      
+
     - content: "`pragma solidity >=0.4.0 <0.6.0;`"
       key: C
-      
+
     - content: "`pragma solidity -0.5.2;`"
       key: D
-      
 
 - uuid: 85f2abbc-9acb-4ebe-a624-3c952da70b22
   type: SingleChoice
   content: A Solidity Contract file has a pragma versioning `pragma solidity ^0.5.2;`. With which of the following compilers will the contract run?
-  hint: Think of what condition is applicable with `^` symbol in solidity versioning. 
+  hint: Think of what condition is applicable with `^` symbol in solidity versioning.
   explanation: A source file with the line above does not compile with a compiler earlier than version 0.5.2, and it also does not work on a compiler starting from version 0.6.0 (this second condition is added by using ^).
   answerKeys:
     - C
   subTopics:
-    - "solidity-compiler"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: Compiler version 0.5.1
       key: A
-      
+
     - content: Compiler version 0.4.1
       key: B
-      
+
     - content: Compiler version 0.5.5
       key: C
-      
+
     - content: Compiler version 0.6.1
       key: D
-      
 
 - uuid: 6bc53ece-fffd-4f7f-bb54-c8200d629d16
   type: MultipleChoice
   content: Which of the following statements is incorrect regarding pragmas in solidity?
   hint: ABI coder pragma can be used to select between the two implementations of the ABI encoder and decoder and experimental pragma can be used to enable features of the compiler or language that are not yet enabled by default.
   explanation: |
-               The pragma keyword is used to enable certain compiler features or checks. A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project. If you import another file, the pragma from that file does not automatically apply to the importing file.
-               By using pragma abicoder v1 or pragma abicoder v2 you can select between the two implementations of the ABI encoder and decoder. It can be used to enable features of the compiler or language that are not yet enabled by default. The following experimental pragmas are currently supported: ABIEncoderV2 , SMTChecker.
+    The pragma keyword is used to enable certain compiler features or checks. A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project. If you import another file, the pragma from that file does not automatically apply to the importing file.
+    By using pragma abicoder v1 or pragma abicoder v2 you can select between the two implementations of the ABI encoder and decoder. It can be used to enable features of the compiler or language that are not yet enabled by default. The following experimental pragmas are currently supported: ABIEncoderV2 , SMTChecker.
   answerKeys:
     - A
     - D
   subTopics:
-    - "file-layout"
+    - smart-contract
   difficultyLevel: Medium
   choices:
     - content: In Solidity `pragma` keyword is only used to specify the version of the compiler the code should compile with.
       key: A
-      
+
     - content: The `pragma` keyword is used to enable certain compiler features or checks.
       key: B
-      
-    - content: The following code will only compile with compiler version 0.6.12, `pragma solidity 0.6.12;`. 
+
+    - content: The following code will only compile with compiler version 0.6.12, `pragma solidity 0.6.12;`.
       key: C
-      
+
     - content: If you import another file, the pragma from that file will automatically apply to the importing file.
       key: D
-      
 
 - uuid: d336edf3-75ef-43c7-b77d-74bafcaa92b9
   type: SingleChoice
@@ -88,21 +85,20 @@
   answerKeys:
     - D
   subTopics:
-    - "file-layout"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: pragma experimental SMTChecker;
       key: A
-      
+
     - content: pragma abicoder v1;
       key: B
-      
+
     - content: pragma solidity ^0.5.2;
       key: C
-      
+
     - content: pragma version 0.6.2;
       key: D
-      
 
 - uuid: 1e3de4e3-fd09-446a-ba8a-2d223b59f587
   type: SingleChoice
@@ -112,18 +108,18 @@
   answerKeys:
     - D
   subTopics:
-    - "file-layout"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: import * as symbolName from "filename";
       key: A
-      
+
     - content: import "filename" as symbolName;
       key: B
-      
+
     - content: import {symbol1 as alias, symbol2} from "filename";
       key: C
-      
+
     - content: import "filename";
       key: D
 
@@ -140,21 +136,20 @@
   answerKeys:
     - A
   subTopics:
-    - "file-layout"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-      
+
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-      
+
     - content: Both are true.
       key: C
-      
+
     - content: Neither is true.
       key: D
-      
 
 - uuid: 25239107-bb81-48b8-9485-9c8df81a5514
   type: MultipleChoice
@@ -167,21 +162,20 @@
     - A
     - D
   subTopics:
-    - "file-layout"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: /This is a single line comment.
       key: A
-      
+
     - content: //This is a single line comment.
       key: B
-      
+
     - content: ///This is a single line comment.
       key: C
-      
+
     - content: /*This is a single line comment.
       key: D
-      
 
 - uuid: 6de1c98d-d533-4b04-937c-6f90db4fc63e
   type: MultipleChoice
@@ -195,21 +189,20 @@
     - A
     - C
   subTopics:
-    - "file-layout"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: NatSpec stands for Ethereum Natural Language Specification Format.
       key: A
-      
+
     - content: NatSpec comments provide tags and in case if no tags are used , the solidity compiler will interpret (///) as (//).
       key: B
-      
+
     - content: The Solidity compiler only interprets tags if they are external or public.
       key: C
-      
+
     - content: Comments in solidity can only be made using (//) for Single-line and (/*...*/) for multi-line.
       key: D
-      
 
 - uuid: 77cd176f-04d5-464d-86fa-64992e2d4db8
   type: SingleChoice
@@ -220,21 +213,20 @@
   answerKeys:
     - D
   subTopics:
-    - "contract-structure"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: Pragma directive
       key: A
-      
+
     - content: Name of the contract
       key: B
-      
+
     - content: Data and functions
       key: C
-      
+
     - content: All of the above
       key: D
-      
 
 - uuid: 421abb3d-6f87-4e4a-a22f-af467d34035b
   type: SingleChoice
@@ -250,22 +242,20 @@
   answerKeys:
     - C
   subTopics:
-    - "functions"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: Modifier definitions
       key: A
-      
+
     - content: Fallback definition
       key: B
-      
+
     - content: Function header and code
       key: C
-      
+
     - content: Event
       key: D
-      
-
 
 - uuid: e854f94d-5e49-4e3f-9e2a-0f8a1a4d1f83
   type: SingleChoice
@@ -278,53 +268,51 @@
   answerKeys:
     - B
   subTopics:
-    - "contract-structure"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: Constructor overloading is supported.
       key: A
-      
+
     - content: A constructor is optional.
       key: B
-      
+
     - content: The contract deployed on the blockchain will also contain the constructor code.
       key: C
-      
+
     - content: None of these
       key: D
-      
 
 - uuid: 611c7208-9eb2-4c4a-8d10-160081de6710
   type: SingleChoice
   content: |
-   Which of the options regarding the statements below are correct?
-   Statement 1 - A contract in the sense of Solidity is a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain.
-   Statement 2 - Contracts in Solidity are similar to classes in object-oriented languages.
+    Which of the options regarding the statements below are correct?
+    Statement 1 - A contract in the sense of Solidity is a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain.
+    Statement 2 - Contracts in Solidity are similar to classes in object-oriented languages.
   hint: noHint
   explanation: |
     Contracts in Solidity are similar to classes in object-oriented languages. They contain persistent data in state variables, and functions that can modify these variables.
   answerKeys:
     - C
   subTopics:
-    - "contract-structure"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: Statement 1 is correct but Statement 2 is incorrect.
       key: A
-      
+
     - content: Statement 2 is correct but Statement 1 is incorrect.
       key: B
-      
+
     - content: Both are correct.
       key: C
-      
+
     - content: Neither is correct.
       key: D
-      
 
 - uuid: b8e4a65e-683e-43a0-b0c1-7f6271177181
   type: SingleChoice
-  content:  |
+  content: |
     Which of the following options are correct based on the code snippet below?
     ```
     contract OriginCoordinates {
@@ -349,21 +337,20 @@
   answerKeys:
     - C
   subTopics:
-    - "state-variables"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: This code will not compile as solidity functions cannot have multipe return values.
       key: A
-      
+
     - content: This code will not compile because State Variables declared immutable cannot be initialised in a constructor.
       key: B
-      
+
     - content: This code will not compile because State Variables declared constant cannot be initialised in a constructor.
       key: C
-      
+
     - content: The code has no errors and can be deployed.
       key: D
-      
 
 - uuid: 5e40d1c1-0bbc-45f6-ae2e-eeee3715168b
   type: MultipleChoice
@@ -376,21 +363,20 @@
     - C
     - D
   subTopics:
-    - "functions"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: Functions outside of a contract are also called 'free functions'.
       key: A
-      
+
     - content: Functions declared as view can modify the state variables.
       key: B
-      
+
     - content: In Solidity the function is simply invoked by writing the name of the function where it has to be called.
       key: C
-      
+
     - content: Functions can have multiple return values.
       key: D
-      
 
 - uuid: c60393ac-3492-4d4b-a7c7-ecee0e09e9d7
   type: MultipleChoice
@@ -403,21 +389,20 @@
     - B
     - D
   subTopics:
-    - "functions"
+    - "state-variables-and-functions"
   difficultyLevel: Medium
   choices:
     - content: Free functions in solidity are functions declared inside a contract with public Visibility.
       key: A
-      
+
     - content: Their code is included in all contracts that call them.
       key: B
-      
+
     - content: They can access state variables and internal functions directly.
       key: C
-      
+
     - content: A free function behaves like an internal function of the contract that called it.
       key: D
-      
 
 - uuid: c97bee69-c7c1-4932-a6f8-60c2cf4df840
   type: SingleChoice
@@ -431,21 +416,20 @@
   answerKeys:
     - B
   subTopics:
-    - "file-layout"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: This statement imports all global symbols from “filename” into the current global scope.
       key: A
-      
+
     - content: This statement creates a new global symbol symbolName whose members are all the global symbols from "filename".
       key: B
-      
+
     - content: This statement imports symbolName member from "filename".
       key: C
-      
+
     - content: None of these.
       key: D
-      
 
 - uuid: 985403b3-673a-4017-9099-76a5cc0d5f10
   type: SingleChoice
@@ -457,21 +441,20 @@
   answerKeys:
     - D
   subTopics:
-    - "functions"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: Contract received ether and no data.
       key: A
-      
+
     - content: Contract received data but no function matched the function called.
       key: B
-      
+
     - content: Contract sent insufficient gas.
       key: C
-      
+
     - content: Both A & B
       key: D
-          
 
 - uuid: e288ce1e-aa2e-48b1-9878-f7133359198c
   type: SingleChoice
@@ -481,21 +464,20 @@
   answerKeys:
     - C
   subTopics:
-    - "events"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
-    - content: When called, events flag an error to the caller. 
+    - content: When called, events flag an error to the caller.
       key: A
-      
+
     - content: They provide a condition under which event a function calling the event should be executed.
       key: B
-      
+
     - content: They cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
       key: C
-      
+
     - content: None of these.
       key: D
-      
 
 - uuid: 138e8326-fe39-421f-ae9e-ac5a6cfb0ad0
   type: MUltipleChoice
@@ -503,26 +485,25 @@
   hint: When called, events cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
   explanation: |
     Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.
-    All information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts. 
+    All information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts.
   answerKeys:
     - A
     - C
   subTopics:
-    - "events"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
     - content: Events can be used to communicate with external users about a transaction that happened on the blockchain.
       key: A
-      
+
     - content: They are used for error handling.
       key: B
-      
+
     - content: They can be used to inform a user of any action that happened on the blockchain and can thus ease the development of outside systems in cooperation with smart contracts.
       key: C
-      
+
     - content: None of these.
       key: D
-      
 
 - uuid: 42d7664b-47e1-4f1e-9162-af63a8c0db22
   type: MultipleChoice
@@ -543,28 +524,28 @@
     }
     ```
   hint: Function modifiers can be used to change the behaviour of functions in a declarative way.
-  explanation: In the code, constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner. 
-        the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.
+  explanation:
+    In the code, constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner.
+    the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.
   answerKeys:
     - A
     - B
     - D
   subTopics:
-    - "contract-structure"
+    - smart-contract
   difficultyLevel: Medium
   choices:
     - content: Upon contract creation, the owner address is initialized to the user who deployed the contract.
       key: A
-      
+
     - content: The function setName can only be called by the owner of the contract.
       key: B
-      
+
     - content: onlyOwner is a function which will throw an error each time it is called by a non-owner.
       key: C
-      
+
     - content: onlyOwner can be used to modify the behaviour of a function.
       key: D
-      
 
 - uuid: d8609639-3532-48ff-8f33-7ae8ce2ade62
   type: SingleChoice
@@ -575,22 +556,20 @@
   answerKeys:
     - B
   subTopics:
-    - "functions"
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
     - content: function
       key: A
-      
-    - content: function modifier 
+
+    - content: function modifier
       key: B
-      
+
     - content: event
       key: C
-      
+
     - content: constructor
       key: D
-      
 
 - uuid: 33eab1f8-3a7c-4cd9-8c0d-f42a2f9f4fd3
   type: SingleChoice
@@ -600,21 +579,20 @@
   answerKeys:
     - C
   subTopics:
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
     - content: It is used in a function.
       key: A
-      
+
     - content: It is used in aconstructor.
       key: B
-      
+
     - content: It is used in a modifier.
       key: C
-      
+
     - content: It can be used anywhere at the file level.
       key: D
-      
 
 - uuid: aa3caf4e-b9d8-46f9-95ac-d588df2558a7
   type: SingleChoice
@@ -645,22 +623,20 @@
   answerKeys:
     - C
   subTopics:
-    - "functions"
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Medium
   choices:
     - content: "10"
       key: A
-      
+
     - content: "15"
       key: B
-      
+
     - content: "20"
       key: C
-      
+
     - content: "30"
       key: D
-      
 
 - uuid: 07881a7f-600c-4bfc-baf9-787f3fa70700
   type: SingleChoice
@@ -676,21 +652,20 @@
   answerKeys:
     - D
   subTopics:
-    - "functions"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: public function foo() view returns(){}
       key: A
-      
+
     - content: public view function foo() returns(){}
       key: B
-      
+
     - content: function foo() view returns() public{}
       key: C
-      
+
     - content: function foo() public view returns(){}
       key: D
-      
 
 - uuid: 0767755b-6790-44cd-8364-7c56acb77457
   type: SingleChoice
@@ -706,21 +681,20 @@
   answerKeys:
     - C
   subTopics:
-    - "contract-structure"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-      
+
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-      
+
     - content: Both are true.
       key: C
-      
+
     - content: Neither is true.
       key: D
-      
 
 - uuid: 2fb21e8c-429e-4229-817b-6077c945fca0
   type: MultipleChoice
@@ -733,21 +707,20 @@
     - A
     - B
   subTopics:
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
     - content: Specified at the entry of a function and executed after the function ends.
       key: A
-      
+
     - content: Specified at the entry to a function and executed before the function begins.
       key: B
-      
+
     - content: Specified at the exit of a function and executed after the function ends.
       key: C
-      
+
     - content: None of these.
       key: D
-      
 
 - uuid: f6d9abaf-0f05-4376-ad34-58c366ebee76
   type: SingleChoice
@@ -757,21 +730,20 @@
   answerKeys:
     - A
   subTopics:
-    - "contract-structure"
+    - smart-contract
   difficultyLevel: Low
   choices:
     - content: "1"
       key: A
-      
+
     - content: "2"
       key: B
-      
+
     - content: "3"
       key: C
-      
+
     - content: Many
       key: D
-      
 
 - uuid: 437f24c0-fa13-4ac8-bd39-3c4649aadb0c
   type: SingleChoice
@@ -785,21 +757,20 @@
     - B
     - C
   subTopics:
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
-    - content: “_;” is a special code only used in the function modifier. 
+    - content: “_;” is a special code only used in the function modifier.
       key: A
-      
+
     - content: It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
       key: B
-      
+
     - content: Having `_;` more than once in a modifier is valid.
       key: C
-      
+
     - content: option 4
       key: D
-      
 
 - uuid: 38d84a22-7517-4aaf-9018-75b533aa3e7e
   type: SingleChoice
@@ -834,22 +805,20 @@
   answerKeys:
     - B
   subTopics:
-    - "functions"
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Medium
   choices:
     - content: 0,0,0
       key: A
-      
+
     - content: 1,2,2
       key: B
-      
+
     - content: 0,0,1
       key: C
-      
+
     - content: 1,2,1
       key: D
-      
 
 - uuid: d73be206-d0fe-4f75-b6d3-693275d1b069
   type: SingleChoice
@@ -862,22 +831,20 @@
   answerKeys:
     - D
   subTopics:
-    - "functions"
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
     - content: A function can have any number of modifiers.
       key: A
-      
+
     - content: Visibility modifiers for a function should come before custom access modifiers.
       key: B
-      
+
     - content: Modifiers can be without any parameters.
       key: C
-      
+
     - content: All the above.
       key: D
-      
 
 - uuid: a8f4d89b-bfc8-4dc0-8f9e-5aab0088f13a
   type: SingleChoice
@@ -890,22 +857,20 @@
   answerKeys:
     - A
   subTopics:
-    - "events"
-    - "modifiers"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-      
+
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-      
+
     - content: Both are true.
       key: C
-      
+
     - content: Neither is true.
       key: D
-      
 
 - uuid: 61bc26de-8555-40ef-8f26-8235ada76c94
   type: MultipleChoice
@@ -918,21 +883,20 @@
     - B
     - C
   subTopics:
-    - "events"
+    - "events-modifiers"
   difficultyLevel: Low
   choices:
     - content: All indexed arguments will be stored in the data part of the log.
       key: A
-      
+
     - content: indexed keyword is used to log values as topics rather than data part of the log.
       key: B
-      
+
     - content: The indexed keyword helps you to filter the logs to find the wanted data.
       key: C
-      
+
     - content: None of these.
       key: D
-      
 
 - uuid: 4b1b0494-f540-4a22-af9a-bdd791fb2834
   type: SingleChoice
@@ -945,18 +909,17 @@
     - "errors"
   difficultyLevel: Low
   choices:
-    - content: out-of-gas error  
+    - content: out-of-gas error
       key: A
-      
+
     - content: data type overflow error
       key: B
-      
+
     - content: divide by zero error
       key: C
-      
+
     - content: All of these
       key: D
-      
 
 - uuid: 411289f8-19ca-4f57-8bd1-c55aea028b5a
   type: SingleChoice
@@ -971,16 +934,15 @@
   choices:
     - content: revert
       key: A
-      
+
     - content: require
       key: B
-      
+
     - content: assert
       key: C
-      
+
     - content: All of these
       key: D
-      
 
 - uuid: c513ceac-7031-4473-aaa0-d17870eeeb0a
   type: MultipleChoice
@@ -998,21 +960,19 @@
     - C
   subTopics:
     - "errors"
-    - "assert"
   difficultyLevel: Low
   choices:
     - content: If you call assert with an argument that evaluates to false.
       key: A
-      
+
     - content: If an arithmetic operation results in underflow or overflow.
       key: B
-      
+
     - content: If you divide or modulo by zero.
       key: C
-      
+
     - content: Calling require(x) where x evaluates to false.
       key: D
-      
 
 - uuid: 3c2e68b2-0577-411b-8980-2389c0d859ac
   type: SingleChoice
@@ -1032,16 +992,15 @@
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-      
+
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-      
+
     - content: Neither is true.
       key: C
-      
+
     - content: Both are true.
       key: D
-      
 
 - uuid: 734e92a7-07e9-43d6-b346-3be5d5e20109
   type: SingleChoice
@@ -1060,16 +1019,15 @@
   choices:
     - content: Calling require(x) where x evaluates to false.
       key: A
-      
+
     - content: If you perform an external function call targeting a contract that contains no code.
       key: B
-      
+
     - content: If you use revert() or revert("description").
       key: C
-      
+
     - content: All of these.
       key: D
-      
 
 - uuid: c3b40fc3-0ff1-49d8-aa2b-9a454ef568f0
   type: MultipleChoice
@@ -1089,16 +1047,15 @@
   choices:
     - content: The two ways if (!condition) revert(...); and require(condition, ...); are equivalent.
       key: A
-      
+
     - content: Using a custom error instance will usually be much cheaper than a revert.
       key: B
-      
+
     - content: Using revert() causes a revert without any error data while revert("description") will create an Error(string) error.
       key: C
-      
+
     - content: None of these.
       key: D
-      
 
 - uuid: c4123a41-b80e-4a83-adc7-7a189e1a6041
   type: SingleChoice
@@ -1112,21 +1069,19 @@
     - B
   subTopics:
     - "errors"
-    - "assert"
   difficultyLevel: Low
   choices:
     - content: revert
       key: A
-      
+
     - content: assert
       key: B
-      
+
     - content: require
       key: C
-      
+
     - content: None of these
       key: D
-      
 
 - uuid: fea2cad9-970c-40cc-8fa9-ec46f0b3155a
   type: SingleChoice
@@ -1141,22 +1096,20 @@
   answerKeys:
     - D
   subTopics:
-    - "errors"
-    - "try-catch"
+    - "custom-errors-and-try-catch"
   difficultyLevel: Low
   choices:
     - content: "`catch Error(string memory reason) { ... }`"
       key: A
-      
+
     - content: "`catch Panic(uint errorCode) { ... }`"
       key: B
-      
+
     - content: "`catch (bytes memory lowLevelData) { ... }`"
       key: C
-      
+
     - content: All of these
       key: D
-      
 
 - uuid: 6c484192-0531-42ec-a0fc-494132dea432
   type: SingleChoice
@@ -1171,22 +1124,20 @@
   answerKeys:
     - A
   subTopics:
-    - "contract-structure"
-    - "functions"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-      
+
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-      
+
     - content: Both are true.
       key: C
-      
+
     - content: Neither is true.
       key: D
-      
 
 - uuid: f6231249-cc8e-402b-9536-20dedb877205
   type: SingleChoice
@@ -1199,22 +1150,21 @@
   answerKeys:
     - D
   subTopics:
-    - "contract-structure"
-    - "functions"
+    - "state-variables-and-functions"
   difficultyLevel: Low
   choices:
     - content: It is not necessary for functions to be bound to a specific contract.
       key: A
-      
+
     - content: Free functions cannot have visibility.
       key: B
-      
+
     - content: Free functions are like internal functions.
       key: C
-      
+
     - content: All of these.
       key: D
-      
+
 - uuid: 285aa1cb-75de-4cf8-9d33-8987e14955a7
   type: SingleChoice
   content: What effect does a "require" keyword have on an if/else statement when it's false?
@@ -1224,22 +1174,16 @@
     - C
   subTopics:
     - "errors"
-    - "require"
   difficultyLevel: Low
   choices:
     - content: It goes to the next function.
       key: A
-      
+
     - content: It triggers the fallback function.
       key: B
-      
+
     - content: It stops the contract and returns any unused gas.
       key: C
-      
+
     - content: None of these.
       key: D
-      
-
-
-  
-
