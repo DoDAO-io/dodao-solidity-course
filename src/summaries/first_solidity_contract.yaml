@@ -3,8 +3,8 @@
   key: smart-contract
   details: |
     The source code of a solidity contract begins with a license identifier to avoid any potential legal issues that could arise if the code is published as open source. The compiler version is specified using the keyword 
-    `pragma` and can be placed anywhere within the contract, though it is generally considered best practice to specify it at the top of the document. For single-line comments, we need to use //. For multiline comments, we need to use /*comments here */. 
-    Solidity comments can also be written in `NatSpec` format. Developers use it for documenting return variables, functions, and so on. To define a single-line comment in this format, we need to use /// for multiline, we need to use /** comments here */. 
+    `pragma` and can be placed anywhere within the contract, though it is generally considered best practice to specify it at the top of the document. For single-line comments, we need to use `//`. For multiline comments, we need to use `/*comments here */`. 
+    Solidity comments can also be written in `NatSpec` format. Developers use it for documenting return variables, functions, and so on. To define a single-line comment in this format, we need to use `///` for multiline, we need to use `/** comments here */`. 
     `import` keyword is used for importing files from other resources
 
     Solidity has a special kind of function called a `constructor` function. This function will be called automatically when you deploy your contract. You can define a constructor function using the keyword 'constructor' followed by the function's code.
@@ -53,7 +53,7 @@
     This means that we cannot add `public` and `external` keywords.
 
     `fallback` and `recieve` are special functions. The `fallback` will be executed if:
-    1. One of the other functions match the function identifier 
+    1. None of the other functions match the function identifier 
     2. If ether is transferred to the contract with some call data
 
     If ether is sent to a contract without any call data, the receive function will be executed. If receive is not defined, fallback will be executed. The `fallback` and `receive` functions must be defined with the `payable` keyword and visibility. 
