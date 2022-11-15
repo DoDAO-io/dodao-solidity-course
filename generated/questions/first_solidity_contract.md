@@ -22,7 +22,7 @@ pragma solidity ^0.6.12 - Compiles with version 0.6.12 and above
 pragma solidity >=0.4.0 <0.6.0 - Compiles with all versions between 0.4.0 and 0.6.0.
 
 
-Sub Topics: solidity-compiler
+Sub Topics: smart-contract
  
 
 ---
@@ -38,7 +38,7 @@ Hint: Think of what condition is applicable with `^` symbol in solidity versioni
          
 Explanation: A source file with the line above does not compile with a compiler earlier than version 0.5.2, and it also does not work on a compiler starting from version 0.6.0 (this second condition is added by using ^).
 
-Sub Topics: solidity-compiler
+Sub Topics: smart-contract
  
 
 ---
@@ -56,7 +56,7 @@ Explanation: The pragma keyword is used to enable certain compiler features or c
 By using pragma abicoder v1 or pragma abicoder v2 you can select between the two implementations of the ABI encoder and decoder. It can be used to enable features of the compiler or language that are not yet enabled by default. The following experimental pragmas are currently supported: ABIEncoderV2 , SMTChecker.
 
 
-Sub Topics: file-layout
+Sub Topics: smart-contract
  
 
 ---
@@ -74,7 +74,7 @@ Explanation: By using pragma abicoder v1 or pragma abicoder v2 you can select be
 If you use pragma experimental SMTChecker;, then you get additional safety warnings which are obtained by querying an SMT solver.
 
 
-Sub Topics: file-layout
+Sub Topics: smart-contract
  
 
 ---
@@ -90,7 +90,7 @@ Hint: All import statements are correct.
          
 Explanation: The statement `import "filename";` imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. It is better to import specific symbols explicitly.
 
-Sub Topics: file-layout
+Sub Topics: smart-contract
  
 
 ---
@@ -111,7 +111,7 @@ Explanation: Solidity supports import statements to help modularise your code th
 However, Solidity does not support the concept of a default export.
 
 
-Sub Topics: file-layout
+Sub Topics: smart-contract
  
 
 ---
@@ -129,7 +129,7 @@ Explanation: Single-line comments (//) and multi-line comments (/*...*/) are pos
 Additionally, there is another type of comment called a NatSpec comment, they are written with a triple slash (///) or a double asterisk block (/** ... */) and they should be used directly above function declarations or statements.
 
 
-Sub Topics: file-layout
+Sub Topics: smart-contract
  
 
 ---
@@ -148,7 +148,7 @@ If no tags are used then the Solidity compiler will interpret a /// or /** comme
 The Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.
 
 
-Sub Topics: file-layout
+Sub Topics: smart-contract
  
 
 ---
@@ -165,7 +165,7 @@ Hint: noHint
 Explanation: Each contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types.
 
 
-Sub Topics: contract-structure
+Sub Topics: smart-contract
  
 
 ---
@@ -187,7 +187,7 @@ Explanation: The basic syntax is shown here.
 ```
 
 
-Sub Topics: functions
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -206,7 +206,7 @@ After the constructor has executed, the final code of the contract is stored on 
 The deployed code does not include the constructor code or internal functions only called from the constructor.
 
 
-Sub Topics: contract-structure
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -226,7 +226,7 @@ Hint: noHint
 Explanation: Contracts in Solidity are similar to classes in object-oriented languages. They contain persistent data in state variables, and functions that can modify these variables.
 
 
-Sub Topics: contract-structure
+Sub Topics: smart-contract
  
 
 ---
@@ -261,7 +261,7 @@ Explanation: The state variable x_coordinate cannot be initialized in the constr
 For constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time.
 
 
-Sub Topics: state-variables
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -278,7 +278,7 @@ Hint: noHint
 Explanation: Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.
 
 
-Sub Topics: functions
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -296,7 +296,7 @@ Explanation: A free function behaves like an internal function of the contract t
 The main difference is that a free function cannot directly access state variables and internal functions of contracts.
 
 
-Sub Topics: functions
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -316,7 +316,7 @@ Explanation: The following example creates a new global symbol symbolName whose 
 `import * as symbolName from "filename";` which results in all global symbols being available in the format symbolName.symbol.
 
 
-Sub Topics: file-layout
+Sub Topics: smart-contract
  
 
 ---
@@ -334,7 +334,7 @@ Explanation: A fallback function is called in two cases- A contract receives onl
 or when no function calls matched even though the account received data.
 
 
-Sub Topics: functions
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -350,7 +350,7 @@ Hint: noHint
          
 Explanation: Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
 
-Sub Topics: events
+Sub Topics: events-modifiers
  
 
 ---
@@ -365,10 +365,10 @@ Sub Topics: events
 Hint: When called, events cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
          
 Explanation: Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.
-All information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts. 
+All information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts.
 
 
-Sub Topics: events
+Sub Topics: events-modifiers
  
 
 ---
@@ -399,7 +399,7 @@ Hint: Function modifiers can be used to change the behaviour of functions in a d
          
 Explanation: In the code, constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner. the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.
 
-Sub Topics: contract-structure
+Sub Topics: smart-contract
  
 
 ---
@@ -416,7 +416,7 @@ Hint: noHint
 Explanation: Modifiers assist in the execution of a functions behavior. They can be used to restrict access of a function.
 
 
-Sub Topics: functions, modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -432,7 +432,7 @@ Hint: noHint
          
 Explanation: In Solidity, `_;` is used inside a modifier to specify when the function should be executed.
 
-Sub Topics: modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -469,7 +469,7 @@ Hint: Notice how the function set will execute because of the modifier m.
          
 Explanation: In Solidity, `_;` is used inside a modifier to specify when the function should be executed. As the modifier has `_;` before the modifier statements, so the function code will execute first and then the modifier code. The function set will update the value of a to 20 and then the modifier code will check if the value is greater than 15 or not.
 
-Sub Topics: functions, modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -491,7 +491,7 @@ Explanation: The basic syntax of a function is shown below.
 ```
 
 
-Sub Topics: functions
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -513,7 +513,7 @@ It is executed once when a contract is created and it is used to initialize cont
 A constructor can be either public or internal.
 
 
-Sub Topics: contract-structure
+Sub Topics: smart-contract
  
 
 ---
@@ -531,7 +531,7 @@ Explanation: “_;” is a special code only used in the function modifier. It' 
 "_;" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing "_;" before or after the modifier code.
 
 
-Sub Topics: modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -547,7 +547,7 @@ Hint: noHint
          
 Explanation: A contract can have only one constructor.
 
-Sub Topics: contract-structure
+Sub Topics: smart-contract
  
 
 ---
@@ -565,7 +565,7 @@ Explanation: “_;” is a special code only used in the function modifier. Havi
 It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
 
 
-Sub Topics: modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -606,7 +606,7 @@ Hint: noHint
          
 Explanation: The default value of uint is zero so when func() is called modA code will run first, the `_;` will be replaced by modifier's code and the `_;` in the modB modifier's is replaced by the func function's code. Therefore `a=1` , `b=2` and `c=2`.
 
-Sub Topics: functions, modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -625,7 +625,7 @@ Visibility modifiers for a function should come before custom access modifiers.
 Modifiers can be without any parameters.
 
 
-Sub Topics: functions, modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -644,7 +644,7 @@ Hint: noHint
          
 Explanation: A function declared as view can only read the state variables and not make updates to them , any modifiers attached to such function can also not make changes to the state of variables.
 
-Sub Topics: events, modifiers
+Sub Topics: events-modifiers
  
 
 ---
@@ -662,7 +662,7 @@ Explanation: You can add the attribute indexed to up to three parameters which a
 All non-indexed arguments will be stored in the data part of the log.
 
 
-Sub Topics: events
+Sub Topics: events-modifiers
  
 
 ---
@@ -715,7 +715,7 @@ Explanation: A Panic exception is generated in the following situations.
   Calling require(x) where x evaluates to false will result in an Error exception.
 
 
-Sub Topics: errors, assert
+Sub Topics: errors
  
 
 ---
@@ -794,7 +794,7 @@ Properly functioning code should never create a Panic, not even on invalid exter
 In this case integer overflow/underflow is undesirable and will lead to a bug wich needs to be fixed.
 
 
-Sub Topics: errors, assert
+Sub Topics: errors
  
 
 ---
@@ -815,7 +815,7 @@ Explanation: Solidity supports different kinds of catch blocks depending on the 
   * We can just use catch { … } if we are not interested in error data.
 
 
-Sub Topics: errors, try-catch
+Sub Topics: custom-errors-and-try-catch
  
 
 ---
@@ -836,7 +836,7 @@ Explanation: A Receive Ether Function is declared using `receive() external paya
 This function cannot have arguments, cannot return anything and must have external visibility and payable state mutability. It can be virtual, can override and can have modifiers.
 
 
-Sub Topics: contract-structure, functions
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -855,7 +855,7 @@ Free functions are always internal functions and are meant to replace internal l
 A free function behaves like an internal function of the contract that called it. The main difference is that a free function cannot directly access state variables and internal functions of contracts.
 
 
-Sub Topics: contract-structure, functions
+Sub Topics: state-variables-and-functions
  
 
 ---
@@ -871,5 +871,5 @@ Hint: noHint
          
 Explanation: `require` accepts a single argument and returns a boolean value after evaluation, it also has a custom string message option. If false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.
 
-Sub Topics: errors, require
+Sub Topics: errors
  

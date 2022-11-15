@@ -23,13 +23,13 @@
           "title": "Structure of a smartcontract",
           "shortTitle": "contract structure",
           "key": "smart-contract",
-          "details": "#### Versioning of solidity compiler\nThe compiler version will be in the form MAJOR.MINOR.PATCH example(0.8.7) which indicates the major release 0 with 8th minor release and 7th patch. \n\n#### Structure of a smart-contract in solidity\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\n\ncontract HelloWorld {\nstring word = \"helloworld\";\n// this is a single line comment\n\n/* this is a \n    multi line comment */\n}\n\n```\n\nEvery Solidity source file should have a license identifier in order to avoid legal issues when the code is published as open source. The Solidity compiler recognizes SPDX license identifiers, which are machine-readable. \nYou can specify the license identifier anywhere in the code, but it's recommended to put it at the top of each file.\n\nThe compiler that will be used to compile the Solidity file must be specified using the keyword \"pragma\" followed by the caret (^) symbol and the version number. The caret symbol indicates that any Solidity \ncompiler with a version of the same major and minor value and patch number greater than the specified version can be used to compile the file. Example in the above code version compiler with 0.8.7 can be used to compile the above code but 0.9.2 and 0.8.0 can't be used to compile the above file. \nEvery solidity file must be saved as `.sol` for compiling. Single line comments starts with `//`. Multiline comments starts with `/*` and ends with `*/`.\n\n`import` keyword is used for importing files from other resources. Solidity also include constructor functions. Constructors are functions which will be executed automatically for one time when a contract is deployed.\nYou can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\nYou can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\nexample code snippet.\n\n```sol\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n  address public owner;\n\n  constructor() {\n      owner = msg.sender;\n  }\n\n  /* msg.sender is the address that has called or initiated a function or created a transaction. \n          But at the time of deployment it will be the address of the deployer of the contract */\n\n  /// @author admin\n}\n\n```\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n"
+          "details": "#### Versioning of solidity compiler\nThe compiler version will be in the form MAJOR.MINOR.PATCH example(0.8.7) which indicates the major release 0 with 8th minor release and 7th patch. \n\n#### Structure of a smart-contract in solidity\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\n\ncontract HelloWorld {\n    string word = \"helloworld\";\n    // this is a single line comment\n\n    /* this is a \n        multi line comment */\n}\n\n```\n\nEvery Solidity source file should have a license identifier in order to avoid legal issues when the code is published as open source. The Solidity compiler recognizes SPDX license identifiers, which are machine-readable. \nYou can specify the license identifier anywhere in the code, but it's recommended to put it at the top of each file.\n\nThe compiler that will be used to compile the Solidity file must be specified using the keyword \"pragma\" followed by the caret (^) symbol and the version number. The caret symbol indicates that any Solidity \ncompiler with a version of the same major and minor value and patch number greater than the specified version can be used to compile the file. Example in the above code version compiler with 0.8.7 can be used to compile the above code but 0.9.2 and 0.8.0 can't be used to compile the above file. \nEvery solidity file must be saved as `.sol` for compiling. Single line comments starts with `//`. Multiline comments starts with `/*` and ends with `*/`.\n\n`import` keyword is used for importing files from other resources. Solidity also include constructor functions. Constructors are functions which will be executed automatically for one time when a contract is deployed.\nYou can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\nYou can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\nexample code snippet.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    /* msg.sender is the address that has called or initiated a function or created a transaction. \n            But at the time of deployment it will be the address of the deployer of the contract */\n\n    /// @author admin\n}\n\n```\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n"
         },
         {
           "title": "Statevariables and Functions",
           "shortTitle": "Functions",
           "key": "state-variables-and-functions",
-          "details": "\nState variables are variables whose values are permanently stored in contract storage. State variables can be declared as `constant` or `immutable`. The constant variables cannot be redeclared after assigning but immutable variables\ncan be redeclared using constructor. Constant or immutable can be declared only for variables of the type string, int or uint, boolean, address and enums. Using constant and immutable can reduce the gas cost.\n\nFunctions in Solidity are like small pieces of code that can be executed. The way you write a function in Solidity is similar to how you would write one in c, c++, or JavaScript, except for a few small differences. \nFunctions are usually written inside a contract, but they can also be written outside of contracts. These functions that are written outside of contracts are called \"free functions\". Free functions don't have \naccess to variables inside the contracts, but other contracts can call them. Free functions also don't have visibility, which means we cannot use the public or external keyword for them. We need to define the \ndata type for function arguments and return types. \n\nWe can return values from a function in two ways:\nOne way is to normally return the value using the return keyword. Another way is to define a return variable and assign the return value to that variable. The function `add` below defines a return variable `sum`. \nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n\n\n```solidity\ncontract SimpleProgram {\n    uint public constant value = 23;\n    uint public answer = add(value, 1);\n    address immutable owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    uint public product = multiply(value, 2);\n\n    function multiply(uint a, uint b) public returns (uint) {\n        return a * b;\n    }\n}\n\nfunction add(uint a, uint b) pure returns (uint sum) {\nsum = a + b;\n}\n\n```\nThe above code snippet shows that the owner variable is assigned the deployer or contract owner address during the constructor time. However, you cannot reassign a constant variable like an immutable variable. \nThe simpleProgram contract is calling the free function `add` to add two numbers together and assigning the return value from the function to a variable `answer`.\n\n#### Others functions and features in solidity\nThe `fallback` and `receive` functions are two special types of functions that are often used together. The `fallback` function is a function that is called if none of the other functions match the function \nidentifier or if ether is transferred to the contract with some data. The `receive` function is a function that is called when someone sends ether to a contract. If the contract does not have a `receive` function, \nthen the `fallback` function will be executed. If ether is sent with some data directly to the contract, then the `fallback`function will be executed even if a `receive` function is defined. \nWhile defining the recieve function payable keyword must be added in order to receive ether. Visibility of receive and fallback functions must be defined.\n\nThere are two keywords which can restrict functions: `pure` and `view`. If `pure` is used in a function, that function will not be able to read or write. If `view` is used in a function, \nthat function will not be able to write, but will have read access. \n\nSample code explaining how to use recieve and fallback functions.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract SolidityCourse {\n    uint public value = 0;\n\n    receive() external payable {\n        setValue(24);\n    }\n\n    function setValue(uint x) internal {\n        value = x;\n    }\n\n    function check_value() public view returns (uint answer) {\n        // view keyword restrict the function check_a to read only\n        answer = value;\n    }\n\n    fallback() external {\n        setValue(12);\n    }\n}\n\n```\n"
+          "details": "\nState variables are variables whose values are permanently stored in contract storage. State variables can be declared as `constant` or `immutable`. The constant variables cannot be redeclared after assigning but immutable variables\ncan be redeclared using constructor. Constant or immutable can be declared only for variables of the type string, int or uint, boolean, address and enums. Using constant and immutable can reduce the gas cost.\n\nFunctions in Solidity are like small pieces of code that can be executed. The way you write a function in Solidity is similar to how you would write one in c, c++, or JavaScript, except for a few small differences. \nFunctions are usually written inside a contract, but they can also be written outside of contracts. These functions that are written outside of contracts are called \"free functions\". Free functions don't have \naccess to variables inside the contracts, but other contracts can call them. Free functions also don't have visibility, which means we cannot use the public or external keyword for them. We need to define the \ndata type for function arguments and return types. \n\nWe can return values from a function in two ways:\nOne way is to normally return the value using the return keyword. Another way is to define a return variable and assign the return value to that variable. The function `add` below defines a return variable `sum`. \nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n\n\n```solidity\ncontract SimpleProgram {\n    uint public constant value = 23;\n    uint public answer = add(value, 1);\n    address immutable owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    uint public product = multiply(value, 2);\n\n    function multiply(uint a, uint b) public returns (uint) {\n        return a * b;\n    }\n}\n\nfunction add(uint a, uint b) pure returns (uint sum) {\n    sum = a + b;\n}\n\n```\nThe above code snippet shows that the owner variable is assigned the deployer or contract owner address during the constructor time. However, you cannot reassign a constant variable like an immutable variable. \nThe simpleProgram contract is calling the free function `add` to add two numbers together and assigning the return value from the function to a variable `answer`.\n\n#### Others functions and features in solidity\nThe `fallback` and `receive` functions are two special types of functions that are often used together. The `fallback` function is a function that is called if none of the other functions match the function \nidentifier or if ether is transferred to the contract with some data. The `receive` function is a function that is called when someone sends ether to a contract. If the contract does not have a `receive` function, \nthen the `fallback` function will be executed. If ether is sent with some data directly to the contract, then the `fallback`function will be executed even if a `receive` function is defined. \nWhile defining the recieve function payable keyword must be added in order to receive ether. Visibility of receive and fallback functions must be defined.\n\nThere are two keywords which can restrict functions: `pure` and `view`. If `pure` is used in a function, that function will not be able to read or write. If `view` is used in a function, \nthat function will not be able to write, but will have read access. \n\nSample code explaining how to use recieve and fallback functions.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract SolidityCourse {\n    uint public value = 0;\n\n    receive() external payable {\n        setValue(24);\n    }\n\n    function setValue(uint x) internal {\n        value = x;\n    }\n\n    function check_value() public view returns (uint answer) {\n        // view keyword restrict the function check_a to read only\n        answer = value;\n    }\n\n    fallback() external {\n        setValue(12);\n    }\n}\n\n```\n"
         },
         {
           "title": "Events and Function modifiers",
@@ -41,13 +41,13 @@
           "title": "Error Handling",
           "shortTitle": "Error-handling",
           "key": "errors",
-          "details": "Solidity uses state-reverting exceptions to handle errors. Such an exception undoes all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller.\nSolidity has many functions for error handling. Errors can occur at compile time or runtime. Solidity is compiled to byte code and there a syntax error check happens at compile-time, while runtime \nerrors occur mainly while executing the contracts. Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.\nError handling in solidity is done using revert, require, assert. \n\nError handling can be done using assert, revert, require, \"try-catch\" and custom errors.\n\n#### Assert \nAssert is used to check conditions which should be true always. The assert function creates an error of type Panic(uint256). Assert should only be used to test for internal errors, and to check invariants. Properly functioning code should never create a Panic, \nnot even on invalid external input. If this happens, then there is a bug in your contract which you should fix.\n\nA Panic exception is generated in the following situations.\n    * If you call assert with an argument that evaluates to false.\n    * If an arithmetic operation results in underflow or overflow.\n    * If you divide or modulo by zero.\n    * If you convert a value that is too big or negative into an enum type.\n    * If you call .pop() on an empty array.\n    * If you access an array or an array slice at an out-of-bounds or negative index.\n    * If you allocate too much memory or create an array that is too large.\n    * If you call a zero-initialized variable of internal function type.\n\n#### Require\nThe require function takes two parameters. The first argument is the condition and the second is the custom string text which will be displayed if the condition returns false. this second parameter is optional.\nIf false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.\n\nrequire exception is triggered for the following cases:\n* Calling require(x) where x evaluates to false.\n* If you perform an external function call targeting a contract that contains no code.\n* If you use revert() or revert(\"description\").\n* If your contract receives Ether via a public function without payable modifier.\n* If your contract receives Ether via a public getter function.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.0;\n\ncontract FunctionModifiers {\n    address public owner;\n    uint public favourite_number = 7;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == owner);\n        _;\n    }\n\n    function setValue(uint x) public onlyOwner {\n        favourite_number = x;\n    }\n}\n```\nIn the above snippet require exception will be triggered if `msg.sender` is not equal to `owner` i.e, the address which is calling or acessing the function is not equal to the deployer's address. \n\n#### Revert\nThis statement is similar to the require statement. It does not evaluate any condition and does not depends on any state or statement. It is used to generate exceptions, display errors, and revert the function calls.\nCalling a revert statement implies an exception is thrown, the unused gas is returned and the state reverts to its original state. Revert is used to handle the same exception types as require handles, but with little bit more complex logic.\nrevert takes an optional argument of string type.\n\n```solidity\nfunction checker(uint x) public return(bool y){\n    if(x>=10){\n    return false;\n    revert(\"value exceeded\");\n    }\n    else{\n        return true;\n    }\n}\n```\n"
+          "details": "Solidity uses state-reverting exceptions to handle errors. Such an exception undoes all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller.\nSolidity has many functions for error handling. Errors can occur at compile time or runtime. Solidity is compiled to byte code and there a syntax error check happens at compile-time, while runtime \nerrors occur mainly while executing the contracts. Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.\nError handling can be done using assert, revert, require, \"try-catch\" and custom errors.\n\n#### Assert \nAssert is used to check conditions which should be true always. The assert function creates an error of type Panic(uint256). Assert should only be used to test for internal errors, and to check invariants. Properly functioning code should never create a Panic, \nnot even on invalid external input. If this happens, then there is a bug in your contract which you should fix.\n\nA Panic exception is generated in the following situations.\n* If you call assert with an argument that evaluates to false.\n* If an arithmetic operation results in underflow or overflow.\n* If you divide or modulo by zero.\n* If you convert a value that is too big or negative into an enum type.\n* If you call .pop() on an empty array.\n* If you access an array or an array slice at an out-of-bounds or negative index.\n* If you allocate too much memory or create an array that is too large.\n* If you call a zero-initialized variable of internal function type.\n\n#### Require\nThe require function takes two parameters. The first argument is the condition and the second is the custom string text which will be displayed if the condition returns false. this second parameter is optional.\nIf false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.\n\nrequire exception is triggered for the following cases:\n* Calling require(x) where x evaluates to false.\n* If you perform an external function call targeting a contract that contains no code.\n* If you use revert() or revert(\"description\").\n* If your contract receives Ether via a public function without payable modifier.\n* If your contract receives Ether via a public getter function.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.0;\n\ncontract FunctionModifiers {\n    address public owner;\n    uint public favourite_number = 7;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == owner);\n        _;\n    }\n\n    function setValue(uint x) public onlyOwner {\n        favourite_number = x;\n    }\n}\n```\nIn the above snippet require exception will be triggered if `msg.sender` is not equal to `owner` i.e, the address which is calling or acessing the function is not equal to the deployer's address. \n\n#### Revert\nThis statement is similar to the require statement. It does not evaluate any condition and does not depends on any state or statement. It is used to generate exceptions, display errors, and revert the function calls.\nCalling a revert statement implies an exception is thrown, the unused gas is returned and the state reverts to its original state. Revert is used to handle the same exception types as require handles, but with little bit more complex logic.\nrevert takes an optional argument of string type.\n\n```solidity\nfunction checker(uint x) public pure returns(bool y){\n    if(x>=10){\n        revert(\"value exceeded\");\n    }\n    else{\n        return true;\n    }\n}\n```\n"
         },
         {
           "title": "Custom Errors and try-catch",
           "shortTitle": "Custom Errors",
           "key": "custom-errors-and-try-catch",
-          "details": "```\n#### Try Catch in Solidity\nIn a try catch statement, the try block will execute some code. If it gets any errors, the caught statement will be executed. A failure in an external call can be caught using a try/catch statement.\nA external call is a function calling from one contract to another contract. \nAn example of an external call.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract A {\n    function add(uint x, uint y) public returns (uint sum) {\n        sum = x + y;\n    }\n}\n\ncontract B {\n    A object_of_a; // this is an object of contract A\n    uint public answer = 0;\n\n    function setContract(A addr) public {\n        // we need to pass the address of deployed a contract\n        object_of_a = addr;\n    }\n\n    function callAdd() public {\n        answer = object_of_a.add(12, 3);\n    }\n}\n```\nIn the above code we are creating the object of contract `A` by its address(deployed address of A). Then we are calling the function `add` from contract `B`. This is called as \"external call\". \n\nAn example of try catch block is shown below. The try keyword has to be followed by an expression representing an external function call or a contract creation (new ContractName()). Solidity supports different kinds of catch blocks depending on the type of errors.\none try block can have multiple catch blocks. Different catch blocks are explained in single comments in the below please go through it for better understanding. We can just use catch { … } if we are not interested in error data.\n\n```solidity\ninterface DataFeed { function getData(address token) external returns (uint value); }\n\ncontract FeedConsumer {\n    DataFeed feed;\n    uint errorCount;\n    function rate(address token) public returns (uint value, bool success) {\n        // Permanently disable the mechanism if there are\n        // more than 10 errors.\n        require(errorCount < 10);\n        try feed.getData(token) returns (uint v) {\n            return (v, true);\n        } catch Error(string memory /*reason*/) {\n            // This is executed in case revert was called inside getData and a reason string was provided.\n            errorCount++;\n            return (0, false);\n        } catch Panic(uint /*errorCode*/) {\n            // This is executed in case of a panic,\n            // i.e. a serious error like division by zero\n            // or overflow. The error code can be used\n            // to determine the kind of error.\n            errorCount++;\n            return (0, false);\n        } catch (bytes memory /*lowLevelData*/) {\n            // This is executed in case revert() was used.\n            errorCount++;\n            return (0, false);\n        }\n    }\n}\n```\n\n#### Custom Errors\nCreating custom errors in your code can actually help you conserve gas usage. How? Well, normal errors come with pre-written, lengthy error messages that can really guzzle up a lot of gas. However, when you create a c\nustom error using the `error` keyword, you can specify the message yourself. These custom errors can be called using a conditional and revert statement.\n\nAn example of an custom error is shown below.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract CustomError {\n    error Logic(string message);\n\n    function testCustom_error(uint x) public pure {\n        if (x > 10) {\n        revert Logic(\"the value exceeded 10\");\n        }\n    }\n}\n\n```\nBy using the keyword `error`, we have defined a custom error name called `Logic`. If the value of x exceeds 10, the transaction will be reverted and our custom error message will be shown. \nThe values that need to be logged at the time of an error should be specified/defined in the argument of our custom error.\n"
+          "details": "#### Try Catch in Solidity\nIn a try catch statement, the try block will execute some code. If it gets any errors, the caught statement will be executed. A failure in an external call can be caught using a try/catch statement.\nA external call is a function calling from one contract to another contract. \nAn example of an external call.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract A {\n    function add(uint x, uint y) public returns (uint sum) {\n        sum = x + y;\n    }\n}\n\ncontract B {\n    A object_of_a; // this is an object of contract A\n    uint public answer = 0;\n\n    function setContract(A addr) public {\n        // we need to pass the address of deployed a contract\n        object_of_a = addr;\n    }\n\n    function callAdd() public {\n        answer = object_of_a.add(12, 3);\n    }\n}\n```\nIn the above code we are creating the object of contract `A` by its address(deployed address of A). Then we are calling the function `add` from contract `B`. This is called as \"external call\". \n\nAn example of try catch block is shown below. The try keyword has to be followed by an expression representing an external function call or a contract creation (new ContractName()). Solidity supports different kinds of catch blocks depending on the type of errors.\none try block can have multiple catch blocks. Different catch blocks are explained in single comments in the below please go through it for better understanding. We can just use catch { … } if we are not interested in error data.\n\n```solidity\ninterface DataFeed { function getData(address token) external returns (uint value); }\n\ncontract FeedConsumer {\n    DataFeed feed;\n    uint errorCount;\n    function rate(address token) public returns (uint value, bool success) {\n        // Permanently disable the mechanism if there are\n        // more than 10 errors.\n        require(errorCount < 10);\n        try feed.getData(token) returns (uint v) {\n            return (v, true);\n        } catch Error(string memory /*reason*/) {\n            // This is executed in case revert was called inside getData and a reason string was provided.\n            errorCount++;\n            return (0, false);\n        } catch Panic(uint /*errorCode*/) {\n            // This is executed in case of a panic,\n            // i.e. a serious error like division by zero\n            // or overflow. The error code can be used\n            // to determine the kind of error.\n            errorCount++;\n            return (0, false);\n        } catch (bytes memory /*lowLevelData*/) {\n            // This is executed in case revert() was used.\n            errorCount++;\n            return (0, false);\n        }\n    }\n}\n```\n\n#### Custom Errors\nCreating custom errors in your code can actually help you conserve gas usage. How? Well, normal errors come with pre-written, lengthy error messages that can really guzzle up a lot of gas. However, when you create a \ncustom error using the `error` keyword, you can specify the message yourself. These custom errors can be called using a conditional and revert statement.\n\nAn example of an custom error is shown below.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract CustomError {\n    error Logic(string message);\n\n    function testCustom_error(uint x) public pure {\n        if (x > 10) {\n            revert Logic(\"the value exceeded 10\");\n        }\n    }\n}\n\n```\nBy using the keyword `error`, we have defined a custom error name called `Logic`. If the value of x exceeds 10, the transaction will be reverted and our custom error message will be shown. \nThe values that need to be logged at the time of an error should be specified/defined in the argument of our custom error.\n"
         }
       ],
       "questions": [
@@ -63,7 +63,7 @@
             "C"
           ],
           "subTopics": [
-            "solidity-compiler"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -95,7 +95,7 @@
             "C"
           ],
           "subTopics": [
-            "solidity-compiler"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -128,7 +128,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -160,7 +160,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -192,7 +192,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -224,7 +224,7 @@
             "A"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -257,7 +257,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -290,7 +290,7 @@
             "C"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -322,7 +322,7 @@
             "D"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -354,7 +354,7 @@
             "C"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -386,7 +386,7 @@
             "B"
           ],
           "subTopics": [
-            "contract-structure"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -418,7 +418,7 @@
             "C"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -450,7 +450,7 @@
             "C"
           ],
           "subTopics": [
-            "state-variables"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -484,7 +484,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -517,7 +517,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -549,7 +549,7 @@
             "B"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -581,7 +581,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -613,7 +613,7 @@
             "C"
           ],
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -640,13 +640,13 @@
           "type": "MUltipleChoice",
           "content": "What are events used for?",
           "hint": "When called, events cause the arguments to be stored in the transactions log - a special data structure in the blockchain.",
-          "explanation": "Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.\nAll information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts. \n",
+          "explanation": "Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.\nAll information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts.\n",
           "answerKeys": [
             "A",
             "C"
           ],
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -680,7 +680,7 @@
             "D"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -712,8 +712,7 @@
             "B"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -745,7 +744,7 @@
             "C"
           ],
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -777,8 +776,7 @@
             "C"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -810,7 +808,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -842,7 +840,7 @@
             "C"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -875,7 +873,7 @@
             "B"
           ],
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -907,7 +905,7 @@
             "A"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -941,7 +939,7 @@
             "C"
           ],
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -973,8 +971,7 @@
             "B"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -1006,8 +1003,7 @@
             "D"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1039,8 +1035,7 @@
             "A"
           ],
           "subTopics": [
-            "events",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1073,7 +1068,7 @@
             "C"
           ],
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1171,8 +1166,7 @@
             "C"
           ],
           "subTopics": [
-            "errors",
-            "assert"
+            "errors"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1302,8 +1296,7 @@
             "B"
           ],
           "subTopics": [
-            "errors",
-            "assert"
+            "errors"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1335,8 +1328,7 @@
             "D"
           ],
           "subTopics": [
-            "errors",
-            "try-catch"
+            "custom-errors-and-try-catch"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1368,8 +1360,7 @@
             "A"
           ],
           "subTopics": [
-            "contract-structure",
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1401,8 +1392,7 @@
             "D"
           ],
           "subTopics": [
-            "contract-structure",
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1434,8 +1424,7 @@
             "C"
           ],
           "subTopics": [
-            "errors",
-            "require"
+            "errors"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1466,7 +1455,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=71cmPaD_AnQ",
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "details": "This video covers \n1) Function declaration in Solidity \n2) View functions (read-only) and non-view functions (can change Blockchain data).\n"
         },
@@ -1477,7 +1466,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=b6FBWsz7VaI",
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "details": "Function modifiers allow your code to have less repetitive, re-useable code logic. This video explains the declaration and use of modifiers.\n"
         },
@@ -1488,7 +1477,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=jaMHPT-78HM",
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "details": "In Solidity, you can use events to push data to outside consumers, like web frontends.\nThis video shows how to declare and emit events in Solidity.\n"
         },
@@ -1499,11 +1488,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=1Mi1ub9bIv8",
           "subTopics": [
-            "errors",
-            "revert",
-            "require",
-            "try-catch",
-            "assert"
+            "errors"
           ],
           "details": "Solidity uses state-reverting exceptions to handle errors. \nThis video covers how error handling in solidity is done using revert, require, assert and try/catch.\n"
         },
@@ -1514,90 +1499,41 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=yzcp594R92c",
           "subTopics": [
-            "file-layout",
-            "contract-structure"
+            "smart-contract"
           ],
           "details": "This video explains the typical layout of a Solidity source file: \n1) Pragma statement\n2) Imports\n3) Contract declaration\n4) Variable \n5) Function declarations\n"
         }
       ],
       "summaries": [
         {
-          "title": "Installing Solidity Compiler",
-          "shortTitle": "Solidity Compiler",
-          "key": "solidity-compiler",
-          "details": "- Versoning \n  * Solidity versions follow 'Semantic Versioning' which is essential to avoid 'dependency hell' while programming in Solidity.\n    'Dependency hell' in software management occurs when version specifications are made too tight or too loose due to which releasing new versions becomes a nightmare as it becomes difficult to resolve conflicts. To avoid this solidity \n    releases its versions with version number MAJOR.MINOR.PATCH .eg Solidity compiler version 0.8.15 indicates major release 0 with 8th minor release and 15th patch fix.\n  * Patch level releases with major release 0 (i.e. 0.x.y) does not contain breaking changes. That means code that compiles with version 0.x.y can be expected to compile with 0.x.z where z > y.\n"
+          "title": "Structure of a smartcontract",
+          "shortTitle": "contract structure",
+          "key": "smart-contract",
+          "details": "The source code of a solidity contract begins with a license identifier to avoid any potential legal issues that could arise if the code is published as open source. The compiler version is specified using the keyword \n`pragma` and can be placed anywhere within the contract, though it is generally considered best practice to specify it at the top of the document. For single-line comments, we need to use `//`. For multiline comments, we need to use `/*comments here */`. \nSolidity comments can also be written in `NatSpec` format. Developers use it for documenting return variables, functions, and so on. To define a single-line comment in this format, we need to use `///` for multiline, we need to use `/** comments here */`. \n`import` keyword is used for importing files from other resources\n\nSolidity has a special kind of function called a `constructor` function. This function will be called automatically when you deploy your contract. You can define a constructor function using the keyword 'constructor' followed by the function's code.\n\n```solidity\n//SPDX-License-Identifier:MIT \npragma solidity ^0.8.2; // compiler version is specified using the keyword pragma\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n    // this is a single line comment\n\n    /* this is a \n        multi line comment */\n\n    /* msg.sender is the address that has called or initiated a function or created a transaction. \n            But at the time of deployment it will be the address of the deployer of the contract */\n\n    /// This is NatSpec single line comment\n\n    /**\n    This is NatSpec multi line comment\n    */\n}\n\n```\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n"
         },
         {
-          "title": "Layout of a Source File",
-          "shortTitle": "File Layout",
-          "key": "file-layout",
-          "details": "- SPDX License Identifier\n  * The source code of a smart contract needs to be open source for it to be trusted and to prevent any legal issues with regards to copyright, machine-readable SPDX license identifiers should be used.\n  * Every solidity source file should start with a comment indicating its license. eg. `// SPDX-License-Identifier: MIT` .\n  * The Software Package Data Exchange (SPDX) is an open standard used for communicating licenses , copyrights and security references.\n\n- Pragmas\n  * pragma is a directive used to configure compiler features and checks.\n  * A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project.\n  * If you import another file, the pragma from that file does not automatically apply to the importing file.\n  * A Version pragma is a directive that specifies the compiler version to be used for current Solidity file.\n  * For example, `pragma solidity ^0.4.0;`,  the pragma for a file using the above statement will not compile earlier than version 0.4.0 and it will also not work on a compiler starting from version 0.5.0, this condition is taken care off by ^. \n  * Another example is, `pragma solidity >=0.6.0 <0.8.0;` where the pragma directive instructs the compiler to compile code for Solidity version greater than equal to 0.6.0 till up to but not including 0.8.0.\n\n- Comments\n  * Single-line comments (//) and multi-line comments (/*...*/) are possible. Any text after // or between /* and */ is ignored by the compiler.\n    ```\n    // This is a single-line comment.\n\n    /*\n    This is a\n    multi-line comment.\n    */\n    ```\n  * You can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\n  * You should insert all documentation using comments before class, interface, and function keywords.\n  * You can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\n    ```\n    /// @author ishaan\n\n    /**\n    @notice introducing Solidity NAtSpec comments.\n    This is a\n    multi-line comment.\n    /*\n    ```\n  * NAtSpec comments can be used with optional tags, in the above code snippet @author shows the name of the author and @notice explain to an end user what it does.\n  * The Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.\n\n- Imports\n  * Solidity supports import statements to modularize code similar to those available in JavaScript (from ES6 on).\n  * At a global level, you can use import statements of the following form: `import \"filename\";`. This statement imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. \n  * The following example creates a new global symbol symbolName whose members are all the global symbols from \"filename\": `import * as symbolName from \"filename\";`\n    which results in all global symbols being available in the format symbolName.symbol.\n  * If there is a naming collision, you can rename symbols while importing. `import {symbol1 as alias, symbol2} from \"filename\";`. \n"
-        },
-        {
-          "title": "Structure of a Smart Contract",
-          "shortTitle": "Contract Structure",
-          "key": "contract-structure",
-          "details": "Contracts in Solidity are similar to classes in object-oriented languages. \nEach contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types. \n- Constructor\n  * A constructor is an optional function declared with the constructor keyword which is executed upon contract creation, and where you can run contract initialisation code.\n  * Before the constructor code is executed, state variables are initialised to their specified value if you initialise them inline, or their default value if you do not.\n  * If there is no constructor, the contract will assume the default constructor, which is equivalent to constructor() {}.\n  * The code snippet below explains the use of a constructor, \n    ```\n      uint public x;\n      uint public y;\n      address public owner;\n      uint public createdAt;\n      Constructor (uint _x, uint _y) public {\n                  x=_x;\n                  y=_y;\n                  owner = msg.sender;\n                  createdAt = block.timestamp;\n    ```\n  * Constructors are very useful in Solidity, if you do not implement a function to change the state variable it will remain as long as the block chain is running. So using a constructor is a way to set a state variable that you do not want to change.\n"
-        },
-        {
-          "title": "State Variables",
-          "shortTitle": "State Variables",
-          "key": "state-variables",
-          "details": "* State variables are variables whose values are permanently stored in contract storage.\n* In the following code snippet `storedData` is an example of a state variable.\n```\n// SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.4.0 <0.9.0;\n\ncontract SimpleStorage {\n    uint storedData; // State variable\n    // ...\n}\n```\n* State variables can be declared as `constant` or `immutable`. In both cases, the variables cannot be modified after the contract has been constructed.\n* For constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time. Constant variables can also be declared at the file level.\n* Not all types of constants and immutables are implemented at this time. The only supported types are strings (only for constants) and value types(booleans, integers, address and enum).\n* The example below shows the use of constant and immutable state variables.\n  ```\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity >=0.7.4;\n\n  uint constant X = 32**22 + 8;\n\n  contract C {\n      string constant TEXT = \"abc\";\n      bytes32 constant MY_HASH = keccak256(\"abc\");\n      uint immutable decimals;\n      uint immutable maxBalance;\n      address immutable owner = msg.sender;\n\n      constructor(uint decimals_, address ref) {\n          decimals = decimals_;\n          maxBalance = ref.balance;\n      }\n  }\n  ```\n"
-        },
-        {
-          "title": "Functions",
+          "title": "Statevariables and Functions",
           "shortTitle": "Functions",
-          "key": "functions",
-          "details": "* Functions are the executable units of code. \n  Functions are usually defined inside a contract, but they can also be defined outside of contracts.\n* In the code below helper function is defined outside the contract whearas arithmetic function is declared inside the contract.\n  ```\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity >=0.7.1 <0.9.0;\n\n  contract Simple {\n      function arithmetic(uint a, uint b)\n          public\n          pure\n          returns (uint sum, uint product)\n      {\n          return (a + b, a * b);\n      }\n  }\n\n  // Helper function defined outside of a contract\n  function helper(uint x) pure returns (uint) {\n      return x * 2;\n  }\n  ```\n* Functions outside of a contract are also called 'free functions' and their code is included in all contracts that call them.\n* The main difference to functions defined inside a contract is that free functions do not have direct access to storage variables and functions not in their scope.\n* Functions take typed parameters as input and can also return an arbitrary number of values as output.\n* In the code snippet above , the contract `Simple` has a function arithmetic which takes two input parameters `uint a` and `uint b`.\n* The function arithmetic also returns two values `uint sum` and `uint product`.\n* the return values in a function can also be explicitly assigned to return variables instead of a return statememnt like in the code below.\n  ```\n  function arithmetic(uint a, uint b)\n      public\n      pure\n      returns (uint sum, uint product)\n  {\n      sum = a + b;\n      product = a * b;\n  }\n  ```\n* Solidity has a fallback function which is executed if none of the other functions match the function identifier or no data was provided with the function call. \n* Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.\n* Check the following code to declare a fallback function.\n  ```\n  function() public payable\n  {\n      balance[msg.sender] += msg.value;\n  }\n  ```\n  The above fallback function is called in two cases- A contract receives only Ether and no data,\n  or when no function calls matched even though the account received data.\n* Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.\n  ```\n  contract ViewAndPure {\n      uint public x = 1;\n\n      // Promise not to modify the state.\n      function addToX(uint y) public view returns (uint) {\n          return x + y;\n      }\n\n      // Promise not to modify or read from the state.\n      function add(uint i, uint j) public pure returns (uint) {\n          return i + j;\n      }\n  }\n  ```\n  The above view function `addToX` can read the state variable x but cannot update its state whearas the pure function `add` can neither read nor update the state.\n"
+          "key": "state-variables-and-functions",
+          "details": "\nState variables are variables that are stored permanently on the blockchain. They can be declared as `constant` and `immutable`, but immutable can be redeclared in the constructor. Constant and immutable variables reduce the gas cost.\nFunctions in solidity are essentially just like any other programming language - they are pieces of code that can be executed by simply calling the function. Functions can be declared inside or outside of a contract. \nThe functions which are declared outside of the contract are referred to as free functions. Free functions don't have access to variables that are inside the contract and they also don't have visibility. \nThis means that we cannot add `public` and `external` keywords.\n\n`fallback` and `recieve` are special functions. The `fallback` will be executed if:\n1. None of the other functions match the function identifier \n2. If ether is transferred to the contract with some call data\n\nIf ether is sent to a contract without any call data, the receive function will be executed. If receive is not defined, fallback will be executed. The `fallback` and `receive` functions must be defined with the `payable` keyword and visibility. \nThere are two keywords which can restrict the state mutability of a function: `view` and `pure`. `view`will restrict the function to read-only but if `pure` is defined, that function will not be able to read or write.\n\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract SimpleProgram {\n    uint public value = 23;\n    uint public answer = add(value, 1); // calling the free function add\n    address immutable owner;\n\n    constructor() {\n        owner = msg.sender; // redelcaring the immutable variable\n    }\n\n    uint public product = multiply(value, 2); // calling the function multiply\n\n    function multiply(uint a, uint b) public pure returns (uint) { // function inside the contract with pure keyword\n        return a * b;\n    } \n    // Data types of arguments and returning values should be defined for a function\n\n    receive() external payable { // recieve function declaration\n        setValue(24);\n    }\n\n    function setValue(uint x) internal {\n        value = x;\n    }\n\n    function check_value() public view returns (uint) {\n        // view keyword restrict the function check_a to read only\n        return value;\n    }\n\n    fallback() external payable { // fallback function declaration\n        setValue(12);\n    }\n\n\n}\n\nfunction add(uint a, uint b) pure returns (uint sum) {    // free function\n    sum = a + b;\n}\n\n```\n"
         },
         {
-          "title": "Events",
-          "shortTitle": "Events",
-          "key": "events",
-          "details": "* Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.\n* Events are defined within the contracts as global and called within their functions. Events are declared by using the event keyword as follows , `event <eventName>(parameters) ;`.\n* The example below shows the declaration of an event and its use in its function. In this example, the Deposit event is emitted when a user sends Ether to the smart contract with the deposit function.\n\n ```\n  event Deposit(\n  address indexed from,\n  bytes32 indexed id,\n  uint value\n  );\n\n  function deposit(bytes32 id) public payable {\n      emit Deposit(msg.sender, id, msg.value);\n  }\n```\n* Events are ways to communicate with a client application or front-end website that something has happened on the blockchain. The above event Deposit can be detected from\n  the JavaScript API by filtering for `Deposit`.\n"
-        },
-        {
-          "title": "Function Modifiers",
-          "shortTitle": "Function Modifiers",
-          "key": "modifiers",
-          "details": "* Function modifiers can be used to change the behaviour of functions in a declarative way.\n* A modifier can be used automatically to check a condition prior to execution of the function.\n* In the code snippet below constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner. \n  the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.\n  ```\n  pragma solidity ^0.7.0;\n  contract C {\n      address owner;\n      string private name;\n      constructor() {\n          owner = msg.sender;\n      }\n      modifier onlyOwner() {\n          require(msg.sender == owner, 'Not Owner');\n          _;\n      }\n      function setName(string memory newName) public onlyOwner{\n          name = newName;\n      }\n  }\n  ```\n\n* “_;” is a special code only used in the function modifier. It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.\n* \"_;\" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing \"_;\" before or after the modifier code.\n"
+          "title": "Events and Function modifiers",
+          "shortTitle": "Events and modifiers",
+          "key": "events-modifiers",
+          "details": "Events are a way of logging data in the blockchain. They are declared using the keyword `event` and logged using the keyword `emit`. Once they are logged, they can be viewed in etherscan if the smart contract has been deployed in \nEthereum or one of its testnets. Function modifiers are a declarative way of changing the behavior of functions. The modifier is declared using the keyword `modifier`. Function modifiers are added as a keyword to the functions. \nThey are used to check a condition before the function is executed.\nSyntax for declaring the modifier:\n```solidity\nmodifier Identifier {\n    //code comes here\n}\n```\nThe below snippet shows how to use events and function modifiers. whenever function `setValue` executes the event is logged as `emit Log(x,msg.sender)` defines emitting of the event with the message value and the senders address.\nThe `_;`is a special keyword inside the modifier which tells the compiler to execute the parent function i.e, in this case `setValue` function. \n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.0;\n\ncontract FunctionModifiers {\n    address public immutable owner;\n    uint public favourite_number = 7;\n    event Log(uint , address );// declaration of the event\n    // Identifiers for event's arguments is not mandatory\n    constructor() {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == owner, \"not owner\");// declaration of the modifier\n        _; // this will tell the compiler to execute the parent function\n    }\n\n    function setValue(uint x) public onlyOwner returns (uint v) { // adding modifier to the function\n        favourite_number = x;\n        emit Log(x,msg.sender); // event is logged using the emit keyword\n        v = x;\n    }\n}\n\n```\n"
         },
         {
           "title": "Error Handling",
-          "shortTitle": "Error Handling",
+          "shortTitle": "Error-handling",
           "key": "errors",
-          "details": "- Solidity uses state-reverting exceptions to handle errors. Such an exception undoes all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller.\n- Solidity has many functions for error handling. Errors can occur at compile time or runtime.\n  Solidity is compiled to byte code and there a syntax error check happens at compile-time, while runtime errors occur mainly while executing the contracts. Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.\n- Error handling in solidity is done using revert, require, assert and try/catch.\n- Solidity has built-in errors `Error(string)` and `Panic(uint256)` which are handled by functions `require` and `assert`.\n  Error is used for “regular” error conditions while Panic is used for errors that should not be present in bug-free code.\n"
+          "details": "Solidity uses state-reverting exceptions to handle errors. Such an exception reverts all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller. Solidity has many functions for error handling. \nCompile time or runtime errors can occur. Error handling can be done using assert, require, revert, try-catch and custom errors.\n\n #### Assert \n The `assert` function creates an error of type `Panic(uint256)` when used. It is primarily employed to check for internal errors and conditions that must always evaluate to be true. If the condition in the assert statement fails, \n it implies that there is a bug in the smart contract. The assert function takes one required parameter, which is the condition, and an optional parameter of the type string.\n \n #### Require\n The `require` function is used to test for errors that usually occur, whereas the assert function is used to test for errors that should never happen. The require function takes one required parameter, which is a condition, \n and an optional string parameter.\n\n require exception is triggered for the following cases:\n * Calling require(x) where x evaluates to false.\n * If you perform an external function call targeting a contract that contains no code.\n * If you use revert() or revert(\"description\").\n * If your contract receives Ether via a public function without payable modifier.\n * If your contract receives Ether via a public getter function.\n\n #### Revert\n Revert is a function that is similar to require but does not evaluate any conditions. It is used to generate exceptions, display errors, and revert the function calls. Calling a revert statement implies an exception is thrown, \n the unused gas is returned, and the state reverts to its original state.\n\n The below code snippet explains how to use assert, revert and require.    \n \n ```solidity\n contract Errors{\n   address immutable public owner;\n   constructor(){\n       owner = msg.sender;\n   }\n   function foo(uint x)public view{\n       assert(msg.sender!= owner); // if caller of the function is not the owner exception is thrown \n       require(x==1,\"the value 0 is not supported\");// if the parameter equals one require exception is thrown and state is reverted\n       if(x>100){\n           revert(\"the value exceeded\");// state is reverted of the value of x exceed 100\n       }\n\n   }\n\n }\n ```\n"
         },
         {
-          "title": "Panic via `assert`",
-          "shortTitle": "Panic via `assert`",
-          "key": "assert",
-          "details": "* The assert function creates an error of type Panic(uint256).\n* Assert should only be used to test for internal errors, and to check invariants. Properly functioning code should never create a Panic, not even on invalid external input. If this happens, then there is a bug in your contract which you should fix.\n* A Panic exception is generated in the following situations.\n  * If you call assert with an argument that evaluates to false.\n  * If an arithmetic operation results in underflow or overflow.\n  * If you divide or modulo by zero.\n  * If you convert a value that is too big or negative into an enum type.\n  * If you call .pop() on an empty array.\n  * If you access an array or an array slice at an out-of-bounds or negative index.\n  * If you allocate too much memory or create an array that is too large.\n  * If you call a zero-initialized variable of internal function type.\n* In the code snippet below , For large vaues of variables a and b , a+b might give an overflow and hence make the statement `c<=a` false resulting in a Panic generated by the assert statement.\n  ```\n  contract Assert {\n        function add(uint256 a, uint256 b) internal pure returns (uint256) {\n            uint256 c = a + b;\n            assert(c >= a);\n            \n            return c;\n        }\n    }\n  ```\n"
-        },
-        {
-          "title": "Error via require",
-          "shortTitle": "Error via require",
-          "key": "require",
-          "details": "* The require function is used to guarantee valid conditions that cannot be detected before execution. It checks conditions on input, contract state variables or return values from calls to external contracts.\n* It accepts a single argument and returns a boolean value after evaluation, it also has a custom string message option. If false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.\n* An Error exception is generated by the compiler in the following cases-\n  * Calling require(x) where x evaluates to false.\n  * If you perform an external function call targeting a contract that contains no code.\n  * If you use revert() or revert(\"description\").\n  * If your contract receives Ether via a public function without payable modifier.\n  * If your contract receives Ether via a public getter function.\n* For the following cases, the error data from the external call (if provided) is forwarded. This means that it can either cause an Error or a Panic (or whatever else was given):\n  * If a .transfer() fails.\n  * If you call a function via a message call but it does not finish properly (i.e., it runs out of gas, has no matching function, or throws an exception itself).\n  * If you create a contract using the new keyword but the contract creation does not finish properly.\n* In the code snippet below , the account that invokes the function `idGenerator` must be an owner otherwise, require statement creates an error 'Only owner!'.\n  ```\n  function idGenerator() external view returns (uint) {\n  \n      require(msg.sender == lawyer, 'Only owner!');\n      \n      return uint(keccak256(abi.encode(block.timestamp, block.difficulty)));\n  }\n  ```\n"
-        },
-        {
-          "title": "revert",
-          "shortTitle": "revert",
-          "key": "revert",
-          "details": "* This statement is similar to the require statement. It does not evaluate any condition and does not depends on any state or statement. It is used to generate exceptions, display errors, and revert the function call.\n* Calling a revert statement implies an exception is thrown, the unused gas is returned and the state reverts to its original state.  Revert is used to handle the same exception types as require handles, but with little bit more complex logic.\n* In the code snippet below, the function checkOverflow throws an error exception with the string \"Overflow Exist\" in case the sum variable is out of bounds.\n  ```\n  function checkOverflow(uint _num1, uint _num2) public view returns(string memory, uint){\n      uint sum = _num1 + _num2;\n      if(sum < 0 || sum > 255){\n          revert(\" Overflow Exist\");\n      }\n      else{\n          return (\"No Overflow\", sum);\n      }\n        \n  }\n  ```\n"
-        },
-        {
-          "title": "try/catch",
-          "shortTitle": "try/catch",
-          "key": "try-catch",
-          "details": "* A failure in an external call can be caught using a try/catch statement.\n* The try/ catch feature is only available for external calls.\n* The try keyword has to be followed by an expression representing an external function call or a contract creation (new ContractName()).\n* Code shown belows shows an example usage of a try/catch block.\n  ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity >=0.8.1;\n\n    interface DataFeed { function getData(address token) external returns (uint value); }\n\n    contract FeedConsumer {\n        DataFeed feed;\n        uint errorCount;\n        function rate(address token) public returns (uint value, bool success) {\n            try feed.getData(token) returns (uint v) {\n                return (v, true);\n            } catch Error(string memory /*reason*/) {\n                // This is executed in case\n                // revert was called inside getData\n                // and a reason string was provided.\n                errorCount++;\n                return (0, false);\n            } catch Panic(uint /*errorCode*/) {\n                // This is executed in case of a panic,\n                // i.e. a serious error like division by zero\n                // or overflow. The error code can be used\n                // to determine the kind of error.\n                errorCount++;\n                return (0, false);\n            } catch (bytes memory /*lowLevelData*/) {\n                // This is executed in case revert() was used.\n                errorCount++;\n                return (0, false);\n            }\n        }\n    }\n  ```\n* Solidity supports different kinds of catch blocks depending on the type of errors.\n* `catch Error(string memory reason) { ... }`, This catch clause is executed if the error was caused by `revert(\"reasonString\")` or `require(false, \"reasonString\")` (or an internal error that causes such an exception).\n* `catch Panic(uint errorCode) { ... }`, If the error was caused by a panic, i.e. by a failing assert, division by zero, invalid array access, arithmetic overflow and others, this catch clause will be run.\n* `catch (bytes memory lowLevelData) { ... }`, This clause is executed if the error signature does not match any other clause, if there was an error while decoding the error message, or if no error data was provided with the exception. The declared variable provides access to the low-level error data in that case.\n* We can just use catch { … } if we are not interested in error data.\n"
-        },
-        {
-          "title": "custom errors",
-          "shortTitle": "custom errors",
-          "key": "custom-error",
-          "details": "* Starting from Solidity v0.8.4, there is a convenient and gas-efficient way to explain to users why an operation failed through the use of custom errors.\n* You can already use strings to give more information about failures (e.g., `revert(\"Insufficient funds.\");`), but they are rather expensive, especially when it comes to deploy cost, and it is difficult to use dynamic information in them.\n* Custom errors are defined using the `error` statement, which can be used inside and outside of contracts (including interfaces and libraries).\n* They have to be used together with the revert statement which causes all changes in the current call to be reverted and passes the error data back to the caller.\n* The example below shows use of error with the revert statement.\n  ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity ^0.8.4;\n\n    error InsufficientBalance(uint256 available, uint256 required);\n\n    contract TestToken {\n        mapping(address => uint) balance;\n        function transfer(address to, uint256 amount) public {\n            if (amount > balance[msg.sender])\n                revert InsufficientBalance({\n                    available: balance[msg.sender],\n                    required: amount\n                });\n            balance[msg.sender] -= amount;\n            balance[to] += amount;\n        }\n    }\n  ```\n"
+          "title": "Custom Errors and try-catch",
+          "shortTitle": "Custom Errors",
+          "key": "custom-errors-and-try-catch",
+          "details": "In a `try-catch` statement, the try block will execute some code. If it gets any errors, the caught statement will be executed. A failure in an external call can be caught using a try/catch statement.\nThe `try` keyword has to be followed by an expression representing an external function call or a contract creation (`new ContractName()`). One try block can have many catch blocks.\nCustom errors help to reduce gas costs as the error message can be customized. They are defined using the keyword `error`. `try-catch` must be defined inside a function.\n\nIn the below snippet we are defining a try-catch block for an external call. If the try block executes sucessfully the `getOwner` variable will be assugned a value which will be equal to the address of the account from which the contract\n`External contract` is deployed. If there is an error catch blocks will be executed. The custom error is defined as `Logic` in the below snippet. Custom error is thrown when the input/argument of the function `testCustom_error` is greater than 10. \n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Errors{\n    ExternalContract object;\n    error Logic(string message);// defining the custom error\n    address public getOwner;\n    function setupOject(ExternalContract addr) public{ // creating the object of the external contract\n        object = addr;\n    }\n  \n    function callExternalContract() public returns(string memory returnmessage){ \n        // data location must be specified for data types like arrays, structs and strings if it is passed as an argument to a function\n        try object.viewAdress() returns(address addressOwner){ // making external call using try catch\n            getOwner= addressOwner;\n            return string(\"sucess\");\n        }catch Error(string memory message){ \n            return message;\n        }catch Panic(uint){\n            return \"panic-error\";\n        }\n\n    }\n    \n    function testCustom_error(uint x) public pure {\n        if (x > 10) {\n            revert Logic(\"the value exceeded 10\");// state is reverted with the custom error Logic\n        }\n    }\n\n\n}\n\ncontract ExternalContract{ // this is our external\n    address public immutable owner;\n    constructor(){\n        owner = msg.sender;\n    }\n    function viewAdress() public view returns(address){\n        return owner;\n    }\n\n}\n\n```\n"
         }
       ]
     },

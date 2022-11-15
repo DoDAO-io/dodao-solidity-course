@@ -14,7 +14,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
 2) View functions (read-only) and non-view functions (can change Blockchain data).
     
  
- Sub Topics: functions    
+ Sub Topics: state-variables-and-functions    
   **Function Modifiers**
  
  [![Function Modifiers](https://img.youtube.com/vi/b6FBWsz7VaI/0.jpg)](https://www.youtube.com/watch?v=b6FBWsz7VaI)     
@@ -22,7 +22,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  Function modifiers allow your code to have less repetitive, re-useable code logic. This video explains the declaration and use of modifiers.
     
  
- Sub Topics: modifiers    
+ Sub Topics: events-modifiers    
   **Events**
  
  [![Events](https://img.youtube.com/vi/jaMHPT-78HM/0.jpg)](https://www.youtube.com/watch?v=jaMHPT-78HM)     
@@ -31,7 +31,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
 This video shows how to declare and emit events in Solidity.
     
  
- Sub Topics: events    
+ Sub Topics: events-modifiers    
   **Error Handling**
  
  [![Error Handling](https://img.youtube.com/vi/1Mi1ub9bIv8/0.jpg)](https://www.youtube.com/watch?v=1Mi1ub9bIv8)     
@@ -40,7 +40,7 @@ This video shows how to declare and emit events in Solidity.
 This video covers how error handling in solidity is done using revert, require, assert and try/catch.
     
  
- Sub Topics: errors, revert, require, try-catch, assert    
+ Sub Topics: errors    
   **Structure of Smart contract**
  
  [![Structure of Smart contract](https://img.youtube.com/vi/yzcp594R92c/0.jpg)](https://www.youtube.com/watch?v=yzcp594R92c)     
@@ -53,5 +53,5 @@ This video covers how error handling in solidity is done using revert, require, 
 5) Function declarations
     
  
- Sub Topics: file-layout, contract-structure    
+ Sub Topics: smart-contract    
  
