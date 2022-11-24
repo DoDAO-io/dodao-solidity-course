@@ -29,7 +29,6 @@
             multi line comment */
     }
 
-
     ```
 
 
@@ -100,8 +99,8 @@
         /// @author admin
     }
 
-
     ```
+
 
     In the above snippet, the constructor function will only be called once when
     the contract is deployed. This function will assign the deployer address to
