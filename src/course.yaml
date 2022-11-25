@@ -50,6 +50,7 @@ topics:
   - title: Expressions and Control Structures
     key: expression-control
     details: This chapter covers how to write expressions and covers the various Control Structures like if/else , for etc.
+    explanations: expression_control.yaml
     readings: expression_control.yaml
     summaries: expression_control.yaml
     questions: expression_control.yaml
