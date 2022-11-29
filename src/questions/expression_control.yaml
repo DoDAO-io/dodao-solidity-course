@@ -1,20 +1,94 @@
-- uuid: b3bd428b-7fd9-44b7-8139-c3a9f577793b
-  type: MultipleChoice
-  content: question
-  hint: noHint
-  explanation: explanation
+- uuid: 1e754d66-092a-438f-b75e-8fc637f6cee9
+  type: SingleChoice
+  content: What will happen if we declared `else` statement without any if statement?
+  hint: Else statement
+  explanation: Else statement can be defined only when the `if` statement is defined prior to it and they should be continuous i.e, no codes should lie between them.
   answerKeys:
-    - B
-    - D
+    - C
   subTopics:
-    - "control-structure"
+    - "decision-making"
   difficultyLevel: Low
   choices:
-    - content: "1"
+    - content: Compiler checks for the condition in the else statement
       key: A
-    - content: "2"
+    - content: It will be executed
       key: B
-    - content: "3"
+    - content: Error message will appear
       key: C
-    - content: "4"
+    - content: Nothing will happen
       key: D
+- uuid: d3983125-28ed-4af6-857e-7c3dc9ed136a
+  type: MultipleChoice
+  content: Which of the following is/are correct?
+  hint: noHint
+  explanation: We can have multiple `if` statements continuosly but only one else statement after a single or multiple `if` statement.
+  answerKeys:
+    - A
+    - D
+  subTopics:
+    - "decision-making"
+  difficultyLevel: Low
+  choices:
+    - content: We can have multiple `if` statements continously
+      key: A
+    - content: We can have only one `if` statement continuously
+      key: B
+    - content: We can have multiple `else` statement under `if` statements continously
+      key: C
+    - content: We can have only one `else` statement under `if` statements continuously
+      key: D
+- uuid: 86e9b299-6751-4ed5-adf8-d1af7fe2b2ab
+  type: SingleChoice
+  content: Can we define `else if` block in Solidity?
+  hint: Doesn't exist
+  explanation: Else if doesn't exist in solidity. `Else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. Else if do exist in other programming langiages like c,c++, JavaScript.
+  answerKeys:
+    - B
+  subTopics:
+    - "decision-making"
+  difficultyLevel: Low
+  choices:
+    - content: Else if block can be defined but only inside the struct
+      key: A
+    - content: Else if block doesn't exist in Solidity so we can't define it
+      key: B
+    - content: Else if can be defined but only above the `if` block
+      key: C
+    - content: Else if can be defined but only below the `else` block
+      key: D
+- uuid: 7eb527f6-5464-419c-a459-7806e4021efc
+  type: SingleChoice
+  content: Is it possible to convert non-boolean to boolean in solidity example `if(1)`?
+  hint: Boolean
+  explanation: We cannot do type conversion from non-boolean to boolean in solidity
+  answerKeys:
+    - A
+  subTopics:
+    - "decision-making"
+  difficultyLevel: Low
+  choices:
+    - content: "No"
+      key: A
+    - content: "Yes"
+      key: B
+
+- uuid: e42f5064-acfd-400a-9c6d-87f4d28e0c8f
+  type: MultipleChoice
+  content: What is the datatype inside the paranthesis of an `if` statement?
+  hint: noHint
+  explanation: The paranthesis in if statement contains a condition so the data type should be either true or false hence it is boolean value.
+  answerKeys:
+    - C
+  subTopics:
+    - "decision-making"
+  difficultyLevel: Low
+  choices:
+    - content: Int
+      key: A
+    - content: String
+      key: B
+    - content: Boolean
+      key: C
+    - content: Address
+      key: D
+

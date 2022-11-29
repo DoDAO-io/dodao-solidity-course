@@ -24,7 +24,6 @@ contract HelloWorld {
     /* this is a 
         multi line comment */
 }
-
 ```
 
 Every Solidity source file should have a license identifier in order to avoid legal issues when the code is published as open source. The Solidity compiler recognizes SPDX license identifiers, which are machine-readable. 
@@ -59,8 +58,8 @@ contract SolidityStructure {
 
     /// @author admin
 }
-
 ```
+
 In the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or 
 initiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.
  

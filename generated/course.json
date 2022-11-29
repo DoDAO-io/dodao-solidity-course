@@ -21,9 +21,9 @@
       "explanations": [
         {
           "key": "smart-contract",
+          "title": "Structure of a smartcontract",
           "shortTitle": "contract structure",
-          "details": "#### Versioning of solidity compiler\nThe compiler version will be in the form MAJOR.MINOR.PATCH example(0.8.7) which indicates the major release 0 with 8th minor release and 7th patch. \n\n#### Structure of a smart-contract in solidity\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\n\ncontract HelloWorld {\n    string word = \"helloworld\";\n    // this is a single line comment\n\n    /* this is a \n        multi line comment */\n}\n```\n\nEvery Solidity source file should have a license identifier in order to avoid legal issues when the code is published as open source. The Solidity compiler recognizes SPDX license identifiers, which are machine-readable. \nYou can specify the license identifier anywhere in the code, but it's recommended to put it at the top of each file.\n\nThe compiler that will be used to compile the Solidity file must be specified using the keyword \"pragma\" followed by the caret (^) symbol and the version number. The caret symbol indicates that any Solidity \ncompiler with a version of the same major and minor value and patch number greater than the specified version can be used to compile the file. Example in the above code version compiler with 0.8.7 can be used to compile the above code but 0.9.2 and 0.8.0 can't be used to compile the above file. \nEvery solidity file must be saved as `.sol` for compiling. Single line comments starts with `//`. Multiline comments starts with `/*` and ends with `*/`.\n\n`import` keyword is used for importing files from other resources. Solidity also include constructor functions. Constructors are functions which will be executed automatically for one time when a contract is deployed.\nYou can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\nYou can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\nexample code snippet.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    /* msg.sender is the address that has called or initiated a function or created a transaction. \n            But at the time of deployment it will be the address of the deployer of the contract */\n\n    /// @author admin\n}\n```\n\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n",
-          "title": "Structure of a smartcontract"
+          "details": "#### Versioning of solidity compiler\nThe compiler version will be in the form MAJOR.MINOR.PATCH example(0.8.7) which indicates the major release 0 with 8th minor release and 7th patch. \n\n#### Structure of a smart-contract in solidity\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\n\ncontract HelloWorld {\n    string word = \"helloworld\";\n    // this is a single line comment\n\n    /* this is a \n        multi line comment */\n}\n```\n\nEvery Solidity source file should have a license identifier in order to avoid legal issues when the code is published as open source. The Solidity compiler recognizes SPDX license identifiers, which are machine-readable. \nYou can specify the license identifier anywhere in the code, but it's recommended to put it at the top of each file.\n\nThe compiler that will be used to compile the Solidity file must be specified using the keyword \"pragma\" followed by the caret (^) symbol and the version number. The caret symbol indicates that any Solidity \ncompiler with a version of the same major and minor value and patch number greater than the specified version can be used to compile the file. Example in the above code version compiler with 0.8.7 can be used to compile the above code but 0.9.2 and 0.8.0 can't be used to compile the above file. \nEvery solidity file must be saved as `.sol` for compiling. Single line comments starts with `//`. Multiline comments starts with `/*` and ends with `*/`.\n\n`import` keyword is used for importing files from other resources. Solidity also include constructor functions. Constructors are functions which will be executed automatically for one time when a contract is deployed.\nYou can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\nYou can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\nexample code snippet.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    /* msg.sender is the address that has called or initiated a function or created a transaction. \n            But at the time of deployment it will be the address of the deployer of the contract */\n\n    /// @author admin\n}\n```\n\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n"
         },
         {
           "title": "Statevariables and Functions",
@@ -4731,37 +4731,176 @@
       "key": "expression-control",
       "details": "This chapter covers how to write expressions and covers the various Control Structures like if/else , for etc.",
       "order": 3,
-      "explanations": [],
+      "explanations": [
+        {
+          "title": "Decision Making",
+          "shortTitle": "if/else statements",
+          "key": "decision-making",
+          "details": "If/else statements are used for making decisions and for checking conditions in order to run a program. If the compiler encounters an `if` statement, it checks the condition(s) specified in that statement. \nIf the condition(s) are true, it executes the code inside the body of the `if` statement. If the condition(s) are false, the compiler jumps to the next line after the block. The compiler will check all \nthe `if` statements but it is not the case with `else`. The `else` block is executed if and only if all of the preceding `if`statements in the code block are false. We can have multiple `if` blocks, but we can have only one `else` block under an `if` block. \nThe `else` statement can be defined only when the `if` statement is defined prior to it and they should be continuous - no other codes should lie in between `if` and `else` blocks. If/else statements can be declared only inside functions or function modifiers. \nIf/else statments are very useful to handle the logic of our code.\n\nIf/else statements in Solidity are similar to other programming languages like JavaScript and Python, but the main difference is that type conversion from non-boolean to boolean is not available in Solidity. \nThis means that `if (1)` is not a valid statement in Solidity. We can also have single line if/else statements. \n\nsyntax for if/else statements\n```\nif(expression//condition){\n//body\n}\nif(condition) body; single line if statement\nelse {\n  body of else block\n}\n\n```\nExample of a contract demonstrating the usage of if/else statements.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract DecisionMaking {\n    event Log(string message);\n\n    function checkValue(uint x) public {\n        if (x > 100) { // if statement-1\n            emit Log(\"x is greater than hundred\");\n        }\n        if (x > 50 && x <= 100) // if statement-2\n            emit Log(\"x is greater than fifty but less than hundred\");\n        if (x > 1 && x <= 50) { // if statement-3\n            emit Log(\"x is greater than one but less than fifty\");\n        } else emit Log(\"x is less than 1\"); // else statement-1\n        if (x == 0) emit Log(\"x is equal to zero\"); // if statement-4\n        else {\n            emit Log(\"x is not equal to zero\"); // else statement-2\n        }\n    }\n}\n```\nThe code snippet above defines the if/else blocks inside the function `checkValue`. When the function is called with an argument, every if block will be validated. The compiler checks all the `if` blocks and then goes \nto the `else` statement if none of the `if` blocks validate to true. For example if the value of `x` is 20 the `if statement-3` is executed and as well as `else statement-2` is executed. If the value of `x` is 0 `else statement-1` is executed\nbecause all the if statements above it fails the condition. Similarly `if statement-4` is also executed as the condition is true.\n"
+        },
+        {
+          "title": "For, While, Do While Loops",
+          "shortTitle": "Loops",
+          "key": "loops-for-while-do",
+          "details": "- for Loops\nFor loops are used to iterate and loop through different conditions. You can define for loops only inside a function or function modifier, similar to if/else statements.\nFor loop is defined by the keyword `for`. It takes three parameters, two of which are optional and one required. The parameters are seperated by semi-colon. The first parameter is optional, where variables can be initialized. \nThe second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering \nthem as needed. Anything can be done in the optional parameters - for example, in the first parameter we can do operations instead of initializing variables, and in the third parameter we can initialize variables or do other operations.\n\n** Working of for loop\nThe compiler will execute the first parameter of the for loop only once. It will then check the condition and, if it's true, execute the body of the for loop. After executing the third parameter, it will check the condition again. \nThis process repeats until the condition is false.\n\nLoops usually have three parameters, with the first parameter being executed only once at the start of the loop, the second parameter being the condition which is validated for the whole iteration of the loop, and the third parameter \nbeing executed for every iteration except the first iteration. If the condition inside the loop is always true, however, the loop will become an infinite loop and the program will crash.\n\nsyntax of the for loop \n```solidity\nfor(first parameter;second parameter(condition);third parameter){\n  body of the for loop\n}\n```\n\nAn example of using for loop in solidity\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public sum = 0;\n\n    function Summation(uint n) public { // this function will do summation till n and add it to the variable sum\n        for (uint i = 0; i <= n; i++) {// for loop is used for iterating till n\n            sum += i; \n        }\n    }\n}\n\n```\nThe value of the `sum` variable is initially set to zero. When the `Summation` function is called with any positive integer as an argument, the for loop starts executing. The value of `i` is set to zero and the compiler \nchecks for the condition `i<=n`. If that condition is true, it will execute the body and then execute the third parameter (`i++`). It will then check the condition again to see if it is true. If so, the process will repeat. \nThe loop will only terminate if the condition is not met, which in this case is when `i>n`. Upon completion of the loop, we should get a sum that is equal to the summation of 0 to n.\n\n- while loop \nWhile loops are very similar to for loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. \nIf that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, \nit will become an infinite loop and the program will crash.\n\nsyntax for while loop\n```solidity\nwhile(condition){\n//body of while loop\n}\n```\nAn example of using while loop in solidity\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public evensum = 0;\n\n    function sumEven(uint n) public {// this function will do summation of even numbers till n\n        uint i = 0;\n        while (i <= n) {  // while loop is used for iteration\n            if (i % 2 == 0) sum += i; // if statement for filtering even numbers till n\n            i++;\n        }\n    }\n}\n\n```\nIn the code snippet above, we have initialized a variable called `evensum` with a value of zero. The function `sumEven` is called with a positive integer, and \nif the condition `i<=n` is true, the while loop will start executing. The loop will continue until the condition is no longer true - in this case, when `i>n`. \nThis code results in the sum of all even numbers from 0 to n.\n\n- Do-While loop\nDo while loops are completely similar to while loop the main difference is the do while loop is executed atleast one time. Do-while loop is executed once for even false condition.\nsyntax for do while loop\n```solidity\ndo{\n  body of the do while loop\n}while(condition); // semi-colon is necessary\n\n```\nExample showing how to use do while loop.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public i = 0;\n\n    function doWhile() public {\n        do { // do while loop is used for iteration\n            i++;\n        } while (1 > 2); // false condition\n    }\n}\n\n```\nIn the above code, we have initialized `i=0`. When the function `doWhile` gets called, it executes the do-while loop. Even though the condition `1>2` is false, the loop will execute for at least one time, \nmeaning the value of `i` will be one when the function is called once. If the function is called `n` times, the loop will execute `n` times and thus the value of `i` will be `n`.\nWe have used a false condition to demonstrate how do-while loops work.\n\nIn general, it's best to minimize the use of loops in Solidity code in order to reduce gas fees. By avoiding loops, you can save a lot of gas because it prevents computationally-heavy operations.\n"
+        },
+        {
+          "title": "Break, Continue and return keywords",
+          "shortTitle": "Keywords",
+          "key": "keywords",
+          "details": "- Break\nBreak is a keyword which is used to break or terminate the running loop. It is a very useful keyword. In some situation we need to terminate the loop after a certain condition is met in that case we may use\n`break` keyword. Break keyword is used inside loops mostly with if/else statements. When compiler encounters break keyword it jumps out of the loop.\n\nexample showing the usage of break keyword\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    uint[] numbers = [1, 2, 3, 4, 5];\n    event elementcheck(string message);\n\n    function checkNumber(uint n) public {\n        for (uint i = 0; i < n; i++) {\n            if (numbers[i] == n) {\n                emit elementcheck(\"element is found\");\n                break;\n            }\n        }\n    }\n}\n\n```\nIn the code snippet provided, `numbers` is an array of unsigned integers. If `checkNumber` is called with a positive number as an argument, the for loop will be executed and the if condition will validate if `numbers[i]==n`.\nIf that condition is satisfied,  the event will be emitted and the loop will be terminated using the break keyword.\n\n- Continue\nThe `continue` keyword is used to skip an iteration of a loop. In some cases, we need to skip an iteration of the loop when certain conditions are met. If the compiler encounters the `continue` keyword, it will jump to \nthe next iteration of the loop. This means that the control is transferred to the loop check condition. If the condition is true, the next iteration starts.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nexample showing the usage of continue keyword\ncontract Keywords {\n    uint public sumeven = 0;\n\n    function summationOfEven(uint n) public {\n        // this function will sum even numbers from one to n\n        for (uint i = 0; i <= n; i++) {\n            if (i % 2 != 0) {\n                continue; // continue keyword helps skipping the odd numbers in this case\n            } else {\n                sumeven += i;\n            }\n        }\n    }\n\n    function reset() public {\n        // rests the value of sumeven to zero\n        sumeven = 0;\n    }\n}\n\n```\nIn the code snippet above, we have initialized `sumeven=0`. When the function `summationOfEven` is called with a positive integer n, the for loop is executed. If the condition `i%2!=0` is satisfied, \nthe keyword `continue` will transfer control to the loop check condition and start the next iteration. In this case, `continue` helps us to skip iterations of odd numbers.\n\n- Return \nReturn is a keyword which is used to return values/objects from a function. Whenever `return` is called the function will stop execution and return the value provided in the return statement.\nWe can return values from a function in two ways: One way is to normally return the value using the `return` keyword. Another way is to define a return variable and assign the return value to that\nvariable. The function `add` below defines a return variable `sum`. \n\nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n```solidity\nfunction1(uint x)public returns(uint){\n  return x%2; returning using the return keyword\n}\n\nfunction2(uint y)public returns(uint answer){\n  answer = y%2; // returning the value by assigning return variable answer\n}\n\n```\nIn the above snippet both the functions performs same operation when an argument is passed to but they are returning values it in different ways.\n\nExample of using return keyword \n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    function sum(uint a, uint b) public pure returns (uint, uint, uint, uint) {\n        return (a + b, b % a, a % b, a * b);\n    }\n}\n```\n"
+        }
+      ],
       "questions": [
         {
-          "uuid": "b3bd428b-7fd9-44b7-8139-c3a9f577793b",
-          "type": "MultipleChoice",
-          "content": "question",
-          "hint": "noHint",
-          "explanation": "explanation",
+          "uuid": "1e754d66-092a-438f-b75e-8fc637f6cee9",
+          "type": "SingleChoice",
+          "content": "What will happen if we declared `else` statement without any if statement?",
+          "hint": "Else statement",
+          "explanation": "Else statement can be defined only when the `if` statement is defined prior to it and they should be continuous i.e, no codes should lie between them.",
           "answerKeys": [
-            "B",
-            "D"
+            "C"
           ],
           "subTopics": [
-            "control-structure"
+            "decision-making"
           ],
           "difficultyLevel": "Low",
           "choices": [
             {
-              "content": "1",
+              "content": "Compiler checks for the condition in the else statement",
               "key": "A"
             },
             {
-              "content": "2",
+              "content": "It will be executed",
               "key": "B"
             },
             {
-              "content": "3",
+              "content": "Error message will appear",
               "key": "C"
             },
             {
-              "content": "4",
+              "content": "Nothing will happen",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "d3983125-28ed-4af6-857e-7c3dc9ed136a",
+          "type": "MultipleChoice",
+          "content": "Which of the following is/are correct?",
+          "hint": "noHint",
+          "explanation": "We can have multiple `if` statements continuosly but only one else statement after a single or multiple `if` statement.",
+          "answerKeys": [
+            "A",
+            "D"
+          ],
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "We can have multiple `if` statements continously",
+              "key": "A"
+            },
+            {
+              "content": "We can have only one `if` statement continuously",
+              "key": "B"
+            },
+            {
+              "content": "We can have multiple `else` statement under `if` statements continously",
+              "key": "C"
+            },
+            {
+              "content": "We can have only one `else` statement under `if` statements continuously",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "86e9b299-6751-4ed5-adf8-d1af7fe2b2ab",
+          "type": "SingleChoice",
+          "content": "Can we define `else if` block in Solidity?",
+          "hint": "Doesn't exist",
+          "explanation": "Else if doesn't exist in solidity. `Else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. Else if do exist in other programming langiages like c,c++, JavaScript.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Else if block can be defined but only inside the struct",
+              "key": "A"
+            },
+            {
+              "content": "Else if block doesn't exist in Solidity so we can't define it",
+              "key": "B"
+            },
+            {
+              "content": "Else if can be defined but only above the `if` block",
+              "key": "C"
+            },
+            {
+              "content": "Else if can be defined but only below the `else` block",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "7eb527f6-5464-419c-a459-7806e4021efc",
+          "type": "SingleChoice",
+          "content": "Is it possible to convert non-boolean to boolean in solidity example `if(1)`?",
+          "hint": "Boolean",
+          "explanation": "We cannot do type conversion from non-boolean to boolean in solidity",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "No",
+              "key": "A"
+            },
+            {
+              "content": "Yes",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "e42f5064-acfd-400a-9c6d-87f4d28e0c8f",
+          "type": "MultipleChoice",
+          "content": "What is the datatype inside the paranthesis of an `if` statement?",
+          "hint": "noHint",
+          "explanation": "The paranthesis in if statement contains a condition so the data type should be either true or false hence it is boolean value.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Int",
+              "key": "A"
+            },
+            {
+              "content": "String",
+              "key": "B"
+            },
+            {
+              "content": "Boolean",
+              "key": "C"
+            },
+            {
+              "content": "Address",
               "key": "D"
             }
           ]
@@ -4775,7 +4914,7 @@
           "type": "YoutubeVideo",
           "url": "url",
           "subTopics": [
-            "control-structure"
+            "decision-making"
           ],
           "details": "details\n"
         }
@@ -4784,7 +4923,7 @@
         {
           "title": "Control Structure",
           "shortTitle": "Control Structure",
-          "key": "control-structure",
+          "key": "decision-making",
           "details": "- if/else\n- for\n- while\n- do\n- break,continue\n- return\n"
         },
         {
@@ -6206,6 +6345,5 @@
         }
       ]
     }
-  ],
-  "uuid": "solidity-course"
+  ]
 }
