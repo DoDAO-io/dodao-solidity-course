@@ -98,7 +98,7 @@ checks for the condition `i<=n`. If that condition is true, it will execute the 
 The loop will only terminate if the condition is not met, which in this case is when `i>n`. Upon completion of the loop, we should get a sum that is equal to the summation of 0 to n.
 
 - while loop 
-While loops are very similar to for loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. 
+While loops are very similar to `for` loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. 
 If that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, 
 it will become an infinite loop and the program will crash.
 
@@ -186,7 +186,7 @@ contract Keywords {
 }
 
 ```
-In the code snippet provided, `numbers` is an array of unsigned integers. If `checkNumber` is called with a positive number as an argument, the for loop will be executed and the if condition will validate if `numbers[i]==n`.
+In the code snippet provided, `numbers` is an array of unsigned integers. If `checkNumber` is called with a positive number as an argument, the for loop will be executed and the if condition will validate the condition `numbers[i]==n`.
 If that condition is satisfied,  the event will be emitted and the loop will be terminated using the break keyword.
 
 - Continue
@@ -252,5 +252,77 @@ contract Keywords {
     }
 }
 ```
+ 
+ **Internal and External function calls**        
+- Internal function calls
+Internal function calls are function calls that happen inside the contract. You can do an internal function call by directly using the function's identifier. Recursive calling also counts as an internal function call.
+These function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient. 
+You can use the function's identifier to do an internal function call, no matter where the function is defined. As long as it's defined in the contract, the internal function call will take place. 
+You can call internal functions at any point in your code - for example, you could use them as other function's arguments, or inside if/else statements.
+
+example of an internally called function is shown below
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.5;
+
+contract FunctionCall {
+    uint public addition = add(1, 2);
+    uint public product = multiply(add(2, 3), add(2, 1));
+
+    function add(uint a, uint b) public pure returns (uint output) {
+        output = a + b;
+    }
+
+    function multiply(uint a, uint b) public pure returns (uint) {
+        return a * b;
+    }
+
+    function validate() public {
+        if (add(1, 2) <= multiply(1, 3)) {
+            addition = 100;
+        }
+    }
+}
+
+```
+In the snippet above, we make four internal function calls. The first call is `add(1,2)` and the second and third calls are made within the argument of the function call `product`.
+
+
+- External function calls
+External function calls are basically function calls to other contracts. In order to make an external function call, the parent contract should have defined the object of the callable contract and the 
+deployed address of the callable contract should be assigned to the created contract object. External function calls can be made using `object.functionIdentifier` - for example `g.send(8)`, where `g` is the 
+object of the callable contract and `send` is a function of that contract. For error handling during external calls, we use try/catch statements.
+
+example of an external call is shown below
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.5;
+
+contract CallerContract {
+    ExternalContract call;
+
+    function set(ExternalContract addr) external {
+        call = addr;// setting the contract object
+    }
+
+    function callSend(address payable addr) public {// address should be payable
+        call.send(addr);
+    }
+}
+
+contract ExternalContract {
+    function send(address payable addr) external payable {
+        (bool sucess, ) = addr.call{value: 100}(""); //sending 100 wei
+        require(sucess, "transaction failed"); 
+    }
+
+    receive() external payable {}
+}
+
+```
+In the code snippet above, we are calling the `send` function in the `ExternalContract` using the `CallerContract`. To do this, we first create a contract object of `ExternalContract` by its deployed address. 
+We then make an external call, setting the deployed address to the contract object `call`. The `call.send` function will send ether (in wei) to the address provided in the argument. However, before making the external call, 
+we need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more 
+than the sending value i.e, ether should be more than 100 wei in this case. 
  
  
