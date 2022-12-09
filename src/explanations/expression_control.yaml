@@ -55,7 +55,7 @@
   shortTitle: Loops
   key: "loops-for-while-do"
   details: |
-    #### for Loops
+    #### For Loops
     For loops are used to iterate and loop through different conditions. You can define for loops only inside a function or function modifier, similar to if/else statements.
     For loop is defined by the keyword `for`. It takes three parameters, two of which are optional and one required. The parameters are seperated by semi-colon. The first parameter is optional, where variables can be initialized. 
     The second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering 
@@ -96,7 +96,7 @@
     checks for the condition `i<=n`. If that condition is true, it will execute the body and then execute the third parameter (`i++`). It will then check the condition again to see if it is true. If so, the process will repeat. 
     The loop will only terminate if the condition is not met, which in this case is when `i>n`. Upon completion of the loop, we should get a sum that is equal to the summation of 0 to n.
 
-    #### while loop 
+    #### While loop 
     While loops are very similar to `for` loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. 
     If that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, 
     it will become an infinite loop and the program will crash.
