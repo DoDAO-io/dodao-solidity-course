@@ -7,8 +7,8 @@
       Wei is the smallest unit of measurement. One Wei is worth 0.000000000000000001 Ether (or 10-18). Because it cannot deal with decimal numbers, the EVM (Ethereum Virtual Machine) employs Wei as its base unit. Gwei, another common unit, is 1000000000 Wei, or 0.000000001 (or 10-9) Ether. 
       
       Following are unit conversions on basis of 1 Wei
-      - `1 Wei = 1;`
-      - `1 Kwei = 1e3;`
+      - `1 wei = 1;`
+      - `1 kwei = 1e3;`
       - `1 Mwei = 1e6;`
       - `1 Gwei = 1e9;`
       - `1 Szabo = 1e12;`
