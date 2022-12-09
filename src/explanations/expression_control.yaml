@@ -55,13 +55,13 @@
   shortTitle: Loops
   key: "loops-for-while-do"
   details: |
-    - for Loops
+    #### for Loops
     For loops are used to iterate and loop through different conditions. You can define for loops only inside a function or function modifier, similar to if/else statements.
     For loop is defined by the keyword `for`. It takes three parameters, two of which are optional and one required. The parameters are seperated by semi-colon. The first parameter is optional, where variables can be initialized. 
     The second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering 
     them as needed. Anything can be done in the optional parameters - for example, in the first parameter we can do operations instead of initializing variables, and in the third parameter we can initialize variables or do other operations.
 
-    ** Working of for loop
+    ** Working of for loop **
     The compiler will execute the first parameter of the for loop only once. It will then check the condition and, if it's true, execute the body of the for loop. After executing the third parameter, it will check the condition again. 
     This process repeats until the condition is false.
 
@@ -96,7 +96,7 @@
     checks for the condition `i<=n`. If that condition is true, it will execute the body and then execute the third parameter (`i++`). It will then check the condition again to see if it is true. If so, the process will repeat. 
     The loop will only terminate if the condition is not met, which in this case is when `i>n`. Upon completion of the loop, we should get a sum that is equal to the summation of 0 to n.
 
-    - while loop 
+    #### while loop 
     While loops are very similar to `for` loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. 
     If that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, 
     it will become an infinite loop and the program will crash.
@@ -129,7 +129,7 @@
     if the condition `i<=n` is true, the while loop will start executing. The loop will continue until the condition is no longer true - in this case, when `i>n`. 
     This code results in the sum of all even numbers from 0 to n.
 
-    - Do-While loop
+    #### Do-While loop
     Do while loops are completely similar to while loop the main difference is the do while loop is executed atleast one time. Do-while loop is executed once for even false condition.
     syntax for do while loop
     ```solidity
@@ -164,7 +164,7 @@
   shortTitle: Keywords
   key: "keywords"
   details: |
-    - Break
+    #### Break
     Break is a keyword which is used to break or terminate the running loop. It is a very useful keyword. In some situation we need to terminate the loop after a certain condition is met in that case we may use
     `break` keyword. Break keyword is used inside loops mostly with if/else statements. When compiler encounters break keyword it jumps out of the loop.
 
@@ -191,7 +191,7 @@
     In the code snippet provided, `numbers` is an array of unsigned integers. If `checkNumber` is called with a positive number as an argument, the for loop will be executed and the if condition will validate the condition `numbers[i]==n`.
     If that condition is satisfied,  the event will be emitted and the loop will be terminated using the break keyword.
 
-    - Continue
+    #### Continue
     The `continue` keyword is used to skip an iteration of a loop. In some cases, we need to skip an iteration of the loop when certain conditions are met. If the compiler encounters the `continue` keyword, it will jump to 
     the next iteration of the loop. This means that the control is transferred to the loop check condition. If the condition is true, the next iteration starts.
 
@@ -224,7 +224,7 @@
     In the code snippet above, we have initialized `sumeven=0`. When the function `summationOfEven` is called with a positive integer n, the for loop is executed. If the condition `i%2!=0` is satisfied, 
     the keyword `continue` will transfer control to the loop check condition and start the next iteration. In this case, `continue` helps us to skip iterations of odd numbers.
 
-    - Return 
+    #### Return 
     Return is a keyword which is used to return values/objects from a function. Whenever `return` is called the function will stop execution and return the value provided in the return statement.
     We can return values from a function in two ways: One way is to normally return the value using the `return` keyword. Another way is to define a return variable and assign the return value to that
     variable. The function `add` below defines a return variable `sum`. 
@@ -258,7 +258,7 @@
   shortTitle: Function calls
   key: "function-calls"
   details: |
-    - Internal function calls
+    #### Internal function calls
     Internal function calls are function calls that happen inside the contract. You can do an internal function call by directly using the function's identifier. Recursive calling also counts as an internal function call.
     These function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient. 
     You can use the function's identifier to do an internal function call, no matter where the function is defined. As long as it's defined in the contract, the internal function call will take place. 
@@ -292,7 +292,7 @@
     In the snippet above, we make four internal function calls. The first call is `add(1,2)` and the second and third calls are made within the argument of the function call `product`.
 
 
-    - External function calls
+    #### External function calls
     External function calls are basically function calls to other contracts. In order to make an external function call, the parent contract should have defined the object of the callable contract and the 
     deployed address of the callable contract should be assigned to the created contract object. External function calls can be made using `object.functionIdentifier` - for example `g.send(8)`, where `g` is the 
     object of the callable contract and `send` is a function of that contract. For error handling during external calls, we use try/catch statements.
