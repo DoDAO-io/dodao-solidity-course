@@ -37,11 +37,12 @@
 
     ```sol
 
-    if(expression//condition){
+    if(expression){ //condition
 
     //body
 
     }
+
 
     if(condition) body; single line if statement
 
