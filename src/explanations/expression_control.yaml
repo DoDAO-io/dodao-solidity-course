@@ -70,11 +70,14 @@
             if (x > 100) { // if statement-1
                 emit Log("x is greater than hundred");
             }
+
             if (x > 50 && x <= 100) // if statement-2
                 emit Log("x is greater than fifty but less than hundred");
+
             if (x > 1 && x <= 50) { // if statement-3
                 emit Log("x is greater than one but less than fifty");
             } else emit Log("x is less than 1"); // else statement-1
+
             if (x == 0) emit Log("x is equal to zero"); // if statement-4
             else {
                 emit Log("x is not equal to zero"); // else statement-2
