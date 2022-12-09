@@ -1,6 +1,6 @@
-- title: Units
+- key: units
+  title: Units
   shortTitle: Units
-  key: "units"
   details: |
     ### Ether Units
       While using Ethereum, we may encounter different units, such as Wei and Gwei. In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether. 
@@ -19,24 +19,6 @@
       - `1 Gether = 1e27;`
       - `1 Tether = 1e30;`
         
-      The following code snippet demonstrates a simple function to convert the total `wei` and `gwei` (default unit in Solidity) to Ether.
-        
-      ```solidity
-        contract ConvertUnits {
-          function etherToGWei(uint value_ether) public pure returns (uint){
-            return value_ether*(10**9);
-          }
-          function gweiToEther(uint gwei) public pure returns (uint){
-            return gwei/(10**9);
-          }
-          function etherToWei(uint value_ether) public pure returns (uint){
-            return value_ether*(10**18);
-          }
-          function weiToEther(uint value_wei) public pure returns (uint){
-            return value_wei/(10**18);
-          }
-        }
-      ```
     ### Time Units
       After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit. We can use seconds, minutes, hours, days and weeks as suffix to denote time. Lowest unit of time is `seconds`.  
       
@@ -58,13 +40,17 @@
         }
       ```
       After version 0.5.0, solidity no longer uses the suffix "years" for the reasons of leap units(i.e. leap year).
-
 - title: Globally available Variables
   shortTitle: Global Variables
-  key: "global-variables"
-  details: |
-    A Variable is basically a placeholder for the data which can be manipulated at runtime. Variables allow users to retrieve and change the stored information. There are special variables and functions which always exist in the global namespace and are mainly used to provide information about the blockchain or are general-use utility functions.
-    
+  key: global-variables
+  details: >
+    A Variable is basically a placeholder for the data which can be manipulated
+    at runtime. Variables allow users to retrieve and change the stored
+    information. There are special variables and functions which always exist in
+    the global namespace and are mainly used to provide information about the
+    blockchain or are general-use utility functions.
+
+
     These are of various types having specific properties.
       - Block and Transaction properties.
       - ABI Encoding and Decoding functions.
@@ -74,12 +60,18 @@
       - Members of address type.
       - Contract related.
       - Type Information.
-
 - title: Block and Transaction properties
   shortTitle: Block Properties
-  key: "block-transaction"
-  details: |
-    A key idea in Ethereum is the concept of blocks. Blocks serve as transactional containers. Multiple transactions are contained in a block. The number of transactions in each block varies depending on the gas limit and block size. A blockchain is created by chaining the blocks together. Each block has a parent block, and the header of each block contains the parent block's hash. Only the first block, also referred to as the genesis block, lacks a parent.
+  key: block-transaction
+  details: >
+    A key idea in Ethereum is the concept of blocks. Blocks serve as
+    transactional containers. Multiple transactions are contained in a block.
+    The number of transactions in each block varies depending on the gas limit
+    and block size. A blockchain is created by chaining the blocks together.
+    Each block has a parent block, and the header of each block contains the
+    parent block's hash. Only the first block, also referred to as the genesis
+    block, lacks a parent.
+
 
     Below are block and transaction properties with their functionalities 
       - `blockhash(uint blockNumber) returns (bytes32)`: Gives hash of the given block and will only work for the 256 most recent block due to the reason of scalability.
@@ -98,7 +90,8 @@
       - `tx.gasprice (uint)`: gas price of the transaction.
       - `tx.origin (address)`: sender of the transaction (full call chain).
 
-    The code snippet below demonstrates the use of some of the Block and transaction properties.
+    The code snippet below demonstrates the use of some of the Block and
+    transaction properties.
       ```solidity
         pragma solidity ^0.8.0;
 
@@ -169,24 +162,50 @@
         }
 
       ```
-    The values of all members of msg can change for every external function call. In solidity `block.timestamp` and `blockhash` are sources of randomness are not secure. Timestamp and the blockhash can be influenced by the miners.
-
+    The values of all members of msg can change for every external function
+    call. In solidity `block.timestamp` and `blockhash` are sources of
+    randomness are not secure. Timestamp and the blockhash can be influenced by
+    the miners.
 - title: ABI Encoding and Decoding functions.
   shortTitle: Encoding/Decoding
-  key: "encoding-decoding"
-  details: |
-    In the context of computer science, an ABI (Application Binary Interface) is an interface between two programme modules, most commonly between operating systems and user programmes. ABI, like API, defines the methods and structures used to interact with the binary contract at a lower level. The ABI instructs the function caller to encode the necessary information, such as function signatures and variable declarations, in a format that the EVM can understand in order to call that function in bytecode; this is known as ABI encoding.
-    
-    To send data to the contract, we need to send it in a way that the contract can read it. That is, they need to be encoded. Solidity has  global variable i.e, abi that has an encode and decode method, so we can use it to encode the parameters of any function. 
+  key: encoding-decoding
+  details: >
+    In the context of computer science, an ABI (Application Binary Interface) is
+    an interface between two programme modules, most commonly between operating
+    systems and user programmes. ABI, like API, defines the methods and
+    structures used to interact with the binary contract at a lower level. The
+    ABI instructs the function caller to encode the necessary information, such
+    as function signatures and variable declarations, in a format that the EVM
+    can understand in order to call that function in bytecode; this is known as
+    ABI encoding.
 
-    The encode/dicode method on the `abi` global variable in Solidity lets us easily encode/decode the parameters of any function.
-    
-    ABI encoding is mostly automated, handled by compilers such as REMIX or wallets that interact with the blockchain. JSON is used to represent contract ABI. There are specific instructions for encoding and decoding a contract ABI.
+
+    To send data to the contract, we need to send it in a way that the contract
+    can read it. That is, they need to be encoded. Solidity has  global variable
+    i.e, abi that has an encode and decode method, so we can use it to encode
+    the parameters of any function. 
+
+
+    The encode/dicode method on the `abi` global variable in Solidity lets us
+    easily encode/decode the parameters of any function.
+
+
+    ABI encoding is mostly automated, handled by compilers such as REMIX or
+    wallets that interact with the blockchain. JSON is used to represent
+    contract ABI. There are specific instructions for encoding and decoding a
+    contract ABI.
+
 
     - `abi.encode(...) returns (bytes memory)`: ABI-encodes the given arguments.
-    - `abi.decode(bytes memory encodedData, (...)) returns (...)`: ABI-decodes the given data, while the types are given in parentheses as second argument. 
-    
-    Example: `(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))`
+
+    - `abi.decode(bytes memory encodedData, (...)) returns (...)`: ABI-decodes
+    the given data, while the types are given in parentheses as second
+    argument. 
+
+
+    Example: `(uint a, uint[2] memory b, bytes memory c) = abi.decode(data,
+    (uint, uint[2], bytes))`
+
 
     - The example below demonstrates encoding and decoding.
       ```solidity
@@ -210,10 +229,23 @@
         0:string: _str1 Hi
         1:uint256: _number 5
       ```
-    - `abi.encodePacked(...) returns (bytes memory)`: Performs packed encoding of the given arguments.
-    - `abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)`: ABI-encodes the given arguments starting from the second and prepends the given four-byte selector.
-    - `abi.encodeWithSignature(string memory signature, ...) returns (bytes memory)`: Equivalent to `abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)`.
-    - `abi.encodeCall(function functionPointer, (...)) returns (bytes memory)`: ABI-encodes a call to functionPointer with the arguments found in the tuple. Performs a full type-check, ensuring the types match the function signature. Result `equals abi.encodeWithSelector(functionPointer.selector, (...))`abi.decode. `abi.encodeCall` not works with interfaces. 
+    - `abi.encodePacked(...) returns (bytes memory)`: Performs packed encoding
+    of the given arguments.
+
+    - `abi.encodeWithSelector(bytes4 selector, ...) returns (bytes memory)`:
+    ABI-encodes the given arguments starting from the second and prepends the
+    given four-byte selector.
+
+    - `abi.encodeWithSignature(string memory signature, ...) returns (bytes
+    memory)`: Equivalent to
+    `abi.encodeWithSelector(bytes4(keccak256(bytes(signature))), ...)`.
+
+    - `abi.encodeCall(function functionPointer, (...)) returns (bytes memory)`:
+    ABI-encodes a call to functionPointer with the arguments found in the tuple.
+    Performs a full type-check, ensuring the types match the function signature.
+    Result `equals abi.encodeWithSelector(functionPointer.selector,
+    (...))`abi.decode. `abi.encodeCall` not works with interfaces. 
+
 
     ```solidity
       pragma solidity ^0.8.0;
@@ -250,15 +282,14 @@
       }
 
     ```
-
 - title: Mathematical and Cryptographic Functions
   shortTitle: Math Functions
-  key: "math-functions"
+  key: math-functions
   details: |
     ### Mathematical Functions
 
     Solidity provide some inbuilt mahematical functions.
-    
+
     - `addmod(uint x, uint y, uint k) returns (uint)`
       This functions will compute the expression `(x + y) % k`. The addition is performed with arbitrary precision and does not wrap around at $2^{256}$.
       
@@ -291,7 +322,7 @@
       keccak256 function will compute and return the Keccak-256 hash of the input. Keccak-256 is part of Solidity (SHA-3 Family). It computes the hash of an input to a fixed-length output, yielding a singular 32-byte hash from any number of inputs. It ca be used to create a deterministic, one-of-a-kind ID from a set of data
       
       This cryptographic hash function can only be used in one direction and cannot be reversed. It create cryptographic signature with a small size (by signing the hash instead of a larger input)
-    
+
     - `sha256(bytes memory) returns (bytes32)`
       This function will compute and return the SHA-256 hash of the input. It is weaker than Keccak-256.
 
@@ -316,7 +347,7 @@
       ```
 - title: Members of bytes and string
   shortTitle: bytes/string props
-  key: "bytes-strings"
+  key: bytes-strings
   details: |
     ### Strings
 
@@ -343,12 +374,21 @@
           } 
       }
       ```
-
 - title: Error Handling Functions
   shortTitle: Error Functions
-  key: "error-handling"
-  details: |
-    Solidity has a plethora of error-handling functions. Errors can occur during compile or runtime. Solidity is compiled to byte code, and a syntax error check occurs at compile time, whereas runtime errors are difficult to detect and occur primarily during contract execution. Out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, and so on are examples of runtime errors. Solidity had a single throw statement until version 4.10, so to handle errors, multiple if...else statements must be implemented for checking the values and throwing errors, which consumes more gas. After version 4.10, new error-handling constructs assert, require, and revert statements were added, and the throw function was made absolute.
+  key: error-handling
+  details: >
+    Solidity has a plethora of error-handling functions. Errors can occur during
+    compile or runtime. Solidity is compiled to byte code, and a syntax error
+    check occurs at compile time, whereas runtime errors are difficult to detect
+    and occur primarily during contract execution. Out-of-gas error, data type
+    overflow error, divide by zero error, array-out-of-index error, and so on
+    are examples of runtime errors. Solidity had a single throw statement until
+    version 4.10, so to handle errors, multiple if...else statements must be
+    implemented for checking the values and throwing errors, which consumes more
+    gas. After version 4.10, new error-handling constructs assert, require, and
+    revert statements were added, and the throw function was made absolute.
+
 
     ### Assert
       Assert has the same syntax as the require statement. After evaluating the condition, it returns a boolean value. The programme will either continue to execute or throw an exception based on the return value. Instead of returning unused gas, the assert statement consumes the entire gas supply and then returns the state to its original state. Before the contract is executed, Assert is used to validate the current state and function conditions. 
@@ -382,6 +422,7 @@
         abort execution and revert state changes, providing an explanatory string.
 
     Please gothrough the code for better understanding
+
     ```solidity
       pragma solidity ^0.6.0;
 
@@ -440,12 +481,17 @@
       }
         
     ```
-
 - title: Members of Address Type
   shortTitle: Address Properties
-  key: "address-properties"
-  details: |
-    An address value type is intended to hold up to 20B, or 160 bits, the size of an Ethereum address. In fact, Solidity has two address value types: address and address payable. The distinction between the two is that address payable can send and receive Ether. An address can be used to obtain a balance using the.balance method and to transfer a balance using the.transfer method.
+  key: address-properties
+  details: >
+    An address value type is intended to hold up to 20B, or 160 bits, the size
+    of an Ethereum address. In fact, Solidity has two address value types:
+    address and address payable. The distinction between the two is that address
+    payable can send and receive Ether. An address can be used to obtain a
+    balance using the.balance method and to transfer a balance using
+    the.transfer method.
+
 
     - `<address>.balance (uint256)`:
       Returns the balance of the Address in Wei. The function below is used to return the current balance of the sender.
@@ -457,6 +503,7 @@
 
     - `<address>.codehash (bytes32)`: the codehash of the Address.
 
+
     - `<address payable>.transfer(uint256 amount)`: 
       The receiving smart contract should have a fallback function defined or else the transfer call will throw an error. There is a gas limit of 2300 gas, which is enough to complete the transfer operation.
       
@@ -464,7 +511,7 @@
 
     - `<address payable>.send(uint256 amount) returns (bool)`: 
       Send is similar to transfer. But if the payment fails, it will not revert. Instead, it returns false. The failure handling is left to the calling contract. The syntax of the send function looks like: `receivingAddress.send(10);`. Send forwards 2300 gas to the receiving contract.
-    
+
     ```solidity
       pragma solidity ^0.8.0;
 
@@ -493,16 +540,20 @@
           // output: "bool: false"
       }
     ```
-
 - title: Contract Related Functions
   shortTitle: Contract Related
-  key: "contract-related"
-  details: |
-    `this` is the pointer to the current instance of the type derived from Address which is the current contract.
+  key: contract-related
+  details: >
+    `this` is the pointer to the current instance of the type derived from
+    Address which is the current contract.
 
-    `selfdestruct(address payable recipient)`: Destroy the current contract, after sending its funds to the given Address and end execution.
+
+    `selfdestruct(address payable recipient)`: Destroy the current contract,
+    after sending its funds to the given Address and end execution.
+
 
     please gothrough the below code for better understanding
+
     ```solidity
       function destruct(address payable addr)public payable{
         selfdestruct(addr);
@@ -518,32 +569,49 @@
       // output: "uint: 0"
 
     ```
-
-
 - title: Functions for Type Information
   shortTitle: Type Information
-  key: "type-info"
-  details: |  
+  key: type-info
+  details: >
     The expression type(X) can be used to retrieve information about the type X.
-    Currently, there is limited support for this feature (X can be either a contract or an integer type).
+
+    Currently, there is limited support for this feature (X can be either a
+    contract or an integer type).
+
     The following properties are available for a contract type C:
+
     - `type(C).name`: The name of the contract.
 
-    - `type(C).creationCode`: Memory byte array that contains the creation bytecode of the contract.
 
-    - `type(C).runtimeCode`: Memory byte array that contains the runtime bytecode of the contract.
+    - `type(C).creationCode`: Memory byte array that contains the creation
+    bytecode of the contract.
 
-    In addition to the properties above, the following properties are available for an interface type I: 
 
-    - `type(I).interfaceId`: A bytes4 value containing the EIP-165 interface identifier of the given interface I.
+    - `type(C).runtimeCode`: Memory byte array that contains the runtime
+    bytecode of the contract.
+
+
+    In addition to the properties above, the following properties are available
+    for an interface type I: 
+
+
+    - `type(I).interfaceId`: A bytes4 value containing the EIP-165 interface
+    identifier of the given interface I.
+
 
     The following properties are available for an integer type T:
 
+
     - `type(T).min`: The smallest value representable by type T.
+
     - `type(T).max`: The largest value representable by type T.
 
-    The following code demonstrates the use of type(T). The function `foo` will return -128 which is the minimum value of `int8` value type and 255 which is the maximum value of `uint8` value type.
-    
+
+    The following code demonstrates the use of type(T). The function `foo` will
+    return -128 which is the minimum value of `int8` value type and 255 which is
+    the maximum value of `uint8` value type.
+
+
     ```solidity
       contract C {
         function foo() public pure returns(int,uint){
@@ -551,10 +619,9 @@
         }
       }
     ```
-
 - title: References
   shortTitle: References
-  key: "References"
+  key: References
   details: |
     Units and Globally Available Variables
       - https://docs.soliditylang.org/en/v0.8.16/units-and-global-variables.html
@@ -578,10 +645,3 @@
 
     Members of address type.
       - https://docs.soliditylang.org/en/latest/units-and-global-variables.html#members-of-address-types
-
-
-
-
-
-
-
