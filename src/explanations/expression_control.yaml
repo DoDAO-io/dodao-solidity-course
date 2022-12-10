@@ -100,7 +100,7 @@
   shortTitle: Loops
   key: loops-for-while-do
   details: >
-    - for Loops
+    #### For Loops
 
     For loops are used to iterate and loop through different conditions. You can
     define for loops only inside a function or function modifier, similar to
@@ -122,7 +122,7 @@
     other operations.
 
 
-    ** Working of for loop
+    ** Working of for loop **
 
     The compiler will execute the first parameter of the for loop only once. It
     will then check the condition and, if it's true, execute the body of the for
@@ -189,7 +189,7 @@
     equal to the summation of 0 to n.
 
 
-    - while loop 
+    #### While loop 
 
     While loops are very similar to `for` loops in that they can be used for
     iteration. The main difference between the two types of loops is that while
@@ -251,7 +251,7 @@
     This code results in the sum of all even numbers from 0 to n.
 
 
-    - Do-While loop
+    #### Do-While loop
 
     Do while loops are completely similar to while loop the main difference is
     the do while loop is executed atleast one time. Do-while loop is executed
@@ -308,7 +308,7 @@
   shortTitle: Keywords
   key: keywords
   details: >
-    - Break
+    #### Break
 
     Break is a keyword which is used to break or terminate the running loop. It
     is a very useful keyword. In some situation we need to terminate the loop
@@ -353,7 +353,7 @@
     be terminated using the break keyword.
 
 
-    - Continue
+    #### Continue
 
     The `continue` keyword is used to skip an iteration of a loop. In some
     cases, we need to skip an iteration of the loop when certain conditions are
@@ -405,7 +405,7 @@
     iterations of odd numbers.
 
 
-    - Return 
+    #### Return 
 
     Return is a keyword which is used to return values/objects from a function.
     Whenever `return` is called the function will stop execution and return the
@@ -460,7 +460,7 @@
   shortTitle: Function calls
   key: function-calls
   details: >
-    - Internal function calls
+    #### Internal function calls
 
     Internal function calls are function calls that happen inside the contract.
     You can do an internal function call by directly using the function's
@@ -515,7 +515,7 @@
 
 
 
-    - External function calls
+    #### External function calls
 
     External function calls are basically function calls to other contracts. In
     order to make an external function call, the parent contract should have
