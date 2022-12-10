@@ -66,7 +66,7 @@ For loop is defined by the keyword `for`. It takes three parameters, two of whic
 The second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering 
 them as needed. Anything can be done in the optional parameters - for example, in the first parameter we can do operations instead of initializing variables, and in the third parameter we can initialize variables or do other operations.
 
-** Working of for loop **
+##### Working of for loop 
 The compiler will execute the first parameter of the for loop only once. It will then check the condition and, if it's true, execute the body of the for loop. After executing the third parameter, it will check the condition again. 
 This process repeats until the condition is false.
 
