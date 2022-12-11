@@ -4910,6 +4910,486 @@
               "key": "D"
             }
           ]
+        },
+        {
+          "uuid": "33765469-a9f8-41d7-903a-3ee4e11f2483",
+          "type": "SingleChoice",
+          "content": "How much parameters are required for defining a for loop in Solidity?",
+          "hint": "noHint",
+          "explanation": "The for loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "three",
+              "key": "A"
+            },
+            {
+              "content": "four",
+              "key": "B"
+            },
+            {
+              "content": "one",
+              "key": "C"
+            },
+            {
+              "content": "two",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "f4cb54b6-26de-4f2b-b879-d621fcd951ea",
+          "type": "SingleChoice",
+          "content": "What is the data type of the required parameter in the for loop?",
+          "hint": "noHint",
+          "explanation": "The required argument should be a conditional statement, hence the data type is boolean.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Boolean",
+              "key": "A"
+            },
+            {
+              "content": "Integer",
+              "key": "B"
+            },
+            {
+              "content": "String",
+              "key": "C"
+            },
+            {
+              "content": "Struct",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ea3b6f23-b673-4f9a-b928-2bc1ba77ab65",
+          "type": "SingleChoice",
+          "content": "How generally the primary argument withinside the for loop is executed?",
+          "hint": "noHint",
+          "explanation": "The first argument in the for loop is executed only once.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Infinite",
+              "key": "A"
+            },
+            {
+              "content": "One",
+              "key": "B"
+            },
+            {
+              "content": "Three",
+              "key": "C"
+            },
+            {
+              "content": "It will execute as long as the condition is true",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "e38441e9-3e06-4910-ba4b-104917d8a641",
+          "type": "SingleChoice",
+          "content": "Is it possible to define single line if/else statement?",
+          "hint": "If/else statments",
+          "explanation": "We can define single if/else statements without curly braces.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "No it is not possible",
+              "key": "A"
+            },
+            {
+              "content": "It is possible only when if/else statements is defined inside function modifiers",
+              "key": "B"
+            },
+            {
+              "content": "Yes it is possible",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "078cc470-7699-49ac-9122-8b51aa6349ec",
+          "type": "SingleChoice",
+          "content": "How many times the third parameter will execute if the body of for loop is executed n times?",
+          "hint": "noHint",
+          "explanation": "The third parameter will be executed the same number of times as the for loop body.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "n+1 times",
+              "key": "A"
+            },
+            {
+              "content": "n times",
+              "key": "B"
+            },
+            {
+              "content": "n-1 times",
+              "key": "C"
+            },
+            {
+              "content": "one",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8144216b-fbef-4520-8f2c-fe9b813e17fc",
+          "type": "SingleChoice",
+          "content": "Why are loops not preferred in solidity?",
+          "hint": "Gas Fees",
+          "explanation": "Loops require a lot of computation, so gas fees can get pretty high.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Loops will consume lot of gas for computation",
+              "key": "A"
+            },
+            {
+              "content": "Loops will cause bugs in the contract",
+              "key": "B"
+            },
+            {
+              "content": "Loops are not preferred as it is complex to use",
+              "key": "C"
+            },
+            {
+              "content": "None of These",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "66b3f13c-5db7-42f6-abf9-ee49dd5e93cc",
+          "type": "SingleChoice",
+          "content": "What is the difference between for loop and while loop?",
+          "hint": "Parameters/Arguments",
+          "explanation": "The for loop requires one parameter and can take two optional parameters. The while loop only requires one parameter, which is a conditional statement.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The while loop will continue to run even when the condition is false",
+              "key": "A"
+            },
+            {
+              "content": "For loops involve curly braces while while loops don't",
+              "key": "B"
+            },
+            {
+              "content": "The for loop can be used inside a function, but the while loop can be used anywhere in the contract",
+              "key": "C"
+            },
+            {
+              "content": "While loops can take only one parameter, for loops can take three parameters",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b1b3fc44-3d67-4f1b-9d69-fc6b45f474e5",
+          "type": "SingleChoice",
+          "content": "When will the loop terminate?",
+          "hint": "Condition",
+          "explanation": "The while loop will terminate only when the condition inside the loop is false.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "When the condition is false",
+              "key": "A"
+            },
+            {
+              "content": "After 100 iterations",
+              "key": "B"
+            },
+            {
+              "content": "When the gas fees execeeds 15000 wei",
+              "key": "C"
+            },
+            {
+              "content": "When the condition is true",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ecd90fea-49d4-4ec3-a007-9e864d5fee32",
+          "type": "SingleChoice",
+          "content": "What is the do-while loop's specialty?",
+          "hint": "noHint",
+          "explanation": "The Do-while loop is executed at least once, but if the condition inside the while or for loop is false, it will not execute.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It consumes very less gas",
+              "key": "A"
+            },
+            {
+              "content": "The loop is executed for atleast one time",
+              "key": "B"
+            },
+            {
+              "content": "It can be defined anywhere in the contract",
+              "key": "C"
+            },
+            {
+              "content": "The loop will terminate automatically after 1000 iterations",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "5328ebc5-3dbe-434d-b64d-bc9500796e8d",
+          "type": "SingleChoice",
+          "content": "What keywords are used to define a do-while loop?",
+          "hint": "noHint",
+          "explanation": "The do-while loop is defined using two keywords `do` and `while`.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "For keyword only",
+              "key": "A"
+            },
+            {
+              "content": "While keyword only",
+              "key": "B"
+            },
+            {
+              "content": "Both do and while keywords",
+              "key": "C"
+            },
+            {
+              "content": "Both if and while keywords",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b4e4a99a-c7c7-4dbf-9ab1-51d2afede138",
+          "type": "SingleChoice",
+          "content": "What will happen if the condition in the do-while loop is false?",
+          "hint": "noHint",
+          "explanation": "The do-while loop is executed for atleast one time. It doesn't matter if the condition is false the loop will execute for one time.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The loop will not execute at all",
+              "key": "A"
+            },
+            {
+              "content": "The loop is executed for one time",
+              "key": "B"
+            },
+            {
+              "content": "The program will crash",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "97dbf4a5-4f3c-4a06-87c3-110dfc9622a7",
+          "type": "SingleChoice",
+          "content": "What is the purpose of break keyword?",
+          "hint": "Termination",
+          "explanation": "The break keyword is used to stop the execution of a loop or to terminate the loop. It is mostly used with if/else statements.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "To terminate the loop",
+              "key": "A"
+            },
+            {
+              "content": "To make a jump for next iteration",
+              "key": "B"
+            },
+            {
+              "content": "To stop a function's execution",
+              "key": "C"
+            },
+            {
+              "content": "It is used to handle errors",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "23997bf8-e4f1-4ef4-9fa6-c4b8faec5bfe",
+          "type": "SingleChoice",
+          "content": "What is the use of the continue keyword?",
+          "hint": "noHint",
+          "explanation": "The keyword \"continue\" is mostly used with conditional statements in order to skip the current iteration of a loop.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It is used to handle errors",
+              "key": "A"
+            },
+            {
+              "content": "Used for making a contract object",
+              "key": "B"
+            },
+            {
+              "content": "Used for making external calls",
+              "key": "C"
+            },
+            {
+              "content": "Use to skip iteration",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "4b718e63-fb3a-4eff-ae4a-bdfbcc2750b2",
+          "type": "SingleChoice",
+          "content": "Where can we use a return keyword?",
+          "hint": "noHint",
+          "explanation": "The \"return\" keyword can be used only inside a function or within the body of a function.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It can be used only inside contructor function",
+              "key": "A"
+            },
+            {
+              "content": "It can be defined in for loops without a function",
+              "key": "B"
+            },
+            {
+              "content": "Only inside a function",
+              "key": "C"
+            },
+            {
+              "content": "None of these",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8b75dff0-084f-4b5c-8fe9-1751d4ad35b2",
+          "type": "SingleChoice",
+          "content": "What will happen if the compiler encounters an `break` keyword inside a nested for loop?",
+          "hint": "noHint",
+          "explanation": "When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop altogether.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "All the for loops are terminated",
+              "key": "A"
+            },
+            {
+              "content": "The for loop in which the break keyword is encountered will be terminated",
+              "key": "B"
+            },
+            {
+              "content": "No change will occur",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
         }
       ],
       "readings": [
@@ -4930,7 +5410,13 @@
           "title": "Control Structure",
           "shortTitle": "Control Structure",
           "key": "decision-making",
-          "details": "- if/else\n- for\n- while\n- do\n- break,continue\n- return\n"
+          "details": "- if/else\n"
+        },
+        {
+          "title": "For, While and Do-while Loops and Keywords",
+          "shortTitle": "Loops and Keywords",
+          "key": "loops-keywords",
+          "details": "- for\n- while\n- do\n- break,continue\n- return\n"
         },
         {
           "title": "Function Calls",
