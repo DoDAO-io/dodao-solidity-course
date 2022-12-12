@@ -198,7 +198,7 @@ Sub Topics: loops-keywords
 
 ---
 
-##### When will the loop terminate?  
+##### When will the while loop terminate?  
 
 - [x]  When the condition is false
 - [ ]  After 100 iterations

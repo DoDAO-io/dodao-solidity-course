@@ -5138,7 +5138,7 @@
         {
           "uuid": "b1b3fc44-3d67-4f1b-9d69-fc6b45f474e5",
           "type": "SingleChoice",
-          "content": "When will the loop terminate?",
+          "content": "When will the while loop terminate?",
           "hint": "Condition",
           "explanation": "The while loop will terminate only when the condition inside the loop is false.",
           "answerKeys": [
