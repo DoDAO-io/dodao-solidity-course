@@ -4826,7 +4826,7 @@
           "type": "SingleChoice",
           "content": "Can we define `else if` block in Solidity?",
           "hint": "NoHint",
-          "explanation": "Else if doesn't exist in solidity. `Else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. Else if do exist in other programming langiages like c,c++, JavaScript.",
+          "explanation": "`else if` doesn't exist in solidity. `else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. `else if` does exist in other programming languages like C, C++, JavaScript.",
           "answerKeys": [
             "B"
           ],
