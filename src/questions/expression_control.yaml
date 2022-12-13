@@ -43,7 +43,7 @@
 - uuid: 86e9b299-6751-4ed5-adf8-d1af7fe2b2ab
   type: SingleChoice
   content: Can we define `else if` block in Solidity?
-  hint: Doesn't exist
+  hint: NoHint
   explanation: >-
     Else if doesn't exist in solidity. `Else if` is also a statement like `if`
     but it will be executed only if all of the preceding `if` or `else if`
@@ -51,18 +51,17 @@
     programming langiages like c,c++, JavaScript.
   answerKeys:
     - B
-  subTopics:
-    - decision-making
-  difficultyLevel: Low
+  subTopics: []
+  difficultyLevel: Medium
   choices:
-    - content: Else if block can be defined but only inside the struct
-      key: A
-    - content: Else if block doesn't exist in Solidity so we can't define it
-      key: B
-    - content: Else if can be defined but only above the `if` block
-      key: C
-    - content: Else if can be defined but only below the `else` block
-      key: D
+    - key: A
+      content: Else if block can be defined but only inside the struct
+    - key: B
+      content: Else if block doesn't exist in Solidity so we can't define it
+    - key: C
+      content: Else if can be defined but only above the `if` block
+    - key: D
+      content: Else if can be defined but only below the `else` block
 - uuid: 7eb527f6-5464-419c-a459-7806e4021efc
   type: SingleChoice
   content: >-
