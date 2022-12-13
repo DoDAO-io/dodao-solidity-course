@@ -7,6 +7,8 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
  **Control Structure**        
 - if/else
+ 
+ **For, While and Do-while Loops and Keywords**        
 - for
 - while
 - do

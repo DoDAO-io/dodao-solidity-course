@@ -66,7 +66,7 @@ For loop is defined by the keyword `for`. It takes three parameters, two of whic
 The second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering 
 them as needed. Anything can be done in the optional parameters - for example, in the first parameter we can do operations instead of initializing variables, and in the third parameter we can initialize variables or do other operations.
 
-** Working of for loop **
+##### Working of for loop 
 The compiler will execute the first parameter of the for loop only once. It will then check the condition and, if it's true, execute the body of the for loop. After executing the third parameter, it will check the condition again. 
 This process repeats until the condition is false.
 
@@ -296,8 +296,9 @@ In the snippet above, we make four internal function calls. The first call is `a
 External function calls are basically function calls to other contracts. In order to make an external function call, the parent contract should have defined the object of the callable contract and the 
 deployed address of the callable contract should be assigned to the created contract object. External function calls can be made using `object.functionIdentifier` - for example `g.send(8)`, where `g` is the 
 object of the callable contract and `send` is a function of that contract. For error handling during external calls, we use try/catch statements.
-
-example of an external call is shown below
+EVM considers a call to a non-existing contract to always succeed, so Solidity  uses the extcodesize opcode to check that the contract actually exists before calling it.  If the contract does not exist, an exception is thrown. Hence, the contract to which  the call is made should be defined in the file or imported into the file.
+A function call from one contract to another is not considered its own transaction; rather,  it's seen as a message call that's part of an overall transaction. However, an external  function call will be treated as a transaction if it modifies the state of the blockchain.
+Example of an external call is shown below
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
@@ -326,7 +327,6 @@ contract ExternalContract {
 ```
 In the code snippet above, we are calling the `send` function in the `ExternalContract` using the `CallerContract`. To do this, we first create a contract object of `ExternalContract` by its deployed address. 
 We then make an external call, setting the deployed address to the contract object `call`. The `call.send` function will send ether (in wei) to the address provided in the argument. However, before making the external call, 
-we need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more 
-than the sending value i.e, ether should be more than 100 wei in this case. 
+we need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more than the sending value i.e, ether should be more than 100 wei in this case. 
  
  

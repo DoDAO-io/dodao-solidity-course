@@ -8,7 +8,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
 ---
 
-##### What will happen if we declared `else` statement without any if statement?  
+##### What will happen if we declared `else` statement without any `if` statement?  
 
 - [ ]  Compiler checks for the condition in the else statement
 - [ ]  It will be executed
@@ -82,4 +82,472 @@ Hint: noHint
 Explanation: The paranthesis in if statement contains a condition so the data type should be either true or false hence it is boolean value.
 
 Sub Topics: decision-making
+ 
+
+---
+
+##### How much parameters are required for defining a for loop in Solidity?  
+
+- [ ]  three
+- [ ]  four
+- [x]  one
+- [ ]  two
+  
+Hint: noHint
+         
+Explanation: The for loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What is the data type of the required parameter in the for loop?  
+
+- [x]  Boolean
+- [ ]  Integer
+- [ ]  String
+- [ ]  Struct
+  
+Hint: noHint
+         
+Explanation: The required argument should be a conditional statement, hence the data type is boolean.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### How generally the primary argument withinside the for loop is executed?  
+
+- [ ]  Infinite
+- [x]  One
+- [ ]  Three
+- [ ]  It will execute as long as the condition is true
+  
+Hint: noHint
+         
+Explanation: The first argument in the for loop is executed only once.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### Is it possible to define single line if/else statement?  
+
+- [ ]  No it is not possible
+- [ ]  It is possible only when if/else statements is defined inside function modifiers
+- [x]  Yes it is possible
+- [ ]  None of the above
+  
+Hint: If/else statments
+         
+Explanation: We can define single if/else statements without curly braces.
+
+Sub Topics: decision-making
+ 
+
+---
+
+##### How many times the third parameter will execute if the body of for loop is executed n times?  
+
+- [ ]  n+1 times
+- [x]  n times
+- [ ]  n-1 times
+- [ ]  one
+  
+Hint: noHint
+         
+Explanation: The third parameter will be executed the same number of times as the for loop body.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### Why are loops not preferred in solidity?  
+
+- [x]  Loops will consume lot of gas for computation
+- [ ]  Loops will cause bugs in the contract
+- [ ]  Loops are not preferred as it is complex to use
+- [ ]  None of These
+  
+Hint: Gas Fees
+         
+Explanation: Loops require a lot of computation, so gas fees can get pretty high.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What is the difference between for loop and while loop?  
+
+- [ ]  The while loop will continue to run even when the condition is false
+- [ ]  For loops involve curly braces while while loops don't
+- [ ]  The for loop can be used inside a function, but the while loop can be used anywhere in the contract
+- [x]  While loops can take only one parameter, for loops can take three parameters
+  
+Hint: Parameters/Arguments
+         
+Explanation: The for loop requires one parameter and can take two optional parameters. The while loop only requires one parameter, which is a conditional statement.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### When will the while loop terminate?  
+
+- [x]  When the condition is false
+- [ ]  After 100 iterations
+- [ ]  When the gas fees execeeds 15000 wei
+- [ ]  When the condition is true
+  
+Hint: Condition
+         
+Explanation: The while loop will terminate only when the condition inside the loop is false.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What is the do-while loop's specialty?  
+
+- [ ]  It consumes very less gas
+- [x]  The loop is executed for atleast one time
+- [ ]  It can be defined anywhere in the contract
+- [ ]  The loop will terminate automatically after 1000 iterations
+  
+Hint: noHint
+         
+Explanation: The Do-while loop is executed at least once, but if the condition inside the while or for loop is false, it will not execute.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What keywords are used to define a do-while loop?  
+
+- [ ]  For keyword only
+- [ ]  While keyword only
+- [x]  Both do and while keywords
+- [ ]  Both if and while keywords
+  
+Hint: noHint
+         
+Explanation: The do-while loop is defined using two keywords `do` and `while`.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What will happen if the condition in the do-while loop is false?  
+
+- [ ]  The loop will not execute at all
+- [x]  The loop is executed for one time
+- [ ]  The program will crash
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: The do-while loop is executed for atleast one time. It doesn't matter if the condition is false the loop will execute for one time.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What is the purpose of break keyword?  
+
+- [x]  To terminate the loop
+- [ ]  To make a jump for next iteration
+- [ ]  To stop a function's execution
+- [ ]  It is used to handle errors
+  
+Hint: Termination
+         
+Explanation: The break keyword is used to stop the execution of a loop or to terminate the loop. It is mostly used with if/else statements.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What is the use of the continue keyword?  
+
+- [ ]  It is used to handle errors
+- [ ]  Used for making a contract object
+- [ ]  Used for making external calls
+- [x]  Used to skip iteration
+  
+Hint: noHint
+         
+Explanation: The keyword "continue" is mostly used with conditional statements in order to skip the current iteration of a loop.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### Where can we use a return keyword?  
+
+- [ ]  It can be used only inside contructor function
+- [ ]  It can be defined in for loops without a function
+- [x]  Only inside a function
+- [ ]  None of these
+  
+Hint: noHint
+         
+Explanation: The "return" keyword can be used only inside a function or within the body of a function.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### What will happen if the compiler encounters an `break` keyword inside a nested for loop?  
+
+- [ ]  All the for loops are terminated
+- [x]  The for loop in which the break keyword is encountered will be terminated
+- [ ]  No change will occur
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop altogether.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### In Solidity, is it possible to return a value from a function without using the return keyword?  
+
+- [x]  Yes
+- [ ]  No
+  
+Hint: noHint
+         
+Explanation: We can return a value from a function by assigning the return variable to the value we want to return.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### Tell whether the following statement is true or false.
+the data types of returning values should be specified in the function using the keyword `returns`.
+  
+
+- [x]  True
+- [ ]  False
+  
+Hint: noHint
+         
+Explanation: We need to specify the data type of returning values in the function using the keyword `returns`.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### How to perform an internal function call?  
+
+- [ ]  It can be called using contract's deployed address and assigning it to the contract object
+- [x]  It can be done by using function identifier
+- [ ]  Internal function calls can be called only through constructor function using the function's identifier
+- [ ]  Internal function calls can be called only through function modifier using the function's identifier
+  
+Hint: Identifier
+         
+Explanation: Internal function calls can be executed by using the function's identifier with arguments if they exist. The function that is being called should be defined in the same contract.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Why passing memory references to internally-called functions is very efficient?  
+
+- [ ]  It is because EVM store memory of all internal function calls until the deployed contract is destroyed or demolished
+- [ ]  It is beacause internal function calls stores data into the storage data
+- [x]  It is because internal function calls are translated into simple jumps inside the EVM
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: Internal function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### In the following expression, can you spot the error in the code?
+ ```solidity
+ function add(uint x,uint y) public pure {
+ return x+y;
+ }
+ ```
+  
+
+- [ ]  The `return(uint)` is missing in the above snippet
+- [x]  The `returns(uint)` is missing in the above snippet
+- [ ]  The `pure` keyword should be removed
+- [ ]  The value should be returned within the parenthesis i.e, it should be `return(x+y)` instead of `return x+y`
+  
+Hint: Return keyword
+         
+Explanation: The data type of returning values should be specified before returning in a function. The `returns(uint)` is missing in the above snippet.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### Recursion is which type of function call?  
+
+- [x]  Internal
+- [ ]  External
+- [ ]  Delegate call
+- [ ]  It is a special type of function call
+  
+Hint: noHint
+         
+Explanation: Recursion is an internal function call where the function is called from within the same contract.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Which of the following is correct?
+statement 1 - Internal function call can occur anywhere in a contract.
+statement 2 - Only uint/int, String and boolean can be returned using return keyword.
+  
+
+- [ ]  Statement 2 is correct but Statement 1 is incorrect
+- [x]  Statement 1 is correct but Statement 2 is incorrect
+- [ ]  Both are correct
+- [ ]  Neither is correct
+  
+Hint: noHint
+         
+Explanation: Internal function call can occur anywhere inside the contract for example it can occur inside function arguments, if/else statements, contructor function, etc. We can also return address and bytes using return keyword.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Which of the options regarding the statements below are correct?
+statement 1 - External calls can be done only to the deployed contracts
+statement 2 - External contract's deployed address is necessary to perform an external call
+  
+
+- [ ]  Statement 2 is correct but Statement 1 is incorrect
+- [ ]  Statement 1 is correct but Statement 2 is incorrect
+- [x]  Both are correct
+- [ ]  Neither is correct
+  
+Hint: Externalcall
+         
+Explanation: In order to make an external call, you need the deployed address of the contract. This means that external calls can only be made to contracts that have already been deployed.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### What will happen if the external contract is not defined or imported in solidity file while making an external call?  
+
+- [ ]  The external call will be sent sucessfully
+- [x]  The external call will fail
+- [ ]  In that the call will only be successful if the function that is called is not a payable function
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: The compiler will show an declaration error and the external call will not occur
+
+Sub Topics: func-call
+ 
+
+---
+
+##### What is the correct syntax for an external call?  
+
+- [ ]  functionIdentifier(arguments)
+- [ ]  contractobject.functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract
+- [x]  contractobject.functionIdentifier(arguments)
+- [ ]  functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract
+  
+Hint: noHint
+         
+Explanation: The correct syntax for making an external call is `contractobject.functionIdentifier(arguments)`
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Arrange the following steps in a correct way
+1. Address of the external contract is set to the contract object
+2. External call is made using the contract object
+3. Contract object is created using the exact identifier for the external contract
+4. External contract is defined in the sol file
+  
+
+- [ ]  1->2->3->4
+- [x]  4->3->1->2
+- [ ]  4->3->2->1
+- [ ]  2->4->1->3
+  
+Hint: Externalcall
+         
+Explanation: First, we need to either import or define the external contract in the file where the caller contract is located. 
+Then, we create an object for the external contract. After creating the contract object, we set the deployed address 
+of the external contract to the contract object. Finally, we make the external call using the contract object.
+
+
+Sub Topics: func-call
+ 
+
+---
+
+##### What is used by solidity to check the existence of a contract  
+
+- [ ]  keccac function
+- [x]  extcodesize opcode
+- [ ]  ABI of the deployed contract
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: Solidity uses the `extcodesize` opcode to check that the contract that is about to be called actually exists (it contains code) and causes an exception if it does not.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Which of the following is correct about external function call?  
+
+- [x]  External function calls do not cost any gas until there is no changes in the state of the blockchain
+- [ ]  External calls doesn't require any address it can made just calling the function using its identifier
+- [x]  External contract should be defined or imported for making an external function call
+- [ ]  External call costs gas even it doesn't change the state of the blockchain
+  
+Hint: noHint
+         
+Explanation: External function calls don't cost any gas unless the blockchain state changes. To make an external call, you need the deployed contract address. 
+You also need to have the external contract defined or imported in the Solidity file where the caller contract is located.
+
+
+Sub Topics: func-call
  
