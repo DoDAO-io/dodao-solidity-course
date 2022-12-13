@@ -4855,15 +4855,13 @@
           "uuid": "7eb527f6-5464-419c-a459-7806e4021efc",
           "type": "SingleChoice",
           "content": "Is it possible to convert non-boolean to boolean in solidity example `if(1)`?",
-          "hint": "Boolean",
+          "hint": "NoHint",
           "explanation": "We cannot do type conversion from non-boolean to boolean in solidity",
           "answerKeys": [
             "A"
           ],
-          "subTopics": [
-            "decision-making"
-          ],
-          "difficultyLevel": "Low",
+          "subTopics": [],
+          "difficultyLevel": "Medium",
           "choices": [
             {
               "content": "No",

@@ -67,18 +67,17 @@
   content: >-
     Is it possible to convert non-boolean to boolean in solidity example
     `if(1)`?
-  hint: Boolean
+  hint: NoHint
   explanation: We cannot do type conversion from non-boolean to boolean in solidity
   answerKeys:
     - A
-  subTopics:
-    - decision-making
-  difficultyLevel: Low
+  subTopics: []
+  difficultyLevel: Medium
   choices:
-    - content: 'No'
-      key: A
-    - content: 'Yes'
-      key: B
+    - key: A
+      content: 'No'
+    - key: B
+      content: 'Yes'
 - uuid: e42f5064-acfd-400a-9c6d-87f4d28e0c8f
   type: MultipleChoice
   content: What is the datatype inside the paranthesis of an `if` statement?
