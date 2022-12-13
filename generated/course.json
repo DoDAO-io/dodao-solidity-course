@@ -4762,15 +4762,13 @@
           "uuid": "1e754d66-092a-438f-b75e-8fc637f6cee9",
           "type": "SingleChoice",
           "content": "What will happen if we declared `else` statement without any `if` statement?",
-          "hint": "Else statement",
+          "hint": "NoHint",
           "explanation": "Else statement can be defined only when the `if` statement is defined prior to it and they should be continuous i.e, no codes should lie between them.",
           "answerKeys": [
             "C"
           ],
-          "subTopics": [
-            "decision-making"
-          ],
-          "difficultyLevel": "Low",
+          "subTopics": [],
+          "difficultyLevel": "Medium",
           "choices": [
             {
               "content": "Compiler checks for the condition in the else statement",
