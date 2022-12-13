@@ -8,7 +8,7 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  
 ---
 
-##### What will happen if we declared `else` statement without any if statement?  
+##### What will happen if we declared `else` statement without any `if` statement?  
 
 - [ ]  Compiler checks for the condition in the else statement
 - [ ]  It will be executed
@@ -283,7 +283,7 @@ Sub Topics: loops-keywords
 - [ ]  It is used to handle errors
 - [ ]  Used for making a contract object
 - [ ]  Used for making external calls
-- [x]  Use to skip iteration
+- [x]  Used to skip iteration
   
 Hint: noHint
          
@@ -322,4 +322,232 @@ Hint: noHint
 Explanation: When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop altogether.
 
 Sub Topics: loops-keywords
+ 
+
+---
+
+##### In Solidity, is it possible to return a value from a function without using the return keyword?  
+
+- [x]  Yes
+- [ ]  No
+  
+Hint: noHint
+         
+Explanation: We can return a value from a function by assigning the return variable to the value we want to return.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### Tell whether the following statement is true or false.
+the data types of returning values should be specified in the function using the keyword `returns`.
+  
+
+- [x]  True
+- [ ]  False
+  
+Hint: noHint
+         
+Explanation: We need to specify the data type of returning values in the function using the keyword `returns`.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### How to perform an internal function call?  
+
+- [ ]  It can be called using contract's deployed address and assigning it to the contract object
+- [x]  It can be done by using function identifier
+- [ ]  Internal function calls can be called only through constructor function using the function's identifier
+- [ ]  Internal function calls can be called only through function modifier using the function's identifier
+  
+Hint: Identifier
+         
+Explanation: Internal function calls can be executed by using the function's identifier with arguments if they exist. The function that is being called should be defined in the same contract.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Why passing memory references to internally-called functions is very efficient?  
+
+- [ ]  It is because EVM store memory of all internal function calls until the deployed contract is destroyed or demolished
+- [ ]  It is beacause internal function calls stores data into the storage data
+- [x]  It is because internal function calls are translated into simple jumps inside the EVM
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: Internal function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### In the following expression, can you spot the error in the code?
+ ```solidity
+ function add(uint x,uint y) public pure {
+ return x+y;
+ }
+ ```
+  
+
+- [ ]  The `return(uint)` is missing in the above snippet
+- [x]  The `returns(uint)` is missing in the above snippet
+- [ ]  The `pure` keyword should be removed
+- [ ]  The value should be returned within the parenthesis i.e, it should be `return(x+y)` instead of `return x+y`
+  
+Hint: Return keyword
+         
+Explanation: The data type of returning values should be specified before returning in a function. The `returns(uint)` is missing in the above snippet.
+
+Sub Topics: loops-keywords
+ 
+
+---
+
+##### Recursion is which type of function call?  
+
+- [x]  Internal
+- [ ]  External
+- [ ]  Delegate call
+- [ ]  It is a special type of function call
+  
+Hint: noHint
+         
+Explanation: Recursion is an internal function call where the function is called from within the same contract.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Which of the following is correct?
+statement 1 - Internal function call can occur anywhere in a contract.
+statement 2 - Only uint/int, String and boolean can be returned using return keyword.
+  
+
+- [ ]  Statement 2 is correct but Statement 1 is incorrect
+- [x]  Statement 1 is correct but Statement 2 is incorrect
+- [ ]  Both are correct
+- [ ]  Neither is correct
+  
+Hint: noHint
+         
+Explanation: Internal function call can occur anywhere inside the contract for example it can occur inside function arguments, if/else statements, contructor function, etc. We can also return address and bytes using return keyword.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Which of the options regarding the statements below are correct?
+statement 1 - External calls can be done only to the deployed contracts
+statement 2 - External contract's deployed address is necessary to perform an external call
+  
+
+- [ ]  Statement 2 is correct but Statement 1 is incorrect
+- [ ]  Statement 1 is correct but Statement 2 is incorrect
+- [x]  Both are correct
+- [ ]  Neither is correct
+  
+Hint: Externalcall
+         
+Explanation: In order to make an external call, you need the deployed address of the contract. This means that external calls can only be made to contracts that have already been deployed.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### What will happen if the external contract is not defined or imported in solidity file while making an external call?  
+
+- [ ]  The external call will be sent sucessfully
+- [x]  The external call will fail
+- [ ]  In that the call will only be successful if the function that is called is not a payable function
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: The compiler will show an declaration error and the external call will not occur
+
+Sub Topics: func-call
+ 
+
+---
+
+##### What is the correct syntax for an external call?  
+
+- [ ]  functionIdentifier(arguments)
+- [ ]  contractobject.functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract
+- [x]  contractobject.functionIdentifier(arguments)
+- [ ]  functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract
+  
+Hint: noHint
+         
+Explanation: The correct syntax for making an external call is `contractobject.functionIdentifier(arguments)`
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Arrange the following steps in a correct way
+1. Address of the external contract is set to the contract object
+2. External call is made using the contract object
+3. Contract object is created using the exact identifier for the external contract
+4. External contract is defined in the sol file
+  
+
+- [ ]  1->2->3->4
+- [x]  4->3->1->2
+- [ ]  4->3->2->1
+- [ ]  2->4->1->3
+  
+Hint: Externalcall
+         
+Explanation: First, we need to either import or define the external contract in the file where the caller contract is located. 
+Then, we create an object for the external contract. After creating the contract object, we set the deployed address 
+of the external contract to the contract object. Finally, we make the external call using the contract object.
+
+
+Sub Topics: func-call
+ 
+
+---
+
+##### What is used by solidity to check the existence of a contract  
+
+- [ ]  keccac function
+- [x]  extcodesize opcode
+- [ ]  ABI of the deployed contract
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: Solidity uses the `extcodesize` opcode to check that the contract that is about to be called actually exists (it contains code) and causes an exception if it does not.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### Which of the following is correct about external function call?  
+
+- [x]  External function calls do not cost any gas until there is no changes in the state of the blockchain
+- [ ]  External calls doesn't require any address it can made just calling the function using its identifier
+- [x]  External contract should be defined or imported for making an external function call
+- [ ]  External call costs gas even it doesn't change the state of the blockchain
+  
+Hint: noHint
+         
+Explanation: External function calls don't cost any gas unless the blockchain state changes. To make an external call, you need the deployed contract address. 
+You also need to have the external contract defined or imported in the Solidity file where the caller contract is located.
+
+
+Sub Topics: func-call
  

@@ -296,8 +296,9 @@ In the snippet above, we make four internal function calls. The first call is `a
 External function calls are basically function calls to other contracts. In order to make an external function call, the parent contract should have defined the object of the callable contract and the 
 deployed address of the callable contract should be assigned to the created contract object. External function calls can be made using `object.functionIdentifier` - for example `g.send(8)`, where `g` is the 
 object of the callable contract and `send` is a function of that contract. For error handling during external calls, we use try/catch statements.
-
-example of an external call is shown below
+EVM considers a call to a non-existing contract to always succeed, so Solidity  uses the extcodesize opcode to check that the contract actually exists before calling it.  If the contract does not exist, an exception is thrown. Hence, the contract to which  the call is made should be defined in the file or imported into the file.
+A function call from one contract to another is not considered its own transaction; rather,  it's seen as a message call that's part of an overall transaction. However, an external  function call will be treated as a transaction if it modifies the state of the blockchain.
+Example of an external call is shown below
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
@@ -326,7 +327,6 @@ contract ExternalContract {
 ```
 In the code snippet above, we are calling the `send` function in the `ExternalContract` using the `CallerContract`. To do this, we first create a contract object of `ExternalContract` by its deployed address. 
 We then make an external call, setting the deployed address to the contract object `call`. The `call.send` function will send ether (in wei) to the address provided in the argument. However, before making the external call, 
-we need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more 
-than the sending value i.e, ether should be more than 100 wei in this case. 
+we need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more than the sending value i.e, ether should be more than 100 wei in this case. 
  
  
