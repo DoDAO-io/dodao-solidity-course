@@ -86,7 +86,7 @@ Sub Topics: decision-making
 
 ---
 
-##### How much parameters are required for defining a for loop in Solidity?  
+##### How many parameters are required for defining a `for` loop in Solidity?  
 
 - [ ]  three
 - [ ]  four
@@ -95,14 +95,20 @@ Sub Topics: decision-making
   
 Hint: noHint
          
-Explanation: The for loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.
+Explanation: The `for` loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.
+```solidity
+for(first param;second param(required);third param){
+  //body of the loop
+}
+```
+
 
 Sub Topics: loops-keywords
  
 
 ---
 
-##### What is the data type of the required parameter in the for loop?  
+##### What is the data type of the required parameter in the `for` loop?  
 
 - [x]  Boolean
 - [ ]  Integer
@@ -118,7 +124,7 @@ Sub Topics: loops-keywords
 
 ---
 
-##### How generally the primary argument withinside the for loop is executed?  
+##### How many times is the primary argument(first) within the `for` loop is executed?  
 
 - [ ]  Infinite
 - [x]  One
@@ -127,7 +133,7 @@ Sub Topics: loops-keywords
   
 Hint: noHint
          
-Explanation: The first argument in the for loop is executed only once.
+Explanation: The first argument in the `for` loop is executed only once.
 
 Sub Topics: loops-keywords
  
@@ -143,14 +149,21 @@ Sub Topics: loops-keywords
   
 Hint: If/else statments
          
-Explanation: We can define single if/else statements without curly braces.
+Explanation: We can define single if/else statements with/without curly braces.
 
 Sub Topics: decision-making
  
 
 ---
 
-##### How many times the third parameter will execute if the body of for loop is executed n times?  
+##### How many times will the third parameter be execute if the body of `for` loop is executed n times?
+for example in the below case the body of the for loop will execute for 5 times.
+```solidity
+for(uint i=1;i<=5;i++){
+  sum+=i;
+}
+```
+  
 
 - [ ]  n+1 times
 - [x]  n times
@@ -159,7 +172,7 @@ Sub Topics: decision-making
   
 Hint: noHint
          
-Explanation: The third parameter will be executed the same number of times as the for loop body.
+Explanation: The third parameter will be executed the same number of times as the `for` loop body. As shown in the example the third parameter `i++` will execute for 5 times which is same for the body of the loop.
 
 Sub Topics: loops-keywords
  
@@ -191,7 +204,7 @@ Sub Topics: loops-keywords
   
 Hint: Parameters/Arguments
          
-Explanation: The for loop requires one parameter and can take two optional parameters. The while loop only requires one parameter, which is a conditional statement.
+Explanation: The `while` loop requires only one parameter, and that is the conditional statement. The `for` loop can take three parameters.
 
 Sub Topics: loops-keywords
  
@@ -232,10 +245,10 @@ Sub Topics: loops-keywords
 
 ##### What keywords are used to define a do-while loop?  
 
-- [ ]  For keyword only
-- [ ]  While keyword only
-- [x]  Both do and while keywords
-- [ ]  Both if and while keywords
+- [ ]  `for` keyword only
+- [ ]  `while` keyword only
+- [x]  Both `do` and `while` keywords
+- [ ]  Both `if` and `while` keywords
   
 Hint: noHint
          
@@ -283,7 +296,7 @@ Sub Topics: loops-keywords
 - [ ]  It is used to handle errors
 - [ ]  Used for making a contract object
 - [ ]  Used for making external calls
-- [x]  Used to skip iteration
+- [x]  Used to skip rest of the steps in current iteration and start with next iteration
   
 Hint: noHint
          
@@ -319,7 +332,7 @@ Sub Topics: loops-keywords
   
 Hint: noHint
          
-Explanation: When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop altogether.
+Explanation: When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop in which the `break` keyword is defined.
 
 Sub Topics: loops-keywords
  
@@ -333,15 +346,20 @@ Sub Topics: loops-keywords
   
 Hint: noHint
          
-Explanation: We can return a value from a function by assigning the return variable to the value we want to return.
+Explanation: We can return a value from a function by assigning the return variable to the value we want to return. Example in the below snippet the product of the arguments is returned without the return keyword.
+```solidity
+   function product(uint x, uint y) public pure returns (uint answer) {
+      answer = x * y; //product is returned just by assigning the value to the defined variable
+   }
+```
+
 
 Sub Topics: loops-keywords
  
 
 ---
 
-##### Tell whether the following statement is true or false.
-the data types of returning values should be specified in the function using the keyword `returns`.
+##### the data types of returning values should be specified in the function using the keyword `returns`.
   
 
 - [x]  True
@@ -366,6 +384,16 @@ Sub Topics: loops-keywords
 Hint: Identifier
          
 Explanation: Internal function calls can be executed by using the function's identifier with arguments if they exist. The function that is being called should be defined in the same contract.
+Below code snippet is an example for internal function call.
+```solidity
+uint public addition = add(1, 2); // making an internal call using the function's identifier
+
+function add(uint a, uint b) public pure returns (uint output) {
+    output = a + b;
+}
+
+```
+
 
 Sub Topics: func-call
  
@@ -376,7 +404,7 @@ Sub Topics: func-call
 
 - [ ]  It is because EVM store memory of all internal function calls until the deployed contract is destroyed or demolished
 - [ ]  It is beacause internal function calls stores data into the storage data
-- [x]  It is because internal function calls are translated into simple jumps inside the EVM
+- [x]  It is because internal function calls are translated into simple jumps inside the EVM hence the current memory is not cleared
 - [ ]  None of the above
   
 Hint: noHint
@@ -390,8 +418,8 @@ Sub Topics: func-call
 
 ##### In the following expression, can you spot the error in the code?
  ```solidity
- function add(uint x,uint y) public pure {
- return x+y;
+ function add(uint x, uint y) public pure {
+    return x+y;
  }
  ```
   
@@ -403,7 +431,13 @@ Sub Topics: func-call
   
 Hint: Return keyword
          
-Explanation: The data type of returning values should be specified before returning in a function. The `returns(uint)` is missing in the above snippet.
+Explanation: The data type of returning values should be specified before returning in a function. The `returns(uint)` is missing in the above snippet. The solution is given below.
+```solidity
+function add(uint x, uint y) public pure returns (uint) {
+    return x+y;
+}
+```
+
 
 Sub Topics: loops-keywords
  
@@ -467,7 +501,7 @@ Sub Topics: func-call
 ##### What will happen if the external contract is not defined or imported in solidity file while making an external call?  
 
 - [ ]  The external call will be sent sucessfully
-- [x]  The external call will fail
+- [x]  The code will not compile
 - [ ]  In that the call will only be successful if the function that is called is not a payable function
 - [ ]  None of the above
   
@@ -482,10 +516,10 @@ Sub Topics: func-call
 
 ##### What is the correct syntax for an external call?  
 
-- [ ]  functionIdentifier(arguments)
-- [ ]  contractobject.functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract
-- [x]  contractobject.functionIdentifier(arguments)
-- [ ]  functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract
+- [ ]  `functionIdentifier(arguments)`
+- [ ]  `contractobject.functionIdentifier(addr,arguments)` , where `addr` is the  address of the external contract
+- [x]  `contractobject.functionIdentifier(arguments)`
+- [ ]  `functionIdentifier(addr,arguments)` , where `addr` is the  address of the external contract
   
 Hint: noHint
          

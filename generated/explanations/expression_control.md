@@ -73,10 +73,10 @@ This process repeats until the condition is false.
 Loops usually have three parameters, with the first parameter being executed only once at the start of the loop, the second parameter being the condition which is validated for the whole iteration of the loop, and the third parameter 
 being executed for every iteration except the first iteration. If the condition inside the loop is always true, however, the loop will become an infinite loop and the program will crash.
 
-syntax of the for loop 
+Syntax of the for loop 
 ```solidity
-for(first parameter;second parameter(condition);third parameter){
-  body of the for loop
+for(first parameter; second parameter(condition); third parameter){
+  //body of the for loop
 }
 ```
 
@@ -90,7 +90,7 @@ contract Loops {
     uint public sum = 0;
 
     function Summation(uint n) public { // this function will do summation till n and add it to the variable sum
-        for (uint i = 0; i <= n; i++) {// for loop is used for iterating till n
+        for (uint i = 0; i <= n; i++) { // for loop is used for iterating till n
             sum += i; 
         }
     }
@@ -106,10 +106,12 @@ While loops are very similar to `for` loops in that they can be used for iterati
 If that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, 
 it will become an infinite loop and the program will crash.
 
-syntax for while loop
+Syntax for while loop
 ```solidity
 while(condition){
-//body of while loop
+
+    //body of while loop
+
 }
 ```
 An example of using while loop in solidity
@@ -136,10 +138,10 @@ This code results in the sum of all even numbers from 0 to n.
 
 #### Do-While loop
 Do while loops are completely similar to while loop the main difference is the do while loop is executed atleast one time. Do-while loop is executed once for even false condition.
-syntax for do while loop
+Syntax for do while loop
 ```solidity
 do{
-  body of the do while loop
+  // Body of the do while loop
 }while(condition); // semi-colon is necessary
 
 ```
@@ -170,7 +172,7 @@ In general, it's best to minimize the use of loops in Solidity code in order to 
 Break is a keyword which is used to break or terminate the running loop. It is a very useful keyword. In some situation we need to terminate the loop after a certain condition is met in that case we may use
 `break` keyword. Break keyword is used inside loops mostly with if/else statements. When compiler encounters break keyword it jumps out of the loop.
 
-example showing the usage of break keyword
+Example showing the usage of break keyword
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
@@ -201,7 +203,7 @@ the next iteration of the loop. This means that the control is transferred to th
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
 
-example showing the usage of continue keyword
+Example showing the usage of continue keyword
 contract Keywords {
     uint public sumeven = 0;
 
@@ -264,7 +266,7 @@ These function calls are translated into simple jumps inside the EVM. This has t
 You can use the function's identifier to do an internal function call, no matter where the function is defined. As long as it's defined in the contract, the internal function call will take place. 
 You can call internal functions at any point in your code - for example, you could use them as other function's arguments, or inside if/else statements.
 
-example of an internally called function is shown below
+Example of an internally called function is shown below
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;

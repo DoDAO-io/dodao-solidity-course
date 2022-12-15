@@ -4742,19 +4742,19 @@
           "title": "For, While, Do While Loops",
           "shortTitle": "Loops",
           "key": "loops-for-while-do",
-          "details": "#### For Loops\nFor loops are used to iterate and loop through different conditions. You can define for loops only inside a function or function modifier, similar to if/else statements.\nFor loop is defined by the keyword `for`. It takes three parameters, two of which are optional and one required. The parameters are seperated by semi-colon. The first parameter is optional, where variables can be initialized. \nThe second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering \nthem as needed. Anything can be done in the optional parameters - for example, in the first parameter we can do operations instead of initializing variables, and in the third parameter we can initialize variables or do other operations.\n\n##### Working of for loop \nThe compiler will execute the first parameter of the for loop only once. It will then check the condition and, if it's true, execute the body of the for loop. After executing the third parameter, it will check the condition again. \nThis process repeats until the condition is false.\n\nLoops usually have three parameters, with the first parameter being executed only once at the start of the loop, the second parameter being the condition which is validated for the whole iteration of the loop, and the third parameter \nbeing executed for every iteration except the first iteration. If the condition inside the loop is always true, however, the loop will become an infinite loop and the program will crash.\n\nsyntax of the for loop \n```solidity\nfor(first parameter;second parameter(condition);third parameter){\n  body of the for loop\n}\n```\n\nAn example of using for loop in solidity\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public sum = 0;\n\n    function Summation(uint n) public { // this function will do summation till n and add it to the variable sum\n        for (uint i = 0; i <= n; i++) {// for loop is used for iterating till n\n            sum += i; \n        }\n    }\n}\n\n```\nThe value of the `sum` variable is initially set to zero. When the `Summation` function is called with any positive integer as an argument, the for loop starts executing. The value of `i` is set to zero and the compiler \nchecks for the condition `i<=n`. If that condition is true, it will execute the body and then execute the third parameter (`i++`). It will then check the condition again to see if it is true. If so, the process will repeat. \nThe loop will only terminate if the condition is not met, which in this case is when `i>n`. Upon completion of the loop, we should get a sum that is equal to the summation of 0 to n.\n\n#### While loop \nWhile loops are very similar to `for` loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. \nIf that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, \nit will become an infinite loop and the program will crash.\n\nsyntax for while loop\n```solidity\nwhile(condition){\n//body of while loop\n}\n```\nAn example of using while loop in solidity\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public evensum = 0;\n\n    function sumEven(uint n) public {// this function will do summation of even numbers till n\n        uint i = 0;\n        while (i <= n) {  // while loop is used for iteration\n            if (i % 2 == 0) sum += i; // if statement for filtering even numbers till n\n            i++;\n        }\n    }\n}\n\n```\nIn the code snippet above, we have initialized a variable called `evensum` with a value of zero. The function `sumEven` is called with a positive integer, and \nif the condition `i<=n` is true, the while loop will start executing. The loop will continue until the condition is no longer true - in this case, when `i>n`. \nThis code results in the sum of all even numbers from 0 to n.\n\n#### Do-While loop\nDo while loops are completely similar to while loop the main difference is the do while loop is executed atleast one time. Do-while loop is executed once for even false condition.\nsyntax for do while loop\n```solidity\ndo{\n  body of the do while loop\n}while(condition); // semi-colon is necessary\n\n```\nExample showing how to use do while loop.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public i = 0;\n\n    function doWhile() public {\n        do { // do while loop is used for iteration\n            i++;\n        } while (1 > 2); // false condition\n    }\n}\n\n```\nIn the above code, we have initialized `i=0`. When the function `doWhile` gets called, it executes the do-while loop. Even though the condition `1>2` is false, the loop will execute for at least one time, \nmeaning the value of `i` will be one when the function is called once. If the function is called `n` times, the loop will execute `n` times and thus the value of `i` will be `n`.\nWe have used a false condition to demonstrate how do-while loops work.\n\nIn general, it's best to minimize the use of loops in Solidity code in order to reduce gas fees. By avoiding loops, you can save a lot of gas because it prevents computationally-heavy operations.\n"
+          "details": "#### For Loops\nFor loops are used to iterate and loop through different conditions. You can define for loops only inside a function or function modifier, similar to if/else statements.\nFor loop is defined by the keyword `for`. It takes three parameters, two of which are optional and one required. The parameters are seperated by semi-colon. The first parameter is optional, where variables can be initialized. \nThe second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering \nthem as needed. Anything can be done in the optional parameters - for example, in the first parameter we can do operations instead of initializing variables, and in the third parameter we can initialize variables or do other operations.\n\n##### Working of for loop \nThe compiler will execute the first parameter of the for loop only once. It will then check the condition and, if it's true, execute the body of the for loop. After executing the third parameter, it will check the condition again. \nThis process repeats until the condition is false.\n\nLoops usually have three parameters, with the first parameter being executed only once at the start of the loop, the second parameter being the condition which is validated for the whole iteration of the loop, and the third parameter \nbeing executed for every iteration except the first iteration. If the condition inside the loop is always true, however, the loop will become an infinite loop and the program will crash.\n\nSyntax of the for loop \n```solidity\nfor(first parameter; second parameter(condition); third parameter){\n  //body of the for loop\n}\n```\n\nAn example of using for loop in solidity\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public sum = 0;\n\n    function Summation(uint n) public { // this function will do summation till n and add it to the variable sum\n        for (uint i = 0; i <= n; i++) { // for loop is used for iterating till n\n            sum += i; \n        }\n    }\n}\n\n```\nThe value of the `sum` variable is initially set to zero. When the `Summation` function is called with any positive integer as an argument, the for loop starts executing. The value of `i` is set to zero and the compiler \nchecks for the condition `i<=n`. If that condition is true, it will execute the body and then execute the third parameter (`i++`). It will then check the condition again to see if it is true. If so, the process will repeat. \nThe loop will only terminate if the condition is not met, which in this case is when `i>n`. Upon completion of the loop, we should get a sum that is equal to the summation of 0 to n.\n\n#### While loop \nWhile loops are very similar to `for` loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. \nIf that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, \nit will become an infinite loop and the program will crash.\n\nSyntax for while loop\n```solidity\nwhile(condition){\n\n    //body of while loop\n\n}\n```\nAn example of using while loop in solidity\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public evensum = 0;\n\n    function sumEven(uint n) public {// this function will do summation of even numbers till n\n        uint i = 0;\n        while (i <= n) {  // while loop is used for iteration\n            if (i % 2 == 0) sum += i; // if statement for filtering even numbers till n\n            i++;\n        }\n    }\n}\n\n```\nIn the code snippet above, we have initialized a variable called `evensum` with a value of zero. The function `sumEven` is called with a positive integer, and \nif the condition `i<=n` is true, the while loop will start executing. The loop will continue until the condition is no longer true - in this case, when `i>n`. \nThis code results in the sum of all even numbers from 0 to n.\n\n#### Do-While loop\nDo while loops are completely similar to while loop the main difference is the do while loop is executed atleast one time. Do-while loop is executed once for even false condition.\nSyntax for do while loop\n```solidity\ndo{\n  // Body of the do while loop\n}while(condition); // semi-colon is necessary\n\n```\nExample showing how to use do while loop.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public i = 0;\n\n    function doWhile() public {\n        do { // do while loop is used for iteration\n            i++;\n        } while (1 > 2); // false condition\n    }\n}\n\n```\nIn the above code, we have initialized `i=0`. When the function `doWhile` gets called, it executes the do-while loop. Even though the condition `1>2` is false, the loop will execute for at least one time, \nmeaning the value of `i` will be one when the function is called once. If the function is called `n` times, the loop will execute `n` times and thus the value of `i` will be `n`.\nWe have used a false condition to demonstrate how do-while loops work.\n\nIn general, it's best to minimize the use of loops in Solidity code in order to reduce gas fees. By avoiding loops, you can save a lot of gas because it prevents computationally-heavy operations.\n"
         },
         {
           "title": "Break, Continue and return keywords",
           "shortTitle": "Keywords",
           "key": "keywords",
-          "details": "#### Break\nBreak is a keyword which is used to break or terminate the running loop. It is a very useful keyword. In some situation we need to terminate the loop after a certain condition is met in that case we may use\n`break` keyword. Break keyword is used inside loops mostly with if/else statements. When compiler encounters break keyword it jumps out of the loop.\n\nexample showing the usage of break keyword\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    uint[] numbers = [1, 2, 3, 4, 5];\n    event elementcheck(string message);\n\n    function checkNumber(uint n) public {\n        for (uint i = 0; i < n; i++) {\n            if (numbers[i] == n) {\n                emit elementcheck(\"element is found\");\n                break;\n            }\n        }\n    }\n}\n\n```\nIn the code snippet provided, `numbers` is an array of unsigned integers. If `checkNumber` is called with a positive number as an argument, the for loop will be executed and the if condition will validate the condition `numbers[i]==n`.\nIf that condition is satisfied,  the event will be emitted and the loop will be terminated using the break keyword.\n\n#### Continue\nThe `continue` keyword is used to skip an iteration of a loop. In some cases, we need to skip an iteration of the loop when certain conditions are met. If the compiler encounters the `continue` keyword, it will jump to \nthe next iteration of the loop. This means that the control is transferred to the loop check condition. If the condition is true, the next iteration starts.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nexample showing the usage of continue keyword\ncontract Keywords {\n    uint public sumeven = 0;\n\n    function summationOfEven(uint n) public {\n        // this function will sum even numbers from one to n\n        for (uint i = 0; i <= n; i++) {\n            if (i % 2 != 0) {\n                continue; // continue keyword helps skipping the odd numbers in this case\n            } else {\n                sumeven += i;\n            }\n        }\n    }\n\n    function reset() public {\n        // rests the value of sumeven to zero\n        sumeven = 0;\n    }\n}\n\n```\nIn the code snippet above, we have initialized `sumeven=0`. When the function `summationOfEven` is called with a positive integer n, the for loop is executed. If the condition `i%2!=0` is satisfied, \nthe keyword `continue` will transfer control to the loop check condition and start the next iteration. In this case, `continue` helps us to skip iterations of odd numbers.\n\n#### Return \nReturn is a keyword which is used to return values/objects from a function. Whenever `return` is called the function will stop execution and return the value provided in the return statement.\nWe can return values from a function in two ways: One way is to normally return the value using the `return` keyword. Another way is to define a return variable and assign the return value to that\nvariable. The function `add` below defines a return variable `sum`. \n\nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n```solidity\nfunction1(uint x)public returns(uint){\n  return x%2; returning using the return keyword\n}\n\nfunction2(uint y)public returns(uint answer){\n  answer = y%2; // returning the value by assigning return variable answer\n}\n\n```\nIn the above snippet both the functions performs same operation when an argument is passed to but they are returning values it in different ways.\n\nExample of using return keyword \n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    function sum(uint a, uint b) public pure returns (uint, uint, uint, uint) {\n        return (a + b, b % a, a % b, a * b);\n    }\n}\n```\n"
+          "details": "#### Break\nBreak is a keyword which is used to break or terminate the running loop. It is a very useful keyword. In some situation we need to terminate the loop after a certain condition is met in that case we may use\n`break` keyword. Break keyword is used inside loops mostly with if/else statements. When compiler encounters break keyword it jumps out of the loop.\n\nExample showing the usage of break keyword\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    uint[] numbers = [1, 2, 3, 4, 5];\n    event elementcheck(string message);\n\n    function checkNumber(uint n) public {\n        for (uint i = 0; i < n; i++) {\n            if (numbers[i] == n) {\n                emit elementcheck(\"element is found\");\n                break;\n            }\n        }\n    }\n}\n\n```\nIn the code snippet provided, `numbers` is an array of unsigned integers. If `checkNumber` is called with a positive number as an argument, the for loop will be executed and the if condition will validate the condition `numbers[i]==n`.\nIf that condition is satisfied,  the event will be emitted and the loop will be terminated using the break keyword.\n\n#### Continue\nThe `continue` keyword is used to skip an iteration of a loop. In some cases, we need to skip an iteration of the loop when certain conditions are met. If the compiler encounters the `continue` keyword, it will jump to \nthe next iteration of the loop. This means that the control is transferred to the loop check condition. If the condition is true, the next iteration starts.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nExample showing the usage of continue keyword\ncontract Keywords {\n    uint public sumeven = 0;\n\n    function summationOfEven(uint n) public {\n        // this function will sum even numbers from one to n\n        for (uint i = 0; i <= n; i++) {\n            if (i % 2 != 0) {\n                continue; // continue keyword helps skipping the odd numbers in this case\n            } else {\n                sumeven += i;\n            }\n        }\n    }\n\n    function reset() public {\n        // rests the value of sumeven to zero\n        sumeven = 0;\n    }\n}\n\n```\nIn the code snippet above, we have initialized `sumeven=0`. When the function `summationOfEven` is called with a positive integer n, the for loop is executed. If the condition `i%2!=0` is satisfied, \nthe keyword `continue` will transfer control to the loop check condition and start the next iteration. In this case, `continue` helps us to skip iterations of odd numbers.\n\n#### Return \nReturn is a keyword which is used to return values/objects from a function. Whenever `return` is called the function will stop execution and return the value provided in the return statement.\nWe can return values from a function in two ways: One way is to normally return the value using the `return` keyword. Another way is to define a return variable and assign the return value to that\nvariable. The function `add` below defines a return variable `sum`. \n\nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n```solidity\nfunction1(uint x)public returns(uint){\n  return x%2; returning using the return keyword\n}\n\nfunction2(uint y)public returns(uint answer){\n  answer = y%2; // returning the value by assigning return variable answer\n}\n\n```\nIn the above snippet both the functions performs same operation when an argument is passed to but they are returning values it in different ways.\n\nExample of using return keyword \n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    function sum(uint a, uint b) public pure returns (uint, uint, uint, uint) {\n        return (a + b, b % a, a % b, a * b);\n    }\n}\n```\n"
         },
         {
           "title": "Internal and External function calls",
           "shortTitle": "Function calls",
           "key": "function-calls",
-          "details": "#### Internal function calls\nInternal function calls are function calls that happen inside the contract. You can do an internal function call by directly using the function's identifier. Recursive calling also counts as an internal function call.\nThese function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient. \nYou can use the function's identifier to do an internal function call, no matter where the function is defined. As long as it's defined in the contract, the internal function call will take place. \nYou can call internal functions at any point in your code - for example, you could use them as other function's arguments, or inside if/else statements.\n\nexample of an internally called function is shown below\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract FunctionCall {\n    uint public addition = add(1, 2);\n    uint public product = multiply(add(2, 3), add(2, 1));\n\n    function add(uint a, uint b) public pure returns (uint output) {\n        output = a + b;\n    }\n\n    function multiply(uint a, uint b) public pure returns (uint) {\n        return a * b;\n    }\n\n    function validate() public {\n        if (add(1, 2) <= multiply(1, 3)) {\n            addition = 100;\n        }\n    }\n}\n\n```\nIn the snippet above, we make four internal function calls. The first call is `add(1,2)` and the second and third calls are made within the argument of the function call `product`.\n\n\n#### External function calls\nExternal function calls are basically function calls to other contracts. In order to make an external function call, the parent contract should have defined the object of the callable contract and the \ndeployed address of the callable contract should be assigned to the created contract object. External function calls can be made using `object.functionIdentifier` - for example `g.send(8)`, where `g` is the \nobject of the callable contract and `send` is a function of that contract. For error handling during external calls, we use try/catch statements.\nEVM considers a call to a non-existing contract to always succeed, so Solidity  uses the extcodesize opcode to check that the contract actually exists before calling it.  If the contract does not exist, an exception is thrown. Hence, the contract to which  the call is made should be defined in the file or imported into the file.\nA function call from one contract to another is not considered its own transaction; rather,  it's seen as a message call that's part of an overall transaction. However, an external  function call will be treated as a transaction if it modifies the state of the blockchain.\nExample of an external call is shown below\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract CallerContract {\n    ExternalContract call;\n\n    function set(ExternalContract addr) external {\n        call = addr;// setting the contract object\n    }\n\n    function callSend(address payable addr) public {// address should be payable\n        call.send(addr);\n    }\n}\n\ncontract ExternalContract {\n    function send(address payable addr) external payable {\n        (bool sucess, ) = addr.call{value: 100}(\"\"); //sending 100 wei\n        require(sucess, \"transaction failed\"); \n    }\n\n    receive() external payable {}\n}\n\n```\nIn the code snippet above, we are calling the `send` function in the `ExternalContract` using the `CallerContract`. To do this, we first create a contract object of `ExternalContract` by its deployed address. \nWe then make an external call, setting the deployed address to the contract object `call`. The `call.send` function will send ether (in wei) to the address provided in the argument. However, before making the external call, \nwe need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more than the sending value i.e, ether should be more than 100 wei in this case. \n"
+          "details": "#### Internal function calls\nInternal function calls are function calls that happen inside the contract. You can do an internal function call by directly using the function's identifier. Recursive calling also counts as an internal function call.\nThese function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient. \nYou can use the function's identifier to do an internal function call, no matter where the function is defined. As long as it's defined in the contract, the internal function call will take place. \nYou can call internal functions at any point in your code - for example, you could use them as other function's arguments, or inside if/else statements.\n\nExample of an internally called function is shown below\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract FunctionCall {\n    uint public addition = add(1, 2);\n    uint public product = multiply(add(2, 3), add(2, 1));\n\n    function add(uint a, uint b) public pure returns (uint output) {\n        output = a + b;\n    }\n\n    function multiply(uint a, uint b) public pure returns (uint) {\n        return a * b;\n    }\n\n    function validate() public {\n        if (add(1, 2) <= multiply(1, 3)) {\n            addition = 100;\n        }\n    }\n}\n\n```\nIn the snippet above, we make four internal function calls. The first call is `add(1,2)` and the second and third calls are made within the argument of the function call `product`.\n\n\n#### External function calls\nExternal function calls are basically function calls to other contracts. In order to make an external function call, the parent contract should have defined the object of the callable contract and the \ndeployed address of the callable contract should be assigned to the created contract object. External function calls can be made using `object.functionIdentifier` - for example `g.send(8)`, where `g` is the \nobject of the callable contract and `send` is a function of that contract. For error handling during external calls, we use try/catch statements.\nEVM considers a call to a non-existing contract to always succeed, so Solidity  uses the extcodesize opcode to check that the contract actually exists before calling it.  If the contract does not exist, an exception is thrown. Hence, the contract to which  the call is made should be defined in the file or imported into the file.\nA function call from one contract to another is not considered its own transaction; rather,  it's seen as a message call that's part of an overall transaction. However, an external  function call will be treated as a transaction if it modifies the state of the blockchain.\nExample of an external call is shown below\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract CallerContract {\n    ExternalContract call;\n\n    function set(ExternalContract addr) external {\n        call = addr;// setting the contract object\n    }\n\n    function callSend(address payable addr) public {// address should be payable\n        call.send(addr);\n    }\n}\n\ncontract ExternalContract {\n    function send(address payable addr) external payable {\n        (bool sucess, ) = addr.call{value: 100}(\"\"); //sending 100 wei\n        require(sucess, \"transaction failed\"); \n    }\n\n    receive() external payable {}\n}\n\n```\nIn the code snippet above, we are calling the `send` function in the `ExternalContract` using the `CallerContract`. To do this, we first create a contract object of `ExternalContract` by its deployed address. \nWe then make an external call, setting the deployed address to the contract object `call`. The `call.send` function will send ether (in wei) to the address provided in the argument. However, before making the external call, \nwe need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more than the sending value i.e, ether should be more than 100 wei in this case. \n"
         }
       ],
       "questions": [
@@ -4762,13 +4762,15 @@
           "uuid": "1e754d66-092a-438f-b75e-8fc637f6cee9",
           "type": "SingleChoice",
           "content": "What will happen if we declared `else` statement without any `if` statement?",
-          "hint": "NoHint",
+          "hint": "Else statement",
           "explanation": "Else statement can be defined only when the `if` statement is defined prior to it and they should be continuous i.e, no codes should lie between them.",
           "answerKeys": [
             "C"
           ],
-          "subTopics": [],
-          "difficultyLevel": "Medium",
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
           "choices": [
             {
               "content": "Compiler checks for the condition in the else statement",
@@ -4825,13 +4827,15 @@
           "uuid": "86e9b299-6751-4ed5-adf8-d1af7fe2b2ab",
           "type": "SingleChoice",
           "content": "Can we define `else if` block in Solidity?",
-          "hint": "NoHint",
-          "explanation": "`else if` doesn't exist in solidity. `else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. `else if` does exist in other programming languages like C, C++, JavaScript.",
+          "hint": "Doesn't exist",
+          "explanation": "Else if doesn't exist in solidity. `Else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. Else if do exist in other programming langiages like c,c++, JavaScript.",
           "answerKeys": [
             "B"
           ],
-          "subTopics": [],
-          "difficultyLevel": "Medium",
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
           "choices": [
             {
               "content": "Else if block can be defined but only inside the struct",
@@ -4855,13 +4859,15 @@
           "uuid": "7eb527f6-5464-419c-a459-7806e4021efc",
           "type": "SingleChoice",
           "content": "Is it possible to convert non-boolean to boolean in solidity example `if(1)`?",
-          "hint": "NoHint",
+          "hint": "Boolean",
           "explanation": "We cannot do type conversion from non-boolean to boolean in solidity",
           "answerKeys": [
             "A"
           ],
-          "subTopics": [],
-          "difficultyLevel": "Medium",
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
           "choices": [
             {
               "content": "No",
@@ -4875,7 +4881,7 @@
         },
         {
           "uuid": "e42f5064-acfd-400a-9c6d-87f4d28e0c8f",
-          "type": "MultipleChoice",
+          "type": "SingleChoice",
           "content": "What is the datatype inside the paranthesis of an `if` statement?",
           "hint": "noHint",
           "explanation": "The paranthesis in if statement contains a condition so the data type should be either true or false hence it is boolean value.",
@@ -4908,9 +4914,9 @@
         {
           "uuid": "33765469-a9f8-41d7-903a-3ee4e11f2483",
           "type": "SingleChoice",
-          "content": "How much parameters are required for defining a for loop in Solidity?",
+          "content": "How many parameters are required for defining a `for` loop in Solidity?",
           "hint": "noHint",
-          "explanation": "The for loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.",
+          "explanation": "The `for` loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.\n```solidity\nfor(first param;second param(required);third param){\n  //body of the loop\n}\n```\n",
           "answerKeys": [
             "C"
           ],
@@ -4940,7 +4946,7 @@
         {
           "uuid": "f4cb54b6-26de-4f2b-b879-d621fcd951ea",
           "type": "SingleChoice",
-          "content": "What is the data type of the required parameter in the for loop?",
+          "content": "What is the data type of the required parameter in the `for` loop?",
           "hint": "noHint",
           "explanation": "The required argument should be a conditional statement, hence the data type is boolean.",
           "answerKeys": [
@@ -4972,9 +4978,9 @@
         {
           "uuid": "ea3b6f23-b673-4f9a-b928-2bc1ba77ab65",
           "type": "SingleChoice",
-          "content": "How generally the primary argument withinside the for loop is executed?",
+          "content": "How many times is the primary argument(first) within the `for` loop is executed?",
           "hint": "noHint",
-          "explanation": "The first argument in the for loop is executed only once.",
+          "explanation": "The first argument in the `for` loop is executed only once.",
           "answerKeys": [
             "B"
           ],
@@ -5006,7 +5012,7 @@
           "type": "SingleChoice",
           "content": "Is it possible to define single line if/else statement?",
           "hint": "If/else statments",
-          "explanation": "We can define single if/else statements without curly braces.",
+          "explanation": "We can define single if/else statements with/without curly braces.",
           "answerKeys": [
             "C"
           ],
@@ -5036,9 +5042,9 @@
         {
           "uuid": "078cc470-7699-49ac-9122-8b51aa6349ec",
           "type": "SingleChoice",
-          "content": "How many times the third parameter will execute if the body of for loop is executed n times?",
+          "content": "How many times will the third parameter be execute if the body of `for` loop is executed n times?\nfor example in the below case the body of the for loop will execute for 5 times.\n```solidity\nfor(uint i=1;i<=5;i++){\n  sum+=i;\n}\n```\n",
           "hint": "noHint",
-          "explanation": "The third parameter will be executed the same number of times as the for loop body.",
+          "explanation": "The third parameter will be executed the same number of times as the `for` loop body. As shown in the example the third parameter `i++` will execute for 5 times which is same for the body of the loop.",
           "answerKeys": [
             "B"
           ],
@@ -5102,7 +5108,7 @@
           "type": "SingleChoice",
           "content": "What is the difference between for loop and while loop?",
           "hint": "Parameters/Arguments",
-          "explanation": "The for loop requires one parameter and can take two optional parameters. The while loop only requires one parameter, which is a conditional statement.",
+          "explanation": "The `while` loop requires only one parameter, and that is the conditional statement. The `for` loop can take three parameters.",
           "answerKeys": [
             "D"
           ],
@@ -5208,19 +5214,19 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "content": "For keyword only",
+              "content": "`for` keyword only",
               "key": "A"
             },
             {
-              "content": "While keyword only",
+              "content": "`while` keyword only",
               "key": "B"
             },
             {
-              "content": "Both do and while keywords",
+              "content": "Both `do` and `while` keywords",
               "key": "C"
             },
             {
-              "content": "Both if and while keywords",
+              "content": "Both `if` and `while` keywords",
               "key": "D"
             }
           ]
@@ -5316,7 +5322,7 @@
               "key": "C"
             },
             {
-              "content": "Used to skip iteration",
+              "content": "Used to skip rest of the steps in current iteration and start with next iteration",
               "key": "D"
             }
           ]
@@ -5358,7 +5364,7 @@
           "type": "SingleChoice",
           "content": "What will happen if the compiler encounters an `break` keyword inside a nested for loop?",
           "hint": "noHint",
-          "explanation": "When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop altogether.",
+          "explanation": "When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop in which the `break` keyword is defined.",
           "answerKeys": [
             "B"
           ],
@@ -5390,7 +5396,7 @@
           "type": "SingleChoice",
           "content": "In Solidity, is it possible to return a value from a function without using the return keyword?",
           "hint": "noHint",
-          "explanation": "We can return a value from a function by assigning the return variable to the value we want to return.",
+          "explanation": "We can return a value from a function by assigning the return variable to the value we want to return. Example in the below snippet the product of the arguments is returned without the return keyword.\n```solidity\n   function product(uint x, uint y) public pure returns (uint answer) {\n      answer = x * y; //product is returned just by assigning the value to the defined variable\n   }\n```\n",
           "answerKeys": [
             "A"
           ],
@@ -5412,7 +5418,7 @@
         {
           "uuid": "3fa16d55-f4cd-4ab5-bfa6-279353985b77",
           "type": "SingleChoice",
-          "content": "Tell whether the following statement is true or false.\nthe data types of returning values should be specified in the function using the keyword `returns`.\n",
+          "content": "the data types of returning values should be specified in the function using the keyword `returns`.\n",
           "hint": "noHint",
           "explanation": "We need to specify the data type of returning values in the function using the keyword `returns`.",
           "answerKeys": [
@@ -5438,7 +5444,7 @@
           "type": "SingleChoice",
           "content": "How to perform an internal function call?",
           "hint": "Identifier",
-          "explanation": "Internal function calls can be executed by using the function's identifier with arguments if they exist. The function that is being called should be defined in the same contract.",
+          "explanation": "Internal function calls can be executed by using the function's identifier with arguments if they exist. The function that is being called should be defined in the same contract.\nBelow code snippet is an example for internal function call.\n```solidity\nuint public addition = add(1, 2); // making an internal call using the function's identifier\n\nfunction add(uint a, uint b) public pure returns (uint output) {\n    output = a + b;\n}\n\n```\n",
           "answerKeys": [
             "B"
           ],
@@ -5488,7 +5494,7 @@
               "key": "B"
             },
             {
-              "content": "It is because internal function calls are translated into simple jumps inside the EVM",
+              "content": "It is because internal function calls are translated into simple jumps inside the EVM hence the current memory is not cleared",
               "key": "C"
             },
             {
@@ -5500,9 +5506,9 @@
         {
           "uuid": "3e5264d4-18a8-4a6a-a2e4-da1fcfa2c17b",
           "type": "SingleChoice",
-          "content": "In the following expression, can you spot the error in the code?\n ```solidity\n function add(uint x,uint y) public pure {\n return x+y;\n }\n ```\n",
+          "content": "In the following expression, can you spot the error in the code?\n ```solidity\n function add(uint x, uint y) public pure {\n    return x+y;\n }\n ```\n",
           "hint": "Return keyword",
-          "explanation": "The data type of returning values should be specified before returning in a function. The `returns(uint)` is missing in the above snippet.",
+          "explanation": "The data type of returning values should be specified before returning in a function. The `returns(uint)` is missing in the above snippet. The solution is given below.\n```solidity\nfunction add(uint x, uint y) public pure returns (uint) {\n    return x+y;\n}\n```\n",
           "answerKeys": [
             "B"
           ],
@@ -5644,7 +5650,7 @@
               "key": "A"
             },
             {
-              "content": "The external call will fail",
+              "content": "The code will not compile",
               "key": "B"
             },
             {
@@ -5672,19 +5678,19 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "content": "functionIdentifier(arguments)",
+              "content": "`functionIdentifier(arguments)`",
               "key": "A"
             },
             {
-              "content": "contractobject.functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract",
+              "content": "`contractobject.functionIdentifier(addr,arguments)` , where `addr` is the  address of the external contract",
               "key": "B"
             },
             {
-              "content": "contractobject.functionIdentifier(arguments)",
+              "content": "`contractobject.functionIdentifier(arguments)`",
               "key": "C"
             },
             {
-              "content": "functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract",
+              "content": "`functionIdentifier(addr,arguments)` , where `addr` is the  address of the external contract",
               "key": "D"
             }
           ]
@@ -5789,15 +5795,48 @@
       ],
       "readings": [
         {
-          "uuid": "5bfe6b20-4efc-48f8-a981-49d86534ff19",
-          "title": "title",
-          "shortTitle": "short title",
+          "uuid": "4cd97b5c-4c1d-49b7-b991-8e7b9872e82b",
+          "title": "If/else statements in Solidity",
+          "shortTitle": "If/else statements",
           "type": "YoutubeVideo",
-          "url": "url",
+          "url": "https://www.youtube.com/watch?v=71cmPaD_AnQ",
           "subTopics": [
             "decision-making"
           ],
-          "details": "details\n"
+          "details": "If/else statements are very useful in controlling the logic of the code. This video explains how to \nuse if/else statements, as well as where and when to use them.\n"
+        },
+        {
+          "uuid": "7a5b1b50-ab1c-4f30-bc09-834f7e68d847",
+          "title": "For loop and while in solidity",
+          "shortTitle": "For and while loop",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=SB705OK3bUg",
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "details": "This video covers\n1) For loop in solidity\n2) A sample program using for loop\n3) While loop in solidity\n4) A sample program using while loop\n5) usage of break keyword\n"
+        },
+        {
+          "uuid": "0184b54f-3e26-43a0-94be-31a89765b1a9",
+          "title": "Break and continue keywords",
+          "shortTitle": "keywords",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=39kRBGxviA4",
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "details": "Break and continue are very useful to control the loops. This video explains how to use `break` and `continue` keywords.\n"
+        },
+        {
+          "uuid": "d5458c2b-f383-4c5b-a790-d3348ebb1653",
+          "title": "External function call in Solidity",
+          "shortTitle": "External call",
+          "type": "YoutubeVideo",
+          "url": "https://www.youtube.com/watch?v=vBRUB9X0TEU",
+          "subTopics": [
+            "func-call"
+          ],
+          "details": "This video covers external function call in Solidity. These calls are function calls to other contracts.\nThis video explains how to make external function calls.\n"
         }
       ],
       "summaries": [
@@ -5805,19 +5844,19 @@
           "title": "Control Structure",
           "shortTitle": "Control Structure",
           "key": "decision-making",
-          "details": "- if/else\n"
+          "details": "It is only `if` statements that require a condition; else statements do not need a condition. The compiler checks each `if` statement but it checks the `else` statement \nonly when all of the `if` statements defined above it fail. The `else` statement can only be defined when the `if` statement is defined prior to it, and they should be continuous - no other \ncodes should lie between the `if` and `else` blocks. If/else statements can only be declared inside functions or function modifiers.\nSyntax of the if/else statements.\n\n```\nif(condition){\n  //body of the if statement\n}\nif(condition) //single line if statment;\nelse{ \n  //body of the else statement\n}\n\n```\n\nExample of the if/else statement in solidity is given below. In the below code snippetthe the `if` statment will check for the value of `x`. If the value of `x` exceeds 100 `else` statement will be executed.\n\n```solidity\n  // SPDX-License-Identifier: MIT\n  pragma solidity ^0.8.5;\n\n  contract SampleContract1 {\n      uint public number;\n\n      function setNumber(uint x) public {\n          if (x <= 100) {\n              number = x;\n          } else {\n              revert(\"The value should be less than 10\");\n          }\n      }\n  }\n\n```\n"
         },
         {
           "title": "For, While and Do-while Loops and Keywords",
           "shortTitle": "Loops and Keywords",
           "key": "loops-keywords",
-          "details": "- for\n- while\n- do\n- break,continue\n- return\n"
+          "details": "#### For loop\nThe for loop has three parameters, only one of which is required. The first parameter is executed only once at the start of the for loop. The second parameter is a condition that's checked for each iteration of the loop. \nThe third parameter is executed after each iteration of the for loop. The for loop is defined by the keyword `for`, and the parameters are separated by a semi-colon (`;`).\nThe for loop terminates if the condition is false. It can only be defined inside a function or inside a function modifier.\n\nSyntax of the for loop\n```solidity\nfor(first param; second param(condition); third param){\n  //body of the for loop\n}\n\n```\n\n#### While\nThe `while` loop will take a single parameter, which is a conditional statement. The `while` loop will terminate only when the condition is false. It is defined using the keyword `while`.\nSimilarly to the `for` loop, the `while` loop also should be defined inside a function or function modifier in Solidity.\n\nSyntax of while loop\n```solidity\nwhile(condition){\n  //body of the while loop\n}\n\n```\n\n#### Do-While loop\nThe do-while loop is very similar to the while loop, with the main difference being that the do-while loop will be executed at least one time. If the condition is false, \nthe do-while loop will execute for one time. This is because it first runs the body of the loop and then checks the condition. The do-while loop can only be defined \ninside a function or modifier. It is defined using two keywords: `do` and `while`.\n\nSyntax of do-while loop\n```solidity\n  do{\n    // Body of the do-while loop\n  }while(condition); // semi-colon is necessary\n\n```\nExample showing how to use do while loop. The do-while loop given below will execute for one time even though the condition `1>2` is false.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public i = 0;\n\n    function doWhile() public {\n        do { // do while loop is used for iteration\n            i++;\n        } while (1 > 2); // false condition\n    }\n}\n```\n\n#### Break and Continue keywords\nThe `break` keyword is used to terminate the loop Whenever required and the `continue` keyword is used to skip the current iteration of the loop. When the compiler encounters `break` keyword it will terminate the loop in which it is located.\nwhen compiler encounters `continue` keyword it will jump directly to the next iteration without executing the code below that. The `break` and `continue` keywords can be defined only inside the loop or within the body of the loop.\n\n#### Return keyword\nThe `return` keyword is used to return values from a function. When compiler encounters `return` keyword in the function it will stop executing the code in the function and return the specified value.\nIn the below snippet the function `add` will return the sum of the arguments using the keyword `return`.\n```solidity\ncontract SampleContract1 {\n    function add(uint x, uint y) public returns (uint) {\n      return x + y;\n    }\n}\n\n```\n"
         },
         {
           "title": "Function Calls",
           "shortTitle": "Function Calls",
           "key": "func-call",
-          "details": "- Internal Function Calls\n- External Function Calls\n"
+          "details": "#### Internal Function Calls\nInternal function calls are function calls that occur within the confines of the contract. You can make an internal function call by using the function's identifier.\nThese function calls are converted into simple jumps within the EVM, so the current memory is not cleared. This means that passing memory references to internally-called functions is very efficient.\n\nExample of an internal call is shown below\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract InternalCall {\n    function factorial(uint num) public returns (uint) {\n        if (num == 1) return 1;\n        else return num * factorial(num - 1);\n    }\n}\n\n```\n\n#### External Function Calls\nAn external function call is a function call to another contract. In order to perform an external call, the external contract's deployed address is required. The external contract should be defined or imported into the Solidity file. \nThis is because the EVM considers a call to a non-existing contract to always succeed. As such, Solidity uses the extcodesize opcode to check that the contract actually exists before calling it. A function call from one contract to \nanother is not considered as a transaction unless there is no change in state.\n\nYou can make an external call by creating a contract object and assigning the contract address to the object. To make the call, you'll use the contract object and the function identifier. For example, you might use `object.send(8)`, \nwhere `object` is the created contract object. You can use try/catch statements to handle errors that come up during the external call.\n\nExample of an external call is shown below\n\n```solidity\n\n// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.5;\n\n\ncontract CallerContract {\n    ExternalContract call;\n\n    function set(ExternalContract addr) external {\n        call = addr;// setting the contract object\n    }\n\n    function callSend(address payable addr) public {// address should be payable\n        call.send(addr);\n    }\n}\n\n\ncontract ExternalContract {\n    function send(address payable addr) external payable {\n        (bool sucess, ) = addr.call{value: 100}(\"\"); //sending 100 wei\n        require(sucess, \"transaction failed\"); \n    }\n\n    receive() external payable {}\n}\n\n\n```\n"
         }
       ]
     },
