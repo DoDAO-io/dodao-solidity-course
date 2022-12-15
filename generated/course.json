@@ -4881,7 +4881,7 @@
         },
         {
           "uuid": "e42f5064-acfd-400a-9c6d-87f4d28e0c8f",
-          "type": "MultipleChoice",
+          "type": "SingleChoice",
           "content": "What is the datatype inside the paranthesis of an `if` statement?",
           "hint": "noHint",
           "explanation": "The paranthesis in if statement contains a condition so the data type should be either true or false hence it is boolean value.",
