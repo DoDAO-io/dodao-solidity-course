@@ -109,7 +109,9 @@ it will become an infinite loop and the program will crash.
 syntax for while loop
 ```solidity
 while(condition){
-//body of while loop
+
+    //body of while loop
+
 }
 ```
 An example of using while loop in solidity
@@ -139,7 +141,7 @@ Do while loops are completely similar to while loop the main difference is the d
 syntax for do while loop
 ```solidity
 do{
-  body of the do while loop
+  // Body of the do-while loop
 }while(condition); // semi-colon is necessary
 
 ```
@@ -264,7 +266,7 @@ These function calls are translated into simple jumps inside the EVM. This has t
 You can use the function's identifier to do an internal function call, no matter where the function is defined. As long as it's defined in the contract, the internal function call will take place. 
 You can call internal functions at any point in your code - for example, you could use them as other function's arguments, or inside if/else statements.
 
-example of an internally called function is shown below
+Example of an internally called function is shown below
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;

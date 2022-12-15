@@ -210,7 +210,7 @@
 
     while(condition){
 
-    //body of while loop
+        //body of while loop
 
     }
 
@@ -262,7 +262,7 @@
     ```solidity
 
     do{
-      body of the do while loop
+      // Body of the do-while loop
     }while(condition); // semi-colon is necessary
 
 
@@ -478,7 +478,7 @@
     could use them as other function's arguments, or inside if/else statements.
 
 
-    example of an internally called function is shown below
+    Example of an internally called function is shown below
 
     ```solidity
 

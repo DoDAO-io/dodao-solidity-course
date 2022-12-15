@@ -6,17 +6,173 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  ## Expressions and Control Structures
  
  **Control Structure**        
-- if/else
+It is only `if` statements that require a condition; else statements do not need a condition. The compiler checks each `if` statement but it checks the `else` statement 
+only when all of the `if` statements defined above it fail. The `else` statement can only be defined when the `if` statement is defined prior to it, and they should be continuous - no other 
+codes should lie between the `if` and `else` blocks. If/else statements can only be declared inside functions or function modifiers.
+Syntax of the if/else statements.
+
+```
+if(condition){
+  //body of the if statement
+}
+if(condition) //single line if statment;
+else{ 
+  //body of the else statement
+}
+
+```
+
+Example of the if/else statement in solidity is given below. In the below code snippetthe the `if` statment will check for the value of `x`. If the value of `x` exceeds 100 `else` statement will be executed.
+
+```solidity
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.8.5;
+
+  contract SampleContract1 {
+      uint public number;
+
+      function setNumber(uint x) public {
+          if (x <= 100) {
+              number = x;
+          } else {
+              revert("The value should be less than 10");
+          }
+      }
+  }
+
+```
  
  **For, While and Do-while Loops and Keywords**        
-- for
-- while
-- do
-- break,continue
-- return
+#### For loop
+The for loop has three parameters, only one of which is required. The first parameter is executed only once at the start of the for loop. The second parameter is a condition that's checked for each iteration of the loop. 
+The third parameter is executed after each iteration of the for loop. The for loop is defined by the keyword `for`, and the parameters are separated by a semi-colon (`;`).
+The for loop terminates if the condition is false. It can only be defined inside a function or inside a function modifier.
+
+Syntax of the for loop
+```solidity
+for(first param; second param(condition); third param){
+  //body of the for loop
+}
+
+```
+
+#### while
+The `while` loop will take a single parameter, which is a conditional statement. The `while` loop will terminate only when the condition is false. It is defined using the keyword `while`.
+Similarly to the `for` loop, the `while` loop also should be defined inside a function or function modifier in Solidity.
+
+Syntax of while loop
+```solidity
+while(condition){
+  //body of the while loop
+}
+
+```
+
+#### Do-While loop
+The do-while loop is very similar to the while loop, with the main difference being that the do-while loop will be executed at least one time. If the condition is false, 
+the do-while loop will execute for one time. This is because it first runs the body of the loop and then checks the condition. The do-while loop can only be defined 
+inside a function or modifier. It is defined using two keywords: `do` and `while`.
+
+Syntax of do-while loop
+```solidity
+  do{
+    // Body of the do-while loop
+  }while(condition); // semi-colon is necessary
+
+```
+Example showing how to use do while loop. The do-while loop given below will execute for one time even though the condition `1>2` is false.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.5;
+
+contract Loops {
+    uint public i = 0;
+
+    function doWhile() public {
+        do { // do while loop is used for iteration
+            i++;
+        } while (1 > 2); // false condition
+    }
+}
+```
+
+#### Break and Continue keywords
+The `break` keyword is used to terminate the loop Whenever required and the `continue` keyword is used to skip the current iteration of the loop. When the compiler encounters `break` keyword it will terminate the loop in which it is located.
+when compiler encounters `continue` keyword it will jump directly to the next iteration without executing the code below that. The `break` and `continue` keywords can be defined only inside the loop or within the body of the loop.
+
+#### Return keyword
+The `return` keyword is used to return values from a function. When compiler encounters `return` keyword in the function it will stop executing the code in the function and return the specified value.
+In the below snippet the function `add` will return the sum of the arguments using the keyword `return`.
+```solidity
+contract SampleContract1 {
+    function add(uint x, uint y) public returns (uint) {
+      return x + y;
+    }
+}
+
+```
  
  **Function Calls**        
-- Internal Function Calls
-- External Function Calls
+#### Internal Function Calls
+Internal function calls are function calls that occur within the confines of the contract. You can make an internal function call by using the function's identifier.
+These function calls are converted into simple jumps within the EVM, so the current memory is not cleared. This means that passing memory references to internally-called functions is very efficient.
+
+Example of an internal call is shown below
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.5;
+
+contract InternalCall {
+    function factorial(uint num) public returns (uint) {
+        if (num == 1) return 1;
+        else return num * factorial(num - 1);
+    }
+}
+
+```
+
+#### External Function Calls
+An external function call is a function call to another contract. In order to perform an external call, the external contract's deployed address is required. The external contract should be defined or imported into the Solidity file. 
+This is because the EVM considers a call to a non-existing contract to always succeed. As such, Solidity uses the extcodesize opcode to check that the contract actually exists before calling it. A function call from one contract to 
+another is not considered as a transaction unless there is no change in state.
+
+You can make an external call by creating a contract object and assigning the contract address to the object. To make the call, you'll use the contract object and the function identifier. For example, you might use `object.send(8)`, 
+where `object` is the created contract object. You can use try/catch statements to handle errors that come up during the external call.
+
+Example of an external call is shown below
+
+```solidity
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.5;
+
+
+contract CallerContract {
+    ExternalContract call;
+
+    function set(ExternalContract addr) external {
+        call = addr;// setting the contract object
+    }
+
+    function callSend(address payable addr) public {// address should be payable
+        call.send(addr);
+    }
+}
+
+
+contract ExternalContract {
+    function send(address payable addr) external payable {
+        (bool sucess, ) = addr.call{value: 100}(""); //sending 100 wei
+        require(sucess, "transaction failed"); 
+    }
+
+    receive() external payable {}
+}
+
+
+```
  
  
