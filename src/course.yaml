@@ -64,8 +64,8 @@ topics:
   - title: Expressions and Control Structures
     key: expression-control
     details: >-
-      This chapter covers how to write expressions and covers the various
-      Control Structures like if/else , for etc.
+      This chapter covers how to use if/else statments in solidity and it covers loops in solidity. 
+      It covers `break`, `continue` and `return` keywords. It also explains about function calls: Both internal and external.
     explanations: expression_control.yaml
     readings: expression_control.yaml
     summaries: expression_control.yaml
