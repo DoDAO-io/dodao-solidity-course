@@ -1,8 +1,13 @@
 - title: Control Structure
   shortTitle: Control Structure
-  key: "control-structure"
+  key: "decision-making"
   details: |
     - if/else
+    
+- title: For, While and Do-while Loops and Keywords
+  shortTitle: Loops and Keywords
+  key: "loops-keywords"
+  details: |
     - for
     - while
     - do

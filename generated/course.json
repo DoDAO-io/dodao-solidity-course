@@ -21,16 +21,16 @@
       "order": 0,
       "explanations": [
         {
+          "key": "smart-contract",
           "title": "Structure of a smartcontract",
           "shortTitle": "contract structure",
-          "key": "smart-contract",
-          "details": "#### Versioning of solidity compiler\nThe compiler version will be in the form MAJOR.MINOR.PATCH example(0.8.7) which indicates the major release 0 with 8th minor release and 7th patch. \n\n#### Structure of a smart-contract in solidity\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\n\ncontract HelloWorld {\nstring word = \"helloworld\";\n// this is a single line comment\n\n/* this is a \n    multi line comment */\n}\n\n```\n\nEvery Solidity source file should have a license identifier in order to avoid legal issues when the code is published as open source. The Solidity compiler recognizes SPDX license identifiers, which are machine-readable. \nYou can specify the license identifier anywhere in the code, but it's recommended to put it at the top of each file.\n\nThe compiler that will be used to compile the Solidity file must be specified using the keyword \"pragma\" followed by the caret (^) symbol and the version number. The caret symbol indicates that any Solidity \ncompiler with a version of the same major and minor value and patch number greater than the specified version can be used to compile the file. Example in the above code version compiler with 0.8.7 can be used to compile the above code but 0.9.2 and 0.8.0 can't be used to compile the above file. \nEvery solidity file must be saved as `.sol` for compiling. Single line comments starts with `//`. Multiline comments starts with `/*` and ends with `*/`.\n\n`import` keyword is used for importing files from other resources. Solidity also include constructor functions. Constructors are functions which will be executed automatically for one time when a contract is deployed.\nYou can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\nYou can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\nexample code snippet.\n\n```sol\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n  address public owner;\n\n  constructor() {\n      owner = msg.sender;\n  }\n\n  /* msg.sender is the address that has called or initiated a function or created a transaction. \n          But at the time of deployment it will be the address of the deployer of the contract */\n\n  /// @author admin\n}\n\n```\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n"
+          "details": "#### Versioning of solidity compiler\nThe compiler version will be in the form MAJOR.MINOR.PATCH example(0.8.7) which indicates the major release 0 with 8th minor release and 7th patch. \n\n#### Structure of a smart-contract in solidity\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\n\ncontract HelloWorld {\n    string word = \"helloworld\";\n    // this is a single line comment\n\n    /* this is a \n        multi line comment */\n}\n```\n\nEvery Solidity source file should have a license identifier in order to avoid legal issues when the code is published as open source. The Solidity compiler recognizes SPDX license identifiers, which are machine-readable. \nYou can specify the license identifier anywhere in the code, but it's recommended to put it at the top of each file.\n\nThe compiler that will be used to compile the Solidity file must be specified using the keyword \"pragma\" followed by the caret (^) symbol and the version number. The caret symbol indicates that any Solidity \ncompiler with a version of the same major and minor value and patch number greater than the specified version can be used to compile the file. Example in the above code version compiler with 0.8.7 can be used to compile the above code but 0.9.2 and 0.8.0 can't be used to compile the above file. \nEvery solidity file must be saved as `.sol` for compiling. Single line comments starts with `//`. Multiline comments starts with `/*` and ends with `*/`.\n\n`import` keyword is used for importing files from other resources. Solidity also include constructor functions. Constructors are functions which will be executed automatically for one time when a contract is deployed.\nYou can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\nYou can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\nexample code snippet.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.2;\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    /* msg.sender is the address that has called or initiated a function or created a transaction. \n            But at the time of deployment it will be the address of the deployer of the contract */\n\n    /// @author admin\n}\n```\n\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n"
         },
         {
           "title": "Statevariables and Functions",
           "shortTitle": "Functions",
           "key": "state-variables-and-functions",
-          "details": "\nState variables are variables whose values are permanently stored in contract storage. State variables can be declared as `constant` or `immutable`. The constant variables cannot be redeclared after assigning but immutable variables\ncan be redeclared using constructor. Constant or immutable can be declared only for variables of the type string, int or uint, boolean, address and enums. Using constant and immutable can reduce the gas cost.\n\nFunctions in Solidity are like small pieces of code that can be executed. The way you write a function in Solidity is similar to how you would write one in c, c++, or JavaScript, except for a few small differences. \nFunctions are usually written inside a contract, but they can also be written outside of contracts. These functions that are written outside of contracts are called \"free functions\". Free functions don't have \naccess to variables inside the contracts, but other contracts can call them. Free functions also don't have visibility, which means we cannot use the public or external keyword for them. We need to define the \ndata type for function arguments and return types. \n\nWe can return values from a function in two ways:\nOne way is to normally return the value using the return keyword. Another way is to define a return variable and assign the return value to that variable. The function `add` below defines a return variable `sum`. \nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n\n\n```solidity\ncontract SimpleProgram {\n    uint public constant value = 23;\n    uint public answer = add(value, 1);\n    address immutable owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    uint public product = multiply(value, 2);\n\n    function multiply(uint a, uint b) public returns (uint) {\n        return a * b;\n    }\n}\n\nfunction add(uint a, uint b) pure returns (uint sum) {\nsum = a + b;\n}\n\n```\nThe above code snippet shows that the owner variable is assigned the deployer or contract owner address during the constructor time. However, you cannot reassign a constant variable like an immutable variable. \nThe simpleProgram contract is calling the free function `add` to add two numbers together and assigning the return value from the function to a variable `answer`.\n\n#### Others functions and features in solidity\nThe `fallback` and `receive` functions are two special types of functions that are often used together. The `fallback` function is a function that is called if none of the other functions match the function \nidentifier or if ether is transferred to the contract with some data. The `receive` function is a function that is called when someone sends ether to a contract. If the contract does not have a `receive` function, \nthen the `fallback` function will be executed. If ether is sent with some data directly to the contract, then the `fallback`function will be executed even if a `receive` function is defined. \nWhile defining the recieve function payable keyword must be added in order to receive ether. Visibility of receive and fallback functions must be defined.\n\nThere are two keywords which can restrict functions: `pure` and `view`. If `pure` is used in a function, that function will not be able to read or write. If `view` is used in a function, \nthat function will not be able to write, but will have read access. \n\nSample code explaining how to use recieve and fallback functions.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract SolidityCourse {\n    uint public value = 0;\n\n    receive() external payable {\n        setValue(24);\n    }\n\n    function setValue(uint x) internal {\n        value = x;\n    }\n\n    function check_value() public view returns (uint answer) {\n        // view keyword restrict the function check_a to read only\n        answer = value;\n    }\n\n    fallback() external {\n        setValue(12);\n    }\n}\n\n```\n"
+          "details": "\nState variables are variables whose values are permanently stored in contract storage. State variables can be declared as `constant` or `immutable`. The constant variables cannot be redeclared after assigning but immutable variables\ncan be redeclared using constructor. Constant or immutable can be declared only for variables of the type string, int or uint, boolean, address and enums. Using constant and immutable can reduce the gas cost.\n\nFunctions in Solidity are like small pieces of code that can be executed. The way you write a function in Solidity is similar to how you would write one in c, c++, or JavaScript, except for a few small differences. \nFunctions are usually written inside a contract, but they can also be written outside of contracts. These functions that are written outside of contracts are called \"free functions\". Free functions don't have \naccess to variables inside the contracts, but other contracts can call them. Free functions also don't have visibility, which means we cannot use the public or external keyword for them. We need to define the \ndata type for function arguments and return types. \n\nWe can return values from a function in two ways:\nOne way is to normally return the value using the return keyword. Another way is to define a return variable and assign the return value to that variable. The function `add` below defines a return variable `sum`. \nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n\n\n```solidity\ncontract SimpleProgram {\n    uint public constant value = 23;\n    uint public answer = add(value, 1);\n    address immutable owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    uint public product = multiply(value, 2);\n\n    function multiply(uint a, uint b) public returns (uint) {\n        return a * b;\n    }\n}\n\nfunction add(uint a, uint b) pure returns (uint sum) {\n    sum = a + b;\n}\n\n```\nThe above code snippet shows that the owner variable is assigned the deployer or contract owner address during the constructor time. However, you cannot reassign a constant variable like an immutable variable. \nThe simpleProgram contract is calling the free function `add` to add two numbers together and assigning the return value from the function to a variable `answer`.\n\n#### Others functions and features in solidity\nThe `fallback` and `receive` functions are two special types of functions that are often used together. The `fallback` function is a function that is called if none of the other functions match the function \nidentifier or if ether is transferred to the contract with some data. The `receive` function is a function that is called when someone sends ether to a contract. If the contract does not have a `receive` function, \nthen the `fallback` function will be executed. If ether is sent with some data directly to the contract, then the `fallback`function will be executed even if a `receive` function is defined. \nWhile defining the recieve function payable keyword must be added in order to receive ether. Visibility of receive and fallback functions must be defined.\n\nThere are two keywords which can restrict functions: `pure` and `view`. If `pure` is used in a function, that function will not be able to read or write. If `view` is used in a function, \nthat function will not be able to write, but will have read access. \n\nSample code explaining how to use recieve and fallback functions.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract SolidityCourse {\n    uint public value = 0;\n\n    receive() external payable {\n        setValue(24);\n    }\n\n    function setValue(uint x) internal {\n        value = x;\n    }\n\n    function check_value() public view returns (uint answer) {\n        // view keyword restrict the function check_a to read only\n        answer = value;\n    }\n\n    fallback() external {\n        setValue(12);\n    }\n}\n\n```\n"
         },
         {
           "title": "Events and Function modifiers",
@@ -42,13 +42,13 @@
           "title": "Error Handling",
           "shortTitle": "Error-handling",
           "key": "errors",
-          "details": "Solidity uses state-reverting exceptions to handle errors. Such an exception undoes all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller.\nSolidity has many functions for error handling. Errors can occur at compile time or runtime. Solidity is compiled to byte code and there a syntax error check happens at compile-time, while runtime \nerrors occur mainly while executing the contracts. Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.\nError handling in solidity is done using revert, require, assert. \n\nError handling can be done using assert, revert, require, \"try-catch\" and custom errors.\n\n#### Assert \nAssert is used to check conditions which should be true always. The assert function creates an error of type Panic(uint256). Assert should only be used to test for internal errors, and to check invariants. Properly functioning code should never create a Panic, \nnot even on invalid external input. If this happens, then there is a bug in your contract which you should fix.\n\nA Panic exception is generated in the following situations.\n    * If you call assert with an argument that evaluates to false.\n    * If an arithmetic operation results in underflow or overflow.\n    * If you divide or modulo by zero.\n    * If you convert a value that is too big or negative into an enum type.\n    * If you call .pop() on an empty array.\n    * If you access an array or an array slice at an out-of-bounds or negative index.\n    * If you allocate too much memory or create an array that is too large.\n    * If you call a zero-initialized variable of internal function type.\n\n#### Require\nThe require function takes two parameters. The first argument is the condition and the second is the custom string text which will be displayed if the condition returns false. this second parameter is optional.\nIf false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.\n\nrequire exception is triggered for the following cases:\n* Calling require(x) where x evaluates to false.\n* If you perform an external function call targeting a contract that contains no code.\n* If you use revert() or revert(\"description\").\n* If your contract receives Ether via a public function without payable modifier.\n* If your contract receives Ether via a public getter function.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.0;\n\ncontract FunctionModifiers {\n    address public owner;\n    uint public favourite_number = 7;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == owner);\n        _;\n    }\n\n    function setValue(uint x) public onlyOwner {\n        favourite_number = x;\n    }\n}\n```\nIn the above snippet require exception will be triggered if `msg.sender` is not equal to `owner` i.e, the address which is calling or acessing the function is not equal to the deployer's address. \n\n#### Revert\nThis statement is similar to the require statement. It does not evaluate any condition and does not depends on any state or statement. It is used to generate exceptions, display errors, and revert the function calls.\nCalling a revert statement implies an exception is thrown, the unused gas is returned and the state reverts to its original state. Revert is used to handle the same exception types as require handles, but with little bit more complex logic.\nrevert takes an optional argument of string type.\n\n```solidity\nfunction checker(uint x) public return(bool y){\n    if(x>=10){\n    return false;\n    revert(\"value exceeded\");\n    }\n    else{\n        return true;\n    }\n}\n```\n"
+          "details": "Solidity uses state-reverting exceptions to handle errors. Such an exception undoes all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller.\nSolidity has many functions for error handling. Errors can occur at compile time or runtime. Solidity is compiled to byte code and there a syntax error check happens at compile-time, while runtime \nerrors occur mainly while executing the contracts. Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.\nError handling can be done using assert, revert, require, \"try-catch\" and custom errors.\n\n#### Assert \nAssert is used to check conditions which should be true always. The assert function creates an error of type Panic(uint256). Assert should only be used to test for internal errors, and to check invariants. Properly functioning code should never create a Panic, \nnot even on invalid external input. If this happens, then there is a bug in your contract which you should fix.\n\nA Panic exception is generated in the following situations.\n* If you call assert with an argument that evaluates to false.\n* If an arithmetic operation results in underflow or overflow.\n* If you divide or modulo by zero.\n* If you convert a value that is too big or negative into an enum type.\n* If you call .pop() on an empty array.\n* If you access an array or an array slice at an out-of-bounds or negative index.\n* If you allocate too much memory or create an array that is too large.\n* If you call a zero-initialized variable of internal function type.\n\n#### Require\nThe require function takes two parameters. The first argument is the condition and the second is the custom string text which will be displayed if the condition returns false. this second parameter is optional.\nIf false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.\n\nrequire exception is triggered for the following cases:\n* Calling require(x) where x evaluates to false.\n* If you perform an external function call targeting a contract that contains no code.\n* If you use revert() or revert(\"description\").\n* If your contract receives Ether via a public function without payable modifier.\n* If your contract receives Ether via a public getter function.\n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.0;\n\ncontract FunctionModifiers {\n    address public owner;\n    uint public favourite_number = 7;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == owner);\n        _;\n    }\n\n    function setValue(uint x) public onlyOwner {\n        favourite_number = x;\n    }\n}\n```\nIn the above snippet require exception will be triggered if `msg.sender` is not equal to `owner` i.e, the address which is calling or acessing the function is not equal to the deployer's address. \n\n#### Revert\nThis statement is similar to the require statement. It does not evaluate any condition and does not depends on any state or statement. It is used to generate exceptions, display errors, and revert the function calls.\nCalling a revert statement implies an exception is thrown, the unused gas is returned and the state reverts to its original state. Revert is used to handle the same exception types as require handles, but with little bit more complex logic.\nrevert takes an optional argument of string type.\n\n```solidity\nfunction checker(uint x) public pure returns(bool y){\n    if(x>=10){\n        revert(\"value exceeded\");\n    }\n    else{\n        return true;\n    }\n}\n```\n"
         },
         {
           "title": "Custom Errors and try-catch",
           "shortTitle": "Custom Errors",
           "key": "custom-errors-and-try-catch",
-          "details": "```\n#### Try Catch in Solidity\nIn a try catch statement, the try block will execute some code. If it gets any errors, the caught statement will be executed. A failure in an external call can be caught using a try/catch statement.\nA external call is a function calling from one contract to another contract. \nAn example of an external call.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract A {\n    function add(uint x, uint y) public returns (uint sum) {\n        sum = x + y;\n    }\n}\n\ncontract B {\n    A object_of_a; // this is an object of contract A\n    uint public answer = 0;\n\n    function setContract(A addr) public {\n        // we need to pass the address of deployed a contract\n        object_of_a = addr;\n    }\n\n    function callAdd() public {\n        answer = object_of_a.add(12, 3);\n    }\n}\n```\nIn the above code we are creating the object of contract `A` by its address(deployed address of A). Then we are calling the function `add` from contract `B`. This is called as \"external call\". \n\nAn example of try catch block is shown below. The try keyword has to be followed by an expression representing an external function call or a contract creation (new ContractName()). Solidity supports different kinds of catch blocks depending on the type of errors.\none try block can have multiple catch blocks. Different catch blocks are explained in single comments in the below please go through it for better understanding. We can just use catch { … } if we are not interested in error data.\n\n```solidity\ninterface DataFeed { function getData(address token) external returns (uint value); }\n\ncontract FeedConsumer {\n    DataFeed feed;\n    uint errorCount;\n    function rate(address token) public returns (uint value, bool success) {\n        // Permanently disable the mechanism if there are\n        // more than 10 errors.\n        require(errorCount < 10);\n        try feed.getData(token) returns (uint v) {\n            return (v, true);\n        } catch Error(string memory /*reason*/) {\n            // This is executed in case revert was called inside getData and a reason string was provided.\n            errorCount++;\n            return (0, false);\n        } catch Panic(uint /*errorCode*/) {\n            // This is executed in case of a panic,\n            // i.e. a serious error like division by zero\n            // or overflow. The error code can be used\n            // to determine the kind of error.\n            errorCount++;\n            return (0, false);\n        } catch (bytes memory /*lowLevelData*/) {\n            // This is executed in case revert() was used.\n            errorCount++;\n            return (0, false);\n        }\n    }\n}\n```\n\n#### Custom Errors\nCreating custom errors in your code can actually help you conserve gas usage. How? Well, normal errors come with pre-written, lengthy error messages that can really guzzle up a lot of gas. However, when you create a c\nustom error using the `error` keyword, you can specify the message yourself. These custom errors can be called using a conditional and revert statement.\n\nAn example of an custom error is shown below.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract CustomError {\n    error Logic(string message);\n\n    function testCustom_error(uint x) public pure {\n        if (x > 10) {\n        revert Logic(\"the value exceeded 10\");\n        }\n    }\n}\n\n```\nBy using the keyword `error`, we have defined a custom error name called `Logic`. If the value of x exceeds 10, the transaction will be reverted and our custom error message will be shown. \nThe values that need to be logged at the time of an error should be specified/defined in the argument of our custom error.\n"
+          "details": "#### Try Catch in Solidity\nIn a try catch statement, the try block will execute some code. If it gets any errors, the caught statement will be executed. A failure in an external call can be caught using a try/catch statement.\nA external call is a function calling from one contract to another contract. \nAn example of an external call.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract A {\n    function add(uint x, uint y) public returns (uint sum) {\n        sum = x + y;\n    }\n}\n\ncontract B {\n    A object_of_a; // this is an object of contract A\n    uint public answer = 0;\n\n    function setContract(A addr) public {\n        // we need to pass the address of deployed a contract\n        object_of_a = addr;\n    }\n\n    function callAdd() public {\n        answer = object_of_a.add(12, 3);\n    }\n}\n```\nIn the above code we are creating the object of contract `A` by its address(deployed address of A). Then we are calling the function `add` from contract `B`. This is called as \"external call\". \n\nAn example of try catch block is shown below. The try keyword has to be followed by an expression representing an external function call or a contract creation (new ContractName()). Solidity supports different kinds of catch blocks depending on the type of errors.\none try block can have multiple catch blocks. Different catch blocks are explained in single comments in the below please go through it for better understanding. We can just use catch { … } if we are not interested in error data.\n\n```solidity\ninterface DataFeed { function getData(address token) external returns (uint value); }\n\ncontract FeedConsumer {\n    DataFeed feed;\n    uint errorCount;\n    function rate(address token) public returns (uint value, bool success) {\n        // Permanently disable the mechanism if there are\n        // more than 10 errors.\n        require(errorCount < 10);\n        try feed.getData(token) returns (uint v) {\n            return (v, true);\n        } catch Error(string memory /*reason*/) {\n            // This is executed in case revert was called inside getData and a reason string was provided.\n            errorCount++;\n            return (0, false);\n        } catch Panic(uint /*errorCode*/) {\n            // This is executed in case of a panic,\n            // i.e. a serious error like division by zero\n            // or overflow. The error code can be used\n            // to determine the kind of error.\n            errorCount++;\n            return (0, false);\n        } catch (bytes memory /*lowLevelData*/) {\n            // This is executed in case revert() was used.\n            errorCount++;\n            return (0, false);\n        }\n    }\n}\n```\n\n#### Custom Errors\nCreating custom errors in your code can actually help you conserve gas usage. How? Well, normal errors come with pre-written, lengthy error messages that can really guzzle up a lot of gas. However, when you create a \ncustom error using the `error` keyword, you can specify the message yourself. These custom errors can be called using a conditional and revert statement.\n\nAn example of an custom error is shown below.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract CustomError {\n    error Logic(string message);\n\n    function testCustom_error(uint x) public pure {\n        if (x > 10) {\n            revert Logic(\"the value exceeded 10\");\n        }\n    }\n}\n\n```\nBy using the keyword `error`, we have defined a custom error name called `Logic`. If the value of x exceeds 10, the transaction will be reverted and our custom error message will be shown. \nThe values that need to be logged at the time of an error should be specified/defined in the argument of our custom error.\n"
         }
       ],
       "questions": [
@@ -64,7 +64,7 @@
             "C"
           ],
           "subTopics": [
-            "solidity-compiler"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -96,7 +96,7 @@
             "C"
           ],
           "subTopics": [
-            "solidity-compiler"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -129,7 +129,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -161,7 +161,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -193,7 +193,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -225,7 +225,7 @@
             "A"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -258,7 +258,7 @@
             "D"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -291,7 +291,7 @@
             "C"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -323,7 +323,7 @@
             "D"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -355,7 +355,7 @@
             "C"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -387,7 +387,7 @@
             "B"
           ],
           "subTopics": [
-            "contract-structure"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -419,7 +419,7 @@
             "C"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -451,7 +451,7 @@
             "C"
           ],
           "subTopics": [
-            "state-variables"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -485,7 +485,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -518,7 +518,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -550,7 +550,7 @@
             "B"
           ],
           "subTopics": [
-            "file-layout"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -582,7 +582,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -614,7 +614,7 @@
             "C"
           ],
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -641,13 +641,13 @@
           "type": "MUltipleChoice",
           "content": "What are events used for?",
           "hint": "When called, events cause the arguments to be stored in the transactions log - a special data structure in the blockchain.",
-          "explanation": "Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.\nAll information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts. \n",
+          "explanation": "Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.\nAll information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts.\n",
           "answerKeys": [
             "A",
             "C"
           ],
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -681,7 +681,7 @@
             "D"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -713,8 +713,7 @@
             "B"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -746,7 +745,7 @@
             "C"
           ],
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -778,8 +777,7 @@
             "C"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -811,7 +809,7 @@
             "D"
           ],
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -843,7 +841,7 @@
             "C"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -876,7 +874,7 @@
             "B"
           ],
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -908,7 +906,7 @@
             "A"
           ],
           "subTopics": [
-            "contract-structure"
+            "smart-contract"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -942,7 +940,7 @@
             "C"
           ],
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -974,8 +972,7 @@
             "B"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -1007,8 +1004,7 @@
             "D"
           ],
           "subTopics": [
-            "functions",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1040,8 +1036,7 @@
             "A"
           ],
           "subTopics": [
-            "events",
-            "modifiers"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1074,7 +1069,7 @@
             "C"
           ],
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1172,8 +1167,7 @@
             "C"
           ],
           "subTopics": [
-            "errors",
-            "assert"
+            "errors"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1303,8 +1297,7 @@
             "B"
           ],
           "subTopics": [
-            "errors",
-            "assert"
+            "errors"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1336,8 +1329,7 @@
             "D"
           ],
           "subTopics": [
-            "errors",
-            "try-catch"
+            "custom-errors-and-try-catch"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1369,8 +1361,7 @@
             "A"
           ],
           "subTopics": [
-            "contract-structure",
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1402,8 +1393,7 @@
             "D"
           ],
           "subTopics": [
-            "contract-structure",
-            "functions"
+            "state-variables-and-functions"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1435,8 +1425,7 @@
             "C"
           ],
           "subTopics": [
-            "errors",
-            "require"
+            "errors"
           ],
           "difficultyLevel": "Low",
           "choices": [
@@ -1467,7 +1456,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=71cmPaD_AnQ",
           "subTopics": [
-            "functions"
+            "state-variables-and-functions"
           ],
           "details": "This video covers \n1) Function declaration in Solidity \n2) View functions (read-only) and non-view functions (can change Blockchain data).\n"
         },
@@ -1478,7 +1467,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=b6FBWsz7VaI",
           "subTopics": [
-            "modifiers"
+            "events-modifiers"
           ],
           "details": "Function modifiers allow your code to have less repetitive, re-useable code logic. This video explains the declaration and use of modifiers.\n"
         },
@@ -1489,7 +1478,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=jaMHPT-78HM",
           "subTopics": [
-            "events"
+            "events-modifiers"
           ],
           "details": "In Solidity, you can use events to push data to outside consumers, like web frontends.\nThis video shows how to declare and emit events in Solidity.\n"
         },
@@ -1500,11 +1489,7 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=1Mi1ub9bIv8",
           "subTopics": [
-            "errors",
-            "revert",
-            "require",
-            "try-catch",
-            "assert"
+            "errors"
           ],
           "details": "Solidity uses state-reverting exceptions to handle errors. \nThis video covers how error handling in solidity is done using revert, require, assert and try/catch.\n"
         },
@@ -1515,90 +1500,41 @@
           "type": "YoutubeVideo",
           "url": "https://www.youtube.com/watch?v=yzcp594R92c",
           "subTopics": [
-            "file-layout",
-            "contract-structure"
+            "smart-contract"
           ],
           "details": "This video explains the typical layout of a Solidity source file: \n1) Pragma statement\n2) Imports\n3) Contract declaration\n4) Variable \n5) Function declarations\n"
         }
       ],
       "summaries": [
         {
-          "title": "Installing Solidity Compiler",
-          "shortTitle": "Solidity Compiler",
-          "key": "solidity-compiler",
-          "details": "- Versoning \n  * Solidity versions follow 'Semantic Versioning' which is essential to avoid 'dependency hell' while programming in Solidity.\n    'Dependency hell' in software management occurs when version specifications are made too tight or too loose due to which releasing new versions becomes a nightmare as it becomes difficult to resolve conflicts. To avoid this solidity \n    releases its versions with version number MAJOR.MINOR.PATCH .eg Solidity compiler version 0.8.15 indicates major release 0 with 8th minor release and 15th patch fix.\n  * Patch level releases with major release 0 (i.e. 0.x.y) does not contain breaking changes. That means code that compiles with version 0.x.y can be expected to compile with 0.x.z where z > y.\n"
+          "title": "Structure of a smartcontract",
+          "shortTitle": "contract structure",
+          "key": "smart-contract",
+          "details": "The source code of a solidity contract begins with a license identifier to avoid any potential legal issues that could arise if the code is published as open source. The compiler version is specified using the keyword \n`pragma` and can be placed anywhere within the contract, though it is generally considered best practice to specify it at the top of the document. For single-line comments, we need to use `//`. For multiline comments, we need to use `/*comments here */`. \nSolidity comments can also be written in `NatSpec` format. Developers use it for documenting return variables, functions, and so on. To define a single-line comment in this format, we need to use `///` for multiline, we need to use `/** comments here */`. \n`import` keyword is used for importing files from other resources\n\nSolidity has a special kind of function called a `constructor` function. This function will be called automatically when you deploy your contract. You can define a constructor function using the keyword 'constructor' followed by the function's code.\n\n```solidity\n//SPDX-License-Identifier:MIT \npragma solidity ^0.8.2; // compiler version is specified using the keyword pragma\n\nimport \"priceconverter.sol\"; // this is normal importing\nimport \"priceconverter.sol\" as pc; // if you want to import one file but with different name\nimport { price1 as p1, price2 } from \"storagefactory.sol\"; // If we want to import only specific variables or functions from a file\n\ncontract SolidityStructure {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n    // this is a single line comment\n\n    /* this is a \n        multi line comment */\n\n    /* msg.sender is the address that has called or initiated a function or created a transaction. \n            But at the time of deployment it will be the address of the deployer of the contract */\n\n    /// This is NatSpec single line comment\n\n    /**\n    This is NatSpec multi line comment\n    */\n}\n\n```\nIn the above snippet, the constructor function will only be called once when the contract is deployed. This function will assign the deployer address to the `owner`. `msg.sender` is the address that has called or \ninitiated a function or created a transaction. But at the time of deployment it will be the address of the deployer of the contract.\n"
         },
         {
-          "title": "Layout of a Source File",
-          "shortTitle": "File Layout",
-          "key": "file-layout",
-          "details": "- SPDX License Identifier\n  * The source code of a smart contract needs to be open source for it to be trusted and to prevent any legal issues with regards to copyright, machine-readable SPDX license identifiers should be used.\n  * Every solidity source file should start with a comment indicating its license. eg. `// SPDX-License-Identifier: MIT` .\n  * The Software Package Data Exchange (SPDX) is an open standard used for communicating licenses , copyrights and security references.\n\n- Pragmas\n  * pragma is a directive used to configure compiler features and checks.\n  * A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project.\n  * If you import another file, the pragma from that file does not automatically apply to the importing file.\n  * A Version pragma is a directive that specifies the compiler version to be used for current Solidity file.\n  * For example, `pragma solidity ^0.4.0;`,  the pragma for a file using the above statement will not compile earlier than version 0.4.0 and it will also not work on a compiler starting from version 0.5.0, this condition is taken care off by ^. \n  * Another example is, `pragma solidity >=0.6.0 <0.8.0;` where the pragma directive instructs the compiler to compile code for Solidity version greater than equal to 0.6.0 till up to but not including 0.8.0.\n\n- Comments\n  * Single-line comments (//) and multi-line comments (/*...*/) are possible. Any text after // or between /* and */ is ignored by the compiler.\n    ```\n    // This is a single-line comment.\n\n    /*\n    This is a\n    multi-line comment.\n    */\n    ```\n  * You can also write your Solidity comments in the Ethereum Natural Language Specification Format (NatSpec). It defines a special form of comments in Solidity contracts. Developers use it for documenting return variables, functions, and so on.\n  * You should insert all documentation using comments before class, interface, and function keywords.\n  * You can write single or multi-line comments in Solidity, and use two types of syntax, start the line with /// to include a single-line comment and start with /**and end with /* to include a multi-line comment.\n    ```\n    /// @author ishaan\n\n    /**\n    @notice introducing Solidity NAtSpec comments.\n    This is a\n    multi-line comment.\n    /*\n    ```\n  * NAtSpec comments can be used with optional tags, in the above code snippet @author shows the name of the author and @notice explain to an end user what it does.\n  * The Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.\n\n- Imports\n  * Solidity supports import statements to modularize code similar to those available in JavaScript (from ES6 on).\n  * At a global level, you can use import statements of the following form: `import \"filename\";`. This statement imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. \n  * The following example creates a new global symbol symbolName whose members are all the global symbols from \"filename\": `import * as symbolName from \"filename\";`\n    which results in all global symbols being available in the format symbolName.symbol.\n  * If there is a naming collision, you can rename symbols while importing. `import {symbol1 as alias, symbol2} from \"filename\";`. \n"
-        },
-        {
-          "title": "Structure of a Smart Contract",
-          "shortTitle": "Contract Structure",
-          "key": "contract-structure",
-          "details": "Contracts in Solidity are similar to classes in object-oriented languages. \nEach contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types. \n- Constructor\n  * A constructor is an optional function declared with the constructor keyword which is executed upon contract creation, and where you can run contract initialisation code.\n  * Before the constructor code is executed, state variables are initialised to their specified value if you initialise them inline, or their default value if you do not.\n  * If there is no constructor, the contract will assume the default constructor, which is equivalent to constructor() {}.\n  * The code snippet below explains the use of a constructor, \n    ```\n      uint public x;\n      uint public y;\n      address public owner;\n      uint public createdAt;\n      Constructor (uint _x, uint _y) public {\n                  x=_x;\n                  y=_y;\n                  owner = msg.sender;\n                  createdAt = block.timestamp;\n    ```\n  * Constructors are very useful in Solidity, if you do not implement a function to change the state variable it will remain as long as the block chain is running. So using a constructor is a way to set a state variable that you do not want to change.\n"
-        },
-        {
-          "title": "State Variables",
-          "shortTitle": "State Variables",
-          "key": "state-variables",
-          "details": "* State variables are variables whose values are permanently stored in contract storage.\n* In the following code snippet `storedData` is an example of a state variable.\n```\n// SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.4.0 <0.9.0;\n\ncontract SimpleStorage {\n    uint storedData; // State variable\n    // ...\n}\n```\n* State variables can be declared as `constant` or `immutable`. In both cases, the variables cannot be modified after the contract has been constructed.\n* For constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time. Constant variables can also be declared at the file level.\n* Not all types of constants and immutables are implemented at this time. The only supported types are strings (only for constants) and value types(booleans, integers, address and enum).\n* The example below shows the use of constant and immutable state variables.\n  ```\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity >=0.7.4;\n\n  uint constant X = 32**22 + 8;\n\n  contract C {\n      string constant TEXT = \"abc\";\n      bytes32 constant MY_HASH = keccak256(\"abc\");\n      uint immutable decimals;\n      uint immutable maxBalance;\n      address immutable owner = msg.sender;\n\n      constructor(uint decimals_, address ref) {\n          decimals = decimals_;\n          maxBalance = ref.balance;\n      }\n  }\n  ```\n"
-        },
-        {
-          "title": "Functions",
+          "title": "Statevariables and Functions",
           "shortTitle": "Functions",
-          "key": "functions",
-          "details": "* Functions are the executable units of code. \n  Functions are usually defined inside a contract, but they can also be defined outside of contracts.\n* In the code below helper function is defined outside the contract whearas arithmetic function is declared inside the contract.\n  ```\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity >=0.7.1 <0.9.0;\n\n  contract Simple {\n      function arithmetic(uint a, uint b)\n          public\n          pure\n          returns (uint sum, uint product)\n      {\n          return (a + b, a * b);\n      }\n  }\n\n  // Helper function defined outside of a contract\n  function helper(uint x) pure returns (uint) {\n      return x * 2;\n  }\n  ```\n* Functions outside of a contract are also called 'free functions' and their code is included in all contracts that call them.\n* The main difference to functions defined inside a contract is that free functions do not have direct access to storage variables and functions not in their scope.\n* Functions take typed parameters as input and can also return an arbitrary number of values as output.\n* In the code snippet above , the contract `Simple` has a function arithmetic which takes two input parameters `uint a` and `uint b`.\n* The function arithmetic also returns two values `uint sum` and `uint product`.\n* the return values in a function can also be explicitly assigned to return variables instead of a return statememnt like in the code below.\n  ```\n  function arithmetic(uint a, uint b)\n      public\n      pure\n      returns (uint sum, uint product)\n  {\n      sum = a + b;\n      product = a * b;\n  }\n  ```\n* Solidity has a fallback function which is executed if none of the other functions match the function identifier or no data was provided with the function call. \n* Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.\n* Check the following code to declare a fallback function.\n  ```\n  function() public payable\n  {\n      balance[msg.sender] += msg.value;\n  }\n  ```\n  The above fallback function is called in two cases- A contract receives only Ether and no data,\n  or when no function calls matched even though the account received data.\n* Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.\n  ```\n  contract ViewAndPure {\n      uint public x = 1;\n\n      // Promise not to modify the state.\n      function addToX(uint y) public view returns (uint) {\n          return x + y;\n      }\n\n      // Promise not to modify or read from the state.\n      function add(uint i, uint j) public pure returns (uint) {\n          return i + j;\n      }\n  }\n  ```\n  The above view function `addToX` can read the state variable x but cannot update its state whearas the pure function `add` can neither read nor update the state.\n"
+          "key": "state-variables-and-functions",
+          "details": "\nState variables are variables that are stored permanently on the blockchain. They can be declared as `constant` and `immutable`, but immutable can be redeclared in the constructor. Constant and immutable variables reduce the gas cost.\nFunctions in solidity are essentially just like any other programming language - they are pieces of code that can be executed by simply calling the function. Functions can be declared inside or outside of a contract. \nThe functions which are declared outside of the contract are referred to as free functions. Free functions don't have access to variables that are inside the contract and they also don't have visibility. \nThis means that we cannot add `public` and `external` keywords.\n\n`fallback` and `recieve` are special functions. The `fallback` will be executed if:\n1. None of the other functions match the function identifier \n2. If ether is transferred to the contract with some call data\n\nIf ether is sent to a contract without any call data, the receive function will be executed. If receive is not defined, fallback will be executed. The `fallback` and `receive` functions must be defined with the `payable` keyword and visibility. \nThere are two keywords which can restrict the state mutability of a function: `view` and `pure`. `view`will restrict the function to read-only but if `pure` is defined, that function will not be able to read or write.\n\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract SimpleProgram {\n    uint public value = 23;\n    uint public answer = add(value, 1); // calling the free function add\n    address immutable owner;\n\n    constructor() {\n        owner = msg.sender; // redelcaring the immutable variable\n    }\n\n    uint public product = multiply(value, 2); // calling the function multiply\n\n    function multiply(uint a, uint b) public pure returns (uint) { // function inside the contract with pure keyword\n        return a * b;\n    } \n    // Data types of arguments and returning values should be defined for a function\n\n    receive() external payable { // recieve function declaration\n        setValue(24);\n    }\n\n    function setValue(uint x) internal {\n        value = x;\n    }\n\n    function check_value() public view returns (uint) {\n        // view keyword restrict the function check_a to read only\n        return value;\n    }\n\n    fallback() external payable { // fallback function declaration\n        setValue(12);\n    }\n\n\n}\n\nfunction add(uint a, uint b) pure returns (uint sum) {    // free function\n    sum = a + b;\n}\n\n```\n"
         },
         {
-          "title": "Events",
-          "shortTitle": "Events",
-          "key": "events",
-          "details": "* Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.\n* Events are defined within the contracts as global and called within their functions. Events are declared by using the event keyword as follows , `event <eventName>(parameters) ;`.\n* The example below shows the declaration of an event and its use in its function. In this example, the Deposit event is emitted when a user sends Ether to the smart contract with the deposit function.\n\n ```\n  event Deposit(\n  address indexed from,\n  bytes32 indexed id,\n  uint value\n  );\n\n  function deposit(bytes32 id) public payable {\n      emit Deposit(msg.sender, id, msg.value);\n  }\n```\n* Events are ways to communicate with a client application or front-end website that something has happened on the blockchain. The above event Deposit can be detected from\n  the JavaScript API by filtering for `Deposit`.\n"
-        },
-        {
-          "title": "Function Modifiers",
-          "shortTitle": "Function Modifiers",
-          "key": "modifiers",
-          "details": "* Function modifiers can be used to change the behaviour of functions in a declarative way.\n* A modifier can be used automatically to check a condition prior to execution of the function.\n* In the code snippet below constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner. \n  the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.\n  ```\n  pragma solidity ^0.7.0;\n  contract C {\n      address owner;\n      string private name;\n      constructor() {\n          owner = msg.sender;\n      }\n      modifier onlyOwner() {\n          require(msg.sender == owner, 'Not Owner');\n          _;\n      }\n      function setName(string memory newName) public onlyOwner{\n          name = newName;\n      }\n  }\n  ```\n\n* “_;” is a special code only used in the function modifier. It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.\n* \"_;\" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing \"_;\" before or after the modifier code.\n"
+          "title": "Events and Function modifiers",
+          "shortTitle": "Events and modifiers",
+          "key": "events-modifiers",
+          "details": "Events are a way of logging data in the blockchain. They are declared using the keyword `event` and logged using the keyword `emit`. Once they are logged, they can be viewed in etherscan if the smart contract has been deployed in \nEthereum or one of its testnets. Function modifiers are a declarative way of changing the behavior of functions. The modifier is declared using the keyword `modifier`. Function modifiers are added as a keyword to the functions. \nThey are used to check a condition before the function is executed.\nSyntax for declaring the modifier:\n```solidity\nmodifier Identifier {\n    //code comes here\n}\n```\nThe below snippet shows how to use events and function modifiers. whenever function `setValue` executes the event is logged as `emit Log(x,msg.sender)` defines emitting of the event with the message value and the senders address.\nThe `_;`is a special keyword inside the modifier which tells the compiler to execute the parent function i.e, in this case `setValue` function. \n\n```solidity\n//SPDX-License-Identifier:MIT\npragma solidity ^0.8.0;\n\ncontract FunctionModifiers {\n    address public immutable owner;\n    uint public favourite_number = 7;\n    event Log(uint , address );// declaration of the event\n    // Identifiers for event's arguments is not mandatory\n    constructor() {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == owner, \"not owner\");// declaration of the modifier\n        _; // this will tell the compiler to execute the parent function\n    }\n\n    function setValue(uint x) public onlyOwner returns (uint v) { // adding modifier to the function\n        favourite_number = x;\n        emit Log(x,msg.sender); // event is logged using the emit keyword\n        v = x;\n    }\n}\n\n```\n"
         },
         {
           "title": "Error Handling",
-          "shortTitle": "Error Handling",
+          "shortTitle": "Error-handling",
           "key": "errors",
-          "details": "- Solidity uses state-reverting exceptions to handle errors. Such an exception undoes all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller.\n- Solidity has many functions for error handling. Errors can occur at compile time or runtime.\n  Solidity is compiled to byte code and there a syntax error check happens at compile-time, while runtime errors occur mainly while executing the contracts. Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.\n- Error handling in solidity is done using revert, require, assert and try/catch.\n- Solidity has built-in errors `Error(string)` and `Panic(uint256)` which are handled by functions `require` and `assert`.\n  Error is used for “regular” error conditions while Panic is used for errors that should not be present in bug-free code.\n"
+          "details": "Solidity uses state-reverting exceptions to handle errors. Such an exception reverts all changes made to the state in the current call (and all its sub-calls) and flags an error to the caller. Solidity has many functions for error handling. \nCompile time or runtime errors can occur. Error handling can be done using assert, require, revert, try-catch and custom errors.\n\n #### Assert \n The `assert` function creates an error of type `Panic(uint256)` when used. It is primarily employed to check for internal errors and conditions that must always evaluate to be true. If the condition in the assert statement fails, \n it implies that there is a bug in the smart contract. The assert function takes one required parameter, which is the condition, and an optional parameter of the type string.\n \n #### Require\n The `require` function is used to test for errors that usually occur, whereas the assert function is used to test for errors that should never happen. The require function takes one required parameter, which is a condition, \n and an optional string parameter.\n\n require exception is triggered for the following cases:\n * Calling require(x) where x evaluates to false.\n * If you perform an external function call targeting a contract that contains no code.\n * If you use revert() or revert(\"description\").\n * If your contract receives Ether via a public function without payable modifier.\n * If your contract receives Ether via a public getter function.\n\n #### Revert\n Revert is a function that is similar to require but does not evaluate any conditions. It is used to generate exceptions, display errors, and revert the function calls. Calling a revert statement implies an exception is thrown, \n the unused gas is returned, and the state reverts to its original state.\n\n The below code snippet explains how to use assert, revert and require.    \n \n ```solidity\n contract Errors{\n   address immutable public owner;\n   constructor(){\n       owner = msg.sender;\n   }\n   function foo(uint x)public view{\n       assert(msg.sender!= owner); // if caller of the function is not the owner exception is thrown \n       require(x==1,\"the value 0 is not supported\");// if the parameter equals one require exception is thrown and state is reverted\n       if(x>100){\n           revert(\"the value exceeded\");// state is reverted of the value of x exceed 100\n       }\n\n   }\n\n }\n ```\n"
         },
         {
-          "title": "Panic via `assert`",
-          "shortTitle": "Panic via `assert`",
-          "key": "assert",
-          "details": "* The assert function creates an error of type Panic(uint256).\n* Assert should only be used to test for internal errors, and to check invariants. Properly functioning code should never create a Panic, not even on invalid external input. If this happens, then there is a bug in your contract which you should fix.\n* A Panic exception is generated in the following situations.\n  * If you call assert with an argument that evaluates to false.\n  * If an arithmetic operation results in underflow or overflow.\n  * If you divide or modulo by zero.\n  * If you convert a value that is too big or negative into an enum type.\n  * If you call .pop() on an empty array.\n  * If you access an array or an array slice at an out-of-bounds or negative index.\n  * If you allocate too much memory or create an array that is too large.\n  * If you call a zero-initialized variable of internal function type.\n* In the code snippet below , For large vaues of variables a and b , a+b might give an overflow and hence make the statement `c<=a` false resulting in a Panic generated by the assert statement.\n  ```\n  contract Assert {\n        function add(uint256 a, uint256 b) internal pure returns (uint256) {\n            uint256 c = a + b;\n            assert(c >= a);\n            \n            return c;\n        }\n    }\n  ```\n"
-        },
-        {
-          "title": "Error via require",
-          "shortTitle": "Error via require",
-          "key": "require",
-          "details": "* The require function is used to guarantee valid conditions that cannot be detected before execution. It checks conditions on input, contract state variables or return values from calls to external contracts.\n* It accepts a single argument and returns a boolean value after evaluation, it also has a custom string message option. If false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state.\n* An Error exception is generated by the compiler in the following cases-\n  * Calling require(x) where x evaluates to false.\n  * If you perform an external function call targeting a contract that contains no code.\n  * If you use revert() or revert(\"description\").\n  * If your contract receives Ether via a public function without payable modifier.\n  * If your contract receives Ether via a public getter function.\n* For the following cases, the error data from the external call (if provided) is forwarded. This means that it can either cause an Error or a Panic (or whatever else was given):\n  * If a .transfer() fails.\n  * If you call a function via a message call but it does not finish properly (i.e., it runs out of gas, has no matching function, or throws an exception itself).\n  * If you create a contract using the new keyword but the contract creation does not finish properly.\n* In the code snippet below , the account that invokes the function `idGenerator` must be an owner otherwise, require statement creates an error 'Only owner!'.\n  ```\n  function idGenerator() external view returns (uint) {\n  \n      require(msg.sender == lawyer, 'Only owner!');\n      \n      return uint(keccak256(abi.encode(block.timestamp, block.difficulty)));\n  }\n  ```\n"
-        },
-        {
-          "title": "revert",
-          "shortTitle": "revert",
-          "key": "revert",
-          "details": "* This statement is similar to the require statement. It does not evaluate any condition and does not depends on any state or statement. It is used to generate exceptions, display errors, and revert the function call.\n* Calling a revert statement implies an exception is thrown, the unused gas is returned and the state reverts to its original state.  Revert is used to handle the same exception types as require handles, but with little bit more complex logic.\n* In the code snippet below, the function checkOverflow throws an error exception with the string \"Overflow Exist\" in case the sum variable is out of bounds.\n  ```\n  function checkOverflow(uint _num1, uint _num2) public view returns(string memory, uint){\n      uint sum = _num1 + _num2;\n      if(sum < 0 || sum > 255){\n          revert(\" Overflow Exist\");\n      }\n      else{\n          return (\"No Overflow\", sum);\n      }\n        \n  }\n  ```\n"
-        },
-        {
-          "title": "try/catch",
-          "shortTitle": "try/catch",
-          "key": "try-catch",
-          "details": "* A failure in an external call can be caught using a try/catch statement.\n* The try/ catch feature is only available for external calls.\n* The try keyword has to be followed by an expression representing an external function call or a contract creation (new ContractName()).\n* Code shown belows shows an example usage of a try/catch block.\n  ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity >=0.8.1;\n\n    interface DataFeed { function getData(address token) external returns (uint value); }\n\n    contract FeedConsumer {\n        DataFeed feed;\n        uint errorCount;\n        function rate(address token) public returns (uint value, bool success) {\n            try feed.getData(token) returns (uint v) {\n                return (v, true);\n            } catch Error(string memory /*reason*/) {\n                // This is executed in case\n                // revert was called inside getData\n                // and a reason string was provided.\n                errorCount++;\n                return (0, false);\n            } catch Panic(uint /*errorCode*/) {\n                // This is executed in case of a panic,\n                // i.e. a serious error like division by zero\n                // or overflow. The error code can be used\n                // to determine the kind of error.\n                errorCount++;\n                return (0, false);\n            } catch (bytes memory /*lowLevelData*/) {\n                // This is executed in case revert() was used.\n                errorCount++;\n                return (0, false);\n            }\n        }\n    }\n  ```\n* Solidity supports different kinds of catch blocks depending on the type of errors.\n* `catch Error(string memory reason) { ... }`, This catch clause is executed if the error was caused by `revert(\"reasonString\")` or `require(false, \"reasonString\")` (or an internal error that causes such an exception).\n* `catch Panic(uint errorCode) { ... }`, If the error was caused by a panic, i.e. by a failing assert, division by zero, invalid array access, arithmetic overflow and others, this catch clause will be run.\n* `catch (bytes memory lowLevelData) { ... }`, This clause is executed if the error signature does not match any other clause, if there was an error while decoding the error message, or if no error data was provided with the exception. The declared variable provides access to the low-level error data in that case.\n* We can just use catch { … } if we are not interested in error data.\n"
-        },
-        {
-          "title": "custom errors",
-          "shortTitle": "custom errors",
-          "key": "custom-error",
-          "details": "* Starting from Solidity v0.8.4, there is a convenient and gas-efficient way to explain to users why an operation failed through the use of custom errors.\n* You can already use strings to give more information about failures (e.g., `revert(\"Insufficient funds.\");`), but they are rather expensive, especially when it comes to deploy cost, and it is difficult to use dynamic information in them.\n* Custom errors are defined using the `error` statement, which can be used inside and outside of contracts (including interfaces and libraries).\n* They have to be used together with the revert statement which causes all changes in the current call to be reverted and passes the error data back to the caller.\n* The example below shows use of error with the revert statement.\n  ```\n    // SPDX-License-Identifier: GPL-3.0\n    pragma solidity ^0.8.4;\n\n    error InsufficientBalance(uint256 available, uint256 required);\n\n    contract TestToken {\n        mapping(address => uint) balance;\n        function transfer(address to, uint256 amount) public {\n            if (amount > balance[msg.sender])\n                revert InsufficientBalance({\n                    available: balance[msg.sender],\n                    required: amount\n                });\n            balance[msg.sender] -= amount;\n            balance[to] += amount;\n        }\n    }\n  ```\n"
+          "title": "Custom Errors and try-catch",
+          "shortTitle": "Custom Errors",
+          "key": "custom-errors-and-try-catch",
+          "details": "In a `try-catch` statement, the try block will execute some code. If it gets any errors, the caught statement will be executed. A failure in an external call can be caught using a try/catch statement.\nThe `try` keyword has to be followed by an expression representing an external function call or a contract creation (`new ContractName()`). One try block can have many catch blocks.\nCustom errors help to reduce gas costs as the error message can be customized. They are defined using the keyword `error`. `try-catch` must be defined inside a function.\n\nIn the below snippet we are defining a try-catch block for an external call. If the try block executes sucessfully the `getOwner` variable will be assugned a value which will be equal to the address of the account from which the contract\n`External contract` is deployed. If there is an error catch blocks will be executed. The custom error is defined as `Logic` in the below snippet. Custom error is thrown when the input/argument of the function `testCustom_error` is greater than 10. \n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Errors{\n    ExternalContract object;\n    error Logic(string message);// defining the custom error\n    address public getOwner;\n    function setupOject(ExternalContract addr) public{ // creating the object of the external contract\n        object = addr;\n    }\n  \n    function callExternalContract() public returns(string memory returnmessage){ \n        // data location must be specified for data types like arrays, structs and strings if it is passed as an argument to a function\n        try object.viewAdress() returns(address addressOwner){ // making external call using try catch\n            getOwner= addressOwner;\n            return string(\"sucess\");\n        }catch Error(string memory message){ \n            return message;\n        }catch Panic(uint){\n            return \"panic-error\";\n        }\n\n    }\n    \n    function testCustom_error(uint x) public pure {\n        if (x > 10) {\n            revert Logic(\"the value exceeded 10\");// state is reverted with the custom error Logic\n        }\n    }\n\n\n}\n\ncontract ExternalContract{ // this is our external\n    address public immutable owner;\n    constructor(){\n        owner = msg.sender;\n    }\n    function viewAdress() public view returns(address){\n        return owner;\n    }\n\n}\n\n```\n"
         }
       ]
     },
@@ -3349,10 +3285,10 @@
       "order": 2,
       "explanations": [
         {
+          "key": "units",
           "title": "Units",
           "shortTitle": "Units",
-          "key": "units",
-          "details": "### Ether Units\n  While using Ethereum, we may encounter different units, such as Wei and Gwei. In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether. \n  Wei is the smallest unit of measurement. One Wei is worth 0.000000000000000001 Ether (or 10-18). Because it cannot deal with decimal numbers, the EVM (Ethereum Virtual Machine) employs Wei as its base unit. Gwei, another common unit, is 1000000000 Wei, or 0.000000001 (or 10-9) Ether. \n  \n  Following are unit conversions on basis of 1 Wei\n  - `1 Wei = 1;`\n  - `1 Kwei = 1e3;`\n  - `1 Mwei = 1e6;`\n  - `1 Gwei = 1e9;`\n  - `1 Szabo = 1e12;`\n  - `1 Finney = 1e15;`\n  - `1 Ether = 1e18;`\n  - `1 Kether = 1e21;`\n  - `1 Mether = 1e24;`\n  - `1 Gether = 1e27;`\n  - `1 Tether = 1e30;`\n    \n  The following code snippet demonstrates a simple function to convert the total `wei` and `gwei` (default unit in Solidity) to Ether.\n    \n  ```solidity\n    contract ConvertUnits {\n      function etherToGWei(uint value_ether) public pure returns (uint){\n        return value_ether*(10**9);\n      }\n      function gweiToEther(uint gwei) public pure returns (uint){\n        return gwei/(10**9);\n      }\n      function etherToWei(uint value_ether) public pure returns (uint){\n        return value_ether*(10**18);\n      }\n      function weiToEther(uint value_wei) public pure returns (uint){\n        return value_wei/(10**18);\n      }\n    }\n  ```\n### Time Units\n  After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit. We can use seconds, minutes, hours, days and weeks as suffix to denote time. Lowest unit of time is `seconds`.  \n  \n  Below are some time unit examples from solidity. \n  - `1 seconds = 1;`\n  - `1 minutes = 60 seconds;`\n  - `1 hours = 60 minutes;`\n  - `1 day = 24 hours;`\n  - `1 week = 7 days;`  \n\n  On calling function `func` below, the value of `block.timestamp` returns 1661554329 seconds however the returned value will be 143558295494400 seconds because `block.timestamp` gets multiplied with 24*60*60 due to the `days` time denomination.\n\n  ```solidity\n    contract C\n    {\n      function func() public view returns(uint){\n          return block.timestamp * 1 days;\n      }\n    }\n  ```\n  After version 0.5.0, solidity no longer uses the suffix \"years\" for the reasons of leap units(i.e. leap year).\n"
+          "details": "### Ether Units\n  While using Ethereum, we may encounter different units, such as Wei and Gwei. In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether. \n  Wei is the smallest unit of measurement. One Wei is worth 0.000000000000000001 Ether (or $10^{18}$). Because it cannot deal with decimal numbers, the EVM (Ethereum Virtual Machine) employs Wei as its base unit. Gwei, another common unit, is 1000000000 Wei, or 0.000000001 (or $10^9$) Ether. \n  \n  Following are unit conversions on basis of 1 Wei\n  - `1 wei = 1;`\n  - `1 gwei = 1e9;`\n  - `1 ether = 1e18;`\n    \n### Time Units\n  After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit. We can use seconds, minutes, hours, days and weeks as suffix to denote time. Lowest unit of time is `seconds`.  \n  \n  Below are some time unit examples from solidity. \n  - `1 seconds = 1;`\n  - `1 minutes = 60 seconds;`\n  - `1 hours = 60 minutes;`\n  - `1 day = 24 hours;`\n  - `1 week = 7 days;`  \n\n  On calling function `func` below, the value of `block.timestamp` returns 1661554329 seconds however the returned value will be 143558295494400 seconds because `block.timestamp` gets multiplied with 24*60*60 due to the `days` time denomination.\n\n  ```solidity\n    contract C\n    {\n      function func() public view returns(uint){\n          return block.timestamp * 1 days;\n      }\n    }\n  ```\n  After version 0.5.0, solidity no longer uses the suffix \"years\" for the reasons of leap units(i.e. leap year).\n"
         },
         {
           "title": "Globally available Variables",
@@ -4796,37 +4732,1057 @@
       "key": "expression-control",
       "details": "This chapter covers how to write expressions and covers the various Control Structures like if/else , for etc.",
       "order": 3,
-      "explanations": [],
+      "explanations": [
+        {
+          "key": "decision-making",
+          "title": "Decision Making",
+          "shortTitle": "if/else statements",
+          "details": "If/else statements are used for making decisions and for checking conditions in order to run a program. If the compiler encounters an `if` statement, it checks the condition(s) specified in that statement. \n\nIf the condition(s) are true, it executes the code inside the body of the `if` statement. If the condition(s) are false, the compiler jumps to the next line after the block. The compiler will check all \nthe `if` statements but it is not the case with `else`. The `else` block is executed if and only if all of the preceding `if` statements in the code block are false. We can have multiple `if` blocks, but we can have only one `else` block under an `if` block. \n\nThe `else` statement can be defined only when the `if` statement is defined prior to it and they should be continuous - no other codes should lie in between `if` and `else` blocks. If/else statements can be declared only inside functions or function modifiers. \nIf/else statements are very useful to handle the logic of our code.\n\nIf/else statements in Solidity are similar to other programming languages like JavaScript and Python, but the main difference is that type conversion from non-boolean to boolean is not available in Solidity. \nThis means that `if (1)` is not a valid statement in Solidity. We can also have single line if/else statements. \n\nsyntax for if/else statements\n```sol\nif(expression){ //condition\n//body\n}\n\nif(condition) body; single line if statement\nelse {\n  body of else block\n}\n\n```\nExample of a contract demonstrating the usage of if/else statements.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract DecisionMaking {\n    event Log(string message);\n\n    function checkValue(uint x) public {\n        if (x > 100) { // if statement-1\n            emit Log(\"x is greater than hundred\");\n        }\n\n        if (x > 50 && x <= 100) // if statement-2\n            emit Log(\"x is greater than fifty but less than hundred\");\n\n        if (x > 1 && x <= 50) { // if statement-3\n            emit Log(\"x is greater than one but less than fifty\");\n        } else emit Log(\"x is less than 1\"); // else statement-1\n\n        if (x == 0) emit Log(\"x is equal to zero\"); // if statement-4\n        else {\n            emit Log(\"x is not equal to zero\"); // else statement-2\n        }\n    }\n}\n```\nThe code snippet above defines the if/else blocks inside the function `checkValue`. When the function is called with an argument, every if block will be validated. The compiler checks all the `if` blocks and then goes to the `else` statement if none of the `if` blocks validate to true. For example if the value of `x` is 20 the `if statement-3` is executed and as well as `else statement-2` is executed. If the value of `x` is 0 `else statement-1` is executed because all the if statements above it fails the condition. Similarly `if statement-4` is also executed as the condition is true.\n"
+        },
+        {
+          "title": "For, While, Do While Loops",
+          "shortTitle": "Loops",
+          "key": "loops-for-while-do",
+          "details": "#### For Loops\nFor loops are used to iterate and loop through different conditions. You can define for loops only inside a function or function modifier, similar to if/else statements.\nFor loop is defined by the keyword `for`. It takes three parameters, two of which are optional and one required. The parameters are seperated by semi-colon. The first parameter is optional, where variables can be initialized. \nThe second parameter is a condition that belongs to the data type boolean. If this condition fails, the loop will terminate. The third parameter is also optional and can be used for incrementing and decrementing values or altering \nthem as needed. Anything can be done in the optional parameters - for example, in the first parameter we can do operations instead of initializing variables, and in the third parameter we can initialize variables or do other operations.\n\n##### Working of for loop \nThe compiler will execute the first parameter of the for loop only once. It will then check the condition and, if it's true, execute the body of the for loop. After executing the third parameter, it will check the condition again. \nThis process repeats until the condition is false.\n\nLoops usually have three parameters, with the first parameter being executed only once at the start of the loop, the second parameter being the condition which is validated for the whole iteration of the loop, and the third parameter \nbeing executed for every iteration except the first iteration. If the condition inside the loop is always true, however, the loop will become an infinite loop and the program will crash.\n\nsyntax of the for loop \n```solidity\nfor(first parameter;second parameter(condition);third parameter){\n  body of the for loop\n}\n```\n\nAn example of using for loop in solidity\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public sum = 0;\n\n    function Summation(uint n) public { // this function will do summation till n and add it to the variable sum\n        for (uint i = 0; i <= n; i++) {// for loop is used for iterating till n\n            sum += i; \n        }\n    }\n}\n\n```\nThe value of the `sum` variable is initially set to zero. When the `Summation` function is called with any positive integer as an argument, the for loop starts executing. The value of `i` is set to zero and the compiler \nchecks for the condition `i<=n`. If that condition is true, it will execute the body and then execute the third parameter (`i++`). It will then check the condition again to see if it is true. If so, the process will repeat. \nThe loop will only terminate if the condition is not met, which in this case is when `i>n`. Upon completion of the loop, we should get a sum that is equal to the summation of 0 to n.\n\n#### While loop \nWhile loops are very similar to `for` loops in that they can be used for iteration. The main difference between the two types of loops is that while loops only take one parameter instead of three. The parameter passed into a while loop is a condition. \nIf that condition is not met, the while loop will terminate. The while loop is defined using the keyword `while`. The while loop will continue to execute until the condition is true. However, if the given condition is always true, \nit will become an infinite loop and the program will crash.\n\nsyntax for while loop\n```solidity\nwhile(condition){\n//body of while loop\n}\n```\nAn example of using while loop in solidity\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public evensum = 0;\n\n    function sumEven(uint n) public {// this function will do summation of even numbers till n\n        uint i = 0;\n        while (i <= n) {  // while loop is used for iteration\n            if (i % 2 == 0) sum += i; // if statement for filtering even numbers till n\n            i++;\n        }\n    }\n}\n\n```\nIn the code snippet above, we have initialized a variable called `evensum` with a value of zero. The function `sumEven` is called with a positive integer, and \nif the condition `i<=n` is true, the while loop will start executing. The loop will continue until the condition is no longer true - in this case, when `i>n`. \nThis code results in the sum of all even numbers from 0 to n.\n\n#### Do-While loop\nDo while loops are completely similar to while loop the main difference is the do while loop is executed atleast one time. Do-while loop is executed once for even false condition.\nsyntax for do while loop\n```solidity\ndo{\n  body of the do while loop\n}while(condition); // semi-colon is necessary\n\n```\nExample showing how to use do while loop.\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Loops {\n    uint public i = 0;\n\n    function doWhile() public {\n        do { // do while loop is used for iteration\n            i++;\n        } while (1 > 2); // false condition\n    }\n}\n\n```\nIn the above code, we have initialized `i=0`. When the function `doWhile` gets called, it executes the do-while loop. Even though the condition `1>2` is false, the loop will execute for at least one time, \nmeaning the value of `i` will be one when the function is called once. If the function is called `n` times, the loop will execute `n` times and thus the value of `i` will be `n`.\nWe have used a false condition to demonstrate how do-while loops work.\n\nIn general, it's best to minimize the use of loops in Solidity code in order to reduce gas fees. By avoiding loops, you can save a lot of gas because it prevents computationally-heavy operations.\n"
+        },
+        {
+          "title": "Break, Continue and return keywords",
+          "shortTitle": "Keywords",
+          "key": "keywords",
+          "details": "#### Break\nBreak is a keyword which is used to break or terminate the running loop. It is a very useful keyword. In some situation we need to terminate the loop after a certain condition is met in that case we may use\n`break` keyword. Break keyword is used inside loops mostly with if/else statements. When compiler encounters break keyword it jumps out of the loop.\n\nexample showing the usage of break keyword\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    uint[] numbers = [1, 2, 3, 4, 5];\n    event elementcheck(string message);\n\n    function checkNumber(uint n) public {\n        for (uint i = 0; i < n; i++) {\n            if (numbers[i] == n) {\n                emit elementcheck(\"element is found\");\n                break;\n            }\n        }\n    }\n}\n\n```\nIn the code snippet provided, `numbers` is an array of unsigned integers. If `checkNumber` is called with a positive number as an argument, the for loop will be executed and the if condition will validate the condition `numbers[i]==n`.\nIf that condition is satisfied,  the event will be emitted and the loop will be terminated using the break keyword.\n\n#### Continue\nThe `continue` keyword is used to skip an iteration of a loop. In some cases, we need to skip an iteration of the loop when certain conditions are met. If the compiler encounters the `continue` keyword, it will jump to \nthe next iteration of the loop. This means that the control is transferred to the loop check condition. If the condition is true, the next iteration starts.\n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nexample showing the usage of continue keyword\ncontract Keywords {\n    uint public sumeven = 0;\n\n    function summationOfEven(uint n) public {\n        // this function will sum even numbers from one to n\n        for (uint i = 0; i <= n; i++) {\n            if (i % 2 != 0) {\n                continue; // continue keyword helps skipping the odd numbers in this case\n            } else {\n                sumeven += i;\n            }\n        }\n    }\n\n    function reset() public {\n        // rests the value of sumeven to zero\n        sumeven = 0;\n    }\n}\n\n```\nIn the code snippet above, we have initialized `sumeven=0`. When the function `summationOfEven` is called with a positive integer n, the for loop is executed. If the condition `i%2!=0` is satisfied, \nthe keyword `continue` will transfer control to the loop check condition and start the next iteration. In this case, `continue` helps us to skip iterations of odd numbers.\n\n#### Return \nReturn is a keyword which is used to return values/objects from a function. Whenever `return` is called the function will stop execution and return the value provided in the return statement.\nWe can return values from a function in two ways: One way is to normally return the value using the `return` keyword. Another way is to define a return variable and assign the return value to that\nvariable. The function `add` below defines a return variable `sum`. \n\nTherefore, we can return the value by just assigning the value to the sum as shown in the below snippet.\n```solidity\nfunction1(uint x)public returns(uint){\n  return x%2; returning using the return keyword\n}\n\nfunction2(uint y)public returns(uint answer){\n  answer = y%2; // returning the value by assigning return variable answer\n}\n\n```\nIn the above snippet both the functions performs same operation when an argument is passed to but they are returning values it in different ways.\n\nExample of using return keyword \n\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract Keywords {\n    function sum(uint a, uint b) public pure returns (uint, uint, uint, uint) {\n        return (a + b, b % a, a % b, a * b);\n    }\n}\n```\n"
+        },
+        {
+          "title": "Internal and External function calls",
+          "shortTitle": "Function calls",
+          "key": "function-calls",
+          "details": "#### Internal function calls\nInternal function calls are function calls that happen inside the contract. You can do an internal function call by directly using the function's identifier. Recursive calling also counts as an internal function call.\nThese function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient. \nYou can use the function's identifier to do an internal function call, no matter where the function is defined. As long as it's defined in the contract, the internal function call will take place. \nYou can call internal functions at any point in your code - for example, you could use them as other function's arguments, or inside if/else statements.\n\nexample of an internally called function is shown below\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract FunctionCall {\n    uint public addition = add(1, 2);\n    uint public product = multiply(add(2, 3), add(2, 1));\n\n    function add(uint a, uint b) public pure returns (uint output) {\n        output = a + b;\n    }\n\n    function multiply(uint a, uint b) public pure returns (uint) {\n        return a * b;\n    }\n\n    function validate() public {\n        if (add(1, 2) <= multiply(1, 3)) {\n            addition = 100;\n        }\n    }\n}\n\n```\nIn the snippet above, we make four internal function calls. The first call is `add(1,2)` and the second and third calls are made within the argument of the function call `product`.\n\n\n#### External function calls\nExternal function calls are basically function calls to other contracts. In order to make an external function call, the parent contract should have defined the object of the callable contract and the \ndeployed address of the callable contract should be assigned to the created contract object. External function calls can be made using `object.functionIdentifier` - for example `g.send(8)`, where `g` is the \nobject of the callable contract and `send` is a function of that contract. For error handling during external calls, we use try/catch statements.\nEVM considers a call to a non-existing contract to always succeed, so Solidity  uses the extcodesize opcode to check that the contract actually exists before calling it.  If the contract does not exist, an exception is thrown. Hence, the contract to which  the call is made should be defined in the file or imported into the file.\nA function call from one contract to another is not considered its own transaction; rather,  it's seen as a message call that's part of an overall transaction. However, an external  function call will be treated as a transaction if it modifies the state of the blockchain.\nExample of an external call is shown below\n```solidity\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ncontract CallerContract {\n    ExternalContract call;\n\n    function set(ExternalContract addr) external {\n        call = addr;// setting the contract object\n    }\n\n    function callSend(address payable addr) public {// address should be payable\n        call.send(addr);\n    }\n}\n\ncontract ExternalContract {\n    function send(address payable addr) external payable {\n        (bool sucess, ) = addr.call{value: 100}(\"\"); //sending 100 wei\n        require(sucess, \"transaction failed\"); \n    }\n\n    receive() external payable {}\n}\n\n```\nIn the code snippet above, we are calling the `send` function in the `ExternalContract` using the `CallerContract`. To do this, we first create a contract object of `ExternalContract` by its deployed address. \nWe then make an external call, setting the deployed address to the contract object `call`. The `call.send` function will send ether (in wei) to the address provided in the argument. However, before making the external call, \nwe need to make sure that the `ExternalContract` has some ether in it, so that it can send ether. Hence, we send ether to the `ExternalContract` before making the external call. The `ExternalContract` should have ether more than the sending value i.e, ether should be more than 100 wei in this case. \n"
+        }
+      ],
       "questions": [
         {
-          "uuid": "b3bd428b-7fd9-44b7-8139-c3a9f577793b",
-          "type": "MultipleChoice",
-          "content": "question",
-          "hint": "noHint",
-          "explanation": "explanation",
+          "uuid": "1e754d66-092a-438f-b75e-8fc637f6cee9",
+          "type": "SingleChoice",
+          "content": "What will happen if we declared `else` statement without any `if` statement?",
+          "hint": "NoHint",
+          "explanation": "Else statement can be defined only when the `if` statement is defined prior to it and they should be continuous i.e, no codes should lie between them.",
           "answerKeys": [
-            "B",
+            "C"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Compiler checks for the condition in the else statement",
+              "key": "A"
+            },
+            {
+              "content": "It will be executed",
+              "key": "B"
+            },
+            {
+              "content": "Error message will appear",
+              "key": "C"
+            },
+            {
+              "content": "Nothing will happen",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "d3983125-28ed-4af6-857e-7c3dc9ed136a",
+          "type": "MultipleChoice",
+          "content": "Which of the following is/are correct?",
+          "hint": "noHint",
+          "explanation": "We can have multiple `if` statements continuosly but only one else statement after a single or multiple `if` statement.",
+          "answerKeys": [
+            "A",
             "D"
           ],
           "subTopics": [
-            "control-structure"
+            "decision-making"
           ],
           "difficultyLevel": "Low",
           "choices": [
             {
-              "content": "1",
+              "content": "We can have multiple `if` statements continously",
               "key": "A"
             },
             {
-              "content": "2",
+              "content": "We can have only one `if` statement continuously",
               "key": "B"
             },
             {
-              "content": "3",
+              "content": "We can have multiple `else` statement under `if` statements continously",
               "key": "C"
             },
             {
-              "content": "4",
+              "content": "We can have only one `else` statement under `if` statements continuously",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "86e9b299-6751-4ed5-adf8-d1af7fe2b2ab",
+          "type": "SingleChoice",
+          "content": "Can we define `else if` block in Solidity?",
+          "hint": "NoHint",
+          "explanation": "`else if` doesn't exist in solidity. `else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. `else if` does exist in other programming languages like C, C++, JavaScript.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Else if block can be defined but only inside the struct",
+              "key": "A"
+            },
+            {
+              "content": "Else if block doesn't exist in Solidity so we can't define it",
+              "key": "B"
+            },
+            {
+              "content": "Else if can be defined but only above the `if` block",
+              "key": "C"
+            },
+            {
+              "content": "Else if can be defined but only below the `else` block",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "7eb527f6-5464-419c-a459-7806e4021efc",
+          "type": "SingleChoice",
+          "content": "Is it possible to convert non-boolean to boolean in solidity example `if(1)`?",
+          "hint": "NoHint",
+          "explanation": "We cannot do type conversion from non-boolean to boolean in solidity",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "No",
+              "key": "A"
+            },
+            {
+              "content": "Yes",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "e42f5064-acfd-400a-9c6d-87f4d28e0c8f",
+          "type": "MultipleChoice",
+          "content": "What is the datatype inside the paranthesis of an `if` statement?",
+          "hint": "noHint",
+          "explanation": "The paranthesis in if statement contains a condition so the data type should be either true or false hence it is boolean value.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Int",
+              "key": "A"
+            },
+            {
+              "content": "String",
+              "key": "B"
+            },
+            {
+              "content": "Boolean",
+              "key": "C"
+            },
+            {
+              "content": "Address",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "33765469-a9f8-41d7-903a-3ee4e11f2483",
+          "type": "SingleChoice",
+          "content": "How much parameters are required for defining a for loop in Solidity?",
+          "hint": "noHint",
+          "explanation": "The for loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "three",
+              "key": "A"
+            },
+            {
+              "content": "four",
+              "key": "B"
+            },
+            {
+              "content": "one",
+              "key": "C"
+            },
+            {
+              "content": "two",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "f4cb54b6-26de-4f2b-b879-d621fcd951ea",
+          "type": "SingleChoice",
+          "content": "What is the data type of the required parameter in the for loop?",
+          "hint": "noHint",
+          "explanation": "The required argument should be a conditional statement, hence the data type is boolean.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Boolean",
+              "key": "A"
+            },
+            {
+              "content": "Integer",
+              "key": "B"
+            },
+            {
+              "content": "String",
+              "key": "C"
+            },
+            {
+              "content": "Struct",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ea3b6f23-b673-4f9a-b928-2bc1ba77ab65",
+          "type": "SingleChoice",
+          "content": "How generally the primary argument withinside the for loop is executed?",
+          "hint": "noHint",
+          "explanation": "The first argument in the for loop is executed only once.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Infinite",
+              "key": "A"
+            },
+            {
+              "content": "One",
+              "key": "B"
+            },
+            {
+              "content": "Three",
+              "key": "C"
+            },
+            {
+              "content": "It will execute as long as the condition is true",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "e38441e9-3e06-4910-ba4b-104917d8a641",
+          "type": "SingleChoice",
+          "content": "Is it possible to define single line if/else statement?",
+          "hint": "If/else statments",
+          "explanation": "We can define single if/else statements without curly braces.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "decision-making"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "No it is not possible",
+              "key": "A"
+            },
+            {
+              "content": "It is possible only when if/else statements is defined inside function modifiers",
+              "key": "B"
+            },
+            {
+              "content": "Yes it is possible",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "078cc470-7699-49ac-9122-8b51aa6349ec",
+          "type": "SingleChoice",
+          "content": "How many times the third parameter will execute if the body of for loop is executed n times?",
+          "hint": "noHint",
+          "explanation": "The third parameter will be executed the same number of times as the for loop body.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "n+1 times",
+              "key": "A"
+            },
+            {
+              "content": "n times",
+              "key": "B"
+            },
+            {
+              "content": "n-1 times",
+              "key": "C"
+            },
+            {
+              "content": "one",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8144216b-fbef-4520-8f2c-fe9b813e17fc",
+          "type": "SingleChoice",
+          "content": "Why are loops not preferred in solidity?",
+          "hint": "Gas Fees",
+          "explanation": "Loops require a lot of computation, so gas fees can get pretty high.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Loops will consume lot of gas for computation",
+              "key": "A"
+            },
+            {
+              "content": "Loops will cause bugs in the contract",
+              "key": "B"
+            },
+            {
+              "content": "Loops are not preferred as it is complex to use",
+              "key": "C"
+            },
+            {
+              "content": "None of These",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "66b3f13c-5db7-42f6-abf9-ee49dd5e93cc",
+          "type": "SingleChoice",
+          "content": "What is the difference between for loop and while loop?",
+          "hint": "Parameters/Arguments",
+          "explanation": "The for loop requires one parameter and can take two optional parameters. The while loop only requires one parameter, which is a conditional statement.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The while loop will continue to run even when the condition is false",
+              "key": "A"
+            },
+            {
+              "content": "For loops involve curly braces while while loops don't",
+              "key": "B"
+            },
+            {
+              "content": "The for loop can be used inside a function, but the while loop can be used anywhere in the contract",
+              "key": "C"
+            },
+            {
+              "content": "While loops can take only one parameter, for loops can take three parameters",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b1b3fc44-3d67-4f1b-9d69-fc6b45f474e5",
+          "type": "SingleChoice",
+          "content": "When will the while loop terminate?",
+          "hint": "Condition",
+          "explanation": "The while loop will terminate only when the condition inside the loop is false.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "When the condition is false",
+              "key": "A"
+            },
+            {
+              "content": "After 100 iterations",
+              "key": "B"
+            },
+            {
+              "content": "When the gas fees execeeds 15000 wei",
+              "key": "C"
+            },
+            {
+              "content": "When the condition is true",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ecd90fea-49d4-4ec3-a007-9e864d5fee32",
+          "type": "SingleChoice",
+          "content": "What is the do-while loop's specialty?",
+          "hint": "noHint",
+          "explanation": "The Do-while loop is executed at least once, but if the condition inside the while or for loop is false, it will not execute.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It consumes very less gas",
+              "key": "A"
+            },
+            {
+              "content": "The loop is executed for atleast one time",
+              "key": "B"
+            },
+            {
+              "content": "It can be defined anywhere in the contract",
+              "key": "C"
+            },
+            {
+              "content": "The loop will terminate automatically after 1000 iterations",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "5328ebc5-3dbe-434d-b64d-bc9500796e8d",
+          "type": "SingleChoice",
+          "content": "What keywords are used to define a do-while loop?",
+          "hint": "noHint",
+          "explanation": "The do-while loop is defined using two keywords `do` and `while`.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "For keyword only",
+              "key": "A"
+            },
+            {
+              "content": "While keyword only",
+              "key": "B"
+            },
+            {
+              "content": "Both do and while keywords",
+              "key": "C"
+            },
+            {
+              "content": "Both if and while keywords",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b4e4a99a-c7c7-4dbf-9ab1-51d2afede138",
+          "type": "SingleChoice",
+          "content": "What will happen if the condition in the do-while loop is false?",
+          "hint": "noHint",
+          "explanation": "The do-while loop is executed for atleast one time. It doesn't matter if the condition is false the loop will execute for one time.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The loop will not execute at all",
+              "key": "A"
+            },
+            {
+              "content": "The loop is executed for one time",
+              "key": "B"
+            },
+            {
+              "content": "The program will crash",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "97dbf4a5-4f3c-4a06-87c3-110dfc9622a7",
+          "type": "SingleChoice",
+          "content": "What is the purpose of break keyword?",
+          "hint": "Termination",
+          "explanation": "The break keyword is used to stop the execution of a loop or to terminate the loop. It is mostly used with if/else statements.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "To terminate the loop",
+              "key": "A"
+            },
+            {
+              "content": "To make a jump for next iteration",
+              "key": "B"
+            },
+            {
+              "content": "To stop a function's execution",
+              "key": "C"
+            },
+            {
+              "content": "It is used to handle errors",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "23997bf8-e4f1-4ef4-9fa6-c4b8faec5bfe",
+          "type": "SingleChoice",
+          "content": "What is the use of the continue keyword?",
+          "hint": "noHint",
+          "explanation": "The keyword \"continue\" is mostly used with conditional statements in order to skip the current iteration of a loop.",
+          "answerKeys": [
+            "D"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It is used to handle errors",
+              "key": "A"
+            },
+            {
+              "content": "Used for making a contract object",
+              "key": "B"
+            },
+            {
+              "content": "Used for making external calls",
+              "key": "C"
+            },
+            {
+              "content": "Used to skip iteration",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "4b718e63-fb3a-4eff-ae4a-bdfbcc2750b2",
+          "type": "SingleChoice",
+          "content": "Where can we use a return keyword?",
+          "hint": "noHint",
+          "explanation": "The \"return\" keyword can be used only inside a function or within the body of a function.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It can be used only inside contructor function",
+              "key": "A"
+            },
+            {
+              "content": "It can be defined in for loops without a function",
+              "key": "B"
+            },
+            {
+              "content": "Only inside a function",
+              "key": "C"
+            },
+            {
+              "content": "None of these",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8b75dff0-084f-4b5c-8fe9-1751d4ad35b2",
+          "type": "SingleChoice",
+          "content": "What will happen if the compiler encounters an `break` keyword inside a nested for loop?",
+          "hint": "noHint",
+          "explanation": "When the compiler encounters the `break` keyword, it will stop the current iteration or terminate the loop altogether.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "All the for loops are terminated",
+              "key": "A"
+            },
+            {
+              "content": "The for loop in which the break keyword is encountered will be terminated",
+              "key": "B"
+            },
+            {
+              "content": "No change will occur",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b842c736-1a61-4743-9519-ffd6df8ad24b",
+          "type": "SingleChoice",
+          "content": "In Solidity, is it possible to return a value from a function without using the return keyword?",
+          "hint": "noHint",
+          "explanation": "We can return a value from a function by assigning the return variable to the value we want to return.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Yes",
+              "key": "A"
+            },
+            {
+              "content": "No",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "3fa16d55-f4cd-4ab5-bfa6-279353985b77",
+          "type": "SingleChoice",
+          "content": "Tell whether the following statement is true or false.\nthe data types of returning values should be specified in the function using the keyword `returns`.\n",
+          "hint": "noHint",
+          "explanation": "We need to specify the data type of returning values in the function using the keyword `returns`.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "9d4fd81e-9a02-46db-81d8-f6c2d354a911",
+          "type": "SingleChoice",
+          "content": "How to perform an internal function call?",
+          "hint": "Identifier",
+          "explanation": "Internal function calls can be executed by using the function's identifier with arguments if they exist. The function that is being called should be defined in the same contract.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It can be called using contract's deployed address and assigning it to the contract object",
+              "key": "A"
+            },
+            {
+              "content": "It can be done by using function identifier",
+              "key": "B"
+            },
+            {
+              "content": "Internal function calls can be called only through constructor function using the function's identifier",
+              "key": "C"
+            },
+            {
+              "content": "Internal function calls can be called only through function modifier using the function's identifier",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b4b131c8-96e4-4436-8d2b-2fefef286c53",
+          "type": "SingleChoice",
+          "content": "Why passing memory references to internally-called functions is very efficient?",
+          "hint": "noHint",
+          "explanation": "Internal function calls are translated into simple jumps inside the EVM. This has the effect that the current memory is not cleared, i.e. passing memory references to internally-called functions is very efficient.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "It is because EVM store memory of all internal function calls until the deployed contract is destroyed or demolished",
+              "key": "A"
+            },
+            {
+              "content": "It is beacause internal function calls stores data into the storage data",
+              "key": "B"
+            },
+            {
+              "content": "It is because internal function calls are translated into simple jumps inside the EVM",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "3e5264d4-18a8-4a6a-a2e4-da1fcfa2c17b",
+          "type": "SingleChoice",
+          "content": "In the following expression, can you spot the error in the code?\n ```solidity\n function add(uint x,uint y) public pure {\n return x+y;\n }\n ```\n",
+          "hint": "Return keyword",
+          "explanation": "The data type of returning values should be specified before returning in a function. The `returns(uint)` is missing in the above snippet.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The `return(uint)` is missing in the above snippet",
+              "key": "A"
+            },
+            {
+              "content": "The `returns(uint)` is missing in the above snippet",
+              "key": "B"
+            },
+            {
+              "content": "The `pure` keyword should be removed",
+              "key": "C"
+            },
+            {
+              "content": "The value should be returned within the parenthesis i.e, it should be `return(x+y)` instead of `return x+y`",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8f8e4198-097a-46c8-87c9-f77e08f4eda8",
+          "type": "SingleChoice",
+          "content": "Recursion is which type of function call?",
+          "hint": "noHint",
+          "explanation": "Recursion is an internal function call where the function is called from within the same contract.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Internal",
+              "key": "A"
+            },
+            {
+              "content": "External",
+              "key": "B"
+            },
+            {
+              "content": "Delegate call",
+              "key": "C"
+            },
+            {
+              "content": "It is a special type of function call",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "1a9ded3e-b1dd-4b2c-ac94-29050c1aab28",
+          "type": "SingleChoice",
+          "content": "Which of the following is correct?\nstatement 1 - Internal function call can occur anywhere in a contract.\nstatement 2 - Only uint/int, String and boolean can be returned using return keyword.\n",
+          "hint": "noHint",
+          "explanation": "Internal function call can occur anywhere inside the contract for example it can occur inside function arguments, if/else statements, contructor function, etc. We can also return address and bytes using return keyword.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Statement 2 is correct but Statement 1 is incorrect",
+              "key": "A"
+            },
+            {
+              "content": "Statement 1 is correct but Statement 2 is incorrect",
+              "key": "B"
+            },
+            {
+              "content": "Both are correct",
+              "key": "C"
+            },
+            {
+              "content": "Neither is correct",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "6dde182b-41e2-49a3-ac06-73b4d4473f38",
+          "type": "SingleChoice",
+          "content": "Which of the options regarding the statements below are correct?\nstatement 1 - External calls can be done only to the deployed contracts\nstatement 2 - External contract's deployed address is necessary to perform an external call\n",
+          "hint": "Externalcall",
+          "explanation": "In order to make an external call, you need the deployed address of the contract. This means that external calls can only be made to contracts that have already been deployed.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Statement 2 is correct but Statement 1 is incorrect",
+              "key": "A"
+            },
+            {
+              "content": "Statement 1 is correct but Statement 2 is incorrect",
+              "key": "B"
+            },
+            {
+              "content": "Both are correct",
+              "key": "C"
+            },
+            {
+              "content": "Neither is correct",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "79424ff0-d9fc-48ae-8399-8b3920564c21",
+          "type": "SingleChoice",
+          "content": "What will happen if the external contract is not defined or imported in solidity file while making an external call?",
+          "hint": "noHint",
+          "explanation": "The compiler will show an declaration error and the external call will not occur",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The external call will be sent sucessfully",
+              "key": "A"
+            },
+            {
+              "content": "The external call will fail",
+              "key": "B"
+            },
+            {
+              "content": "In that the call will only be successful if the function that is called is not a payable function",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "d0a588df-74f0-4766-8511-9cf7dade29b1",
+          "type": "SingleChoice",
+          "content": "What is the correct syntax for an external call?",
+          "hint": "noHint",
+          "explanation": "The correct syntax for making an external call is `contractobject.functionIdentifier(arguments)`",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "functionIdentifier(arguments)",
+              "key": "A"
+            },
+            {
+              "content": "contractobject.functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract",
+              "key": "B"
+            },
+            {
+              "content": "contractobject.functionIdentifier(arguments)",
+              "key": "C"
+            },
+            {
+              "content": "functionIdentifier(addr,arguments) , where `addr` is the  address of the external contract",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "02b0cef4-5599-4c0a-8669-2601e7a175ae",
+          "type": "SingleChoice",
+          "content": "Arrange the following steps in a correct way\n1. Address of the external contract is set to the contract object\n2. External call is made using the contract object\n3. Contract object is created using the exact identifier for the external contract\n4. External contract is defined in the sol file\n",
+          "hint": "Externalcall",
+          "explanation": "First, we need to either import or define the external contract in the file where the caller contract is located. \nThen, we create an object for the external contract. After creating the contract object, we set the deployed address \nof the external contract to the contract object. Finally, we make the external call using the contract object.\n",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "1->2->3->4",
+              "key": "A"
+            },
+            {
+              "content": "4->3->1->2",
+              "key": "B"
+            },
+            {
+              "content": "4->3->2->1",
+              "key": "C"
+            },
+            {
+              "content": "2->4->1->3",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8e50d0f2-adf2-4c2c-90cf-f3b5a68c8f97",
+          "type": "SingleChoice",
+          "content": "What is used by solidity to check the existence of a contract",
+          "hint": "noHint",
+          "explanation": "Solidity uses the `extcodesize` opcode to check that the contract that is about to be called actually exists (it contains code) and causes an exception if it does not.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "keccac function",
+              "key": "A"
+            },
+            {
+              "content": "extcodesize opcode",
+              "key": "B"
+            },
+            {
+              "content": "ABI of the deployed contract",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "cec9a212-f3a9-4ba2-b0ab-601b4594e596",
+          "type": "MultipleChoice",
+          "content": "Which of the following is correct about external function call?",
+          "hint": "noHint",
+          "explanation": "External function calls don't cost any gas unless the blockchain state changes. To make an external call, you need the deployed contract address. \nYou also need to have the external contract defined or imported in the Solidity file where the caller contract is located.\n",
+          "answerKeys": [
+            "A",
+            "C"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "External function calls do not cost any gas until there is no changes in the state of the blockchain",
+              "key": "A"
+            },
+            {
+              "content": "External calls doesn't require any address it can made just calling the function using its identifier",
+              "key": "B"
+            },
+            {
+              "content": "External contract should be defined or imported for making an external function call",
+              "key": "C"
+            },
+            {
+              "content": "External call costs gas even it doesn't change the state of the blockchain",
               "key": "D"
             }
           ]
@@ -4840,7 +5796,7 @@
           "type": "YoutubeVideo",
           "url": "url",
           "subTopics": [
-            "control-structure"
+            "decision-making"
           ],
           "details": "details\n"
         }
@@ -4849,8 +5805,14 @@
         {
           "title": "Control Structure",
           "shortTitle": "Control Structure",
-          "key": "control-structure",
-          "details": "- if/else\n- for\n- while\n- do\n- break,continue\n- return\n"
+          "key": "decision-making",
+          "details": "- if/else\n"
+        },
+        {
+          "title": "For, While and Do-while Loops and Keywords",
+          "shortTitle": "Loops and Keywords",
+          "key": "loops-keywords",
+          "details": "- for\n- while\n- do\n- break,continue\n- return\n"
         },
         {
           "title": "Function Calls",
@@ -4897,9 +5859,9 @@
           "details": "Abstraction allows the user to build more complex logic on top of the provided abstraction(abstract contracts) without having to understand \nor even consider all the hidden complexity.\n\n### Abstract Contracts\nIn Solidity the contracts having at least one function that do not have its implementation or not provided arguments \nfor all the base contract constructors. One can also consider a contract to be abstract if we do not intend to \ncreate one directly. An abstract contract can be declared using the abstract keyword. \n\n```solidity\n  pragma solidity ^0.4.19;\n\n  abstract contract Parent {\n      function sum(uint256 a, uint256 b) public returns (uint256);\n  }\n\n  contract Child is Parent {\n      function sum(uint256 a, uint256 b) public returns (uint256) { return a+b; }\n  }\n``` \nAbstract contracts are used as base contracts, allowing child contracts to inherit and use their functions. The abstract \ncontract defines the structure of the contract, and any derived contract inherited from it should provide an \nimplementation for the incomplete functions; if the derived contract does not provide an implementation for the \nincomplete functions, it will be marked as abstract as well. One cannot create an instance of an abstract contract.\n\n```solidity\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity ^0.8.0;\n\n  // Creating an abstract contract\n  abstract contract AbstractContract {\n      uint256 public num;\n      constructor(uint256 n ){\n          num = n;\n      }\n\n      function getNum() public virtual view returns (uint256){\n          return num;\n      }\n      function setNum(uint256 n) public virtual {}\n  }\n\n  // Child contract inheriting an abstract parent contract 'AbstractContract'\n  contract DerivedContract is AbstractContract {\n      string public name;\n      constructor(string memory nm  ,uint256  n) AbstractContract(n) {\n        name = nm;\n      }\n      function getName() public view returns (string memory){\n          return name;\n      }\n      // Calling functions inherited\n    // from abstract contract\n      function getNum() public override virtual view returns (uint256){\n          return 67;\n      }\n    // Defining functions inherited from abstract parent contract\n      function setNum(uint256 n ) public override virtual {\n          num = n;\n      }\n  }\n\n  contract Caller{\n      DerivedContract dc = new DerivedContract(\"DoDAO\",70);\n      function getData() public view returns(string memory, uint){\n          return (dc.getName(), dc.getNum());\n      }// returns (\"DoDAO\", 67)\n\n  }\n```\n### Interfaces\nInterfaces are similar to abstract contracts, which are created by using an interface keyword. It does not have any \ndefinitions, state variables, constructors, or functions with implementations; instead, they only contain function \ndeclarations, implying that functions in interfaces do not have any statements. They can inherit from other interfaces \nbut not from other contracts. An interface may contain enums and structs that can be accessed using the interface \nname dot notation.Interface functions can only be of the external type.    \n\n```solidity\n  // SPDX-License-Identifier: GPL-3.0\n  pragma solidity 0.4.19;\n\n  // Creating an interface contract\n  interface interfaceContract {\n    function getName(string name) public view returns(string memory);\n    function mul(uint n,uint m) public view returns(uint);\n  }\n\n  // Child contract inheriting\n  // an interface parent\n  // contract 'interfaceContract'\n  contract derivedContract is interfaceContract{\n    // Defining functions inherited from interface parent contract\n    function mul(uint n,uint m) public view returns(uint){\n      return n*m;\n    }\n    function getName(string name) public view returns(string memory){\n      return \"DoDAO\";\n    }\n\n  }\n\n  contract Caller{\n    // Creating an instance of\n    // an interface contract\n    interfaceContract obj;\n\n    // Creating an object of\n    // child contract\n    function call() public{\n      obj = new derivedContract();\n    }\n\n    // Calling functions inherited\n    // from interface contract\n    function getValues() public view returns(uint){\n      uint n = obj.mul(10, 20);\n      obj.getName(\"Interface\");\n      return n;\n    }// returns 200\n  }\n```\n"
         },
         {
+          "key": "library",
           "title": "Libraries in Solidity",
           "shortTitle": "Library",
-          "key": "library",
           "details": "Libraries are similar to Contracts in that they are intended to be reused. A Library is a collection of functions \nthat other contracts can use.\n\n### Creating library**\n\n```solidity\nlibrary <libraryName> {\n    // block of code\n}\n```\n\nIn Solidity, a library is a stateless entity. Unlike smart contracts, state variables cannot be defined in a library; \nlibrary functions are not permitted to alter or modify the state of a smart contract. It does not change the state of \nthe contract; calling a library function consumes no gas. Hence it can only implement pure or view functions. An \nexternal scope cannot access a library. The other contracts can call them, but they are not accessible from outside \nthe deployment.\n\nLet have a look upon how to use libraries in solidity. \n\n### Deploying library\n\n```solidity\n  // import <libraryName> from “./library-file.sol”;\n\n  // Solidity program to demonstrate \n  // how to deploy a library\n  pragma solidity ^0.5.0;\n\n  // Defining Library\n  library LibraryExample {\n      function pow(uint a, uint b) public view returns (uint, address) {\n          return (a ** b, address(this));\n      }\n  }\n\n  // library deployed with for keyword\n\n  contract LibExample {\n\n    // Deploying library using \n    // \"for\" keyword\n    using LibraryExample for unit;\n    address owner = address(this);\n\n    function getPow(uint num1, uint num2) public view returns (uint, address) {\n        return num1.pow(num2);\n    }\n  }\n\n  // library can be used without for keyword\n\n  contract LibExample2{\n\n    // Deploying library without using \n    // \"for\" keyword\n\n    function getPow(uint num1, uint num2) public view returns (uint, address) {\n          return LibraryExample.pow(num1, num2);\n    }\n  }\n```\n\nThe library is an independent entity that can not inherit any other library or contract. No other entity/library/contract \ncan inherit a library. A library is unable to provide fallback or payable functions.\n"
         }
       ],
@@ -6271,5 +7233,8 @@
         }
       ]
     }
+  ],
+  "courseAdmins": [
+    "0x5aa3a393d5ede088e4893d4a053e91c7d61807d0"
   ]
 }

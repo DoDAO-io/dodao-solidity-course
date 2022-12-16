@@ -8,39 +8,13 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
  **Units**        
 ### Ether Units
   While using Ethereum, we may encounter different units, such as Wei and Gwei. In Solidity, we can use wei, gwei or ether to specify a subdenomination of Ether. 
-  Wei is the smallest unit of measurement. One Wei is worth 0.000000000000000001 Ether (or 10-18). Because it cannot deal with decimal numbers, the EVM (Ethereum Virtual Machine) employs Wei as its base unit. Gwei, another common unit, is 1000000000 Wei, or 0.000000001 (or 10-9) Ether. 
+  Wei is the smallest unit of measurement. One Wei is worth 0.000000000000000001 Ether (or $10^{18}$). Because it cannot deal with decimal numbers, the EVM (Ethereum Virtual Machine) employs Wei as its base unit. Gwei, another common unit, is 1000000000 Wei, or 0.000000001 (or $10^9$) Ether. 
   
   Following are unit conversions on basis of 1 Wei
-  - `1 Wei = 1;`
-  - `1 Kwei = 1e3;`
-  - `1 Mwei = 1e6;`
-  - `1 Gwei = 1e9;`
-  - `1 Szabo = 1e12;`
-  - `1 Finney = 1e15;`
-  - `1 Ether = 1e18;`
-  - `1 Kether = 1e21;`
-  - `1 Mether = 1e24;`
-  - `1 Gether = 1e27;`
-  - `1 Tether = 1e30;`
+  - `1 wei = 1;`
+  - `1 gwei = 1e9;`
+  - `1 ether = 1e18;`
     
-  The following code snippet demonstrates a simple function to convert the total `wei` and `gwei` (default unit in Solidity) to Ether.
-    
-  ```solidity
-    contract ConvertUnits {
-      function etherToGWei(uint value_ether) public pure returns (uint){
-        return value_ether*(10**9);
-      }
-      function gweiToEther(uint gwei) public pure returns (uint){
-        return gwei/(10**9);
-      }
-      function etherToWei(uint value_ether) public pure returns (uint){
-        return value_ether*(10**18);
-      }
-      function weiToEther(uint value_wei) public pure returns (uint){
-        return value_wei/(10**18);
-      }
-    }
-  ```
 ### Time Units
   After literal numbers, units of time can be specified by adding suffixes like seconds, minutes, hours, days, and weeks where seconds are the base unit. We can use seconds, minutes, hours, days and weeks as suffix to denote time. Lowest unit of time is `seconds`.  
   
