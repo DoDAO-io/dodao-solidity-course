@@ -12,7 +12,9 @@
   ],
   "publishStatus": "Live",
   "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/Solidity/Solidity.png",
-  "courseAdmins": [],
+  "courseAdmins": [
+    "0x5aa3a393d5ede088e4893d4a053e91c7d61807d0"
+  ],
   "topics": [
     {
       "title": "Your First Solidity Smart Contract",
@@ -4772,20 +4774,20 @@
           "difficultyLevel": "Medium",
           "choices": [
             {
-              "content": "Compiler checks for the condition in the else statement",
-              "key": "A"
+              "key": "A",
+              "content": "Compiler checks for the condition in the else statement"
             },
             {
-              "content": "It will be executed",
-              "key": "B"
+              "key": "B",
+              "content": "It will be executed"
             },
             {
-              "content": "Error message will appear",
-              "key": "C"
+              "key": "C",
+              "content": "Error message will appear"
             },
             {
-              "content": "Nothing will happen",
-              "key": "D"
+              "key": "D",
+              "content": "Nothing will happen"
             }
           ]
         },
@@ -4835,20 +4837,20 @@
           "difficultyLevel": "Medium",
           "choices": [
             {
-              "content": "Else if block can be defined but only inside the struct",
-              "key": "A"
+              "key": "A",
+              "content": "Else if block can be defined but only inside the struct"
             },
             {
-              "content": "Else if block doesn't exist in Solidity so we can't define it",
-              "key": "B"
+              "key": "B",
+              "content": "Else if block doesn't exist in Solidity so we can't define it"
             },
             {
-              "content": "Else if can be defined but only above the `if` block",
-              "key": "C"
+              "key": "C",
+              "content": "Else if can be defined but only above the `if` block"
             },
             {
-              "content": "Else if can be defined but only below the `else` block",
-              "key": "D"
+              "key": "D",
+              "content": "Else if can be defined but only below the `else` block"
             }
           ]
         },
@@ -4865,12 +4867,12 @@
           "difficultyLevel": "Medium",
           "choices": [
             {
-              "content": "No",
-              "key": "A"
+              "key": "A",
+              "content": "No"
             },
             {
-              "content": "Yes",
-              "key": "B"
+              "key": "B",
+              "content": "Yes"
             }
           ]
         },
@@ -7233,8 +7235,5 @@
         }
       ]
     }
-  ],
-  "courseAdmins": [
-    "0x5aa3a393d5ede088e4893d4a053e91c7d61807d0"
   ]
 }

@@ -15,11 +15,11 @@ This is the course header. This will be added on top of every page. Do to [DoDAO
 - [x]  Error message will appear
 - [ ]  Nothing will happen
   
-Hint: Else statement
+Hint: NoHint
          
 Explanation: Else statement can be defined only when the `if` statement is defined prior to it and they should be continuous i.e, no codes should lie between them.
 
-Sub Topics: decision-making
+Sub Topics: No Sub-Topics
  
 
 ---
@@ -47,11 +47,11 @@ Sub Topics: decision-making
 - [ ]  Else if can be defined but only above the `if` block
 - [ ]  Else if can be defined but only below the `else` block
   
-Hint: Doesn't exist
+Hint: NoHint
          
-Explanation: Else if doesn't exist in solidity. `Else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. Else if do exist in other programming langiages like c,c++, JavaScript.
+Explanation: `else if` doesn't exist in solidity. `else if` is also a statement like `if` but it will be executed only if all of the preceding `if` or `else if` statements in the code block are false. `else if` does exist in other programming languages like C, C++, JavaScript.
 
-Sub Topics: decision-making
+Sub Topics: No Sub-Topics
  
 
 ---
@@ -61,11 +61,11 @@ Sub Topics: decision-making
 - [x]  No
 - [ ]  Yes
   
-Hint: Boolean
+Hint: NoHint
          
 Explanation: We cannot do type conversion from non-boolean to boolean in solidity
 
-Sub Topics: decision-making
+Sub Topics: No Sub-Topics
  
 
 ---
