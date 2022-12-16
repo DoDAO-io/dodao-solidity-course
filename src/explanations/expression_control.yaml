@@ -142,12 +142,12 @@
     infinite loop and the program will crash.
 
 
-    syntax of the for loop 
+    Syntax of the for loop 
 
     ```solidity
 
-    for(first parameter;second parameter(condition);third parameter){
-      body of the for loop
+    for(first parameter; second parameter(condition); third parameter){
+      //body of the for loop
     }
 
     ```
@@ -167,7 +167,7 @@
         uint public sum = 0;
 
         function Summation(uint n) public { // this function will do summation till n and add it to the variable sum
-            for (uint i = 0; i <= n; i++) {// for loop is used for iterating till n
+            for (uint i = 0; i <= n; i++) { // for loop is used for iterating till n
                 sum += i; 
             }
         }
@@ -204,13 +204,13 @@
     it will become an infinite loop and the program will crash.
 
 
-    syntax for while loop
+    Syntax for while loop
 
     ```solidity
 
     while(condition){
 
-    //body of while loop
+        //body of while loop
 
     }
 
@@ -257,12 +257,12 @@
     the do while loop is executed atleast one time. Do-while loop is executed
     once for even false condition.
 
-    syntax for do while loop
+    Syntax for do while loop
 
     ```solidity
 
     do{
-      body of the do while loop
+      // Body of the do while loop
     }while(condition); // semi-colon is necessary
 
 
@@ -318,7 +318,7 @@
     statements. When compiler encounters break keyword it jumps out of the loop.
 
 
-    example showing the usage of break keyword
+    Example showing the usage of break keyword
 
     ```solidity
 
@@ -371,7 +371,7 @@
     pragma solidity ^0.8.5;
 
 
-    example showing the usage of continue keyword
+    Example showing the usage of continue keyword
 
     contract Keywords {
         uint public sumeven = 0;
@@ -478,7 +478,7 @@
     could use them as other function's arguments, or inside if/else statements.
 
 
-    example of an internally called function is shown below
+    Example of an internally called function is shown below
 
     ```solidity
 
