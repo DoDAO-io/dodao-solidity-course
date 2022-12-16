@@ -4776,20 +4776,20 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "key": "A",
-              "content": "Compiler checks for the condition in the else statement"
+              "content": "Compiler checks for the condition in the else statement",
+              "key": "A"
             },
             {
-              "key": "B",
-              "content": "It will be executed"
+              "content": "It will be executed",
+              "key": "B"
             },
             {
-              "key": "C",
-              "content": "Error message will appear"
+              "content": "Error message will appear",
+              "key": "C"
             },
             {
-              "key": "D",
-              "content": "Nothing will happen"
+              "content": "Nothing will happen",
+              "key": "D"
             }
           ]
         },
@@ -4841,20 +4841,20 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "key": "A",
-              "content": "Else if block can be defined but only inside the struct"
+              "content": "Else if block can be defined but only inside the struct",
+              "key": "A"
             },
             {
-              "key": "B",
-              "content": "Else if block doesn't exist in Solidity so we can't define it"
+              "content": "Else if block doesn't exist in Solidity so we can't define it",
+              "key": "B"
             },
             {
-              "key": "C",
-              "content": "Else if can be defined but only above the `if` block"
+              "content": "Else if can be defined but only above the `if` block",
+              "key": "C"
             },
             {
-              "key": "D",
-              "content": "Else if can be defined but only below the `else` block"
+              "content": "Else if can be defined but only below the `else` block",
+              "key": "D"
             }
           ]
         },
@@ -4873,12 +4873,12 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "key": "A",
-              "content": "No"
+              "content": "No",
+              "key": "A"
             },
             {
-              "key": "B",
-              "content": "Yes"
+              "content": "Yes",
+              "key": "B"
             }
           ]
         },
