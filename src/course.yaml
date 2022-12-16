@@ -84,3 +84,5 @@ topics:
     questions: oops_concepts.yaml
     status: Done
     completionWeek: Done
+courseAdmins:
+  - '0x5aa3a393d5ede088e4893d4a053e91c7d61807d0'
