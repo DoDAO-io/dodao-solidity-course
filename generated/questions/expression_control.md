@@ -585,3 +585,80 @@ You also need to have the external contract defined or imported in the Solidity 
 
 Sub Topics: func-call
  
+
+---
+
+##### How errors are handled during external call?  
+
+- [ ]  Errors are handled using `break` keyword during external call
+- [ ]  Errors are handled using events during external call
+- [x]  Errors are handled using try/catch statements during external call
+- [ ]  Errors are handled using if/else statements during external call
+  
+Hint: noHint
+         
+Explanation: The errors are handled using try/catch statements during external call.
+
+Sub Topics: func-call
+ 
+
+---
+
+##### What needs to be done before making an external call in which the called function will transfer ether from the external contract?  
+
+- [ ]  The external contract should be removed from the file
+- [x]  Before making an external call, always check the balance of the external contract to make sure it has enough ether. If the contract doesn't have enough, you'll need to send more ether to it before proceeding
+- [ ]  The caller contract should have its own object defined
+- [ ]  None of the above
+  
+Hint: noHint
+         
+Explanation: Before making an external call, we must check the balance of that external contract to ensure it has a sufficient amount of ether. If it doesn't have a good amount of ether, we must send ether to that 
+external contract before making the call. This is because in order to make a transaction, the contract must hold some ether.
+
+
+Sub Topics: func-call
+ 
+
+---
+
+##### In the following expression, can you spot the error in the code?
+ ```solidity
+  contract CallerContract {
+      ExternalContract call;
+
+      function callSend(address payable addr) public {
+          call.send(addr);
+      }
+  }
+
+ ```
+  
+
+- [ ]  The function should be called `ExternalContract.call.send(addr)` instead of `call.send(addr)`
+- [ ]  The `payable` keyword should be removed
+- [x]  The deployed address of the external contract is not set to the contract object
+- [ ]  No error in the code
+  
+Hint: Return keyword
+         
+Explanation: The code above will throw an error because the deployed address of the external contract is not set to the contract object.
+The correct code is shown below
+
+```solidity
+contract CallerContract {
+    ExternalContract call;
+
+    function set(ExternalContract addr) external {
+        call = addr;
+    }
+
+    function callSend(address payable addr) public {
+        call.send(addr);
+    }
+}
+```
+
+
+Sub Topics: loops-keywords
+ 

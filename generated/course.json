@@ -5791,6 +5791,102 @@
               "key": "D"
             }
           ]
+        },
+        {
+          "uuid": "4034811a-a467-4901-b631-b870654bb909",
+          "type": "SingleChoice",
+          "content": "How errors are handled during external call?",
+          "hint": "noHint",
+          "explanation": "The errors are handled using try/catch statements during external call.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Errors are handled using `break` keyword during external call",
+              "key": "A"
+            },
+            {
+              "content": "Errors are handled using events during external call",
+              "key": "B"
+            },
+            {
+              "content": "Errors are handled using try/catch statements during external call",
+              "key": "C"
+            },
+            {
+              "content": "Errors are handled using if/else statements during external call",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b62657b2-b5f6-45ac-86da-c22b8ff9dac3",
+          "type": "SingleChoice",
+          "content": "What needs to be done before making an external call in which the called function will transfer ether from the external contract?",
+          "hint": "noHint",
+          "explanation": "Before making an external call, we must check the balance of that external contract to ensure it has a sufficient amount of ether. If it doesn't have a good amount of ether, we must send ether to that \nexternal contract before making the call. This is because in order to make a transaction, the contract must hold some ether.\n",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [
+            "func-call"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The external contract should be removed from the file",
+              "key": "A"
+            },
+            {
+              "content": "Before making an external call, always check the balance of the external contract to make sure it has enough ether. If the contract doesn't have enough, you'll need to send more ether to it before proceeding",
+              "key": "B"
+            },
+            {
+              "content": "The caller contract should have its own object defined",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "38af5844-f6fa-486e-b8b3-3091aef05d36",
+          "type": "SingleChoice",
+          "content": "In the following expression, can you spot the error in the code?\n ```solidity\n  contract CallerContract {\n      ExternalContract call;\n\n      function callSend(address payable addr) public {\n          call.send(addr);\n      }\n  }\n\n ```\n",
+          "hint": "Return keyword",
+          "explanation": "The code above will throw an error because the deployed address of the external contract is not set to the contract object.\nThe correct code is shown below\n\n```solidity\ncontract CallerContract {\n    ExternalContract call;\n\n    function set(ExternalContract addr) external {\n        call = addr;\n    }\n\n    function callSend(address payable addr) public {\n        call.send(addr);\n    }\n}\n```\n",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "loops-keywords"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "The function should be called `ExternalContract.call.send(addr)` instead of `call.send(addr)`",
+              "key": "A"
+            },
+            {
+              "content": "The `payable` keyword should be removed",
+              "key": "B"
+            },
+            {
+              "content": "The deployed address of the external contract is not set to the contract object",
+              "key": "C"
+            },
+            {
+              "content": "No error in the code",
+              "key": "D"
+            }
+          ]
         }
       ],
       "readings": [
