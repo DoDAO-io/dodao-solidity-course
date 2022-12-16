@@ -97,7 +97,7 @@ Hint: noHint
          
 Explanation: The `for` loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.
 ```solidity
-for(first param;second param(required);third param){
+for(first param; second param(required); third param){
   //body of the loop
 }
 ```
@@ -159,7 +159,7 @@ Sub Topics: decision-making
 ##### How many times will the third parameter be execute if the body of `for` loop is executed n times?
 for example in the below case the body of the for loop will execute for 5 times.
 ```solidity
-for(uint i=1;i<=5;i++){
+for(uint i=1; i<=5; i++){
   sum+=i;
 }
 ```

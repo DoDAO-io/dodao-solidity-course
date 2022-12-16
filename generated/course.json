@@ -4732,7 +4732,7 @@
     {
       "title": "Expressions and Control Structures",
       "key": "expression-control",
-      "details": "This chapter covers how to use if/else statments in solidity and it covers loops in solidity.  It covers `break`, `continue` and `return` keywords. It also explains about function calls: Both internal and external.",
+      "details": "This chapter covers how to use if/else statements and loops in solidity,  as well as how to use the `break`, `continue`, and `return` keywords.  It also explains how to make function calls, both internal and external.",
       "order": 3,
       "explanations": [
         {
@@ -4919,7 +4919,7 @@
           "type": "SingleChoice",
           "content": "How many parameters are required for defining a `for` loop in Solidity?",
           "hint": "noHint",
-          "explanation": "The `for` loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.\n```solidity\nfor(first param;second param(required);third param){\n  //body of the loop\n}\n```\n",
+          "explanation": "The `for` loop takes three parameters, one of which is required and the other two are optional. The required parameter must be a conditional statement.\n```solidity\nfor(first param; second param(required); third param){\n  //body of the loop\n}\n```\n",
           "answerKeys": [
             "C"
           ],
@@ -5045,7 +5045,7 @@
         {
           "uuid": "078cc470-7699-49ac-9122-8b51aa6349ec",
           "type": "SingleChoice",
-          "content": "How many times will the third parameter be execute if the body of `for` loop is executed n times?\nfor example in the below case the body of the for loop will execute for 5 times.\n```solidity\nfor(uint i=1;i<=5;i++){\n  sum+=i;\n}\n```\n",
+          "content": "How many times will the third parameter be execute if the body of `for` loop is executed n times?\nfor example in the below case the body of the for loop will execute for 5 times.\n```solidity\nfor(uint i=1; i<=5; i++){\n  sum+=i;\n}\n```\n",
           "hint": "noHint",
           "explanation": "The third parameter will be executed the same number of times as the `for` loop body. As shown in the example the third parameter `i++` will execute for 5 times which is same for the body of the loop.",
           "answerKeys": [
