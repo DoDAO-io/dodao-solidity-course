@@ -5793,7 +5793,7 @@
           ]
         },
         {
-          "uuid": "4034811a-a467-4901-b631-b870654bb909",
+          "uuid": "1436cb64-6669-4dcc-a4a1-35caa89865ec",
           "type": "SingleChoice",
           "content": "How errors are handled during external call?",
           "hint": "noHint",
@@ -5825,7 +5825,7 @@
           ]
         },
         {
-          "uuid": "b62657b2-b5f6-45ac-86da-c22b8ff9dac3",
+          "uuid": "17a2bfdd-7d19-4574-b862-f50de2958856",
           "type": "SingleChoice",
           "content": "What needs to be done before making an external call in which the called function will transfer ether from the external contract?",
           "hint": "noHint",
@@ -5857,16 +5857,16 @@
           ]
         },
         {
-          "uuid": "38af5844-f6fa-486e-b8b3-3091aef05d36",
+          "uuid": "7228e199-e096-49fc-aea3-5bef8863f5a3",
           "type": "SingleChoice",
-          "content": "In the following expression, can you spot the error in the code?\n ```solidity\n  contract CallerContract {\n      ExternalContract call;\n\n      function callSend(address payable addr) public {\n          call.send(addr);\n      }\n  }\n\n ```\n",
-          "hint": "Return keyword",
+          "content": "In the following expression, can you spot the error in the code?\n```solidity\n  contract CallerContract {\n      ExternalContract call;\n\n      function callSend(address payable addr) public {\n          call.send(addr);\n      }\n  }\n\n```\n",
+          "hint": "noHint",
           "explanation": "The code above will throw an error because the deployed address of the external contract is not set to the contract object.\nThe correct code is shown below\n\n```solidity\ncontract CallerContract {\n    ExternalContract call;\n\n    function set(ExternalContract addr) external {\n        call = addr;\n    }\n\n    function callSend(address payable addr) public {\n        call.send(addr);\n    }\n}\n```\n",
           "answerKeys": [
             "C"
           ],
           "subTopics": [
-            "loops-keywords"
+            "func-call"
           ],
           "difficultyLevel": "Low",
           "choices": [

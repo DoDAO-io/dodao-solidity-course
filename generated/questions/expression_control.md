@@ -623,7 +623,7 @@ Sub Topics: func-call
 ---
 
 ##### In the following expression, can you spot the error in the code?
- ```solidity
+```solidity
   contract CallerContract {
       ExternalContract call;
 
@@ -632,7 +632,7 @@ Sub Topics: func-call
       }
   }
 
- ```
+```
   
 
 - [ ]  The function should be called `ExternalContract.call.send(addr)` instead of `call.send(addr)`
@@ -640,7 +640,7 @@ Sub Topics: func-call
 - [x]  The deployed address of the external contract is not set to the contract object
 - [ ]  No error in the code
   
-Hint: Return keyword
+Hint: noHint
          
 Explanation: The code above will throw an error because the deployed address of the external contract is not set to the contract object.
 The correct code is shown below
@@ -660,5 +660,5 @@ contract CallerContract {
 ```
 
 
-Sub Topics: loops-keywords
+Sub Topics: func-call
  
