@@ -12,6 +12,7 @@
   ],
   "publishStatus": "Live",
   "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/Solidity/Solidity.png",
+  "courseAdmins": [],
   "topics": [
     {
       "title": "Your First Solidity Smart Contract",
