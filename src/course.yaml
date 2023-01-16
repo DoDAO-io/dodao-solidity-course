@@ -28,7 +28,7 @@ highlights:
   - Advanced Solidity concepts
   - Summaries and questions for each chapter
 publishStatus: Live
-thumbnail: https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/Solidity/Solidity.png
+thumbnail: https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/CourseIcons/solidity.png
 topics:
   - title: Your First Solidity Smart Contract
     key: intro-solidity
