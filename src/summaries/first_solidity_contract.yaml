@@ -1,3 +1,77 @@
+- title: Structure of a smartcontract
+  shortTitle: contract structure
+  key: smart-contract
+  details: >
+    The source code of a solidity contract begins with a license identifier to
+    avoid any potential legal issues that could arise if the code is published
+    as open source. The compiler version is specified using the keyword 
+
+    `pragma` and can be placed anywhere within the contract, though it is
+    generally considered best practice to specify it at the top of the document.
+    For single-line comments, we need to use `//`. For multiline comments, we
+    need to use `/*comments here */`. 
+
+    Solidity comments can also be written in `NatSpec` format. Developers use it
+    for documenting return variables, functions, and so on. To define a
+    single-line comment in this format, we need to use `///` for multiline, we
+    need to use `/** comments here */`. 
+
+    `import` keyword is used for importing files from other resources
+
+
+    Solidity has a special kind of function called a `constructor` function.
+    This function will be called automatically when you deploy your contract.
+    You can define a constructor function using the keyword 'constructor'
+    followed by the function's code.
+
+
+    ```solidity
+
+    //SPDX-License-Identifier:MIT 
+
+    pragma solidity ^0.8.2; // compiler version is specified using the keyword
+    pragma
+
+
+    import "priceconverter.sol"; // this is normal importing
+
+    import "priceconverter.sol" as pc; // if you want to import one file but
+    with different name
+
+    import { price1 as p1, price2 } from "storagefactory.sol"; // If we want to
+    import only specific variables or functions from a file
+
+
+    contract SolidityStructure {
+        address public owner;
+
+        constructor() {
+            owner = msg.sender;
+        }
+        // this is a single line comment
+
+        /* this is a 
+            multi line comment */
+
+        /* msg.sender is the address that has called or initiated a function or created a transaction. 
+                But at the time of deployment it will be the address of the deployer of the contract */
+
+        /// This is NatSpec single line comment
+
+        /**
+        This is NatSpec multi line comment
+        */
+    }
+
+
+    ```
+
+    In the above snippet, the constructor function will only be called once when
+    the contract is deployed. This function will assign the deployer address to
+    the `owner`. `msg.sender` is the address that has called or 
+
+    initiated a function or created a transaction. But at the time of deployment
+    it will be the address of the deployer of the contract.
 - title: Statevariables and Functions
   shortTitle: Functions
   key: state-variables-and-functions
@@ -88,80 +162,6 @@
 
 
     ```
-- title: Structure of a smartcontract
-  shortTitle: contract structure
-  key: smart-contract
-  details: >
-    The source code of a solidity contract begins with a license identifier to
-    avoid any potential legal issues that could arise if the code is published
-    as open source. The compiler version is specified using the keyword 
-
-    `pragma` and can be placed anywhere within the contract, though it is
-    generally considered best practice to specify it at the top of the document.
-    For single-line comments, we need to use `//`. For multiline comments, we
-    need to use `/*comments here */`. 
-
-    Solidity comments can also be written in `NatSpec` format. Developers use it
-    for documenting return variables, functions, and so on. To define a
-    single-line comment in this format, we need to use `///` for multiline, we
-    need to use `/** comments here */`. 
-
-    `import` keyword is used for importing files from other resources
-
-
-    Solidity has a special kind of function called a `constructor` function.
-    This function will be called automatically when you deploy your contract.
-    You can define a constructor function using the keyword 'constructor'
-    followed by the function's code.
-
-
-    ```solidity
-
-    //SPDX-License-Identifier:MIT 
-
-    pragma solidity ^0.8.2; // compiler version is specified using the keyword
-    pragma
-
-
-    import "priceconverter.sol"; // this is normal importing
-
-    import "priceconverter.sol" as pc; // if you want to import one file but
-    with different name
-
-    import { price1 as p1, price2 } from "storagefactory.sol"; // If we want to
-    import only specific variables or functions from a file
-
-
-    contract SolidityStructure {
-        address public owner;
-
-        constructor() {
-            owner = msg.sender;
-        }
-        // this is a single line comment
-
-        /* this is a 
-            multi line comment */
-
-        /* msg.sender is the address that has called or initiated a function or created a transaction. 
-                But at the time of deployment it will be the address of the deployer of the contract */
-
-        /// This is NatSpec single line comment
-
-        /**
-        This is NatSpec multi line comment
-        */
-    }
-
-
-    ```
-
-    In the above snippet, the constructor function will only be called once when
-    the contract is deployed. This function will assign the deployer address to
-    the `owner`. `msg.sender` is the address that has called or 
-
-    initiated a function or created a transaction. But at the time of deployment
-    it will be the address of the deployer of the contract.
 - title: Events and Function modifiers
   shortTitle: Events and modifiers
   key: events-modifiers
