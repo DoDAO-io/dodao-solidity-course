@@ -6,7 +6,7 @@ summary: >
 
   In this course you will learn how to write smart contracts and all the
   features of Solidity language.
-details: >
+details: >-
   Each smart contract can contain declarations of State Variables, Functions,
   Function Modifiers, Events, Errors, Struct Types, Enum Types etc. 
 
@@ -21,6 +21,10 @@ details: >
   This course will also cover Object-oriented programming concepts like
   constructor functions, contract and classes, interfaces, abstract contracts
   (virtual and override), inheritance etc.
+
+
+
+  new updates
 duration: 4 - 6 hours
 highlights:
   - Solidity smart contracts
