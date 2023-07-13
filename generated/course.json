@@ -16,8 +16,8 @@
     "0x5aa3a393d5ede088e4893d4a053e91c7d61807d0"
   ],
   "topicConfig": {
-    "showExplanations": false,
-    "showHints": false
+    "showExplanations": true,
+    "showHints": true
   },
   "topics": [
     {
