@@ -2,7 +2,7 @@
   "key": "solidity-course",
   "title": "Solidity Course (In Progress)",
   "summary": "Smart contracts allow users to implement conditions, rules and policies of the blockchain applications. \nIn this course you will learn how to write smart contracts and all the features of Solidity language.\n",
-  "details": "Each smart contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types, Enum Types etc. \nSmart Contract development in solidity requires an understanding of the solidity compiler, structure of a smart contract, use of various globally available functions and variables, expressions and control structures and error handling methods.\nIn this course, you will learn all these essentials for programming in Solidity.\nThis course will also cover Object-oriented programming concepts like constructor functions, contract and classes, interfaces, abstract contracts (virtual and override), inheritance etc.\n\n\nnew updates",
+  "details": "Each smart contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types, Enum Types etc. \nSmart Contract development in solidity requires an understanding of the solidity compiler, structure of a smart contract, use of various globally available functions and variables, expressions and control structures and error handling methods.\nIn this course, you will learn all these essentials for programming in Solidity.\nThis course will also cover Object-oriented programming concepts like constructor functions, contract and classes, interfaces, abstract contracts (virtual and override), inheritance etc.",
   "duration": "4 - 6 hours",
   "highlights": [
     "Solidity smart contracts",
