@@ -23,7 +23,7 @@
     {
       "title": "Your First Solidity Smart Contract",
       "key": "intro-solidity",
-      "details": "This chapter explains the solidity compiler and how to get started with solidity . Further it explores the layout of a solidity source file and also the structure of smart contracts in solidity.",
+      "details": "This chapter explains the solidity compiler and how to get started with solidity . Further it explores the layout of a solidity source file and also the structure of smart contracts in solidity.\n\nUpdates\n\nUpdates",
       "order": 0,
       "explanations": [
         {
