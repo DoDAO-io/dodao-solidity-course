@@ -30,6 +30,14 @@ highlights:
 publishStatus: Draft
 thumbnail: https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/CourseIcons/solidity.png
 topics:
+  - title: Types
+    key: data-types
+    details: This chapter explains the basics of data types used in Solidity.
+    readings: data_types.yaml
+    summaries: data_types.yaml
+    questions: data_types.yaml
+    status: Done
+    completionWeek: Done
   - title: Your First Solidity Smart Contract
     key: intro-solidity
     details: >-
@@ -46,14 +54,6 @@ topics:
     summaries: first_solidity_contract.yaml
     questions: first_solidity_contract.yaml
     explanations: first_solidity_contract.yaml
-    status: Done
-    completionWeek: Done
-  - title: Types
-    key: data-types
-    details: This chapter explains the basics of data types used in Solidity.
-    readings: data_types.yaml
-    summaries: data_types.yaml
-    questions: data_types.yaml
     status: Done
     completionWeek: Done
   - title: Units and variables
