@@ -1,29 +1,3 @@
-- uuid: 0dfd7a32-7eb3-4751-b35e-7f3b9ca775bc
-  type: MultipleChoice
-  content: Which of the following is a valid pragma verion declaration in Solidity?
-  hint: noHint
-  explanation: >
-    pragma solidity 0.6.12  - Only compiles with version 0.6.12
-
-    pragma solidity ^0.6.12 - Compiles with version 0.6.12 and above
-
-    pragma solidity >=0.4.0 <0.6.0 - Compiles with all versions between 0.4.0
-    and 0.6.0.
-  answerKeys:
-    - A
-    - B
-    - C
-  subTopics: []
-  difficultyLevel: Medium
-  choices:
-    - key: A
-      content: '`pragma solidity 0.6.13;`'
-    - key: B
-      content: '`pragma solidity ^0.6.12;`'
-    - key: C
-      content: '`pragma solidity >=0.4.0 <0.6.0;`'
-    - key: D
-      content: '`pragma solidity -0.5.2;`'
 - uuid: 85f2abbc-9acb-4ebe-a624-3c952da70b22
   type: SingleChoice
   content: >-
