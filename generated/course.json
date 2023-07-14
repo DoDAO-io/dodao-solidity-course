@@ -3134,6 +3134,96 @@
               "key": "D"
             }
           ]
+        },
+        {
+          "uuid": "06810593-6d5c-4bd7-aae4-2fc7e0adbb4e",
+          "type": "SingleChoice",
+          "content": "What is an asset?",
+          "hint": "NoHint",
+          "explanation": "Property owned by a person or company, regarded as having value and available to meet debts, commitments, or legacies.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Something that is owned by a person or company and increases in value over time",
+              "key": "A"
+            },
+            {
+              "content": "Something that you buy from a shop",
+              "key": "B"
+            },
+            {
+              "content": "Something that decreases in value over time",
+              "key": "C"
+            },
+            {
+              "content": "Something that you buy for fun",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "f4fe8a5b-e14c-43c4-9426-2ff707a44afa",
+          "type": "SingleChoice",
+          "content": "What are liabilities?",
+          "hint": "NoHint",
+          "explanation": "Financial obligations to outside parties that represent a net loss in value.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Something that is owned by a person or company and increases in value over time",
+              "key": "A"
+            },
+            {
+              "content": "Something that you buy from a shop",
+              "key": "B"
+            },
+            {
+              "content": "Financial obligations to outside parties that represent a net loss in value",
+              "key": "C"
+            },
+            {
+              "content": "Something that you buy for fun",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ea9a7834-da79-4099-9a71-90c6f465803f",
+          "type": "SingleChoice",
+          "content": "How do assets and liabilities relate?",
+          "hint": "NoHint",
+          "explanation": "Assets represent a net gain in value, while liabilities represent a net loss in value.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Assets represent a net loss in value, while liabilities represent a net gain in value",
+              "key": "A"
+            },
+            {
+              "content": "Assets represent a net gain in value, while liabilities represent a net loss in value",
+              "key": "B"
+            },
+            {
+              "content": "Assets and liabilities have no relation to each other",
+              "key": "C"
+            },
+            {
+              "content": "Assets and liabilities represent the same thing",
+              "key": "D"
+            }
+          ]
         }
       ],
       "readings": [
