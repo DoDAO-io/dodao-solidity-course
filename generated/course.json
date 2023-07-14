@@ -59,38 +59,6 @@
       ],
       "questions": [
         {
-          "uuid": "85f2abbc-9acb-4ebe-a624-3c952da70b22",
-          "type": "SingleChoice",
-          "content": "A Solidity Contract file has a pragma versioning `pragma solidity ^0.5.2;`. With which of the following compilers will the contract run?",
-          "hint": "Think of what condition is applicable with `^` symbol in solidity versioning.",
-          "explanation": "A source file with the line above does not compile with a compiler earlier than version 0.5.2, and it also does not work on a compiler starting from version 0.6.0 (this second condition is added by using ^).",
-          "answerKeys": [
-            "C"
-          ],
-          "subTopics": [
-            "smart-contract"
-          ],
-          "difficultyLevel": "Low",
-          "choices": [
-            {
-              "content": "Compiler version 0.5.1",
-              "key": "A"
-            },
-            {
-              "content": "Compiler version 0.4.1",
-              "key": "B"
-            },
-            {
-              "content": "Compiler version 0.5.5",
-              "key": "C"
-            },
-            {
-              "content": "Compiler version 0.6.1",
-              "key": "D"
-            }
-          ]
-        },
-        {
           "uuid": "0dfd7a32-7eb3-4751-b35e-7f3b9ca775bc",
           "type": "MultipleChoice",
           "content": "Which of the following is a valid pragma verion declaration in Solidity?",
@@ -118,6 +86,38 @@
             },
             {
               "content": "`pragma solidity -0.5.2;`",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "85f2abbc-9acb-4ebe-a624-3c952da70b22",
+          "type": "SingleChoice",
+          "content": "A Solidity Contract file has a pragma versioning `pragma solidity ^0.5.2;`. With which of the following compilers will the contract run?",
+          "hint": "Think of what condition is applicable with `^` symbol in solidity versioning.",
+          "explanation": "A source file with the line above does not compile with a compiler earlier than version 0.5.2, and it also does not work on a compiler starting from version 0.6.0 (this second condition is added by using ^).",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [
+            "smart-contract"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Compiler version 0.5.1",
+              "key": "A"
+            },
+            {
+              "content": "Compiler version 0.4.1",
+              "key": "B"
+            },
+            {
+              "content": "Compiler version 0.5.5",
+              "key": "C"
+            },
+            {
+              "content": "Compiler version 0.6.1",
               "key": "D"
             }
           ]
