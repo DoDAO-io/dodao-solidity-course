@@ -72,9 +72,9 @@
 
     initiated a function or created a transaction. But at the time of deployment
     it will be the address of the deployer of the contract.
-- title: Statevariables and Functions
+- key: state-variables-and-functions
+  title: Statevariables and Functions
   shortTitle: Functions
-  key: state-variables-and-functions
   details: >
 
     State variables are variables that are stored permanently on the blockchain.
