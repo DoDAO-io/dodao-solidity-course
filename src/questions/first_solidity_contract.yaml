@@ -2,35 +2,40 @@
   type: MultipleChoice
   content: Which of the following is a valid pragma verion declaration in Solidity?
   hint: noHint
-  explanation: |
+  explanation: >
     pragma solidity 0.6.12  - Only compiles with version 0.6.12
+
     pragma solidity ^0.6.12 - Compiles with version 0.6.12 and above
-    pragma solidity >=0.4.0 <0.6.0 - Compiles with all versions between 0.4.0 and 0.6.0.
+
+    pragma solidity >=0.4.0 <0.6.0 - Compiles with all versions between 0.4.0
+    and 0.6.0.
   answerKeys:
     - A
     - B
     - C
-  subTopics:
-    - smart-contract
-  difficultyLevel: Low
+  subTopics: []
+  difficultyLevel: Medium
   choices:
-    - content: "`pragma solidity 0.6.12;`"
-      key: A
-
-    - content: "`pragma solidity ^0.6.12;`"
-      key: B
-
-    - content: "`pragma solidity >=0.4.0 <0.6.0;`"
-      key: C
-
-    - content: "`pragma solidity -0.5.2;`"
-      key: D
-
+    - key: A
+      content: '`pragma solidity 0.6.12;`'
+    - key: B
+      content: '`pragma solidity ^0.6.12;`'
+    - key: C
+      content: '`pragma solidity >=0.4.0 <0.6.0;`'
+    - key: D
+      content: '`pragma solidity -0.5.2;`'
 - uuid: 85f2abbc-9acb-4ebe-a624-3c952da70b22
   type: SingleChoice
-  content: A Solidity Contract file has a pragma versioning `pragma solidity ^0.5.2;`. With which of the following compilers will the contract run?
-  hint: Think of what condition is applicable with `^` symbol in solidity versioning.
-  explanation: A source file with the line above does not compile with a compiler earlier than version 0.5.2, and it also does not work on a compiler starting from version 0.6.0 (this second condition is added by using ^).
+  content: >-
+    A Solidity Contract file has a pragma versioning `pragma solidity ^0.5.2;`.
+    With which of the following compilers will the contract run?
+  hint: >-
+    Think of what condition is applicable with `^` symbol in solidity
+    versioning.
+  explanation: >-
+    A source file with the line above does not compile with a compiler earlier
+    than version 0.5.2, and it also does not work on a compiler starting from
+    version 0.6.0 (this second condition is added by using ^).
   answerKeys:
     - C
   subTopics:
@@ -39,23 +44,33 @@
   choices:
     - content: Compiler version 0.5.1
       key: A
-
     - content: Compiler version 0.4.1
       key: B
-
     - content: Compiler version 0.5.5
       key: C
-
     - content: Compiler version 0.6.1
       key: D
-
 - uuid: 6bc53ece-fffd-4f7f-bb54-c8200d629d16
   type: MultipleChoice
-  content: Which of the following statements is incorrect regarding pragmas in solidity?
-  hint: ABI coder pragma can be used to select between the two implementations of the ABI encoder and decoder and experimental pragma can be used to enable features of the compiler or language that are not yet enabled by default.
-  explanation: |
-    The pragma keyword is used to enable certain compiler features or checks. A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project. If you import another file, the pragma from that file does not automatically apply to the importing file.
-    By using pragma abicoder v1 or pragma abicoder v2 you can select between the two implementations of the ABI encoder and decoder. It can be used to enable features of the compiler or language that are not yet enabled by default. The following experimental pragmas are currently supported: ABIEncoderV2 , SMTChecker.
+  content: >-
+    Which of the following statements is incorrect regarding pragmas in
+    solidity?
+  hint: >-
+    ABI coder pragma can be used to select between the two implementations of
+    the ABI encoder and decoder and experimental pragma can be used to enable
+    features of the compiler or language that are not yet enabled by default.
+  explanation: >
+    The pragma keyword is used to enable certain compiler features or checks. A
+    pragma directive is always local to a source file, so you have to add the
+    pragma to all your files if you want to enable it in your whole project. If
+    you import another file, the pragma from that file does not automatically
+    apply to the importing file.
+
+    By using pragma abicoder v1 or pragma abicoder v2 you can select between the
+    two implementations of the ABI encoder and decoder. It can be used to enable
+    features of the compiler or language that are not yet enabled by default.
+    The following experimental pragmas are currently supported: ABIEncoderV2 ,
+    SMTChecker.
   answerKeys:
     - A
     - D
@@ -63,25 +78,32 @@
     - smart-contract
   difficultyLevel: Medium
   choices:
-    - content: In Solidity `pragma` keyword is only used to specify the version of the compiler the code should compile with.
+    - content: >-
+        In Solidity `pragma` keyword is only used to specify the version of the
+        compiler the code should compile with.
       key: A
-
-    - content: The `pragma` keyword is used to enable certain compiler features or checks.
+    - content: >-
+        The `pragma` keyword is used to enable certain compiler features or
+        checks.
       key: B
-
-    - content: The following code will only compile with compiler version 0.6.12, `pragma solidity 0.6.12;`.
+    - content: >-
+        The following code will only compile with compiler version 0.6.12,
+        `pragma solidity 0.6.12;`.
       key: C
-
-    - content: If you import another file, the pragma from that file will automatically apply to the importing file.
+    - content: >-
+        If you import another file, the pragma from that file will automatically
+        apply to the importing file.
       key: D
-
 - uuid: d336edf3-75ef-43c7-b77d-74bafcaa92b9
   type: SingleChoice
   content: Which of the following pragma declarations is incorrect?
   hint: noHint
-  explanation: |
-    By using pragma abicoder v1 or pragma abicoder v2 you can select between the two implementations of the ABI encoder and decoder.
-    If you use pragma experimental SMTChecker;, then you get additional safety warnings which are obtained by querying an SMT solver.
+  explanation: >
+    By using pragma abicoder v1 or pragma abicoder v2 you can select between the
+    two implementations of the ABI encoder and decoder.
+
+    If you use pragma experimental SMTChecker;, then you get additional safety
+    warnings which are obtained by querying an SMT solver.
   answerKeys:
     - D
   subTopics:
@@ -90,21 +112,25 @@
   choices:
     - content: pragma experimental SMTChecker;
       key: A
-
     - content: pragma abicoder v1;
       key: B
-
     - content: pragma solidity ^0.5.2;
       key: C
-
     - content: pragma version 0.6.2;
       key: D
-
 - uuid: 1e3de4e3-fd09-446a-ba8a-2d223b59f587
   type: SingleChoice
-  content: If you want to import a file in your solidity code which of the following will be a correct but inefficient way to do so?
+  content: >-
+    If you want to import a file in your solidity code which of the following
+    will be a correct but inefficient way to do so?
   hint: All import statements are correct.
-  explanation: The statement `import "filename";` imports all global symbols from “filename” into the current global scope. This form is not recommended for use, because it unpredictably pollutes the namespace. If you add new top-level items inside “filename”, they automatically appear in all files that import like this from “filename”. It is better to import specific symbols explicitly.
+  explanation: >-
+    The statement `import "filename";` imports all global symbols from
+    “filename” into the current global scope. This form is not recommended for
+    use, because it unpredictably pollutes the namespace. If you add new
+    top-level items inside “filename”, they automatically appear in all files
+    that import like this from “filename”. It is better to import specific
+    symbols explicitly.
   answerKeys:
     - D
   subTopics:
@@ -113,25 +139,27 @@
   choices:
     - content: import * as symbolName from "filename";
       key: A
-
     - content: import "filename" as symbolName;
       key: B
-
     - content: import {symbol1 as alias, symbol2} from "filename";
       key: C
-
     - content: import "filename";
       key: D
-
 - uuid: 70f2e739-5097-4606-be32-9fc2dc766c0e
   type: SingleChoice
-  content: |
+  content: >
     Which of the following statements regarding solidity files is correct?
-    Statement 1 - It is a better practice to modularize code by writing contracts in different source files and using imports.
-    Statement 2 - The export declaration is used to export functions from a Contract.
+
+    Statement 1 - It is a better practice to modularize code by writing
+    contracts in different source files and using imports.
+
+    Statement 2 - The export declaration is used to export functions from a
+    Contract.
   hint: noHint
-  explanation: |
-    Solidity supports import statements to help modularise your code that are similar to those available in JavaScript (from ES6 on). 
+  explanation: >
+    Solidity supports import statements to help modularise your code that are
+    similar to those available in JavaScript (from ES6 on). 
+
     However, Solidity does not support the concept of a default export.
   answerKeys:
     - A
@@ -141,23 +169,24 @@
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-
     - content: Both are true.
       key: C
-
     - content: Neither is true.
       key: D
-
 - uuid: 25239107-bb81-48b8-9485-9c8df81a5514
   type: MultipleChoice
   content: Which of the following comments is invalid in a Solidity Code?
   hint: noHint
-  explanation: |
-    Single-line comments (//) and multi-line comments (/*...*/) are possible in Solidity. 
-    Additionally, there is another type of comment called a NatSpec comment, they are written with a triple slash (///) or a double asterisk block (/** ... */) and they should be used directly above function declarations or statements.
+  explanation: >
+    Single-line comments (//) and multi-line comments (/*...*/) are possible in
+    Solidity. 
+
+    Additionally, there is another type of comment called a NatSpec comment,
+    they are written with a triple slash (///) or a double asterisk block (/**
+    ... */) and they should be used directly above function declarations or
+    statements.
   answerKeys:
     - A
     - D
@@ -167,24 +196,27 @@
   choices:
     - content: /This is a single line comment.
       key: A
-
     - content: //This is a single line comment.
       key: B
-
     - content: ///This is a single line comment.
       key: C
-
     - content: /*This is a single line comment.
       key: D
-
 - uuid: 6de1c98d-d533-4b04-937c-6f90db4fc63e
   type: MultipleChoice
   content: In the context of NatSpec comments which of the following is true?
-  hint: Solidity supports NatSpec comments in addition to the simple single/multi line comments.
-  explanation: |
+  hint: >-
+    Solidity supports NatSpec comments in addition to the simple single/multi
+    line comments.
+  explanation: >
     NatSpec stands for Ethereum Natural Language Specification Format.
-    If no tags are used then the Solidity compiler will interpret a /// or /** comment in the same way as if it were tagged with @notice.
-    The Solidity compiler only interprets tags if they are external or public. You can use similar comments for internal and private functions, but those will not be parsed.
+
+    If no tags are used then the Solidity compiler will interpret a /// or /**
+    comment in the same way as if it were tagged with @notice.
+
+    The Solidity compiler only interprets tags if they are external or public.
+    You can use similar comments for internal and private functions, but those
+    will not be parsed.
   answerKeys:
     - A
     - C
@@ -194,22 +226,25 @@
   choices:
     - content: NatSpec stands for Ethereum Natural Language Specification Format.
       key: A
-
-    - content: NatSpec comments provide tags and in case if no tags are used , the solidity compiler will interpret (///) as (//).
+    - content: >-
+        NatSpec comments provide tags and in case if no tags are used , the
+        solidity compiler will interpret (///) as (//).
       key: B
-
-    - content: The Solidity compiler only interprets tags if they are external or public.
+    - content: >-
+        The Solidity compiler only interprets tags if they are external or
+        public.
       key: C
-
-    - content: Comments in solidity can only be made using (//) for Single-line and (/*...*/) for multi-line.
+    - content: >-
+        Comments in solidity can only be made using (//) for Single-line and
+        (/*...*/) for multi-line.
       key: D
-
 - uuid: 77cd176f-04d5-464d-86fa-64992e2d4db8
   type: SingleChoice
   content: What does the basic structure of a contract contain?
   hint: noHint
-  explanation: |
-    Each contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types.
+  explanation: >
+    Each contract can contain declarations of State Variables, Functions,
+    Function Modifiers, Events, Errors, Struct Types and Enum Types.
   answerKeys:
     - D
   subTopics:
@@ -218,16 +253,12 @@
   choices:
     - content: Pragma directive
       key: A
-
     - content: Name of the contract
       key: B
-
     - content: Data and functions
       key: C
-
     - content: All of the above
       key: D
-
 - uuid: 421abb3d-6f87-4e4a-a22f-af467d34035b
   type: SingleChoice
   content: What does a simple function definition in Solidity contain?
@@ -242,56 +273,62 @@
   answerKeys:
     - C
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
     - content: Modifier definitions
       key: A
-
     - content: Fallback definition
       key: B
-
     - content: Function header and code
       key: C
-
     - content: Event
       key: D
-
 - uuid: e854f94d-5e49-4e3f-9e2a-0f8a1a4d1f83
   type: SingleChoice
   content: Regarding constructors in solidity which statement is correct?
   hint: Only one constructor is allowed.
-  explanation: |
-    A constructor is optional. Only one constructor is allowed, which means overloading is not supported.
-    After the constructor has executed, the final code of the contract is stored on the blockchain. 
-    The deployed code does not include the constructor code or internal functions only called from the constructor.
+  explanation: >
+    A constructor is optional. Only one constructor is allowed, which means
+    overloading is not supported.
+
+    After the constructor has executed, the final code of the contract is stored
+    on the blockchain. 
+
+    The deployed code does not include the constructor code or internal
+    functions only called from the constructor.
   answerKeys:
     - B
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
     - content: Constructor overloading is supported.
       key: A
-
     - content: A constructor is optional.
       key: B
-
-    - content: The contract deployed on the blockchain will also contain the constructor code.
+    - content: >-
+        The contract deployed on the blockchain will also contain the
+        constructor code.
       key: C
-
     - content: None of these
       key: D
-
 - uuid: 611c7208-9eb2-4c4a-8d10-160081de6710
   type: SingleChoice
-  content: |
+  content: >
     Which of the options regarding the statements below are correct?
-    Statement 1 - A contract in the sense of Solidity is a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain.
-    Statement 2 - Contracts in Solidity are similar to classes in object-oriented languages.
+
+    Statement 1 - A contract in the sense of Solidity is a collection of code
+    (its functions) and data (its state) that resides at a specific address on
+    the Ethereum blockchain.
+
+    Statement 2 - Contracts in Solidity are similar to classes in
+    object-oriented languages.
   hint: noHint
-  explanation: |
-    Contracts in Solidity are similar to classes in object-oriented languages. They contain persistent data in state variables, and functions that can modify these variables.
+  explanation: >
+    Contracts in Solidity are similar to classes in object-oriented languages.
+    They contain persistent data in state variables, and functions that can
+    modify these variables.
   answerKeys:
     - C
   subTopics:
@@ -300,16 +337,12 @@
   choices:
     - content: Statement 1 is correct but Statement 2 is incorrect.
       key: A
-
     - content: Statement 2 is correct but Statement 1 is incorrect.
       key: B
-
     - content: Both are correct.
       key: C
-
     - content: Neither is correct.
       key: D
-
 - uuid: b8e4a65e-683e-43a0-b0c1-7f6271177181
   type: SingleChoice
   content: |
@@ -331,180 +364,201 @@
     }
     ```
   hint: Check the declaration of the state variables.
-  explanation: |
-    The state variable x_coordinate cannot be initialized in the constructor as it is declared as constant.
-    For constant variables, the value has to be fixed at compile-time, while for immutable, it can still be assigned at construction time.
+  explanation: >
+    The state variable x_coordinate cannot be initialized in the constructor as
+    it is declared as constant.
+
+    For constant variables, the value has to be fixed at compile-time, while for
+    immutable, it can still be assigned at construction time.
   answerKeys:
     - C
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
-    - content: This code will not compile as solidity functions cannot have multipe return values.
+    - content: >-
+        This code will not compile as solidity functions cannot have multipe
+        return values.
       key: A
-
-    - content: This code will not compile because State Variables declared immutable cannot be initialised in a constructor.
+    - content: >-
+        This code will not compile because State Variables declared immutable
+        cannot be initialised in a constructor.
       key: B
-
-    - content: This code will not compile because State Variables declared constant cannot be initialised in a constructor.
+    - content: >-
+        This code will not compile because State Variables declared constant
+        cannot be initialised in a constructor.
       key: C
-
     - content: The code has no errors and can be deployed.
       key: D
-
 - uuid: 5e40d1c1-0bbc-45f6-ae2e-eeee3715168b
   type: MultipleChoice
   content: Which of the following statements is correct regarding functions?
   hint: noHint
-  explanation: |
-    Functions can be declared view in which case they promise not to modify the state, they can also be declared pure in which case they promise not to read from or modify the state.
+  explanation: >
+    Functions can be declared view in which case they promise not to modify the
+    state, they can also be declared pure in which case they promise not to read
+    from or modify the state.
   answerKeys:
     - A
     - C
     - D
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
     - content: Functions outside of a contract are also called 'free functions'.
       key: A
-
     - content: Functions declared as view can modify the state variables.
       key: B
-
-    - content: In Solidity the function is simply invoked by writing the name of the function where it has to be called.
+    - content: >-
+        In Solidity the function is simply invoked by writing the name of the
+        function where it has to be called.
       key: C
-
     - content: Functions can have multiple return values.
       key: D
-
 - uuid: c60393ac-3492-4d4b-a7c7-ecee0e09e9d7
   type: MultipleChoice
   content: Which of the following options is correct regarding "free functions"?
-  hint: Free functions in Solidity are functions created outside of the scope of a contract.
-  explanation: |
-    A free function behaves like an internal function of the contract that called it. 
-    The main difference is that a free function cannot directly access state variables and internal functions of contracts.
+  hint: >-
+    Free functions in Solidity are functions created outside of the scope of a
+    contract.
+  explanation: >
+    A free function behaves like an internal function of the contract that
+    called it. 
+
+    The main difference is that a free function cannot directly access state
+    variables and internal functions of contracts.
   answerKeys:
     - B
     - D
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Medium
   choices:
-    - content: Free functions in solidity are functions declared inside a contract with public Visibility.
+    - content: >-
+        Free functions in solidity are functions declared inside a contract with
+        public Visibility.
       key: A
-
     - content: Their code is included in all contracts that call them.
       key: B
-
     - content: They can access state variables and internal functions directly.
       key: C
-
-    - content: A free function behaves like an internal function of the contract that called it.
+    - content: >-
+        A free function behaves like an internal function of the contract that
+        called it.
       key: D
-
 - uuid: c97bee69-c7c1-4932-a6f8-60c2cf4df840
   type: SingleChoice
   content: |
     What does the following syntax do? 
     `import * as symbolName from "filename";`
   hint: noHint
-  explanation: |
-    The following example creates a new global symbol symbolName whose members are all the global symbols from "filename":
-    `import * as symbolName from "filename";` which results in all global symbols being available in the format symbolName.symbol.
+  explanation: >
+    The following example creates a new global symbol symbolName whose members
+    are all the global symbols from "filename":
+
+    `import * as symbolName from "filename";` which results in all global
+    symbols being available in the format symbolName.symbol.
   answerKeys:
     - B
   subTopics:
     - smart-contract
   difficultyLevel: Low
   choices:
-    - content: This statement imports all global symbols from “filename” into the current global scope.
+    - content: >-
+        This statement imports all global symbols from “filename” into the
+        current global scope.
       key: A
-
-    - content: This statement creates a new global symbol symbolName whose members are all the global symbols from "filename".
+    - content: >-
+        This statement creates a new global symbol symbolName whose members are
+        all the global symbols from "filename".
       key: B
-
     - content: This statement imports symbolName member from "filename".
       key: C
-
     - content: None of these.
       key: D
-
 - uuid: 985403b3-673a-4017-9099-76a5cc0d5f10
   type: SingleChoice
   content: In which scenarios is a fallback function triggered?
   hint: noHint
-  explanation: |
-    A fallback function is called in two cases- A contract receives only Ether and no data,
+  explanation: >
+    A fallback function is called in two cases- A contract receives only Ether
+    and no data,
+
     or when no function calls matched even though the account received data.
   answerKeys:
     - D
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
     - content: Contract received ether and no data.
       key: A
-
     - content: Contract received data but no function matched the function called.
       key: B
-
     - content: Contract sent insufficient gas.
       key: C
-
     - content: Both A & B
       key: D
-
 - uuid: e288ce1e-aa2e-48b1-9878-f7133359198c
   type: SingleChoice
   content: What happens when an event is called?
   hint: noHint
-  explanation: Events are inheritable members of contracts. When you call them, they cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
+  explanation: >-
+    Events are inheritable members of contracts. When you call them, they cause
+    the arguments to be stored in the transactions log - a special data
+    structure in the blockchain.
   answerKeys:
     - C
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
     - content: When called, events flag an error to the caller.
       key: A
-
-    - content: They provide a condition under which event a function calling the event should be executed.
+    - content: >-
+        They provide a condition under which event a function calling the event
+        should be executed.
       key: B
-
-    - content: They cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
+    - content: >-
+        They cause the arguments to be stored in the transactions log - a
+        special data structure in the blockchain.
       key: C
-
     - content: None of these.
       key: D
-
 - uuid: 138e8326-fe39-421f-ae9e-ac5a6cfb0ad0
   type: MUltipleChoice
   content: What are events used for?
-  hint: When called, events cause the arguments to be stored in the transactions log - a special data structure in the blockchain.
-  explanation: |
-    Events are used to inform external users that something happened on the blockchain. Smart contracts themselves cannot listen to any events.
-    All information in the blockchain is public and any actions can be found by looking into the transactions close enough but events are a shortcut to ease the development of outside systems in cooperation with smart contracts.
+  hint: >-
+    When called, events cause the arguments to be stored in the transactions log
+    - a special data structure in the blockchain.
+  explanation: >
+    Events are used to inform external users that something happened on the
+    blockchain. Smart contracts themselves cannot listen to any events.
+
+    All information in the blockchain is public and any actions can be found by
+    looking into the transactions close enough but events are a shortcut to ease
+    the development of outside systems in cooperation with smart contracts.
   answerKeys:
     - A
     - C
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
-    - content: Events can be used to communicate with external users about a transaction that happened on the blockchain.
+    - content: >-
+        Events can be used to communicate with external users about a
+        transaction that happened on the blockchain.
       key: A
-
     - content: They are used for error handling.
       key: B
-
-    - content: They can be used to inform a user of any action that happened on the blockchain and can thus ease the development of outside systems in cooperation with smart contracts.
+    - content: >-
+        They can be used to inform a user of any action that happened on the
+        blockchain and can thus ease the development of outside systems in
+        cooperation with smart contracts.
       key: C
-
     - content: None of these.
       key: D
-
 - uuid: 42d7664b-47e1-4f1e-9162-af63a8c0db22
   type: MultipleChoice
   content: |
@@ -523,10 +577,14 @@
       name = newName;
     }
     ```
-  hint: Function modifiers can be used to change the behaviour of functions in a declarative way.
-  explanation:
-    In the code, constructor sets the creator of the contract to the owner variable . The `onlyOwner` modifier checks that the caller of the function is the owner.
-    the function `setName` uses the modifier `onlyOwner`. If the caller of the function is not the owner then the function does not execute.
+  hint: >-
+    Function modifiers can be used to change the behaviour of functions in a
+    declarative way.
+  explanation: >-
+    In the code, constructor sets the creator of the contract to the owner
+    variable . The `onlyOwner` modifier checks that the caller of the function
+    is the owner. the function `setName` uses the modifier `onlyOwner`. If the
+    caller of the function is not the owner then the function does not execute.
   answerKeys:
     - A
     - B
@@ -535,65 +593,60 @@
     - smart-contract
   difficultyLevel: Medium
   choices:
-    - content: Upon contract creation, the owner address is initialized to the user who deployed the contract.
+    - content: >-
+        Upon contract creation, the owner address is initialized to the user who
+        deployed the contract.
       key: A
-
     - content: The function setName can only be called by the owner of the contract.
       key: B
-
-    - content: onlyOwner is a function which will throw an error each time it is called by a non-owner.
+    - content: >-
+        onlyOwner is a function which will throw an error each time it is called
+        by a non-owner.
       key: C
-
     - content: onlyOwner can be used to modify the behaviour of a function.
       key: D
-
 - uuid: d8609639-3532-48ff-8f33-7ae8ce2ade62
   type: SingleChoice
   content: Which of the following can be used to restrict access of a function?
   hint: noHint
-  explanation: |
-    Modifiers assist in the execution of a functions behavior. They can be used to restrict access of a function.
+  explanation: >
+    Modifiers assist in the execution of a functions behavior. They can be used
+    to restrict access of a function.
   answerKeys:
     - B
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
     - content: function
       key: A
-
     - content: function modifier
       key: B
-
     - content: event
       key: C
-
     - content: constructor
       key: D
-
 - uuid: 33eab1f8-3a7c-4cd9-8c0d-f42a2f9f4fd3
   type: SingleChoice
   content: Where is `_;` instruction used in Solidity?
   hint: noHint
-  explanation: In Solidity, `_;` is used inside a modifier to specify when the function should be executed.
+  explanation: >-
+    In Solidity, `_;` is used inside a modifier to specify when the function
+    should be executed.
   answerKeys:
     - C
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
     - content: It is used in a function.
       key: A
-
     - content: It is used in aconstructor.
       key: B
-
     - content: It is used in a modifier.
       key: C
-
     - content: It can be used anywhere at the file level.
       key: D
-
 - uuid: aa3caf4e-b9d8-46f9-95ac-d588df2558a7
   type: SingleChoice
   content: |
@@ -619,25 +672,26 @@
     }
     ```
   hint: Notice how the function set will execute because of the modifier m.
-  explanation: In Solidity, `_;` is used inside a modifier to specify when the function should be executed. As the modifier has `_;` before the modifier statements, so the function code will execute first and then the modifier code. The function set will update the value of a to 20 and then the modifier code will check if the value is greater than 15 or not.
+  explanation: >-
+    In Solidity, `_;` is used inside a modifier to specify when the function
+    should be executed. As the modifier has `_;` before the modifier statements,
+    so the function code will execute first and then the modifier code. The
+    function set will update the value of a to 20 and then the modifier code
+    will check if the value is greater than 15 or not.
   answerKeys:
     - C
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Medium
   choices:
-    - content: "10"
+    - content: '10'
       key: A
-
-    - content: "15"
+    - content: '15'
       key: B
-
-    - content: "20"
+    - content: '20'
       key: C
-
-    - content: "30"
+    - content: '30'
       key: D
-
 - uuid: 07881a7f-600c-4bfc-baf9-787f3fa70700
   type: SingleChoice
   content: Which of the following is a correct declaration of a function?
@@ -652,31 +706,34 @@
   answerKeys:
     - D
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
     - content: public function foo() view returns(){}
       key: A
-
     - content: public view function foo() returns(){}
       key: B
-
     - content: function foo() view returns() public{}
       key: C
-
     - content: function foo() public view returns(){}
       key: D
-
 - uuid: 0767755b-6790-44cd-8364-7c56acb77457
   type: SingleChoice
-  content: |
+  content: >
     Which of the following options are true regarding the statements below.  
+
     Statement 1 - A constructor can be either public or internal.  
-    Statement 2 - A constructor code is executed once when a contract is created and it is used to initialize contract state.
+
+    Statement 2 - A constructor code is executed once when a contract is created
+    and it is used to initialize contract state.
   hint: noHint
-  explanation: |
-    A constructor is an optional funtion and is used to initialize state variables of a contract.
-    It is executed once when a contract is created and it is used to initialize contract state.
+  explanation: >
+    A constructor is an optional funtion and is used to initialize state
+    variables of a contract.
+
+    It is executed once when a contract is created and it is used to initialize
+    contract state.
+
     A constructor can be either public or internal.
   answerKeys:
     - C
@@ -686,42 +743,45 @@
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-
     - content: Both are true.
       key: C
-
     - content: Neither is true.
       key: D
-
 - uuid: 2fb21e8c-429e-4229-817b-6077c945fca0
   type: MultipleChoice
   content: Which of the following is true about function modifier `_;`?
   hint: noHint
-  explanation: |
-    “_;” is a special code only used in the function modifier. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
-    "_;" can be used to execute the function modifier and then the function or execute the function and then the function modifier by placing "_;" before or after the modifier code.
+  explanation: >
+    “_;” is a special code only used in the function modifier. It' indicates
+    where “the rest” of the function code should go by merging the function
+    source with the modifier code.
+
+    "_;" can be used to execute the function modifier and then the function or
+    execute the function and then the function modifier by placing "_;" before
+    or after the modifier code.
   answerKeys:
     - A
     - B
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
-    - content: Specified at the entry of a function and executed after the function ends.
+    - content: >-
+        Specified at the entry of a function and executed after the function
+        ends.
       key: A
-
-    - content: Specified at the entry to a function and executed before the function begins.
+    - content: >-
+        Specified at the entry to a function and executed before the function
+        begins.
       key: B
-
-    - content: Specified at the exit of a function and executed after the function ends.
+    - content: >-
+        Specified at the exit of a function and executed after the function
+        ends.
       key: C
-
     - content: None of these.
       key: D
-
 - uuid: f6d9abaf-0f05-4376-ad34-58c366ebee76
   type: SingleChoice
   content: How many constructors can be there in a Solidity contract?
@@ -733,45 +793,43 @@
     - smart-contract
   difficultyLevel: Low
   choices:
-    - content: "1"
+    - content: '1'
       key: A
-
-    - content: "2"
+    - content: '2'
       key: B
-
-    - content: "3"
+    - content: '3'
       key: C
-
     - content: Many
       key: D
-
 - uuid: 437f24c0-fa13-4ac8-bd39-3c4649aadb0c
   type: SingleChoice
   content: Which of the following is true regarding `_;` used in function modifiers?
   hint: noHint
-  explanation: |
-    “_;” is a special code only used in the function modifier. Having `_;` more than once in a modifier is valid.
-    It instructs solidity to run the code in the function. It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
+  explanation: >
+    “_;” is a special code only used in the function modifier. Having `_;` more
+    than once in a modifier is valid.
+
+    It instructs solidity to run the code in the function. It' indicates where
+    “the rest” of the function code should go by merging the function source
+    with the modifier code.
   answerKeys:
     - A
     - B
     - C
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
     - content: “_;” is a special code only used in the function modifier.
       key: A
-
-    - content: It' indicates where “the rest” of the function code should go by merging the function source with the modifier code.
+    - content: >-
+        It' indicates where “the rest” of the function code should go by merging
+        the function source with the modifier code.
       key: B
-
     - content: Having `_;` more than once in a modifier is valid.
       key: C
-
     - content: option 4
       key: D
-
 - uuid: 38d84a22-7517-4aaf-9018-75b533aa3e7e
   type: SingleChoice
   content: |
@@ -801,152 +859,159 @@
 
     ```
   hint: noHint
-  explanation: The default value of uint is zero so when func() is called modA code will run first, the `_;` will be replaced by modifier's code and the `_;` in the modB modifier's is replaced by the func function's code. Therefore `a=1` , `b=2` and `c=2`.
+  explanation: >-
+    The default value of uint is zero so when func() is called modA code will
+    run first, the `_;` will be replaced by modifier's code and the `_;` in the
+    modB modifier's is replaced by the func function's code. Therefore `a=1` ,
+    `b=2` and `c=2`.
   answerKeys:
     - B
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Medium
   choices:
     - content: 0,0,0
       key: A
-
     - content: 1,2,2
       key: B
-
     - content: 0,0,1
       key: C
-
     - content: 1,2,1
       key: D
-
 - uuid: d73be206-d0fe-4f75-b6d3-693275d1b069
   type: SingleChoice
   content: Which of the following is true about modifiers?
   hint: noHint
-  explanation: |
+  explanation: >
     A function can have any number of modifiers.
-    Visibility modifiers for a function should come before custom access modifiers.
+
+    Visibility modifiers for a function should come before custom access
+    modifiers.
+
     Modifiers can be without any parameters.
   answerKeys:
     - D
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
     - content: A function can have any number of modifiers.
       key: A
-
-    - content: Visibility modifiers for a function should come before custom access modifiers.
+    - content: >-
+        Visibility modifiers for a function should come before custom access
+        modifiers.
       key: B
-
     - content: Modifiers can be without any parameters.
       key: C
-
     - content: All the above.
       key: D
-
 - uuid: a8f4d89b-bfc8-4dc0-8f9e-5aab0088f13a
   type: SingleChoice
-  content: |
+  content: >
     Which of tshe following options is true regarding the below statemens?
+
     Statement 1 - It is allowed to emit an event in function modifiers.
-    Statement 2 - A modifier can update a state variable when used with a function declared as view.
+
+    Statement 2 - A modifier can update a state variable when used with a
+    function declared as view.
   hint: noHint
-  explanation: A function declared as view can only read the state variables and not make updates to them , any modifiers attached to such function can also not make changes to the state of variables.
+  explanation: >-
+    A function declared as view can only read the state variables and not make
+    updates to them , any modifiers attached to such function can also not make
+    changes to the state of variables.
   answerKeys:
     - A
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-
     - content: Both are true.
       key: C
-
     - content: Neither is true.
       key: D
-
 - uuid: 61bc26de-8555-40ef-8f26-8235ada76c94
   type: MultipleChoice
   content: What does the indexed keyword do in events?
   hint: noHint
-  explanation: |
-    You can add the attribute indexed to up to three parameters which adds them to a special data structure known as “topics” instead of the data part of the log. The indexed keyword helps you to filter the logs to find the wanted data.
+  explanation: >
+    You can add the attribute indexed to up to three parameters which adds them
+    to a special data structure known as “topics” instead of the data part of
+    the log. The indexed keyword helps you to filter the logs to find the wanted
+    data.
+
     All non-indexed arguments will be stored in the data part of the log.
   answerKeys:
     - B
     - C
   subTopics:
-    - "events-modifiers"
+    - events-modifiers
   difficultyLevel: Low
   choices:
     - content: All indexed arguments will be stored in the data part of the log.
       key: A
-
-    - content: indexed keyword is used to log values as topics rather than data part of the log.
+    - content: >-
+        indexed keyword is used to log values as topics rather than data part of
+        the log.
       key: B
-
-    - content: The indexed keyword helps you to filter the logs to find the wanted data.
+    - content: >-
+        The indexed keyword helps you to filter the logs to find the wanted
+        data.
       key: C
-
     - content: None of these.
       key: D
-
 - uuid: 4b1b0494-f540-4a22-af9a-bdd791fb2834
   type: SingleChoice
   content: Which of the following scenarios will result in a runtime time errors?
   hint: noHint
-  explanation: Some of the runtime errors are out-of-gas error, data type overflow error, divide by zero error, array-out-of-index error, etc.
+  explanation: >-
+    Some of the runtime errors are out-of-gas error, data type overflow error,
+    divide by zero error, array-out-of-index error, etc.
   answerKeys:
     - D
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
     - content: out-of-gas error
       key: A
-
     - content: data type overflow error
       key: B
-
     - content: divide by zero error
       key: C
-
     - content: All of these
       key: D
-
 - uuid: 411289f8-19ca-4f57-8bd1-c55aea028b5a
   type: SingleChoice
-  content: Error handling and validations in Solidity can be done using which of the following?
+  content: >-
+    Error handling and validations in Solidity can be done using which of the
+    following?
   hint: noHint
-  explanation: Error handling and validations in solidity is done using revert, require, assert and try/catch.
+  explanation: >-
+    Error handling and validations in solidity is done using revert, require,
+    assert and try/catch.
   answerKeys:
     - D
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
     - content: revert
       key: A
-
     - content: require
       key: B
-
     - content: assert
       key: C
-
     - content: All of these
       key: D
-
 - uuid: c513ceac-7031-4473-aaa0-d17870eeeb0a
   type: MultipleChoice
-  content: Which of the following scenarios will cause a Panic type exception to be generated?
+  content: >-
+    Which of the following scenarios will cause a Panic type exception to be
+    generated?
   hint: noHint
   explanation: |
     A Panic exception is generated in the following situations.
@@ -959,52 +1024,55 @@
     - B
     - C
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
     - content: If you call assert with an argument that evaluates to false.
       key: A
-
     - content: If an arithmetic operation results in underflow or overflow.
       key: B
-
     - content: If you divide or modulo by zero.
       key: C
-
     - content: Calling require(x) where x evaluates to false.
       key: D
-
 - uuid: 3c2e68b2-0577-411b-8980-2389c0d859ac
   type: SingleChoice
-  content: |
-    Consider the statements below regarding Error(string) and Panic(uint256) type error signatures.
-    Statement 1 - Error(string) is used for regular error conditions while Panic(uint256) is used for errors that should not be present in bug-free code.
+  content: >
+    Consider the statements below regarding Error(string) and Panic(uint256)
+    type error signatures.
+
+    Statement 1 - Error(string) is used for regular error conditions while
+    Panic(uint256) is used for errors that should not be present in bug-free
+    code.
+
     Statement 2 - Panic type exception occurs via require and Error via assert.
   hint: noHint
-  explanation: |
-    Solidity supports two error signatures: Error(string) and Panic(uint256). Error(string) is used for regular error conditions while Panic(uint256) is used for errors that should not be present in bug-free code.
-    Panic is generated by calling assert with an argument showing false and error is generated by calling require with an argument showing false.
+  explanation: >
+    Solidity supports two error signatures: Error(string) and Panic(uint256).
+    Error(string) is used for regular error conditions while Panic(uint256) is
+    used for errors that should not be present in bug-free code.
+
+    Panic is generated by calling assert with an argument showing false and
+    error is generated by calling require with an argument showing false.
   answerKeys:
     - A
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-
     - content: Neither is true.
       key: C
-
     - content: Both are true.
       key: D
-
 - uuid: 734e92a7-07e9-43d6-b346-3be5d5e20109
   type: SingleChoice
-  content: Which of the following scenarios will cause an Error type exception to be generated?
+  content: >-
+    Which of the following scenarios will cause an Error type exception to be
+    generated?
   hint: noHint
   explanation: |
     An Error exception is generated by the compiler in the following cases-
@@ -1014,81 +1082,92 @@
   answerKeys:
     - D
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
     - content: Calling require(x) where x evaluates to false.
       key: A
-
-    - content: If you perform an external function call targeting a contract that contains no code.
+    - content: >-
+        If you perform an external function call targeting a contract that
+        contains no code.
       key: B
-
     - content: If you use revert() or revert("description").
       key: C
-
     - content: All of these.
       key: D
-
 - uuid: c3b40fc3-0ff1-49d8-aa2b-9a454ef568f0
   type: MultipleChoice
   content: Which of the following options in correct regarding errors?
   hint: noHint
-  explanation: |
-    Using revert() causes a revert without any error data while revert("description") will create an Error(string) error.
-    Using a custom error instance will usually be much cheaper than a string description, because you can use the name of the error to describe it, which is encoded in only four bytes.
-    The two ways if (!condition) revert(...); and require(condition, ...); are equivalent as long as the arguments to revert and require do not have side-effects, for example if they are just strings.
+  explanation: >
+    Using revert() causes a revert without any error data while
+    revert("description") will create an Error(string) error.
+
+    Using a custom error instance will usually be much cheaper than a string
+    description, because you can use the name of the error to describe it, which
+    is encoded in only four bytes.
+
+    The two ways if (!condition) revert(...); and require(condition, ...); are
+    equivalent as long as the arguments to revert and require do not have
+    side-effects, for example if they are just strings.
   answerKeys:
     - A
     - B
     - C
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
-    - content: The two ways if (!condition) revert(...); and require(condition, ...); are equivalent.
+    - content: >-
+        The two ways if (!condition) revert(...); and require(condition, ...);
+        are equivalent.
       key: A
-
-    - content: Using a custom error instance will usually be much cheaper than a revert.
+    - content: >-
+        Using a custom error instance will usually be much cheaper than a
+        revert.
       key: B
-
-    - content: Using revert() causes a revert without any error data while revert("description") will create an Error(string) error.
+    - content: >-
+        Using revert() causes a revert without any error data while
+        revert("description") will create an Error(string) error.
       key: C
-
     - content: None of these.
       key: D
-
 - uuid: c4123a41-b80e-4a83-adc7-7a189e1a6041
   type: SingleChoice
-  content: To check an integer overflow/underflow , which of the following function should be used?
+  content: >-
+    To check an integer overflow/underflow , which of the following function
+    should be used?
   hint: noHint
-  explanation: |
-    Assert should only be used to test for internal errors, and to check invariants. 
-    Properly functioning code should never create a Panic, not even on invalid external input.
-    In this case integer overflow/underflow is undesirable and will lead to a bug wich needs to be fixed.
+  explanation: >
+    Assert should only be used to test for internal errors, and to check
+    invariants. 
+
+    Properly functioning code should never create a Panic, not even on invalid
+    external input.
+
+    In this case integer overflow/underflow is undesirable and will lead to a
+    bug wich needs to be fixed.
   answerKeys:
     - B
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
     - content: revert
       key: A
-
     - content: assert
       key: B
-
     - content: require
       key: C
-
     - content: None of these
       key: D
-
 - uuid: fea2cad9-970c-40cc-8fa9-ec46f0b3155a
   type: SingleChoice
   content: Which of the following catch blocks is valid ?
   hint: noHint
-  explanation: |
-    Solidity supports different kinds of catch blocks depending on the type of errors.
+  explanation: >
+    Solidity supports different kinds of catch blocks depending on the type of
+    errors.
       * `catch Error(string memory reason) { ... }`, This catch clause is executed if the error was caused by `revert("reasonString")` or `require(false, "reasonString")`.
       * `catch Panic(uint errorCode) { ... }`, If the error was caused by a panic, i.e. by a failing assert, division by zero, invalid array access, arithmetic overflow and others, this catch clause will be run.
       * `catch (bytes memory lowLevelData) { ... }`, This clause is executed if the error signature does not match any other clause, if there was an error while decoding the error message, or if no error data was provided with the exception. The declared variable provides access to the low-level error data in that case.
@@ -1096,94 +1175,99 @@
   answerKeys:
     - D
   subTopics:
-    - "custom-errors-and-try-catch"
+    - custom-errors-and-try-catch
   difficultyLevel: Low
   choices:
-    - content: "`catch Error(string memory reason) { ... }`"
+    - content: '`catch Error(string memory reason) { ... }`'
       key: A
-
-    - content: "`catch Panic(uint errorCode) { ... }`"
+    - content: '`catch Panic(uint errorCode) { ... }`'
       key: B
-
-    - content: "`catch (bytes memory lowLevelData) { ... }`"
+    - content: '`catch (bytes memory lowLevelData) { ... }`'
       key: C
-
     - content: All of these
       key: D
-
 - uuid: 6c484192-0531-42ec-a0fc-494132dea432
   type: SingleChoice
-  content: |
+  content: >
     Which of the following options is correct regarding the statements below,
-    Statement 1 - Solidity has special functions like the receive ether function and the fallback function.
-    Statement 2 - The declaration `receive() external payable { ... }` is not a valid function declaration.
+
+    Statement 1 - Solidity has special functions like the receive ether function
+    and the fallback function.
+
+    Statement 2 - The declaration `receive() external payable { ... }` is not a
+    valid function declaration.
   hint: noHint
-  explanation: |
-    A Receive Ether Function is declared using `receive() external payable { ... }` (without the function keyword). 
-    This function cannot have arguments, cannot return anything and must have external visibility and payable state mutability. It can be virtual, can override and can have modifiers.
+  explanation: >
+    A Receive Ether Function is declared using `receive() external payable { ...
+    }` (without the function keyword). 
+
+    This function cannot have arguments, cannot return anything and must have
+    external visibility and payable state mutability. It can be virtual, can
+    override and can have modifiers.
   answerKeys:
     - A
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
     - content: Statement 1 is true but Statement 2 is false.
       key: A
-
     - content: Statement 2 is true but Statement 1 is false.
       key: B
-
     - content: Both are true.
       key: C
-
     - content: Neither is true.
       key: D
-
 - uuid: f6231249-cc8e-402b-9536-20dedb877205
   type: SingleChoice
   content: Which of the following options is correct?
   hint: noHint
-  explanation: |
-    Functions can be defined at file-level. Such functions are called “free functions” (as opposed to functions bound to a specific contract).
-    Free functions are always internal functions and are meant to replace internal library functions and their very special behaviour.
-    A free function behaves like an internal function of the contract that called it. The main difference is that a free function cannot directly access state variables and internal functions of contracts.
+  explanation: >
+    Functions can be defined at file-level. Such functions are called “free
+    functions” (as opposed to functions bound to a specific contract).
+
+    Free functions are always internal functions and are meant to replace
+    internal library functions and their very special behaviour.
+
+    A free function behaves like an internal function of the contract that
+    called it. The main difference is that a free function cannot directly
+    access state variables and internal functions of contracts.
   answerKeys:
     - D
   subTopics:
-    - "state-variables-and-functions"
+    - state-variables-and-functions
   difficultyLevel: Low
   choices:
     - content: It is not necessary for functions to be bound to a specific contract.
       key: A
-
     - content: Free functions cannot have visibility.
       key: B
-
     - content: Free functions are like internal functions.
       key: C
-
     - content: All of these.
       key: D
-
 - uuid: 285aa1cb-75de-4cf8-9d33-8987e14955a7
   type: SingleChoice
-  content: What effect does a "require" keyword have on an if/else statement when it's false?
+  content: >-
+    What effect does a "require" keyword have on an if/else statement when it's
+    false?
   hint: noHint
-  explanation: "`require` accepts a single argument and returns a boolean value after evaluation, it also has a custom string message option. If false then exception is raised and execution is terminated. The unused gas is returned back to the caller and the state is reversed to its original state."
+  explanation: >-
+    `require` accepts a single argument and returns a boolean value after
+    evaluation, it also has a custom string message option. If false then
+    exception is raised and execution is terminated. The unused gas is returned
+    back to the caller and the state is reversed to its original state.
   answerKeys:
     - C
   subTopics:
-    - "errors"
+    - errors
   difficultyLevel: Low
   choices:
     - content: It goes to the next function.
       key: A
-
     - content: It triggers the fallback function.
       key: B
-
     - content: It stops the contract and returns any unused gas.
       key: C
-
     - content: None of these.
       key: D

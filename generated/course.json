@@ -69,10 +69,8 @@
             "B",
             "C"
           ],
-          "subTopics": [
-            "smart-contract"
-          ],
-          "difficultyLevel": "Low",
+          "subTopics": [],
+          "difficultyLevel": "Medium",
           "choices": [
             {
               "content": "`pragma solidity 0.6.12;`",
