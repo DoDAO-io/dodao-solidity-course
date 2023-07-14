@@ -77,10 +77,10 @@
   shortTitle: Functions
   details: >
 
-    State variables are variables that are stored permanently on the blockchain.
-    They can be declared as `constant` and `immutable`, but immutable can be
-    redeclared in the constructor. Constant and immutable variables reduce the
-    gas cost.
+    State - variables are variables that are stored permanently on the
+    blockchain. They can be declared as `constant` and `immutable`, but
+    immutable can be redeclared in the constructor. Constant and immutable
+    variables reduce the gas cost.
 
     Functions in solidity are essentially just like any other programming
     language - they are pieces of code that can be executed by simply calling
