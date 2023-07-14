@@ -4,7 +4,7 @@
   details: >
     #### Versioning of solidity compiler
 
-    The compiler version will be in the form MAJOR.MINOR.PATCH example(0.8.7)
+    The compiler version 1 will be in the form MAJOR.MINOR.PATCH example(0.8.7)
     which indicates the major release 0 with 8th minor release and 7th patch. 
 
 
