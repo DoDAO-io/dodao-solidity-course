@@ -73,7 +73,7 @@
           "difficultyLevel": "Medium",
           "choices": [
             {
-              "content": "`pragma solidity 0.6.12;`",
+              "content": "`pragma solidity 0.6.13;`",
               "key": "A"
             },
             {
