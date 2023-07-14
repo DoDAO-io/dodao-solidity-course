@@ -7207,6 +7207,96 @@
               "key": "D"
             }
           ]
+        },
+        {
+          "uuid": "5cecfcd8-b8c5-49c9-a21c-803a7354edbf",
+          "type": "SingleChoice",
+          "content": "What is an asset?",
+          "hint": "NoHint",
+          "explanation": "Property owned by a person or company, regarded as having value and available to meet debts, commitments, or legacies.",
+          "answerKeys": [
+            "A"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Something that is owned by a person or company and increases in value over time",
+              "key": "A"
+            },
+            {
+              "content": "Something that you buy from a shop",
+              "key": "B"
+            },
+            {
+              "content": "Something that decreases in value over time",
+              "key": "C"
+            },
+            {
+              "content": "Something that you buy for fun",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "95efc49b-3692-40ec-8d9f-87a7699b8d9b",
+          "type": "SingleChoice",
+          "content": "What is OOP?",
+          "hint": "NoHint",
+          "explanation": "A programming paradigm based on the idea that objects can contain data and code.",
+          "answerKeys": [
+            "B"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "A programming paradigm called OOP (object-oriented programming) is based on the idea that objects can contain data and code.",
+              "key": "B"
+            },
+            {
+              "content": "A programming paradigm that focuses on procedural programming",
+              "key": "A"
+            },
+            {
+              "content": "A programming paradigm that focuses on functional programming",
+              "key": "C"
+            },
+            {
+              "content": "A programming paradigm that focuses on logical programming",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "9ae9a2e8-12c0-4e3a-8bbe-6fd3b2a28c9a",
+          "type": "SingleChoice",
+          "content": "What is Solidity used for?",
+          "hint": "NoHint",
+          "explanation": "Solidity is used as an object-oriented programming language to implement smart contracts on different blockchain platforms, most notably Ethereum.",
+          "answerKeys": [
+            "C"
+          ],
+          "subTopics": [],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Solidity is used as an object-oriented programming language to implement smart contracts on different blockchain platforms, most notably Ethereum.",
+              "key": "C"
+            },
+            {
+              "content": "Solidity is used for creating web applications",
+              "key": "A"
+            },
+            {
+              "content": "Solidity is used for data analysis",
+              "key": "B"
+            },
+            {
+              "content": "Solidity is used for graphic design",
+              "key": "D"
+            }
+          ]
         }
       ],
       "readings": [
